@@ -1,0 +1,116 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    /* Just for visualization */
+}
+
+main {
+    position: relative;
+    /* Makes the container the reference for absolute positioning */
+    display: inline-block;
+    /* Ensures the container wraps around the image */
+
+    aspect-ratio: 4 / 3;
+    /* Maintain 4:3 aspect ratio */
+    max-width: 100%;
+    /* Ensure it doesn't exceed the container's width */
+    max-height: 100%;
+    /* Ensure it doesn't exceed the container's height */
+    width: auto;
+    /* Allow width to adjust based on height */
+    height: auto;
+    /* Allow height to adjust based on width */
+    /* Additional constraints to handle height or width limits */
+    width: min(100%, calc(100vh * (4 / 3)));
+    /* Constrain width based on viewport height */
+    height: min(100%, calc(100vw * (3 / 4)));
+    /* Constrain height based on viewport width */
+
+    background-color: lightblue;
+    /* Just for visualization */
+}
+
+#background {
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    image-rendering: pixelated;
+    display: block;
+}
+
+.input-box-container {
+    position: absolute;
+    /* Positions the div relative to the container */
+    top: 0;
+    /* Positions the div at the top of the container */
+    left: 0;
+    /* Positions the div at the left of the container */
+    width: 100%;
+    /* Makes the div span the full width of the container */
+    height: 90%;
+    /* Makes the div span the full height of the container */
+    color: white;
+    /* Text color */
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.input-box {
+    width: 66%;
+    padding: 20px 20px;
+    background-color: rgba(256, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#prompt {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.options{
+    margin-top: 40px;
+    margin-bottom: 10px;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#option_1, #option_2 {
+    width: 40%;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 256, 0.75);
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.25em;
+    color: white;
+    font-weight: bold;
+}

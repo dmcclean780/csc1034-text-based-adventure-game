@@ -1,13 +1,21 @@
-const prompt = "ENTER THE DUNGEON";
+/**
+    All these constants can be stored in the SQL database in the future 
+*/
+
+const details = "As you rise from the ground, you find yourself in a forest glade with a single cave to exit. " +
+                "You can feel your Death calling for your return if you remain.";
+
+const prompt = "ENTER THE CAVE?";
+
 const option_1 = "YES";
-const option_1_response = function () {
-    window.location.href = "room_1.html";
-}
-const option_2_response = function () {
-    window.location.href = "../../../generic/death.html";
-}
+const option_1_response = eval("(function () {window.location.href = \"room_1.html\";})")
 const option_2 = "NO";
+const option_2_response = eval("(function () {window.location.href = \"../../generic/death.html\";localStorage['deathMessage'] = \"You have chosen to return to Death's embrace\";})");
+
 const background_path = "../../../images/starter_dungeon/start/background.png";
+
+const initailTimerLength = 30;
+const timerResponse = eval("(function () {window.location.href = \"../../generic/death.html\";localStorage['deathMessage'] = \"Indescision allowed Death to renew it's claim on You\";})");
 
 
 
@@ -17,6 +25,8 @@ window.onload = function () {
     document.getElementById("option_1").innerHTML = option_1;
     document.getElementById("option_2").innerHTML = option_2;
     document.getElementById("background").src = background_path;
+    document.getElementById("details").innerHTML = details
+    document.getElementById("timer").innerHTML = initailTimerLength;
 
 
     const button_1 = document.getElementById("option_1");
@@ -24,5 +34,16 @@ window.onload = function () {
 
     const button_2 = document.getElementById("option_2");
     button_2.addEventListener("click", option_2_response);
+
+    let timerLength = initailTimerLength;
+    let countdown = setInterval(function () {
+        timerLength -= 1;
+        document.getElementById("timer").innerHTML = timerLength;
+        if (timerLength <= 0) {
+            clearInterval(countdown);
+            timerResponse();
+        }
+    }
+    , 1000);
 }
 

@@ -1,9 +1,11 @@
+import { runTimerBar } from "../../utils/timerBar.js";
+
 /**
     All these constants can be stored in the SQL database in the future 
 */
 
 const details = "As you rise from the ground, you find yourself in a forest glade with a single cave to exit. " +
-                "You can feel your Death calling for your return if you remain.";
+    "You can feel your Death calling for your return if you remain.";
 
 const prompt = "ENTER THE CAVE?";
 
@@ -20,13 +22,14 @@ const timerResponse = eval("(function () {window.location.href = \"../../generic
 
 
 
+
 window.onload = function () {
     document.getElementById("prompt").innerHTML = prompt;
     document.getElementById("option_1").innerHTML = option_1;
     document.getElementById("option_2").innerHTML = option_2;
     document.getElementById("background").src = background_path;
     document.getElementById("details").innerHTML = details
-    document.getElementById("timer").innerHTML = initailTimerLength;
+    document.getElementById("timer-time").innerHTML = initailTimerLength;
 
 
     const button_1 = document.getElementById("option_1");
@@ -35,15 +38,7 @@ window.onload = function () {
     const button_2 = document.getElementById("option_2");
     button_2.addEventListener("click", option_2_response);
 
-    let timerLength = initailTimerLength;
-    let countdown = setInterval(function () {
-        timerLength -= 1;
-        document.getElementById("timer").innerHTML = timerLength;
-        if (timerLength <= 0) {
-            clearInterval(countdown);
-            timerResponse();
-        }
-    }
-    , 1000);
+    runTimerBar(initailTimerLength)
 }
+
 

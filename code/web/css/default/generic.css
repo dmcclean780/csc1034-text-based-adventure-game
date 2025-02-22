@@ -12,7 +12,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .main-container {
@@ -50,15 +50,16 @@ main {
     background-color: black;
 }
 
-.death-header{
+.death-header {
     font-size: 10em;
-    color:  rgb(182, 11, 11);
+    color: rgb(182, 11, 11);
     text-align: center;
-    
+
 }
 
-#death-message{
+#death-message {
     font-size: 2em;
     color: white;
     text-align: center;
 }
+

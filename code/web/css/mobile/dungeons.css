@@ -43,7 +43,7 @@
     justify-content: space-between;
 }
 
-#option_1, #option_2 {
+.button-options {
     width: 40%;
     padding: 10px 20px;
     background-color: rgba(255, 0, 255, 0.75);

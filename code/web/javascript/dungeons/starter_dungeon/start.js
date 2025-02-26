@@ -39,7 +39,7 @@ function loadStart(){
     document.getElementById("background").src = background_path;
     document.getElementById("details").innerHTML = details
     document.getElementById("timer-bar").duration = timerDuration;
-    document.getElementById("timer-bar").onCompleteCallback = timerResponse;
+    //document.getElementById("timer-bar").onCompleteCallback = timerResponse;
 
 
     const button_1 = document.getElementById("option_1");

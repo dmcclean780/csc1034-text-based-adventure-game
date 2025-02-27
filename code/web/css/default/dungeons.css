@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Jersey+10&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
 #input-box-container {
     position: absolute;
     /* Positions the div relative to the container */
@@ -9,18 +11,19 @@
     /* Makes the div span the full width of the container */
     height: 90%;
     /* Makes the div span the full height of the container */
-    color: white;
+    color: rgb(47, 37, 27);
     /* Text color */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-family: 'Jersey 10', sans-serif;
     align-items: center;
 }
 
 .input-box {
     width: 66%;
     padding: 20px 20px;
-    background-color: rgba(256, 0, 0, 0.75);
+    background-color: rgba(238, 202, 153, 0.75);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,10 +44,12 @@
     justify-content: space-between;
 }
 
-#option_1, #option_2 {
-    width: 40%;
+.button-option {
+    flex: 1;
+    margin: 0px 10px;
     padding: 10px 20px;
-    background-color: rgba(0, 0, 256, 0.75);
+    background-color: rgba(100, 50, 50, 0.75);
+    border-radius: 10px;
     text-align: center;
     cursor: pointer;
     font-size: 1.25em;
@@ -56,7 +61,7 @@
     width: 66%;
     padding: 20px 20px;
     margin: 40px 0px;
-    background-color: rgba(256, 0, 0, 0.75);
+    background-color: rgba(238, 202, 153, 0.75);;
     display: flex;
     flex-direction: column;
     align-items: center;

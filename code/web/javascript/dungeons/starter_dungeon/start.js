@@ -241,5 +241,3 @@ window.addEventListener('load', () => {
         loadSqueexeThroughCrack()
     } 
 });
-
-

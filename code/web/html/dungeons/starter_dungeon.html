@@ -3,14 +3,16 @@
 
 <head>
     <title>Starter Dungeon</title>
+    <link rel="stylesheet" href="../../css/mobile/dungeons.css">
     <link rel="stylesheet" href="../../css/default/dungeons.css">
+    <link rel="stylesheet" href="../../css/mobile/generic.css">
     <link rel="stylesheet" href="../../css/default/generic.css">
     
 </head>
 
 <body>
     <div class="main-container">
-        <main id="main-container">
+
             <img src="" alt="Dungeon Background" id="background">
 
             <div id="input-box-container">
@@ -26,12 +28,12 @@
                     </div>
                     <timer-bar id="timer-bar" duration="30"></timer-bar>
                     <div class="options">
-                        <button id="option_1" onclick="">YES</button>
-                        <button id="option_2" onclick="">NO</button>
+                        <button class="button-options" onclick="">YES</button>
+                        <button class="button-options" onclick="">NO</button>
                     </div>
                 </div>
             </div>
-        </main>
+
     </div>
     <script src="../../javascript/dungeons/starter_dungeon/start.js"></script>
     <script src="../../javascript/components/timerBar.js"></script>

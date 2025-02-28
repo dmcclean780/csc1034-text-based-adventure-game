@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Palace Entrance</title>
+    <link rel="stylesheet" href="../../css/default/dungeons.css">
+    <link rel="stylesheet" href="../../css/default/generic.css">
+    <script src="../../javascript/dungeons/princely_palace/chestRoom.js"></script>
+    
+</head>
+
+<body>
+    <div class="main-container">
+        <main id="main-container">
+            <img src="../../images/princely_palace/start/golden palace background.png" alt="Dungeon Background" id="background">
+
+            <div class="input-box-container">
+                <div class="details-box">
+                    <div id="details">
+                        Four chests sit on the floor before you. A sign above them reads, 
+                        "FIND THE CORRECT CHEST: CHEST 1 IS NOT SAFE, ONE OF THE CHESTS NEXT TO 
+                        CHEST 3 IS NOT SAFE, THERE ARE NO MORE THAN TWO DANGEROUS CHESTS IN A ROW, 
+                        CHEST 4 IS NOT NEXT TO THE SAFE CHEST"
+                    </div>
+                </div>
+                <div class="input-box">
+                    <div id="prompt">
+                        WHAT DIRECTION SHALL YOU TAKE?
+                    </div>
+                    <div class="options">
+                        <button class="button" onclick="chest1()">CHEST 1</button>
+                        <button class="button" onclick="chest2()">CHEST 2</button>
+                        <button class="button" onclick="chest3()">CHEST 3</button>
+                        <button class="button" onclick="chest4()">CHEST 4</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

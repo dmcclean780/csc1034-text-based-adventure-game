@@ -9,7 +9,7 @@
     /* Makes the div span the full width of the container */
     height: 90%;
     /* Makes the div span the full height of the container */
-    color: white;
+    color: rgba(47, 37, 27, 0.75);
     /* Text color */
     display: flex;
     flex-direction: column;
@@ -20,7 +20,8 @@
 .input-box {
     width: 66%;
     padding: 20px 20px;
-    background-color: rgba(256, 0, 0, 0.75);
+    background-color: rgba(238, 202, 153, 0.75);
+    border: 3px solid rgba(82, 69, 55, 0.75);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,7 +30,7 @@
 
 #prompt {
     font-size: 1.5em;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .options{
@@ -41,22 +42,32 @@
     justify-content: space-between;
 }
 
-#option_1, #option_2 {
-    width: 40%;
-    padding: 10px 20px;
-    background-color: rgba(0, 0, 256, 0.75);
+.button_option{
+    flex: 1;
+    margin-left: 10px;
+    padding: 15px 15px;
+    background-color: rgba(100, 50, 50, 0.75);
     text-align: center;
     cursor: pointer;
+    font-family: "Jersey 10", serif;
     font-size: 1.25em;
     color: white;
-    font-weight: bold;
+    border: 3px solid rgba(82, 69, 55, 0.75);
+    border-radius: 8px;
 }
+
+.button_option:hover{
+    background-color: rgba(199, 120, 54, 0.75);
+    border-color:rgba(157, 92, 22, 0.75) ;
+}
+
 
 .details-box {
     width: 66%;
     padding: 20px 20px;
     margin: 40px 0px;
-    background-color: rgba(256, 0, 0, 0.75);
+    background-color: rgba(238, 202, 153, 0.75);
+    border: 3px solid rgba(82, 69, 55, 0.75);
     display: flex;
     flex-direction: column;
     align-items: center;

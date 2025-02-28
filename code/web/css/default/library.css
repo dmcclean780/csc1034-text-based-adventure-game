@@ -1,0 +1,98 @@
+.book-title {
+    font-family: "Caveat", serif;
+    color: rgba(0,0,0,0.8);
+    font-optical-sizing: auto;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+    top: 7%;
+    left: 12%;
+    padding: 10px;
+}
+
+.book-text {
+    font-family: "Caveat", serif;
+    color: rgba(0,0,0,0.8);
+    font-optical-sizing: auto;
+    font-size: 1.25em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+    top: 10%;
+    left: 0.25%;
+    padding: 20px;
+    padding-top: 20px;
+
+    z-index: 1;
+}
+
+.book-title, .book-text {
+    position: relative; /* Ensures text stays in normal document flow */
+    z-index: 1; /* Keeps it below the image */
+}
+
+.overlay-image {
+    position: relative;
+    top: 50%; /* Moves it to overlap the text */
+    left: 0;
+    width: 100%; /* Ensures full width */
+    height: auto;
+    transform: translateY(-50%); /* Adjusts positioning to center over text */
+    z-index: 2; /* Ensures it covers the text */
+}
+
+.left-page{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px; /* Prevent text from touching edges */
+    overflow: hidden; /* Ensure content stays inside */
+    box-sizing: border-box; /* Includes padding in width calculation */
+}
+
+.right-page{
+    width: 50%;
+    height: 100%; /* Adjust as needed */
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#clickable, clickable:hover {
+    cursor: pointer;
+}
+
+.hearts {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 100%;
+    height: 100%;
+    color: rgba(0,0,0,0.8);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.text-container {
+    position: relative; /* Needed for absolute positioning inside */
+    width: 100%;
+}
+
+.stroke-overlay {
+    position: absolute;
+    top: 0.5em; /* Adjust to fine-tune alignment */
+    left: 0;
+    width: 100%; /* Adjust as needed */
+    height: auto;
+    z-index: 2; /* Places image above text */
+    pointer-events: auto; /* Ensures the text remains interactive */
+    opacity: 0;
+}

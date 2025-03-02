@@ -202,26 +202,108 @@ function loadBrazierLit(){
     document.getElementById("option_2").onclick = brazierLitOpt2;
 }
 
+
+
 function squeezeThroughCrackOpt1(){
     
     document.getElementById("popup-menu").setAttribute("contentTitle", "Chest Contents");
-    document.getElementById("popup-menu").setAttribute("content", "Gold x100, Jar of Oil x1"); // ✅ Triggers update
+    document.getElementById("popup-menu").setAttribute("content", "Gold x100, Jar of Oil x1");
     document.getElementById("popup-menu").setAttribute("contentType", "list");
     document.getElementById("popup-menu").style.display= "block";
-    document.getElementById("popup-menu").render(); 
+    document.getElementById("popup-menu").render();
+    document.getElementById("option_1").style.display = "none";
+    localStorage['chestOpened'] = true;
 }
 
+function squeezeThroughCrackOpt2(){
+    document.getElementById("option_2").style.display = "none"; 
+    localStorage['sarcophagusOpened'] = true;
+    window.location.href = "open_sarcophagus.html"; 
+}
 
-function loadSqueexeThroughCrack(){
+function squeezeThroughCrackOpt3(){
+    window.location.href = "tomb_next_chamber.html"; 
+}
+
+function loadSqueezeThroughCrack(){
+    if(localStorage['chestOpened'] == "true"){
+        document.getElementById("option_1").style.display = "none";
+    }
+    if(localStorage['sarcophagusOpened'] == "true"){
+        document.getElementById("option_2").style.display = "none";
+    }
+    if(localStorage['chestOpened'] == "true" && localStorage['sarcophagusOpened'] == "true"){
+        document.getElementById("details").innerHTML = "You have fully explored this room. You should return to the main chamber and continue your journey";
+    }
     document.getElementById("option_1").onclick = squeezeThroughCrackOpt1;
-    //document.getElementById("option_2").onclick = brazierLitOpt2;
+    document.getElementById("option_2").onclick = squeezeThroughCrackOpt2;
+    document.getElementById("option_3").onclick = squeezeThroughCrackOpt3;
 }
+
+
+
+function openSarchophagusOpt1(){
+    document.getElementById("popup-menu").setAttribute("contentTitle", "Old Tome");
+    document.getElementById("popup-menu").setAttribute("content", "THE TEXT CONTENT OF THE OLD TOME");
+    document.getElementById("popup-menu").setAttribute("contentType", "text");
+    document.getElementById("popup-menu").style.display= "block";
+    document.getElementById("popup-menu").render();
+    document.getElementById("option_1").style.display = "none"; 
+}
+
+function openSarchophagusOpt2(){
+    window.location.href = "squeeze_through_the_crack.html";
+    document.getElementById("option_2").style.display = "none";
+}
+
+function loadOpenSarchophagus(){
+    document.getElementById("option_1").onclick = openSarchophagusOpt1;
+    document.getElementById("option_2").onclick = openSarchophagusOpt2;
+}
+
+
+
+function tombNextChamberOpt1(){
+    localStorage['walkDownCorridor'] = true;
+    window.location.href = "wake_the_skeletons.html";
+}
+
+function tombNextChamberOpt2(){
+    localStorage['openSarcophogi'] = true;
+    window.location.href = "wake_the_skeletons.html";
+}
+
+function loadTombNextChamber(){
+    localStorage['openSarcophogi'] = false;
+    localStorage['walkDownCorridor'] = false;
+    document.getElementById("option_1").onclick = tombNextChamberOpt1;
+    document.getElementById("option_2").onclick = tombNextChamberOpt2;
+}
+
+
+
+function wakeTheSkeletonsOpt1(){
+    window.location.href = "fight_the_skeletons.html";
+}
+
+function loadWakeTheSkeletons(){
+    if(localStorage['walkDownCorridor'] == "true"){
+        document.getElementById("details").innerHTML = "As You walk down the corridor the oppressive chill becomes stronger but you continue forward. When you are half way accross the corridorr all of the sarcophogi open and skeletons rise from them. You must fight your way through to the other side";
+    }
+    if(localStorage['openSarcophogi'] == "true"){
+        document.getElementById("details").innerHTML = "You pry open the lid of the closest sarcophagus and find a skeleton clad in ancient armor. As you leave the sarcophagus all the other sarcophogi open and skeletons rise from them. You must fight your way through to the other side";
+    }
+    document.getElementById("option_1").onclick = wakeTheSkeletonsOpt1;
+}
+
+
 
 
 
 window.addEventListener('load', () => {
     console.log(window.location.href.split('/').pop());
     if(window.location.href.split('/').pop() == "starter_dungeon.html") {
+        localStorage.clear();
         loadStart()
     } else if(window.location.href.split('/').pop() == "enter_the_cave.html") {
         loadEnterCave()
@@ -238,6 +320,12 @@ window.addEventListener('load', () => {
     } else if(window.location.href.split('/').pop() == "brazier_lit.html") {
         loadBrazierLit()
     } else if(window.location.href.split('/').pop() == "squeeze_through_the_crack.html") {
-        loadSqueexeThroughCrack()
-    } 
+        loadSqueezeThroughCrack()
+    } else if(window.location.href.split('/').pop() == "open_sarcophagus.html") {
+        loadOpenSarchophagus()
+    } else if(window.location.href.split('/').pop() == "tomb_next_chamber.html") {
+        loadTombNextChamber()
+    } else if(window.location.href.split('/').pop() == "wake_the_skeletons.html") {
+        loadWakeTheSkeletons()
+    }
 });

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Starter Dungeon</title>
+    <link rel="stylesheet" href="../../css/default/dungeons.css">
+    <link rel="stylesheet" href="../../css/default/generic.css">
+
+</head>
+
+<body>
+    <div class="main-container">
+        <img src="" alt="Dungeon Background" id="background">
+
+        <div id="input-box-container">
+            <div class="details-box">
+                <div id="details">
+                    You pry the lid of the sarcophagus an empty burial save for an old tome. You decide to take the tome.
+                </div>
+            </div>
+            <div class="input-box">
+                <div id="prompt">
+                    WHAT WILL YOU DO?
+                </div>
+                <div class="options">
+                    <button class="button-option" id="option_1" onclick="">READ THE TOME</button>
+                    <button class="button-option" id="option_2" onclick="">CONTINUE TO LOOK AROUND</button>
+                </div>
+            </div>
+        </div>
+        <popup-menu id="popup-menu" contentTitle="" content="" contentType="text"></popup-menu>
+    </div>
+    <script src="../../javascript/dungeons/starter_dungeon/start.js"></script>
+    <script src="../../javascript/components/timerBar.js"></script>
+    <script src="../../javascript/components/popupMenu.js"></script>
+</body>
+
+</html>

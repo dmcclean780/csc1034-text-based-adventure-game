@@ -12,35 +12,42 @@
 
 <body>
     <div class="main-container">
-
         <img src="" alt="Dungeon Background" id="background">
 
         <div id="input-box-container">
             <div class="details-box">
                 <div id="details">
-                    You squeeze through the crack and find yourself in a small chamber. The crack collapeses closed asa
-                    soon as you exit. This is an ornate chamber
-                    containing a large chest as well a a finely decorated sarcophagus. You should probably open
-                    both. On the otherside of the tomb is an ornate door leading to the next chamber.
+                    You successfully set the rope on fire. The skeltons are crushed under the weight of the chandeleir and you are able to pass through the door.
                 </div>
             </div>
             <div class="input-box">
                 <div id="prompt">
-                    WHAT WILL YOU DO?
                 </div>
                 <div class="options">
-                    <button class="button-option" id="option_1" onclick="">OPEN THE CHEST</button>
-                    <button class="button-option" id="option_2" onclick="">OPEN THE SARCOPHAGUS</button>
-                    <button class="button-option" id="option_3" onclick="">LEAVE THIS TOMB</button>
+                    <button class="button-option" id="option_1" onclick="">CONTINUE</button>
                 </div>
             </div>
         </div>
-
+        <drag-drop-game 
+            id="drag-drop-game"
+            gameTitle="Set the rope on Fire" 
+            noItemsToDrag="10" 
+            dragItemsImage="../../../images/starter_dungeon/fire.png"
+            gameTimeLimit="20"
+        ></drag-drop-game>
+        <script>
+            const failDragDropGame = () => {
+                localStorage['deathMessage'] = "As you attempt to set fire to the rope, skeltons overwhelm you and you are killed.";
+                window.location.href = "../../generic/death.html";
+            }
+            document.getElementById("drag-drop-game").setAttribute("gameFailFunction", failDragDropGame);
+        </script>
         <popup-menu id="popup-menu" contentTitle="" content="" contentType="text"></popup-menu>
     </div>
     <script src="../../../javascript/dungeons/starter_dungeon/start.js"></script>
     <script src="../../../javascript/components/timerBar.js"></script>
     <script src="../../../javascript/components/popupMenu.js"></script>
+    <script src="../../../javascript/components/dragAndDropGame.js"></script>
 </body>
 
 </html>

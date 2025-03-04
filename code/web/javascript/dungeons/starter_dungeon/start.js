@@ -67,12 +67,12 @@ function startOpt1() {
 }
 
 function startOpt2() {
-    window.location.href = "../generic/death.html";
+    window.location.href = "../../generic/death.html";
     localStorage['deathMessage'] = "You have chosen to return to Death's embrace";
 }
 
 function startTimerComplete() {
-    window.location.href = "../generic/death.html";
+    window.location.href = "../../generic/death.html";
     localStorage['deathMessage'] = "Indescision allowed Death to renew it's claim on You";
 }
 
@@ -140,7 +140,7 @@ function loadLookAround(){
 
 
 function followWindOpt1(){
-    window.location.href = "../generic/death.html";
+    window.location.href = "../../generic/death.html";
     localStorage['deathMessage'] = "Your Overconfidence in your navigation skills led you to your death";
 }
 
@@ -297,6 +297,51 @@ function loadWakeTheSkeletons(){
 }
 
 
+function fightTheSkeletonsOpt1(){
+    window.location.href = "enter_melee.html";
+}
+
+function fightTheSkeletonsOpt2(){
+    window.location.href = "investigate_rope.html";
+}
+
+function loadFightTheSkeletons(){
+    document.getElementById("option_1").onclick = fightTheSkeletonsOpt1;
+    document.getElementById("option_2").onclick = fightTheSkeletonsOpt2;
+}
+
+
+function investigateRopeOpt1(){
+    window.location.href = "burn_the_rope.html";
+}
+
+function investigateRopeOpt2(){
+    window.location.href = "enter_melee.html";
+}
+
+function loadInvestigateRope(){
+    document.getElementById("option_1").onclick = investigateRopeOpt1;
+    document.getElementById("option_2").onclick = investigateRopeOpt2;
+}
+
+
+function burnTheRopeOpt1(){
+    window.location.href = "boss_antechamber.html";
+}
+
+function loadBurnTheRope(){
+    document.getElementById("option_1").onclick = burnTheRopeOpt1;
+}
+
+function enterMeleeOpt1(){
+    window.location.href = "boss_antechamber.html";
+}
+
+function loadEnterMelee(){
+    document.getElementById("option_1").onclick = enterMeleeOpt1;
+}
+
+
 
 
 
@@ -327,5 +372,13 @@ window.addEventListener('load', () => {
         loadTombNextChamber()
     } else if(window.location.href.split('/').pop() == "wake_the_skeletons.html") {
         loadWakeTheSkeletons()
+    } else if(window.location.href.split('/').pop() == "fight_the_skeletons.html") {
+        loadFightTheSkeletons()
+    } else if(window.location.href.split('/').pop() == "investigate_rope.html") {
+        loadInvestigateRope()
+    } else if(window.location.href.split('/').pop() == "burn_the_rope.html") {
+        loadBurnTheRope()
+    } else if(window.location.href.split('/').pop() == "enter_melee.html") {
+        loadEnterMelee()
     }
 });

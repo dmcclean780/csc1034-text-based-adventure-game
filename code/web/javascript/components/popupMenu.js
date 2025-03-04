@@ -43,7 +43,7 @@ class PopupMenu extends HTMLElement {
                 #content-box{
                     width: 100%;
                     height: 95%;
-                    background-color: white;
+                    background-color: rgba(238, 202, 153, 0.75);;
                     border-radius: 10px;
                     padding: 10px;
                     text-align: center;
@@ -58,7 +58,7 @@ class PopupMenu extends HTMLElement {
                     bottom: 0;
                     width: 100px;
                     height: 50px;
-                    background-color: red;
+                    background-color: rgba(100, 50, 50, 0.75);
                     color: white;
                     border: none;
                     border-radius: 5px;

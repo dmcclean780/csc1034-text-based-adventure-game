@@ -38,7 +38,7 @@ class TimerBar extends HTMLElement {
                     margin-bottom: 20px;
                     text-align: center;
                     position: absolute;
-                    
+                    color: white;                    
                 }
 
                 #timer-box {
@@ -86,8 +86,8 @@ class TimerBar extends HTMLElement {
     runTimerBar() {
         let i = 0;
         const widthStep = 100 / this.duration;
-        const firstTransition = (30 / 3) * 2;
-        const secondTransition = 30 / 3;
+        const firstTransition = (this.duration / 3) * 2;
+        const secondTransition = this.duration / 3;
         let timerRemaining = this.duration;
     
         if (i == 0) {

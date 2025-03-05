@@ -12,31 +12,28 @@
 
 <body>
     <div class="main-container">
-
         <img src="" alt="Dungeon Background" id="background">
 
         <div id="input-box-container">
             <div class="details-box">
                 <div id="details">
-                    You go back into the first chamber. With your lantern lit you find the can find you way around and
-                    find and old brazier. You could light it with your lantern.
+                   You exit the catacombs to emerge in a forest with a small path leading to a village in the distance.
                 </div>
             </div>
             <div class="input-box">
                 <div id="prompt">
-                    LIGHT THE BRAZIER?
                 </div>
                 <div class="options" id="options">
-                    <button class="button-option" id="option_1" onclick="">YES</button>
-                    <button class="button-option" id="option_2" onclick="">NO</button>
+                    <button class="button-option" id="option_1" onclick="">GO TO THE VILLAGE</button>
                 </div>
             </div>
         </div>
-        <popup-menu id="popup-menu" title="" content="" contentType=""></popup-menu>
+        <popup-menu id="popup-menu" contentTitle="" content="" contentType="text"></popup-menu>
     </div>
     <script src="../../../javascript/dungeons/starter_dungeon/start.js"></script>
     <script src="../../../javascript/components/timerBar.js"></script>
     <script src="../../../javascript/components/popupMenu.js"></script>
+    <script src="../../../javascript/components/dialogue.js"></script>
 </body>
 
 </html>

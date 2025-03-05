@@ -194,7 +194,7 @@ function brazierLitOpt1(){
 }
 
 function brazierLitOpt2(){
-    console.log("follow wind with lantern")
+    window.location.href = "follow_wind_lantern.html";
 }
 
 function loadBrazierLit(){
@@ -343,6 +343,97 @@ function loadEnterMelee(){
 
 
 
+function brazierNotLitOpt1(){
+    window.location.href = "follow_wind_lantern.html";
+}
+
+function brazierNotLitOpt2(){
+    window.location.href = "brazier_lit.html";
+}
+
+function loadBrazierNotLit(){
+    document.getElementById("option_1").onclick = brazierNotLitOpt1;
+    document.getElementById("option_2").onclick = brazierNotLitOpt2;
+}
+
+
+
+function followWindLanternOpt1(){
+    window.location.href = "move_on_underside.html";
+}
+
+function followWindLanternOpt2(){
+    window.location.href = "crouch_and_continue.html";
+}
+
+function loadFollowWindLantern(){
+    document.getElementById("option_1").onclick = followWindLanternOpt1;
+    document.getElementById("option_2").onclick = followWindLanternOpt2;
+}
+
+
+
+function moveOnUndersideOpt1(){
+    window.location.href = "boss_antechamber.html";
+}
+
+function loadMoveOnUnderside(){
+    document.getElementById("option_1").onclick = moveOnUndersideOpt1;
+}
+
+
+
+function crouchAndContinueOpt1(){
+    window.location.href = "../../generic/death.html";
+    localStorage['deathMessage'] = "The armour of the skeletons was too heavy for you to peirce and you were killed";
+}
+
+function crouchAndContinueOpt2(){
+    window.location.href = "jump_over_skeletons.html";
+}
+
+function loadCrouchAndContinue(){
+    document.getElementById("option_1").onclick = crouchAndContinueOpt1;
+    document.getElementById("option_2").onclick = crouchAndContinueOpt2;
+}
+
+
+
+function jumpOverSkeletonsOpt1(){
+    window.location.href = "cut_the_bridge.html";
+}
+
+function jumpOverSkeletonsOpt2(){
+    window.location.href = "burn_the_bridge.html";
+}
+
+function loadJumpOverSkeletons(){
+    document.getElementById("option_1").onclick = jumpOverSkeletonsOpt1;
+    document.getElementById("option_2").onclick = jumpOverSkeletonsOpt2;
+}
+
+
+
+function cutTheBridgeOpt1(){
+    window.location.href = "boss_antechamber.html";
+}
+
+function loadCutTheBridge(){
+    document.getElementById("option_1").onclick = cutTheBridgeOpt1;
+}
+
+
+
+function burnTheBridgeOpt1(){
+    window.location.href = "boss_antechamber.html";
+}
+
+function loadBurnTheBridge(){
+    document.getElementById("option_1").onclick = burnTheBridgeOpt1;
+}
+
+
+
 
 
 window.addEventListener('load', () => {
@@ -380,5 +471,19 @@ window.addEventListener('load', () => {
         loadBurnTheRope()
     } else if(window.location.href.split('/').pop() == "enter_melee.html") {
         loadEnterMelee()
-    }
+    } else if(window.location.href.split('/').pop() == "brazier_not_lit.html") {
+        loadBrazierNotLit()
+    } else if(window.location.href.split('/').pop() == "follow_wind_lantern.html") {
+        loadFollowWindLantern()
+    } else if(window.location.href.split('/').pop() == "move_on_underside.html") {
+        loadMoveOnUnderside()
+    } else if(window.location.href.split('/').pop() == "crouch_and_continue.html") {
+        loadCrouchAndContinue()
+    } else if(window.location.href.split('/').pop() == "jump_over_skeletons.html") {
+        loadJumpOverSkeletons()
+    } else if(window.location.href.split('/').pop() == "cut_the_bridge.html") {
+        loadCutTheBridge()
+    } else if(window.location.href.split('/').pop() == "burn_the_bridge.html") {
+        loadBurnTheBridge()
+    } 
 });

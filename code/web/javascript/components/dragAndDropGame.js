@@ -13,6 +13,7 @@ class DragAndDropGame extends HTMLElement {
         this.gameTimeLimit = this.getAttribute("gameTimeLimit") || 5;
         this.gameFailFunction = this.getAttribute("gameFailFunction") || (() => { console.log("Game Over!") });
         this.gameTitle = this.getAttribute("gameTitle") || "Drag and Drop Game";
+        this.destBoxBackgroundStylings = this.getAttribute("destBoxBAckgroundStylings");
 
         this.shadowRoot.innerHTML = `
             <style>
@@ -118,9 +119,7 @@ class DragAndDropGame extends HTMLElement {
                 .drag-item-dest-box{
                     width: 100%;
                     flex: 1;
-                    background-color: rgba(200, 175, 100, 1);
-                    background: linear-gradient(195deg, rgba(200, 175, 100, 1) 45%, rgba(56, 36, 16, 0.75) 45%, rgba(56, 36, 16, 0.75) 55%, rgba(200, 175, 100, 1) 55%);
-                    clip-path: circle(50% at 50% 50%);
+                    ${this.destBoxBackgroundStylings}
                 }
 
             </style>

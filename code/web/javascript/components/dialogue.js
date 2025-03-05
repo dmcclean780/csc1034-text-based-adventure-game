@@ -102,7 +102,7 @@ class Dialogue extends HTMLElement {
 
                 #img-wrapper{
                     height: 90%;
-                    width: 50%;
+                    width: 30%;
                     display: flex;
                     flex-direction: column;
                     justify-content: end;

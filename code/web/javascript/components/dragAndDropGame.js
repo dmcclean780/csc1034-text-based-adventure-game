@@ -1,3 +1,10 @@
+/**
+ * This will work on a mobile device/touchscreen device as well.
+ * However it will not work when using chrome dev tools to simulate a mobile device.
+ * The touch must be held slightly before dragging on touchscreen
+ */
+
+
 class DragAndDropGame extends HTMLElement {
 
     elementsDragged = 0;
@@ -155,6 +162,7 @@ class DragAndDropGame extends HTMLElement {
         for (let i = 0; i < this.noItemsToDrag; i++) {
             const element = this.shadowRoot.getElementById(`drag-item-${i}`);
             element.addEventListener("dragstart", this.dragstartHandler);
+
         }
 
         for (let i = 0; i < this.noItemsToDrag; i++) {
@@ -192,6 +200,7 @@ class DragAndDropGame extends HTMLElement {
         }
         this.elementsDraggedID.push(data);
         if (this.elementsDragged == this.noItemsToDrag) {
+            this.shadowRoot.getElementById("timer-bar").stopTimer();
             setTimeout(() => {
                 this.style.display = "none";
             }, 10);

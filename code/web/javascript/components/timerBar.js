@@ -83,6 +83,7 @@ class TimerBar extends HTMLElement {
         }
     }
 
+    id;
     runTimerBar() {
         let i = 0;
         const widthStep = 100 / this.duration;
@@ -96,9 +97,9 @@ class TimerBar extends HTMLElement {
             let timerTime = this.shadowRoot.getElementById("timer-time");
             timerTime.innerHTML = timerRemaining;
             let width = 100;
-            let id = setInterval(() => {
+            this.id = setInterval(() => {
                 if (width <= widthStep || timerRemaining <= 1) {
-                    clearInterval(id);
+                    clearInterval(this.id);
                     i = 0;
                     timerBar.style.width = 0 + "%";
                     timerTime.innerHTML = 0;
@@ -121,6 +122,10 @@ class TimerBar extends HTMLElement {
                 }
             }, 1000);
         }
+    }
+
+    stopTimer(){
+        clearInterval(this.id);
     }
 
 

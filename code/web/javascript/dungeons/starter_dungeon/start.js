@@ -606,71 +606,71 @@ function loadExit() {
 
 
 window.addEventListener('load', () => {
-    console.log(window.location.href.split('/').pop());
-    if (window.location.href.split('/').pop() == "starter_dungeon.html") {
+    const currentPage = window.location.href.split('/').pop().split('.').shift();
+    if (currentPage == "starter_dungeon") {
         localStorage.clear();
         localStorage['strikes'] = 0;
         localStorage['parrys'] = 0;
         loadStart()
-    } else if (window.location.href.split('/').pop() == "enter_the_cave.html") {
+    } else if (currentPage == "enter_the_cave") {
         loadEnterCave()
-    } else if (window.location.href.split('/').pop() == "follow_wall.html") {
+    } else if (currentPage == "follow_wall") {
         loadFollowWall()
-    } else if (window.location.href.split('/').pop() == "follow_wind_no_lantern.html") {
+    } else if (currentPage == "follow_wind_no_lantern") {
         loadFollowWind()
-    } else if (window.location.href.split('/').pop() == "find_another_way.html") {
+    } else if (currentPage == "find_another_way") {
         loadFindAnoutherWay()
-    } else if (window.location.href.split('/').pop() == "light_the_brazier.html") {
+    } else if (currentPage == "light_the_brazier") {
         loadLightBrazier()
-    } else if (window.location.href.split('/').pop() == "look_around.html") {
+    } else if (currentPage == "look_around") {
         loadLookAround()
-    } else if (window.location.href.split('/').pop() == "brazier_lit.html") {
+    } else if (currentPage == "brazier_lit") {
         loadBrazierLit()
-    } else if (window.location.href.split('/').pop() == "squeeze_through_the_crack.html") {
+    } else if (currentPage == "squeeze_through_the_crack") {
         loadSqueezeThroughCrack()
-    } else if (window.location.href.split('/').pop() == "open_sarcophagus.html") {
+    } else if (currentPage == "open_sarcophagus") {
         loadOpenSarchophagus()
-    } else if (window.location.href.split('/').pop() == "tomb_next_chamber.html") {
+    } else if (currentPage == "tomb_next_chamber") {
         loadTombNextChamber()
-    } else if (window.location.href.split('/').pop() == "wake_the_skeletons.html") {
+    } else if (currentPage == "wake_the_skeletons") {
         loadWakeTheSkeletons()
-    } else if (window.location.href.split('/').pop() == "fight_the_skeletons.html") {
+    } else if (currentPage == "fight_the_skeletons") {
         loadFightTheSkeletons()
-    } else if (window.location.href.split('/').pop() == "investigate_rope.html") {
+    } else if (currentPage == "investigate_rope") {
         loadInvestigateRope()
-    } else if (window.location.href.split('/').pop() == "burn_the_rope.html") {
+    } else if (currentPage == "burn_the_rope") {
         loadBurnTheRope()
-    } else if (window.location.href.split('/').pop() == "enter_melee.html") {
+    } else if (currentPage == "enter_melee") {
         loadEnterMelee()
-    } else if (window.location.href.split('/').pop() == "brazier_not_lit.html") {
+    } else if (currentPage == "brazier_not_lit") {
         loadBrazierNotLit()
-    } else if (window.location.href.split('/').pop() == "follow_wind_lantern.html") {
+    } else if (currentPage == "follow_wind_lantern") {
         loadFollowWindLantern()
-    } else if (window.location.href.split('/').pop() == "move_on_underside.html") {
+    } else if (currentPage == "move_on_underside") {
         loadMoveOnUnderside()
-    } else if (window.location.href.split('/').pop() == "crouch_and_continue.html") {
+    } else if (currentPage == "crouch_and_continue") {
         loadCrouchAndContinue()
-    } else if (window.location.href.split('/').pop() == "jump_over_skeletons.html") {
+    } else if (currentPage == "jump_over_skeletons") {
         loadJumpOverSkeletons()
-    } else if (window.location.href.split('/').pop() == "cut_the_bridge.html") {
+    } else if (currentPage == "cut_the_bridge") {
         loadCutTheBridge()
-    } else if (window.location.href.split('/').pop() == "burn_the_bridge.html") {
+    } else if (currentPage == "burn_the_bridge") {
         loadBurnTheBridge()
-    } else if (window.location.href.split('/').pop() == "boss_antechamber.html") {
+    } else if (currentPage == "boss_antechamber") {
         loadBossAntechamber()
-    } else if (window.location.href.split('/').pop() == "boss_antechamber_open.html") {
+    } else if (currentPage == "boss_antechamber_open") {
         loadBossAnteChamberOpen()
-    } else if (window.location.href.split('/').pop() == "boss_chamber.html") {
+    } else if (currentPage == "boss_chamber") {
         loadBossChamber()
-    } else if (window.location.href.split('/').pop() == "boss_fight.html") {
+    } else if (currentPage == "boss_fight") {
         loadBossFight()
-    } else if (window.location.href.split('/').pop() == "dodge.html") {
+    } else if (currentPage == "dodge") {
         loadDodge()
-    } else if (window.location.href.split('/').pop() == "parry.html") {
+    } else if (currentPage == "parry") {
         loadParry()
-    } else if (window.location.href.split('/').pop() == "victory.html") {
+    } else if (currentPage == "victory") {
         loadVictory()
-    } else if (window.location.href.split('/').pop() == "exit.html") {
+    } else if (currentPage == "exit") {
         loadExit()
     }
 });

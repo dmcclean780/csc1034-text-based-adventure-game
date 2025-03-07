@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Starter Dungeon</title>
+    <link rel="stylesheet" href="../../../css/mobile/dungeons.css">
+    <link rel="stylesheet" href="../../../css/default/dungeons.css">
+    <link rel="stylesheet" href="../../../css/mobile/generic.css">
+    <link rel="stylesheet" href="../../../css/default/generic.css">
+
+</head>
+
+<body>
+    <div class="main-container">
+        <img src="" alt="Dungeon Background" id="background">
+
+        <div id="input-box-container">
+            <div class="details-box">
+                <div id="details">
+                    It creeps in silence, pale and cold,<br>
+                    A grasp so tight, a tale untold.<br>
+                    It steals the breath, It dims the light,<br>
+                    It turns the day into endless night.<br>
+                    <br>
+                    Yet in the dark, a spark may rise,<br>
+                    A dancing glow before your eyes.<br>
+                    With ember's heart and golden breath,<br>
+                    I turn away the touch of death.<br>
+                    <br>
+                    What am I?
+                </div>
+            </div>
+            <div class="input-box">
+                <div id="prompt">
+                </div>
+                <div class="options" id="options">
+                    <text-entry correctAnswer = "fire" correctResponseFunction="correctFunction"  incorrectResponseFunction="incorrectFunction"></text-entry>
+                </div>
+            </div>
+        </div>
+        <script>
+            const correctFunction = () => {
+                window.location.href = "boss_antechamber_open.html";
+            }
+
+            const incorrectFunction = () => {
+                document.getElementById("prompt").innerHTML = "Incorrect. Try again.";
+            }
+        </script>
+        <popup-menu id="popup-menu" contentTitle="" content="" contentType="text"></popup-menu>
+    </div>
+    <script src="../../../javascript/dungeons/starter_dungeon/start.js"></script>
+    <script src="../../../javascript/components/timerBar.js"></script>
+    <script src="../../../javascript/components/popupMenu.js"></script>
+    <script src="../../../javascript/components/dragAndDropGame.js"></script>
+    <script src="../../../javascript/components/textEntry.js"></script>
+</body>
+
+</html>

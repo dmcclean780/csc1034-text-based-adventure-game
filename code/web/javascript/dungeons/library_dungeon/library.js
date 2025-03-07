@@ -1,43 +1,133 @@
-// let clickableText = document.getElementByID("#clickable-text");
-let clickableImage = document.getElementByID("#clickable-image");
+let fullPath = window.location.pathname;
+let folderPath = fullPath.substring(0, fullPath.lastIndexOf('/') + 1);
+let pageName = fullPath.split('/').pop();
+let baseName = pageName.substring(0, pageName.lastIndexOf('_') + 1);
+let actionName = pageName.substring(pageName.lastIndexOf('_') + 1);
 
+console.log(fullPath);
+console.log(actionName);
 
-clickableText.addEventListener( "click", function() 
-{
-  console.log( "Bad instance!" );
-})
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.button_option');
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Event listener for the image (stroke-overlay)
-  let clickableImage = document.querySelector("#clickable-image");
-  clickableImage.addEventListener("click", function() {
-    console.log("Image clicked!");
-    this.style.opacity = '0';  // Reset opacity to full
-    opacity = 0; // Reset opacity to 0
-  });
+    buttons.forEach(button => {
+        button.addEventListener('click', function() 
+        {
+            let id = this.id;
 
-  // Event listener for the text (clickable-text)
-  let clickableText = document.querySelector("#clickable-text");
-  clickableText.addEventListener("click", function() {
-    console.log("Text clicked!");
-  });
-
-  // Animation for the opacity of the image (stroke-overlay)
-  let overlays = document.querySelectorAll(".stroke-overlay");
-
-  overlays.forEach(overlay => {
-    overlay.style.opacity = '0'; // Start fully transparent
-  });
-  let opacity = 0; // Start fully transparent
-  
-  let interval = setInterval(function () {
-    if (opacity < 1) {
-      opacity += 0.1; // Increase opacity step-by-step
-      overlay.style.opacity = opacity;
-    } else {
-      clearInterval(interval); // Stop once fully visible
-    }
-  }, 300); // Adjust speed (300ms per step)
-
-
+            if(baseName == "library_outside_")
+            {
+                outsideDecision(id);
+            }
+            else if(baseName == "library_r1_")
+            {
+                r1Decision(id);
+            }
+        });
+    });
 });
+
+function outsideDecision(outsideButtonId) 
+{
+    if(actionName == "enterQuestion.html")
+    {
+        if(outsideButtonId == "option_1")
+        {
+            window.location.href = folderPath + "library_r1_enter.html";
+        }
+        else if(outsideButtonId == "option_2")
+        {
+            window.location.href  = folderPath + "library_outside_lookAround.html";
+        }
+        else if(outsideButtonId == "option_3")
+        {
+            console.log("You can't do that, this will take you back to the Village - Not implemented yet");
+        }
+    }
+    else if(actionName == "lookAround.html")
+    {
+        if(outsideButtonId == "option_1")
+        {
+            window.location.href = folderPath + "library_r1_enter.html";
+        }
+        else if(outsideButtonId == "option_2")
+        {
+            console.log("You can't do that, this will take you back to the Village - Not implemented yet");
+        }
+    }
+}
+
+function r1Decision(r1Buttonid)
+{
+    if(actionName == "enter.html")
+    {
+        if(r1Buttonid == "option_1")
+        {
+            console.log(1);
+            window.location.href = folderPath + "library_r1_investigateBookcase.html";
+        }
+        else if(r1Buttonid == "option_2")
+        {
+            window.location.href = folderPath + "library_r1_investigateInkPot.html";
+
+        }
+    }
+    else if(actionName == "investigateBookcase.html")
+    {
+        if(r1Buttonid == "option_1")
+        {
+            window.location.href = folderPath + "library_r1_investigateInkPot.html";
+        }
+        else if(r1Buttonid == "option_2")
+        {
+            window.location.href = folderPath + "library_r1_raiseTorchBookcase.html";
+        }
+    }
+    else if(actionName == "raiseTorchBookcase.html")
+    {
+        if(r1Buttonid == "option_1")
+        {
+            window.location.href = folderPath + "library_r1_investigateInkPot.html";
+        }
+        else if(r1Buttonid == "option_2")
+        {
+            window.location.href = "/C:/Users/joshu/csc1034_group54/code/web/html/generic/death.html";
+        }
+    }
+    else if(actionName == "investigateInkPot.html")
+    {
+        if(r1Buttonid == "option_1")
+        {
+            window.location.href = folderPath + "library_r1_takeQuill.html";
+        }
+    }
+    else if(actionName == "takeQuill.html")
+    {
+        if(r1Buttonid == "option_1")
+        {
+            window.location.href = folderPath + "library_r1_bookReadPeace.html";
+        }
+        else if(r1Buttonid == "option_2")
+        {
+            window.location.href = "/C:/Users/joshu/csc1034_group54/code/web/html/generic/death.html";
+        }
+        else if(r1Buttonid == "option_3")
+        {
+            window.location.href = "/C:/Users/joshu/csc1034_group54/code/web/html/generic/death.html";
+        }
+    }
+    else if(actionName == "book1Win.html")
+    {
+        if(r1Buttonid == "option_1")
+        {
+            window.location.href = folderPath + "library_r1_nextRoom.html";
+        }
+    }
+    else if(actionName == "library_r1_nextRoom.html")
+    {
+        if(r1Buttonid == "option_1")
+        {
+            window.location.href = folderPath + "library_r2_enter.html";
+        }
+    }
+}

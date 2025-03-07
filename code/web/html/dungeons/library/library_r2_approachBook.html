@@ -17,28 +17,26 @@
         <div id="input-box-container">
             <div class="details-box parchment-block">
                 <div id="details">
-                    Stepping inside, you see the library is in a state of disarray.
-                    Shelves are overturned, books are scattered across the floor. <br> <br>
-                    It's even worse than Paige described.
-                    The 'Ill Ink' is consuming this place. <br> <br>
-                    The door further into the library is blocked a bookcase covered in ink.
-                    You see a small table with an Ink Pot on it.
+                    Looking more closely at the book, it seems to be siphoning some form of power through it. <br><br>
+                    Tendrils on one side look weaker, more frail<br><br>
+                    On the other, however, they look much stronger, carrying a sort of power further into the dungeon.
                 </div>
             </div>
             <div class="input-box">
                 <div id="prompt">
                     What do you do?
                 </div>
+                <timer-bar id="timer-bar" duration="10"></timer-bar>
                 <div class="options">
                     <!-- Takes you to room1 -->
-                    <button class="button_option" id="option_1" onclick="">Investigate the bookcase</button>
+                    <button class="button_option" id="option_1" onclick="">Slice the stronger tendrils</button>
 
-                    <!-- Takes you to library_outside_lookAround -->
-                    <button class="button_option" id="option_2" onclick="">Investigate the Ink Pot</button>
+                    <button class="button_option" id="option_1" onclick="">Slice the weaker tendrils</button>
                 </div>
             </div>
         </div>
     </div>
+    <script src="../../../javascript/components/timerBar.js"></script>
     <script src="../../../javascript/dungeons/library_dungeon/library.js"></script>
 
 </body>

@@ -1,189 +1,343 @@
-class PopupMenu extends HTMLElement {
+let fullPath = window.location.pathname;
+
+class LibraryBook extends HTMLElement {
+    static get observedAttributes() {
+        return ["content", "contentTitle"];
+    }
 
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
 
-        // Default duration
-        this.content = this.getAttribute("content")
-        this.contentType = this.getAttribute("contentType") || "text";
-        this.contentTitle = this.getAttribute("contentTitle");
-        this.timerStarted = false;
+        // Default attributes
+        this.content = this.getAttribute("content") || "";
+        this.contentTitle = this.getAttribute("contentTitle") || "";
 
-        this.shadowRoot.innerHTML = `
-            <style>
+        // Initialize score variables
+        this.scoreCurrent = 0;
+        this.scoreNeeded = 5; // Set the required score
+        this.livesRemaining = 3;  // Initial lives
 
-                :host{
-                    display: block;
-                }
-
-                #root{
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    background-color: rgba(0, 0, 0, 0.5);
-                }
-
-                #wrapper{
-                    position: relative;
-                    width: 90%;
-                    height: 90%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }   
-
-                #content-box{
-                    width: 100%;
-                    height: 95%;
-                    background-color: white;
-                    border-radius: 10px;
-                    padding: 10px;
-                    text-align: center;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #close-button{
-                    position: absolute;
-                    bottom: 0;
-                    width: 100px;
-                    height: 50px;
-                    background-color: red;
-                    color: white;
-                    border: none;
-                    border-radius: 5px;
-                    margin-top: 10px;
-                    cursor: pointer;
-                }
-
-                #content{
-                    height: 20%;
-                }
-
-                #title{
-                    height 80%;    
-                }
-            </style>
-            `;
-
-        if (this.contentType == "text") {
-            this.shadowRoot.innerHTML += `
-                <div id="root">
-                    <div id="wrapper">
-                        <div id="content-box">
-                            <img src="../../../images/library_dungeon/library-stroke-type1.png" class="stroke" alt="stroke" id="clickable-image>
-                            <h1 id="title" >${this.contentTitle}</h1>
-                            <p id="content" >${this.content}</p>
-                        </div>
-                    </div>
-                </div>
-            `;
-        } 
+        this.render();
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        this.render(); // Rerender when attributes change
-    }
-
-    connectedCallback() {
-        this.shadowRoot.querySelector("#close-button").addEventListener("click", () => {
-            this.style.display = "none";
-        });
+        this[name] = newValue;
+        this.render(); // Re-render when attributes change
     }
 
     render() {
-        const contentTitle = this.getAttribute("contentTitle")
-        let content = this.getAttribute("content")
-        const contentType = this.getAttribute("contentType") || "text";
+        const lines = this.content.split("\n").map(line => line.trim()).filter(line => line);
+
         this.shadowRoot.innerHTML = `
             <style>
-
-                :host{
-                    display: none;
+                :host {
+                    display: block;
                 }
-
-                #root{
+                #root {
                     position: absolute;
                     top: 0;
                     left: 0;
                     width: 100%;
                     height: 100%;
                     display: flex;
-                    flex-direction: column;
                     justify-content: center;
                     align-items: center;
                     background-color: rgba(0, 0, 0, 0.5);
+                    color: black;
                 }
-
-                #wrapper{
-                    position: relative;
-                    width: 90%;
-                    height: 90%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }   
-
-                #content-box{
-                    width: 100%;
-                    height: 95%;
+                #content-box {
+                    width: 60%;
+                    height: 80%;
                     background-color: white;
                     border-radius: 10px;
-                    padding: 10px;
+                    padding: 20px;
                     text-align: center;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
+                    position: relative;
+                    overflow: hidden;
+                }
+                #title {
+                    font-size: 4rem;
+                    margin-bottom: 1rem;
+                    color: black;
                 }
 
-                #close-button{
+                #score-box, #lives-box {
                     position: absolute;
-                    bottom: 0;
-                    width: 100px;
-                    height: 50px;
-                    background-color: red;
-                    color: white;
-                    border: none;
+                    top: 5px;
+                    background-color: white;
                     border-radius: 5px;
-                    margin-top: 10px;
-                    cursor: pointer;
+                    display: flex;
+                    flex-direction: column; /* Keep title and score aligned */
+                    align-items: center; /* Vertical centering */
+                    width: 180px; /* Fixed width */
+                    justify-content: space-between;
+                    text-align: center;
+                    border: 5px solid black;
+                }
+
+                #score-box{
+                    right: 5px;
+                }
+
+                #lives-box{
+                    left: 5px;
+                }
+
+                #score-title { 
+                    font-size: 2rem;
+                    color: black;
+                    font-weight: normal;
+                    white-space: nowrap; /* Prevents wrapping */
+                }
+                #score {
+                    font-size: 2rem;
+                    color: black;
+                    font-weight: normal;
+                    text-align: right;
+                    flex-grow: 1; /* Allows even spacing */
+                }
+
+                #lives-title {
+                    font-size: 2rem;
+                    color: black;
+                    font-weight: normal;
+                    white-space: nowrap;
+                }
+
+                #lives {
+                    display: flex;
+                    gap: 5px;
+                }
+
+                @keyframes loseHeart {
+                    0% {
+                        transform: scale(1);
+                        opacity: 1;
+                    }
+                    50% {
+                        transform: scale(0.6);
+                        opacity: 0.5;
+                    }
+                    100% {
+                        transform: scale(0);
+                        opacity: 0;
+                    }
+                }
+
+                .heart {
+                    width: 30px;
+                    height: auto;
+                    opacity: 1;
+                    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+                }
+
+                .heart.lost {
+                    animation: loseHeart 0.5s forwards;
+                }
+
+                .text-line {
+                    font-size: 2rem;
+                    margin: 5px 0;
+                    color: black;
+                    position: relative;
+                    display: block;
+                    padding: 3px;
+                }
+                .ink-image {
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 500px;
+                    height: auto;
+                    opacity: 0; /* All blotches are hidden initially */
+                    cursor: pointer; /* Make ink images clickable */
                 }
             </style>
-            `;
-
-        if (contentType == "text") {
-            this.shadowRoot.innerHTML += `
-                <div id="root">
-                    <div id="wrapper">
-                        <div id="content-box">
-                            <h1>${contentTitle}</h1>
-                            <p>${content}</p>
+            <div id="root">
+                <div id="content-box">
+                        <div id="lives-box">
+                        <p id="lives-title">Lives</p>
+                        <div id="lives">
+                            <img src="../../../images/library_dungeon/library-heart.png" alt="heart" class="heart">
+                            <img src="../../../images/library_dungeon/library-heart.png" alt="heart" class="heart">
+                            <img src="../../../images/library_dungeon/library-heart.png" alt="heart" class="heart">
                         </div>
                     </div>
-                </div>
-            `;
-        } 
+                    <h1 id="title">${this.contentTitle}</h1>
+                    ${lines.length > 0 ? `<span class="text-line">${lines[0]}</span>` : ""}
+                    ${lines.length > 0 ? `<img src="../../../images/library_dungeon/library-stroke-black.png" alt="ink" class="ink-image" id="ink-image-1">` : ""}
+                    ${lines.length > 1 ? `<span class="text-line">${lines[1]}</span>` : ""}
+                    ${lines.length > 1 ? `<img src="../../../images/library_dungeon/library-stroke-black.png" alt="ink" class="ink-image" id="ink-image-2">` : ""}
+                    ${lines.length > 2 ? `<span class="text-line">${lines[2]}</span>` : ""}
+                    ${lines.length > 2 ? `<img src="../../../images/library_dungeon/library-stroke-black.png" alt="ink" class="ink-image" id="ink-image-3">` : ""}
+                    ${lines.length > 3 ? `<span class="text-line">${lines[3]}</span>` : ""}
+                    ${lines.length > 3 ? `<img src="../../../images/library_dungeon/library-stroke-black.png" alt="ink" class="ink-image" id="ink-image-4">` : ""}
+                    ${lines.length > 4 ? `<span class="text-line">${lines[4]}</span>` : ""}
+                    ${lines.length > 4 ? `<img src="../../../images/library_dungeon/library-stroke-black.png" alt="ink" class="ink-image" id="ink-image-5">` : ""}
+                    ${lines.length > 5 ? `<span class="text-line">${lines[5]}</span>` : ""}
+                    ${lines.length > 5 ? `<img src="../../../images/library_dungeon/library-stroke-black.png" alt="ink" class="ink-image" id="ink-image-6">` : ""}
+                    ${lines.length > 6 ? `<span class="text-line">${lines[6]}</span>` : ""}
+                    ${lines.length > 6 ? `<img src="../../../images/library_dungeon/library-stroke-black.png" alt="ink" class="ink-image" id="ink-image-7">` : ""}
+                    ${lines.length > 7 ? `<span class="text-line">${lines[7]}</span>` : ""}
+                    ${lines.length > 7 ? `<img src="../../../images/library_dungeon/library-stroke-black.png" alt="ink" class="ink-image" id="ink-image-8">` : ""}
+                    
+                    <div id="score-box">
+                <p id="score-title">Score</p>
+                <span id="score">${this.scoreCurrent} / ${this.scoreNeeded}</span>
+            </div>
+                    </div>
+            </div>
+        `;
 
-        this.shadowRoot.querySelector("#close-button").addEventListener("click", () => {
-            this.style.display = "none";
+        // Position the ink blotches correctly
+        this.positionInks();
+        this.addClickListeners();
+
+        // Initially, spawn one random ink blotch and hide others
+        this.spawnRandomInk();
+    }
+
+    positionInks() {
+        const inkImages = [
+            this.shadowRoot.querySelector("#ink-image-1"),
+            this.shadowRoot.querySelector("#ink-image-2"),
+            this.shadowRoot.querySelector("#ink-image-3"),
+            this.shadowRoot.querySelector("#ink-image-4"),
+            this.shadowRoot.querySelector("#ink-image-5"),
+            this.shadowRoot.querySelector("#ink-image-6"),
+            this.shadowRoot.querySelector("#ink-image-7"),
+            this.shadowRoot.querySelector("#ink-image-8")
+        ];
+        const textLines = this.shadowRoot.querySelectorAll(".text-line");
+
+        const boxRect = this.shadowRoot.querySelector("#content-box").getBoundingClientRect();
+
+        inkImages.forEach((inkImage, index) => {
+            const textLine = textLines[index];
+            if (inkImage && textLine) {
+                const textLineRect = textLine.getBoundingClientRect();
+                
+                // Center the ink image horizontally
+                const inkImageRect = inkImage.getBoundingClientRect();  // Get the ink image's width
+                const textLineCenterX = textLineRect.left + textLineRect.width / 2; // center of the text line
+                const inkImageCenterX = inkImageRect.width / 2; // center of the ink image
+                inkImage.style.left = `${textLineCenterX - inkImageCenterX - 40}px`; // position ink in the center
+                inkImage.style.top = `${textLineRect.top - boxRect.top - 5}px`;  // Position ink correctly
+
+                inkImage.style.position = 'absolute'; // Make sure it's positioned correctly within the container
+
+            }
         });
     }
 
-    
+    addClickListeners() {
+        const inkImages = [
+            this.shadowRoot.querySelector("#ink-image-1"),
+            this.shadowRoot.querySelector("#ink-image-2"),
+            this.shadowRoot.querySelector("#ink-image-3"),
+            this.shadowRoot.querySelector("#ink-image-4"),
+            this.shadowRoot.querySelector("#ink-image-5"),
+            this.shadowRoot.querySelector("#ink-image-6"),
+            this.shadowRoot.querySelector("#ink-image-7"),
+            this.shadowRoot.querySelector("#ink-image-8")
+        ];
 
+        inkImages.forEach((inkImage, index) => {
+            if (inkImage) {
+                inkImage.addEventListener('click', () => {
+                    if (inkImage.style.opacity > 0) {     
+                        inkImage.style.opacity = 0;  // Immediately hide the clicked ink blot
+
+                        // Clear any ongoing opacity animation
+                        if (inkImage.opacityInterval) {
+                            clearInterval(inkImage.opacityInterval);
+                        }
+
+                        this.scoreCurrent++;  // Increase the score
+                        this.shadowRoot.querySelector("#score").textContent = `${this.scoreCurrent} / ${this.scoreNeeded}`;
+                        if(this.scoreCurrent >= this.scoreNeeded) {
+                            window.location.href = "/C:/Users/joshu/csc1034_group54/code/web/html/dungeons/library/library_r1_book1Win.html";
+                        }
+
+                        // Random delay before showing a new ink blot
+                        const delay = Math.random() * (1000 - 100); // Random delay between 500ms and 2000ms
+
+                        setTimeout(() => {
+                            this.spawnRandomInk();  // Show new ink after delay
+                        }, delay);
+                    } else {
+                        this.updateLives(); // Update lives on wrong click
+                    }
+                });
+            }
+        });
+    }
+
+    spawnRandomInk() {
+        const inkImages = [...this.shadowRoot.querySelectorAll(".ink-image")];
+        const randomIndex = Math.floor(Math.random() * inkImages.length);
+        const inkImage = inkImages[randomIndex];
+
+        if (!inkImage) return;
+
+        inkImage.src = "../../../images/library_dungeon/library-stroke-black.png";
+        inkImage.style.opacity = 0;
+        let opacity = 0;
+        
+        this.currentInk = inkImage; // Track the active ink
+
+        inkImage.opacityInterval = setInterval(() => {
+            if (this.currentInk !== inkImage) {
+                clearInterval(inkImage.opacityInterval);
+                return;
+            }
+
+            opacity += 0.01;
+            inkImage.style.opacity = opacity;
+
+            if (opacity >= 1) {
+                inkImage.src = "../../../images/library_dungeon/library-stroke-red.png"; // Reset to black ink
+                clearInterval(inkImage.opacityInterval);
+                this.updateLives(); // Deduct a life
+                this.currentInk = null;
+
+                setTimeout(() => {
+                    inkImage.style.opacity = 0;
+                    this.spawnRandomInk();
+                }, Math.random() * 1500 + 500);
+            }
+        }, 10);
+    }
+
+    updateLives() {
+        // Decrease the lives and update the display
+        if (this.livesRemaining > 0) {
+            this.livesRemaining -= 1;
+        }
+
+        const heartImages = this.shadowRoot.querySelectorAll(".heart");
+
+        heartImages.forEach((heart, index) => {
+            if (index < this.livesRemaining) {
+                heart.classList.remove("lost"); // Keep heart visible
+            } else if (!heart.classList.contains("lost")) {
+                heart.classList.add("lost"); // Trigger animation for lost heart
+            }
+        });
+
+        if (this.livesRemaining === 0) 
+        {
+            setTimeout(() => {
+                this.gameOver();
+            }, 500);
+        }
+    }
+
+    gameOver() {
+        console.log("Game over!");
+        window.location.href = "/C:/Users/joshu/csc1034_group54/code/web/html/generic/death.html";
+    }
 }
 
-customElements.define("library-book", PopupMenu);
-
+customElements.define("library-book", LibraryBook);

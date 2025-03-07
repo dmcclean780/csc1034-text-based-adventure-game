@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Starter Dungeon</title>
+    <link rel="stylesheet" href="../../../css/mobile/dungeons.css">
+    <link rel="stylesheet" href="../../../css/default/dungeons.css">
+    <link rel="stylesheet" href="../../../css/mobile/generic.css">
+    <link rel="stylesheet" href="../../../css/default/generic.css">
+
+</head>
+
+<body>
+    <div class="main-container">
+        <img src="" alt="Dungeon Background" id="background">
+
+        <div id="input-box-container">
+            <div class="details-box">
+                <div id="details">
+                    You now enter a chamber with a single large door on the wall. The door has an imp carved into it. on
+                    either side of the door are statues depicting Death. On one of the other walls is a large verse
+                    written in glowing purple script.
+                </div>
+            </div>
+            <div class="input-box">
+                <div id="prompt">
+                    WHAT DO YOU DO?
+                </div>
+                <div class="options" id="options">
+                    <button class="button-option" id="option_1" onclick="">LOOK AT THE DOOR</button>
+                    <button class="button-option" id="option_2" onclick="">READ THE VERSE</button>
+                </div>
+            </div>
+        </div>
+        <popup-menu id="popup-menu" contentTitle="" content="" contentType="text"></popup-menu>
+    </div>
+    <script src="../../../javascript/dungeons/starter_dungeon/start.js"></script>
+    <script src="../../../javascript/components/timerBar.js"></script>
+    <script src="../../../javascript/components/popupMenu.js"></script>
+</body>
+
+</html>

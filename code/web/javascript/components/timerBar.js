@@ -40,7 +40,7 @@ class TimerBar extends HTMLElement {
                     margin-bottom: 20px;
                     text-align: center;
                     position: absolute;
-                    
+                    color: white;                    
                 }
 
                 #timer-box {
@@ -85,11 +85,12 @@ class TimerBar extends HTMLElement {
         }
     }
 
+    id;
     runTimerBar() {
         let i = 0;
         const widthStep = 100 / this.duration;
-        const firstTransition = (30 / 3) * 2;
-        const secondTransition = 30 / 3;
+        const firstTransition = (this.duration / 3) * 2;
+        const secondTransition = this.duration / 3;
         let timerRemaining = this.duration;
     
         if (i == 0) {
@@ -98,9 +99,9 @@ class TimerBar extends HTMLElement {
             let timerTime = this.shadowRoot.getElementById("timer-time");
             timerTime.innerHTML = timerRemaining;
             let width = 100;
-            let id = setInterval(() => {
+            this.id = setInterval(() => {
                 if (width <= widthStep || timerRemaining <= 1) {
-                    clearInterval(id);
+                    clearInterval(this.id);
                     i = 0;
                     timerBar.style.width = 0 + "%";
                     timerTime.innerHTML = 0;
@@ -123,6 +124,10 @@ class TimerBar extends HTMLElement {
                 }
             }, 1000);
         }
+    }
+
+    stopTimer(){
+        clearInterval(this.id);
     }
 
 

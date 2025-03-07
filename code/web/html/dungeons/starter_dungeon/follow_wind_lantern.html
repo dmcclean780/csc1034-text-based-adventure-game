@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Starter Dungeon</title>
+    <link rel="stylesheet" href="../../../css/mobile/dungeons.css">
+    <link rel="stylesheet" href="../../../css/default/dungeons.css">
+    <link rel="stylesheet" href="../../../css/mobile/generic.css">
+    <link rel="stylesheet" href="../../../css/default/generic.css">
+
+</head>
+
+<body>
+    <div class="main-container">
+        <img src="" alt="Dungeon Background" id="background">
+
+        <div id="input-box-container">
+            <div class="details-box">
+                <div id="details">
+                    As you move into this chamber, the lantern illuminates the path ahead and you can see that there is
+                    a thin, wooden bridge that crosses over a chasm that leads much deeper within the catacombs, to
+                    where bodies
+                    of a different sort lie buried. Making use of your lantern you start traversing the bridge. As you
+                    get half way across you notice two skeleton warriors guarding the exit on the other side. They have
+                    not noticed you yet. They are too heavily armoured to fight head on, but you may be able to sneak past
+                    them if you move quickly and quietly.
+                </div>
+            </div>
+            <div class="input-box">
+                <div id="prompt">
+                    WHAT DO YOU DO?
+                </div>
+                <div class="options" id="options">
+                    <button class="button-option" id="option_1" onclick="">MOVE ON THE BRIDGE UNDERSIDE</button>
+                    <button class="button-option" id="option_2" onclick="">CROUCH AND CONTINUE</button>
+                </div>
+            </div>
+        </div>
+        <popup-menu id="popup-menu" contentTitle="" content="" contentType="text"></popup-menu>
+    </div>
+    <script src="../../../javascript/dungeons/starter_dungeon/start.js"></script>
+    <script src="../../../javascript/components/timerBar.js"></script>
+    <script src="../../../javascript/components/popupMenu.js"></script>
+</body>
+
+</html>

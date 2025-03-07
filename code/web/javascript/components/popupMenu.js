@@ -10,7 +10,7 @@ class PopupMenu extends HTMLElement {
         this.contentTitle = this.getAttribute("contentTitle");
         this.timerStarted = false;
 
-        this.shadowRoot.innerHTML = `
+        this.shadowRootStyles = `
             <style>
 
                 :host{
@@ -43,7 +43,7 @@ class PopupMenu extends HTMLElement {
                 #content-box{
                     width: 100%;
                     height: 95%;
-                    background-color: white;
+                    background-color: rgba(238, 202, 153, 0.75);;
                     border-radius: 10px;
                     padding: 10px;
                     text-align: center;
@@ -58,7 +58,7 @@ class PopupMenu extends HTMLElement {
                     bottom: 0;
                     width: 100px;
                     height: 50px;
-                    background-color: red;
+                    background-color: rgba(100, 50, 50, 0.75);
                     color: white;
                     border: none;
                     border-radius: 5px;
@@ -75,6 +75,8 @@ class PopupMenu extends HTMLElement {
                 }
             </style>
             `;
+
+        this.shadowRoot.innerHTML = this.shadowRootStyles;
 
         if (this.contentType == "text") {
             this.shadowRoot.innerHTML += `
@@ -122,63 +124,7 @@ class PopupMenu extends HTMLElement {
         const contentTitle = this.getAttribute("contentTitle")
         let content = this.getAttribute("content")
         const contentType = this.getAttribute("contentType") || "text";
-        this.shadowRoot.innerHTML = `
-            <style>
-
-                :host{
-                    display: none;
-                }
-
-                #root{
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    background-color: rgba(0, 0, 0, 0.5);
-                }
-
-                #wrapper{
-                    position: relative;
-                    width: 90%;
-                    height: 90%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }   
-
-                #content-box{
-                    width: 100%;
-                    height: 95%;
-                    background-color: white;
-                    border-radius: 10px;
-                    padding: 10px;
-                    text-align: center;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #close-button{
-                    position: absolute;
-                    bottom: 0;
-                    width: 100px;
-                    height: 50px;
-                    background-color: red;
-                    color: white;
-                    border: none;
-                    border-radius: 5px;
-                    margin-top: 10px;
-                    cursor: pointer;
-                }
-            </style>
-            `;
+        this.shadowRoot.innerHTML = this.shadowRootStyles;
 
         if (contentType == "text") {
             this.shadowRoot.innerHTML += `

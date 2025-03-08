@@ -15,7 +15,7 @@ class DragAndDropGame extends HTMLElement {
         super();
         this.attachShadow({ mode: "open" });
         this.noItemsToDrag = this.getAttribute("noItemsToDrag") || 3;
-        this.dragItemsType = this.getAttribute("dragItemsType") || "text/plain";
+        this.dragItemsType = "text/plain";
         this.dragItemsImage = this.getAttribute("dragItemsImage") || "https://via.placeholder.com/150";
         this.gameTimeLimit = this.getAttribute("gameTimeLimit") || 5;
         this.gameFailFunction = this.getAttribute("gameFailFunction") || (() => { console.log("Game Over!") });

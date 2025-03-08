@@ -8,7 +8,6 @@ class PopupMenu extends HTMLElement {
         this.content = this.getAttribute("content")
         this.contentType = this.getAttribute("contentType") || "text";
         this.contentTitle = this.getAttribute("contentTitle");
-        this.timerStarted = false;
 
         this.shadowRootStyles = `
             <style>

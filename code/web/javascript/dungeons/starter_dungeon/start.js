@@ -334,6 +334,8 @@ function loadBurnTheRope() {
     document.getElementById("option_1").onclick = burnTheRopeOpt1;
 }
 
+
+
 function enterMeleeOpt1() {
     window.location.href = "boss_antechamber.html";
 }
@@ -482,7 +484,9 @@ function loadBossAnteChamberOpen() {
 
 
 
-function bossChamberOpt1() {
+async function bossChamberOpt1() {
+    const ankouData = await makeNpcQuery(1);
+    updateDialogueBox(ankouData, "dialogue", "../../../", () => {window.location.href = "boss_fight.html";});
     document.getElementById("details").style.display = "none";
     document.getElementById("input-box-container").style.display = "none";
     document.getElementById("dialogue").style.display = "flex";

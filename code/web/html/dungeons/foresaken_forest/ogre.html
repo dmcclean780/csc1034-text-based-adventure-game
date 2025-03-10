@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Foresaken Forest</title>
+    <link rel="stylesheet" href="../../../css/default/dungeons.css">
+    <link rel="stylesheet" href="../../../css/default/generic.css">
+    <link rel="stylesheet" href="../../../css/mobile/dungeons.css">
+    <link rel="stylesheet" href="../../../css/mobile/generic.css">
+    <style>.main-container{background-color: rgb(86, 120, 19);}</style>
+    <script src="../../../javascript/dungeons/foresaken_forest.js"></script>
+    <script src="../../../javascript/components/timerBar.js"></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <div id="input-box-container">
+            <div class="details-box">
+                <div id="details">
+                    You approach the ogre, ready to fight.
+                    He spots you and charges towars you.
+                </div>
+            </div>
+            <div class="input-box">
+                <div id="prompt">
+                    What do you do?
+                </div>
+                <timer-bar id="timer-bar" duration="15"></timer-bar>
+                <div class="options">
+                    <button class="button-option" id="option_1" onclick="window.location.href='../../../html/generic/death.html';">Throw Rocks</button>
+                    <!--Success page depends on sphynx results-->
+                    <button class="button-option" id="option_1" onclick="window.location.href='success2.html';">Use Ring</button>
+                    <button class="button-option" id="option_1" onclick="window.location.href='../../../html/generic/death.html';">Run Away</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

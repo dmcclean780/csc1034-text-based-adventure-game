@@ -26,7 +26,7 @@
 
 .input-box {
     width: 66%;
-    padding: 20px 20px;
+    padding: 2% 2%;
     background-color: rgba(238, 202, 153, 0.75);
     border: 3px solid rgba(82, 69, 55, 0.75);
     display: flex;
@@ -41,18 +41,19 @@
 }
 
 .options{
-    margin-top: 40px;
-    margin-bottom: 10px;
+    margin-top: 4%;
+    margin-bottom: 1%;
     width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    overflow-x: auto;
 }
 
 .button-option {
     flex: 1;
-    margin: 0px 10px;
-    padding: 10px 20px;
+    margin: 0% 1%;
+    padding: 1% 2%;
     background-color: rgba(100, 50, 50, 0.75);
     border: 3px solid rgba(82, 69, 55, 0.75);    
     border-radius: 10px;
@@ -60,7 +61,6 @@
     cursor: pointer;
     font-size: 1.5em;
     color: white;
-    border-radius: 8px;
 }
 
 .button-option:hover{
@@ -71,8 +71,8 @@
 
 .details-box {
     width: 66%;
-    padding: 20px 20px;
-    margin: 40px 0px;
+    padding: 2% 2%;
+    margin: 4% 0%;
     background-color: rgba(238, 202, 153, 0.75);
     border: 3px solid rgba(82, 69, 55, 0.75);
     display: flex;
@@ -85,7 +85,7 @@
 
 #details {
     font-size: 1.5em;
-    margin-bottom: 20px;
+    margin-bottom: 2%;
     text-align: center;
 }
 }

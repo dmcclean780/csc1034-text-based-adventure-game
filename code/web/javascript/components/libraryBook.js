@@ -2,7 +2,7 @@ let fullPath = window.location.pathname;
 
 class LibraryBook extends HTMLElement {
     static get observedAttributes() {
-        return ["content", "contentTitle", "nextScreen", "scoreNeeded", "fileRel"];
+        return ["content", "contentTitle", "nextScreen", "scoreNeeded", "fileRel", "livesRemaining"];
     }
 
     constructor() {
@@ -17,7 +17,7 @@ class LibraryBook extends HTMLElement {
         // Initialize score variables
         this.scoreCurrent = 0;
         this.scoreNeeded = this.getAttribute("scoreNeeded") || 5;
-        this.livesRemaining = 3;
+        this.livesRemaining = this.getAttribute("livesRemaining") || 3;
 
         this.fileRel = this.getAttribute("fileRel") || "../../../";
 

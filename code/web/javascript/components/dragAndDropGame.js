@@ -20,9 +20,9 @@ class DragAndDropGame extends HTMLElement {
         this.gameTimeLimit = this.getAttribute("gameTimeLimit") || 5;
         this.gameFailFunction = this.getAttribute("gameFailFunction") || (() => { console.log("Game Over!") });
         this.gameTitle = this.getAttribute("gameTitle") || "Drag and Drop Game";
-        this.destBoxBackgroundStylings = this.getAttribute("destBoxBAckgroundStylings");
+        this.destBoxBackgroundStylings = this.getAttribute("destBoxBackgroundStylings");
 
-        this.shadowRoot.innerHTML = `
+        this.styles = `
             <style>
                 #root{
                     position: absolute;
@@ -129,7 +129,9 @@ class DragAndDropGame extends HTMLElement {
                     ${this.destBoxBackgroundStylings}
                 }
 
-            </style>
+            </style>`;
+
+        this.shadowRoot.innerHTML = this.styles + `
 
             <div id="root">
                 <div id="wrapper">
@@ -208,9 +210,159 @@ class DragAndDropGame extends HTMLElement {
 
     }
 
+    defineStyles(){
+        this.styles = `
+            <style>
+                #root{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgba(0, 0, 0, 0.5);
+                }
+
+                #wrapper{
+                    position: relative;
+                    width: 90%;
+                    height: 90%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }   
+
+                #content-box{
+                    width: 100%;
+                    height: 95%;
+                    background-color: rgba(100, 50, 50, 0.75);
+                    border-radius: 10px;
+                    padding: 10px;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                #content{
+                    flex: 9;
+                }
+
+                #title{
+                    flex: 1;
+                   
+                }
+
+                #timer-bar{
+                    flex: 1;
+                    margin: 10px;    
+                }
+
+                #game-box{
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgb(61, 60, 60);
+                    background-size: cover;
+                    background-position: center;
+                    border-radius: 10px;
+
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    
+                }
+
+                .drag-items-container{
+                    width: 20%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                    padding: 10px;
+                    overflow: auto;
+                    box-sizing: border-box;
+                }
+
+                .drag-items-dest-container{
+                    width: 30%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                    
+                    margin-right: 10px;
+                }
+
+                .drag-item{
+                    width: 100%;
+                    height: ${80 / this.noItemsToDrag}%;
+                    background-image: url("${this.dragItemsImage}");
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-color: transparent;
+                    image-rendering: pixelated;
+
+                }
+
+                .drag-item-dest-box{
+                    width: 100%;
+                    flex: 1;
+                    ${this.destBoxBackgroundStylings}
+                }
+
+            </style>`;
+    }
+
     dragoverHandler(ev) {
         ev.preventDefault();
         ev.dataTransfer.dropEffect = "move";
+    }
+
+    render() {
+
+        this.noItemsToDrag = this.getAttribute("noItemsToDrag") || 3;
+        this.dragItemsType = "text/plain";
+        this.dragItemsImage = this.getAttribute("dragItemsImage") || "https://via.placeholder.com/150";
+        this.gameTimeLimit = this.getAttribute("gameTimeLimit") || 5;
+        this.gameFailFunction = this.getAttribute("gameFailFunction") || (() => { console.log("Game Over!") });
+        this.gameTitle = this.getAttribute("gameTitle") || "Drag and Drop Game";
+        this.destBoxBackgroundStylings = this.getAttribute("destBoxBackgroundStylings");
+
+        this.defineStyles();
+        this.shadowRoot.getElementById("timer-bar").stopTimer();
+        this.shadowRoot.innerHTML = this.styles + `
+
+            <div id="root">
+                <div id="wrapper">
+                    <div id="content-box">
+                        <h1 id="title" >${this.gameTitle}</h1>
+                        <timer-bar id="timer-bar" duration="${this.gameTimeLimit}"></timer-bar>
+                        <div id="game-box">
+                            <div class="drag-items-container">
+                                ${Array.from({ length: this.noItemsToDrag }, (_, i) =>
+                `<div class="drag-item" draggable="true" id="drag-item-${i}"></div>`).join("")
+                }
+                            </div>
+                            <div class="drag-items-dest-container">
+                                ${Array.from({ length: this.noItemsToDrag }, (_, i) =>
+                    `<div class="drag-item-dest-box" id="target-${i}"></div>`).join("")
+                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        this.connectedCallback();
     }
 }
 

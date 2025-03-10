@@ -1,60 +1,65 @@
-SELECT 
-    d.id AS decisionID,
-    a.name AS areaName,
-    d.details,
-    d.prompt,
-    d.backgroundFilePath,
-    d.hasTimer,
-    d.hasPopupMenu,
-    d.hasDialogue,
-    d.hasLibraryBook,
-    d.hasDragDropGame,
-    d.hasTextEntry,
-    d.hasButtonOptions,
+                        SELECT 
+                        decisions.id AS decisionID,
+                        areas.name AS areaName,
+                        decisions.details,
+                        decisions.prompt,
+                        decisions.backgroundFilePath,
+                        decisions.hasTimer,
+                        decisions.hasPopupMenu,
+                        decisions.hasDialogue,
+                        decisions.hasLibraryBook,
+                        decisions.hasDragDropGame,
+                        decisions.hasTextEntry,
+                        decisions.hasButtonOptions,
 
-    -- Conditionally fetch Timer Bar Info
-    CASE WHEN d.hasTimer THEN t.duration ELSE NULL END AS timerDuration,
-    CASE WHEN d.hasTimer THEN t.onComplete ELSE NULL END AS timerOnComplete,
+                        -- Conditionally fetch Timer Bar Info
+                        CASE WHEN decisions.hasTimer THEN timerBars.duration ELSE NULL END AS timerDuration,
+                        CASE WHEN decisions.hasTimer THEN timerBars.onComplete ELSE NULL END AS timerOnComplete,
 
-    -- Conditionally fetch Popup Menu Info
-    CASE WHEN d.hasPopupMenu THEN pm.contentType ELSE NULL END AS popupContentType,
-    CASE WHEN d.hasPopupMenu THEN pm.content ELSE NULL END AS popupContent,
-    CASE WHEN d.hasPopupMenu THEN pm.contentTitle ELSE NULL END AS popupContentTitle,
+                        -- Conditionally fetch Popup Menu Info
+                        CASE WHEN decisions.hasPopupMenu THEN popupMenus.contentType ELSE NULL END AS popupContentType,
+                        CASE WHEN decisions.hasPopupMenu THEN popupMenus.content ELSE NULL END AS popupContent,
+                        CASE WHEN decisions.hasPopupMenu THEN popupMenus.contentTitle ELSE NULL END AS popupContentTitle,
 
-    -- Conditionally fetch Text Entry Info
-    CASE WHEN d.hasTextEntry THEN te.correctAnswer ELSE NULL END AS textEntryCorrectAnswer,
-    CASE WHEN d.hasTextEntry THEN te.onCorrect ELSE NULL END AS textEntryOnCorrect,
-    CASE WHEN d.hasTextEntry THEN te.onIncorrect ELSE NULL END AS textEntryOnIncorrect,
+                        -- Conditionally fetch Text Entry Info
+                        CASE WHEN decisions.hasTextEntry THEN textEntries.correctAnswer ELSE NULL END AS textEntryCorrectAnswer,
+                        CASE WHEN decisions.hasTextEntry THEN textEntries.onCorrect ELSE NULL END AS textEntryOnCorrect,
+                        CASE WHEN decisions.hasTextEntry THEN textEntries.onIncorrect ELSE NULL END AS textEntryOnIncorrect,
 
-    -- Conditionally fetch Library Book Info
-    CASE WHEN d.hasLibraryBook THEN lb.content ELSE NULL END AS bookContent,
-    CASE WHEN d.hasLibraryBook THEN lb.contentTitle ELSE NULL END AS bookTitle,
-    CASE WHEN d.hasLibraryBook THEN lb.scoreNeeded ELSE NULL END AS bookScoreNeeded,
-    CASE WHEN d.hasLibraryBook THEN lb.totalLives ELSE NULL END AS bookTotalLives,
+                        -- Conditionally fetch Library Book Info
+                        CASE WHEN decisions.hasLibraryBook THEN libraryBooks.content ELSE NULL END AS bookContent,
+                        CASE WHEN decisions.hasLibraryBook THEN libraryBooks.contentTitle ELSE NULL END AS bookTitle,
+                        CASE WHEN decisions.hasLibraryBook THEN libraryBooks.scoreNeeded ELSE NULL END AS bookScoreNeeded,
+                        CASE WHEN decisions.hasLibraryBook THEN libraryBooks.totalLives ELSE NULL END AS bookTotalLives,
 
-    -- Conditionally fetch Drag Drop Game Info
-    CASE WHEN d.hasDragDropGame THEN ddg.noDragItems ELSE NULL END AS noDragItems,
-    CASE WHEN d.hasDragDropGame THEN ddg.dragItemsImg ELSE NULL END AS dragItemsImg,
-    CASE WHEN d.hasDragDropGame THEN ddg.timeLimit ELSE NULL END AS dragDropTimeLimit,
-    CASE WHEN d.hasDragDropGame THEN ddg.onFail ELSE NULL END AS dragDropOnFail,
-    CASE WHEN d.hasDragDropGame THEN ddg.title ELSE NULL END AS dragDropTitle,
-    CASE WHEN d.hasDragDropGame THEN ddg.backgroundStyle ELSE NULL END AS dragDropBackground,
+                        -- Conditionally fetch Drag Drop Game Info
+                        CASE WHEN decisions.hasDragDropGame THEN dragDropGames.noDragItems ELSE NULL END AS noDragItems,
+                        CASE WHEN decisions.hasDragDropGame THEN dragDropGames.dragItemsImg ELSE NULL END AS dragItemsImg,
+                        CASE WHEN decisions.hasDragDropGame THEN dragDropGames.timeLimit ELSE NULL END AS dragDropTimeLimit,
+                        CASE WHEN decisions.hasDragDropGame THEN dragDropGames.onFail ELSE NULL END AS dragDropOnFail,
+                        CASE WHEN decisions.hasDragDropGame THEN dragDropGames.title ELSE NULL END AS dragDropTitle,
+                        CASE WHEN decisions.hasDragDropGame THEN dragDropGames.backgroundStyle ELSE NULL END AS dragDropBackground,
 
-    -- Conditionally fetch Button Options
-    CASE WHEN d.hasButtonOptions THEN JSON_ARRAYAGG(bo.buttonID ORDER BY bo.buttonID) ELSE NULL END AS buttonIDs,
-    CASE WHEN d.hasButtonOptions THEN JSON_ARRAYAGG(bo.buttonText ORDER BY bo.buttonID) ELSE NULL END AS buttonTexts,
-    CASE WHEN d.hasButtonOptions THEN JSON_ARRAYAGG(bo.buttonFunction ORDER BY bo.buttonID) ELSE NULL END AS buttonFunctions
+                         -- Conditionally fetch Dialogue Info
+                        CASE WHEN decisions.hasDialogue THEN dialogues.npcID ELSE NULL END AS npcID,
 
-FROM decisions d
-JOIN areas a ON d.areaID = a.id
+                        -- Conditionally fetch Button Options
+                        CASE WHEN decisions.hasButtonOptions THEN JSON_ARRAYAGG(buttonOptions.buttonID ORDER BY buttonOptions.buttonID) ELSE NULL END AS buttonIDs,
+                        CASE WHEN decisions.hasButtonOptions THEN JSON_ARRAYAGG(buttonOptions.buttonText ORDER BY buttonOptions.buttonID) ELSE NULL END AS buttonTexts,
+                        CASE WHEN decisions.hasButtonOptions THEN JSON_ARRAYAGG(buttonOptions.buttonFunction ORDER BY buttonOptions.buttonID) ELSE NULL END AS buttonFunctions,
+                        CASE WHEN decisions.hasButtonOptions THEN JSON_ARRAYAGG(buttonOptions.showCondition ORDER BY buttonOptions.buttonID) ELSE NULL END AS buttonConditions
 
-LEFT JOIN timerBars t ON d.hasTimer = TRUE AND d.id = t.id
-LEFT JOIN popupMenus pm ON d.hasPopupMenu = TRUE AND d.id = pm.id
-LEFT JOIN textEntries te ON d.hasTextEntry = TRUE AND d.id = te.id
-LEFT JOIN libraryBooks lb ON d.hasLibraryBook = TRUE AND d.id = lb.id
-LEFT JOIN dragDropGames ddg ON d.hasDragDropGame = TRUE AND d.id = ddg.id
-LEFT JOIN buttonOptions bo ON d.hasButtonOptions = TRUE AND d.id = bo.decisionID
+                    FROM decisions
+                    JOIN areas ON decisions.areaID = areas.id
 
-WHERE d.id = ?  -- Replace ? with the specific decision ID
+                    LEFT JOIN timerBars ON decisions.hasTimer = TRUE AND decisions.id = timerBars.id AND decisions.areaID = timerBars.areaID
+                    LEFT JOIN popupMenus ON decisions.hasPopupMenu = TRUE AND decisions.id = popupMenus.id AND decisions.areaID = popupMenus.areaID
+                    LEFT JOIN textEntries ON decisions.hasTextEntry = TRUE AND decisions.id = textEntries.id AND decisions.areaID = textEntries.areaID
+                    LEFT JOIN libraryBooks ON decisions.hasLibraryBook = TRUE AND decisions.id = libraryBooks.id AND decisions.areaID = libraryBooks.areaID
+                    LEFT JOIN dragDropGames ON decisions.hasDragDropGame = TRUE AND decisions.id = dragDropGames.id AND decisions.areaID = dragDropGames.areaID
+                    LEFT JOIN buttonOptions ON decisions.hasButtonOptions = TRUE AND decisions.id = buttonOptions.id AND decisions.areaID = buttonOptions.areaID
+                    LEFT JOIN dialogues ON decisions.hasDialogue = TRUE AND decisions.id = dialogues.id AND decisions.areaID = dialogues.areaID
 
-GROUP BY d.id, a.id;
+                    WHERE decisions.id = ${decisionID} AND areas.id = ${areaID}
+
+                    GROUP BY decisions.id, areas.id;

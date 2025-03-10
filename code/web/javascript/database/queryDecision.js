@@ -1,7 +1,7 @@
 async function makeDecisionQuery(decisionID, areaID) {
     const query = `SELECT 
                         decisions.id AS decisionID,
-                        a.name AS areaName,
+                        areas.name AS areaName,
                         decisions.details,
                         decisions.prompt,
                         decisions.backgroundFilePath,
@@ -47,30 +47,32 @@ async function makeDecisionQuery(decisionID, areaID) {
                         -- Conditionally fetch Button Options
                         CASE WHEN decisions.hasButtonOptions THEN JSON_ARRAYAGG(buttonOptions.buttonID ORDER BY buttonOptions.buttonID) ELSE NULL END AS buttonIDs,
                         CASE WHEN decisions.hasButtonOptions THEN JSON_ARRAYAGG(buttonOptions.buttonText ORDER BY buttonOptions.buttonID) ELSE NULL END AS buttonTexts,
-                        CASE WHEN decisions.hasButtonOptions THEN JSON_ARRAYAGG(buttonOptions.buttonFunction ORDER BY buttonOptions.buttonID) ELSE NULL END AS buttonFunctions
+                        CASE WHEN decisions.hasButtonOptions THEN JSON_ARRAYAGG(buttonOptions.buttonFunction ORDER BY buttonOptions.buttonID) ELSE NULL END AS buttonFunctions,
+                        CASE WHEN decisions.hasButtonOptions THEN JSON_ARRAYAGG(buttonOptions.showCondition ORDER BY buttonOptions.buttonID) ELSE NULL END AS buttonConditions
 
                     FROM decisions
-                    JOIN areas a ON decisions.areaID = a.id
+                    JOIN areas ON decisions.areaID = areas.id
 
-                    LEFT JOIN timerBars ON decisions.hasTimer = TRUE AND decisions.id = timerBars.id
-                    LEFT JOIN popupMenus ON decisions.hasPopupMenu = TRUE AND decisions.id = popupMenus.id
-                    LEFT JOIN textEntries ON decisions.hasTextEntry = TRUE AND decisions.id = textEntries.id
-                    LEFT JOIN libraryBooks ON decisions.hasLibraryBook = TRUE AND decisions.id = libraryBooks.id
-                    LEFT JOIN dragDropGames ON decisions.hasDragDropGame = TRUE AND decisions.id = dragDropGames.id
-                    LEFT JOIN buttonOptions ON decisions.hasButtonOptions = TRUE AND decisions.id = buttonOptions.decisionID
-                    LEFT JOIN dialogues ON decisions.hasDialogue = TRUE AND decisions.id = dialogues.id
+                    LEFT JOIN timerBars ON decisions.hasTimer = TRUE AND decisions.id = timerBars.id AND decisions.areaID = timerBars.areaID
+                    LEFT JOIN popupMenus ON decisions.hasPopupMenu = TRUE AND decisions.id = popupMenus.id AND decisions.areaID = popupMenus.areaID
+                    LEFT JOIN textEntries ON decisions.hasTextEntry = TRUE AND decisions.id = textEntries.id AND decisions.areaID = textEntries.areaID
+                    LEFT JOIN libraryBooks ON decisions.hasLibraryBook = TRUE AND decisions.id = libraryBooks.id AND decisions.areaID = libraryBooks.areaID
+                    LEFT JOIN dragDropGames ON decisions.hasDragDropGame = TRUE AND decisions.id = dragDropGames.id AND decisions.areaID = dragDropGames.areaID
+                    LEFT JOIN buttonOptions ON decisions.hasButtonOptions = TRUE AND decisions.id = buttonOptions.id AND decisions.areaID = buttonOptions.areaID
+                    LEFT JOIN dialogues ON decisions.hasDialogue = TRUE AND decisions.id = dialogues.id AND decisions.areaID = dialogues.areaID
 
-                    WHERE decisions.id = ${decisionID} AND a.id = ${areaID}
+                    WHERE decisions.id = ${decisionID} AND areas.id = ${areaID}
 
-                    GROUP BY decisions.id, a.id;
+                    GROUP BY decisions.id, areas.id;
 `;
 
     let decisionData = await makeDatabaseQuery(query);
-    decisionData = Object.fromEntries(Object.entries(decisionData.pop()).filter(([_, v]) => v != null));
+    decisionData = decisionData.pop();
     if(decisionData.hasButtonOptions == 1){
         decisionData.buttonIDs = JSON.parse(decisionData.buttonIDs);
         decisionData.buttonTexts = JSON.parse(decisionData.buttonTexts);
         decisionData.buttonFunctions = JSON.parse(decisionData.buttonFunctions);
+        decisionData.buttonConditions = JSON.parse(decisionData.buttonConditions);
     }
     return decisionData;
 }

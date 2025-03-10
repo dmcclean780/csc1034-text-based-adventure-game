@@ -7,7 +7,9 @@ VALUES
     '["Hrrrggghhh…", 
 		"Death... Take... Thee... PlayerNameHere...", 
 		"Ghhhuuuaaahh…"]',
-    "null"),
+    '(() => {changeState("ANKOU_HEALTH", 5);
+          changeState("PARRY_AVAILABLE", 3);
+             loadNextDecision(2, 28); })'),
 
   ('Armourer', 
     'images/npc/armourer.png', 

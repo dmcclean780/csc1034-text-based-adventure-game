@@ -117,6 +117,8 @@ function loadFollowWall() {
     document.getElementById("option_2").onclick = followWallOpt2;
 }
 
+
+
 function lookAroundOpt1() {
     document.getElementById("details").innerHTML = "The walls are smooth, it is not possible to climb them to the natural light above. You should try to find a way to create a light source.";
 

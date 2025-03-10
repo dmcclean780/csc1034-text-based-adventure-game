@@ -1,7 +1,7 @@
 INSERT INTO areas
-    (name)
+    (id, name)
 VALUES
-    ('Village');
+    (1, 'Village');
 
 INSERT INTO decisions
     (id, areaID, details, prompt, backgroundFilePath, hasTimer, hasPopupMenu, hasDialogue, hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions)
@@ -141,137 +141,177 @@ VALUES
     );
 
 INSERT INTO buttonOptions
-    (decisionID, buttonID, buttonText, buttonFunction)
+    (id, areaID, buttonID, buttonText, buttonFunction, showCondition)
 VALUES
     (
         1,
+        1,
         'option_1',
         'CONTINUE INTO VILLAGE',
-        '(() => {loadNextDecision(1,3)})'
+        '(() => {loadNextDecision(1,3)})',
+        TRUE
     ),
     (
+        1,
         1,
         'option_2',
         'THE ARMOURY',
-        '(() => {loadNextDecision(1,2)})'
+        '(() => {loadNextDecision(1,2)})',
+        TRUE
     ),
     (
         1,
+        1,
         'option_3',
         'LEAVE',
-        '(() => {console.log("LEAVE VILLAGE")})'
+        '(() => {console.log("LEAVE VILLAGE")})',
+        '(getState("TOWN_HALL_ENTERED") == "true")'
     ),
     (
         2,
+        1,
         'option_1',
         'CONTINUE',
-        '(() => {showDialogue()})'
+        '(() => {showDialogue()})',
+        TRUE
     ),
     (
         3,
+        1,
         'option_1',
         'CONTINUE THROUGH THE VILLAGE',
-        '(() => {loadNextDecision(1,8)})'
+        '(() => {loadNextDecision(1,8)})',
+        TRUE
     ),
     (
         3,
+        1,
         'option_2',
         'THE LIBRARY',
-        '(() => {loadNextDecision(1,5)})'
+        '(() => {loadNextDecision(1,5)})',
+        TRUE
     ),
     (
         3,
+        1,
         'option_3',
         'THE TAVERN',
-        '(() => {loadNextDecision(1,4)})'
+        '(() => {loadNextDecision(1,4)})',
+        TRUE
     ),
     (
         3,
+        1,
         'option_4',
         'THE TOWN HALL',
-        '(() => {loadNextDecision(1,6)})'
+        '(() => {changeState("TOWN_HALL_ENTERED", true);loadNextDecision(1,6)})',
+        TRUE
     ),
     (
         3,
+        1,
         'option_5',
         'GO BACK',
-        '(() => {loadNextDecision(1,1)})'
+        '(() => {loadNextDecision(1,1)})',
+        TRUE
     ),
     (
         4,
+        1,
         'option_1',
         'CONTINUE',
-        '(() => {showDialogue()})'
+        '(() => {showDialogue()})',
+        TRUE
     ),
     (
         5,
+        1,
         'option_1',
         'CONTINUE',
-        '(() => {showDialogue()})'
+        '(() => {showDialogue()})',
+        TRUE
     ),
     (
         6,
+        1,
         'option_1',
         'CONTINUE',
-        '(() => {showDialogue()})'
+        '(() => {showDialogue()})',
+        TRUE
     ),
     (
         7,
+        1,
         'option_1',
         'CONTINUE',
-        '(() => {showDialogue()})'
+        '(() => {showDialogue()})',
+        TRUE
     ),
     (
         8,
+        1,
         'option_1',
         'TALK TO THE WITCH',
-        '(() => {loadNextDecision(1,9)})'
+        '(() => {loadNextDecision(1,9)})',
+        TRUE
     ),
     (
         8,
+        1,
         'option_2',
         'GO BACK',
-        '(() => {loadNextDecision(1,3)})'
+        '(() => {loadNextDecision(1,3)})',
+        TRUE
     ),
     (
         8,
+        1,
         'option_3',
         'LEAVE',
-        '(() => {console.log("LEAVE VILLAGE")})'
+        '(() => {console.log("LEAVE VILLAGE")})',
+        '(getState("TOWN_HALL_ENTERED") == "true")'
     ),
     (
         9,
+        1,
         'option_1',
         'TALK TO THE WITCH',
-        '(() => {showDialogue()})'
+        '(() => {showDialogue()})',
+        TRUE
     );
 
 
 
 INSERT INTO dialogues
-    (id, npcID)
+    (id, areaID, npcID)
 VALUES
     (
         2,
+        1,
         2
     ),
     (
         4,
+        1,
         3
     ),
     (
         5,
+        1,
         7
     ),
     (
         6,
+        1,
         5
     ),
     (
         7,
+        1,
         6
     ),
     (
         9,
+        1,
         4
     );

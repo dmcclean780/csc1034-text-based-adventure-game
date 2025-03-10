@@ -3,6 +3,25 @@ class TextEntry extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
+        this.render();
+        
+    }
+
+    connectedCallback() {
+        this.shadowRoot.getElementById("submit-button").addEventListener("click", this.checkAnswer.bind(this));
+    }
+
+    checkAnswer() {
+        let answer = this.shadowRoot.getElementById("text-entry").value;
+        if (answer.toLowerCase() === this.correctAnswer.toLowerCase()) {
+            this.correctResponseFunction();
+        } else {
+            this.incorrectResponseFunction();
+            this.shadowRoot.getElementById("text-entry").value = "";
+        }
+    }
+
+    render(){
         this.correctAnswer = this.getAttribute("correctAnswer") || "correct";
         this.correctResponseFunction = eval(this.getAttribute("correctResponseFunction") || (() => { console.log("Correct!") }));
         this.incorrectResponseFunction = eval(this.getAttribute("incorrectResponseFunction") || (() => { console.log("Incorrect!") }));
@@ -48,20 +67,7 @@ class TextEntry extends HTMLElement {
             <input id="text-entry" type="text" placeholder="Enter your answer here">
             <button id="submit-button">Submit</button>
         `;
-    }
-
-    connectedCallback() {
-        this.shadowRoot.getElementById("submit-button").addEventListener("click", this.checkAnswer.bind(this));
-    }
-
-    checkAnswer() {
-        let answer = this.shadowRoot.getElementById("text-entry").value;
-        if (answer.toLowerCase() === this.correctAnswer.toLowerCase()) {
-            this.correctResponseFunction();
-        } else {
-            this.incorrectResponseFunction();
-            this.shadowRoot.getElementById("text-entry").value = "";
-        }
+        
     }
 }
 

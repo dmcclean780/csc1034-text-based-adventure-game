@@ -1,4 +1,4 @@
-const deathMessage = localStorage.getItem('deathMessage');
+const deathMessage = sessionStorage.getItem("deathMessage");
 console.log(deathMessage);
 
 window.onload = function () {

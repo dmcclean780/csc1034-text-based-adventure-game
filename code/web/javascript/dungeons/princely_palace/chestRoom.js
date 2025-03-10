@@ -3,7 +3,7 @@ function chest1(){
 }
 
 function chest2(){
-    window.location.href = "";
+    window.location.href = "correctChest.html";
 }
 
 function chest3(){

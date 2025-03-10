@@ -1,3 +1,3 @@
 function death(){
-    window.location.href = "../generic/death.html";
+    window.location.href = "../../generic/death.html";
 }

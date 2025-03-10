@@ -2,7 +2,7 @@ let fullPath = window.location.pathname;
 
 class LibraryBook extends HTMLElement {
     static get observedAttributes() {
-        return ["content", "contentTitle", "nextScreen", "scoreNeeded"];
+        return ["content", "contentTitle", "nextScreen", "scoreNeeded", "fileRel"];
     }
 
     constructor() {
@@ -19,7 +19,7 @@ class LibraryBook extends HTMLElement {
         this.scoreNeeded = this.getAttribute("scoreNeeded") || 5;
         this.livesRemaining = 3;
 
-        this.fileRel = "../../../";
+        this.fileRel = this.getAttribute("fileRel") || "../../../";
 
         this.render();
     }
@@ -30,7 +30,7 @@ class LibraryBook extends HTMLElement {
     }
 
     render() {
-        const lines = this.content.split("\n").map(line => line.trim()).filter(line => line);
+        this.content = this.content.split("|");
 
         this.shadowRoot.innerHTML = `
             <style>
@@ -162,29 +162,16 @@ class LibraryBook extends HTMLElement {
                         <div id="lives-box">
                         <p id="lives-title">Lives</p>
                         <div id="lives">
-                            <img src="../../../images/library_dungeon/library-heart.png" alt="heart" class="heart">
-                            <img src="../../../images/library_dungeon/library-heart.png" alt="heart" class="heart">
-                            <img src="../../../images/library_dungeon/library-heart.png" alt="heart" class="heart">
+                            <img src="${this.fileRel}images/library_dungeon/library-heart.png" alt="heart" class="heart">
+                            <img src="${this.fileRel}images/library_dungeon/library-heart.png" alt="heart" class="heart">
+                            <img src="${this.fileRel}images/library_dungeon/library-heart.png" alt="heart" class="heart">
                         </div>
                     </div>
                     <h1 id="title">${this.contentTitle}</h1>
-                    ${lines.length > 0 ? `<span class="text-line">${lines[0]}</span>` : ""}
-                    ${lines.length > 0 ? `<img src="../../../images/library_dungeon/library-stroke-black.png" alt="ink" class="ink-image" id="ink-image-1">` : ""}
-                    ${lines.length > 1 ? `<span class="text-line">${lines[1]}</span>` : ""}
-                    ${lines.length > 1 ? `<img src="../../../images/library_dungeon/library-stroke-black.png" alt="ink" class="ink-image" id="ink-image-2">` : ""}
-                    ${lines.length > 2 ? `<span class="text-line">${lines[2]}</span>` : ""}
-                    ${lines.length > 2 ? `<img src="../../../images/library_dungeon/library-stroke-black.png" alt="ink" class="ink-image" id="ink-image-3">` : ""}
-                    ${lines.length > 3 ? `<span class="text-line">${lines[3]}</span>` : ""}
-                    ${lines.length > 3 ? `<img src="../../../images/library_dungeon/library-stroke-black.png" alt="ink" class="ink-image" id="ink-image-4">` : ""}
-                    ${lines.length > 4 ? `<span class="text-line">${lines[4]}</span>` : ""}
-                    ${lines.length > 4 ? `<img src="../../../images/library_dungeon/library-stroke-black.png" alt="ink" class="ink-image" id="ink-image-5">` : ""}
-                    ${lines.length > 5 ? `<span class="text-line">${lines[5]}</span>` : ""}
-                    ${lines.length > 5 ? `<img src="../../../images/library_dungeon/library-stroke-black.png" alt="ink" class="ink-image" id="ink-image-6">` : ""}
-                    ${lines.length > 6 ? `<span class="text-line">${lines[6]}</span>` : ""}
-                    ${lines.length > 6 ? `<img src="../../../images/library_dungeon/library-stroke-black.png" alt="ink" class="ink-image" id="ink-image-7">` : ""}
-                    ${lines.length > 7 ? `<span class="text-line">${lines[7]}</span>` : ""}
-                    ${lines.length > 7 ? `<img src="../../../images/library_dungeon/library-stroke-black.png" alt="ink" class="ink-image" id="ink-image-8">` : ""}
-                    
+                    ${this.content.map((item) => `
+                        <p class="text-line">${item}</p>
+                        <img src="${this.fileRel}images/library_dungeon/library-stroke-black.png" alt="ink" class="ink-image" id="ink-image-${this.content.indexOf(item) + 1}">
+                    `).join("")}
                     <div id="score-box">
                 <p id="score-title">Score</p>
                 <span id="score">${this.scoreCurrent} / ${this.scoreNeeded}</span>
@@ -202,17 +189,13 @@ class LibraryBook extends HTMLElement {
     }
 
     positionInks() {
-        const inkImages = [
-            this.shadowRoot.querySelector("#ink-image-1"),
-            this.shadowRoot.querySelector("#ink-image-2"),
-            this.shadowRoot.querySelector("#ink-image-3"),
-            this.shadowRoot.querySelector("#ink-image-4"),
-            this.shadowRoot.querySelector("#ink-image-5"),
-            this.shadowRoot.querySelector("#ink-image-6"),
-            this.shadowRoot.querySelector("#ink-image-7"),
-            this.shadowRoot.querySelector("#ink-image-8")
-        ];
+        const inkImages = Array.from(this.shadowRoot.querySelectorAll(".ink-image"));
         const textLines = this.shadowRoot.querySelectorAll(".text-line");
+
+        // Now, inkImages contains only the existing images
+        inkImages.forEach((img, index) => {
+            img.id = `ink-image-${index + 1}`; // Dynamically assign IDs based on position
+        });
 
         const boxRect = this.shadowRoot.querySelector("#content-box").getBoundingClientRect();
 
@@ -235,58 +218,68 @@ class LibraryBook extends HTMLElement {
     }
 
     addClickListeners() {
-        const inkImages = [
-            this.shadowRoot.querySelector("#ink-image-1"),
-            this.shadowRoot.querySelector("#ink-image-2"),
-            this.shadowRoot.querySelector("#ink-image-3"),
-            this.shadowRoot.querySelector("#ink-image-4"),
-            this.shadowRoot.querySelector("#ink-image-5"),
-            this.shadowRoot.querySelector("#ink-image-6"),
-            this.shadowRoot.querySelector("#ink-image-7"),
-            this.shadowRoot.querySelector("#ink-image-8")
-        ];
-
-        inkImages.forEach((inkImage, index) => {
+        const inkImages = Array.from(this.shadowRoot.querySelectorAll(".ink-image"));
+    
+        // Dynamically assign IDs based on position
+        inkImages.forEach((img, index) => {
+            img.id = `ink-image-${index + 1}`;
+        });
+    
+        // Attach click event that calls inkClicked
+        inkImages.forEach((inkImage) => {
             if (inkImage) {
-                inkImage.addEventListener('click', () => {
-                    if (inkImage.style.opacity > 0 && inkImage.style.opacity != 1) {     
-                        inkImage.style.opacity = 0;  // Immediately hide the clicked ink blot
-
-                        // Clear any ongoing opacity animation
-                        if (inkImage.opacityInterval) {
-                            clearInterval(inkImage.opacityInterval);
-                        }
-
-                        this.scoreCurrent++;  // Increase the score
-                        this.shadowRoot.querySelector("#score").textContent = `${this.scoreCurrent} / ${this.scoreNeeded}`;
-                        if(this.scoreCurrent >= this.scoreNeeded) {
-                            window.location.href = this.fileRel.concat("","html/dungeons/library/" + this.nextScreen);
-                        }
-
-                        // Random delay before showing a new ink blot
-                        const delay = Math.random() * (1000 - 100); // Random delay between 500ms and 2000ms
-
-                        setTimeout(() => {
-                            this.spawnRandomInk();  // Show new ink after delay
-                        }, delay);
-                    } 
-                    else if(inkImage.style.opacity != 1) 
-                    {
-                        this.updateLives(); // Update lives on wrong click
-                    }
-                });
+                inkImage.addEventListener("click", () => this.inkClicked(inkImage));
             }
         });
     }
+    
+    inkClicked(inkImage) {
+        const inkImages = Array.from(this.shadowRoot.querySelectorAll(".ink-image"));
+    
+        const anyRedInk = inkImages.some(img => img.src.includes("library-stroke-red.png"));
+    
+        if (inkImage.style.opacity > 0 && inkImage.style.opacity != 1) {     
+            inkImage.style.opacity = 0;  // Immediately hide the clicked ink blot
+    
+            // Clear any ongoing opacity animation
+            if (inkImage.opacityInterval) {
+                clearInterval(inkImage.opacityInterval);
+            }
+    
+            this.scoreCurrent++;  // Increase the score
+            this.shadowRoot.querySelector("#score").textContent = `${this.scoreCurrent} / ${this.scoreNeeded}`;
+            
+            if (this.scoreCurrent >= this.scoreNeeded) {
+                window.location.href = this.fileRel.concat("", "html/dungeons/library/" + this.nextScreen);
+                return;
+            }
+    
+            // Random delay before showing a new ink blot
+            const delay = Math.random() * (1000 - 100); // Random delay between 100ms and 1000ms
+            setTimeout(() => {
+                this.spawnRandomInk();
+            }, delay);
+        } 
+        else if (!anyRedInk) { 
+            // Only deduct a life if ALL inks are black and none are fully opaque
+            const anyFullyOpaque = inkImages.some(img => img.style.opacity >= 1);
+            
+            if (!anyFullyOpaque) {
+                this.updateLives();
+            }
+        }
+    }
+    
+    
 
-    spawnRandomInk(fileRel) {
+    spawnRandomInk() {
         const inkImages = [...this.shadowRoot.querySelectorAll(".ink-image")];
         const randomIndex = Math.floor(Math.random() * inkImages.length);
         const inkImage = inkImages[randomIndex];
 
         if (!inkImage) return;
 
-        inkImage.src = "../../../images/library_dungeon/library-stroke-black.png";
+        inkImage.src = this.fileRel.concat("","images/library_dungeon/library-stroke-black.png");
         inkImage.style.opacity = 0;
         let opacity = 0;
         
@@ -302,13 +295,15 @@ class LibraryBook extends HTMLElement {
             inkImage.style.opacity = opacity;
 
             if (opacity >= 1) {
-                inkImage.src = "../../../images/library_dungeon/library-stroke-red.png"; // Reset to black ink
+                inkImage.src = this.fileRel.concat("","images/library_dungeon/library-stroke-red.png"); // Reset to black ink
                 clearInterval(inkImage.opacityInterval);
                 this.updateLives(); // Deduct a life
                 this.currentInk = null;
 
                 setTimeout(() => {
                     inkImage.style.opacity = 0;
+                    inkImage.src = this.fileRel.concat("","images/library_dungeon/library-stroke-black.png"); // Reset to black ink
+
                     this.spawnRandomInk();
                 }, Math.random() * 1500 + 500);
             }
@@ -339,9 +334,9 @@ class LibraryBook extends HTMLElement {
         }
     }
 
-    gameOver(fileRel) {
+    gameOver() {
         console.log("Game over!");
-        window.location.href = fileRel.concat("","html/generic/death.html");
+        window.location.href = this.fileRel.concat("","html/generic/death.html");
     }
 }
 

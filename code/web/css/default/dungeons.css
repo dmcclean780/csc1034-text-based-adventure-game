@@ -15,6 +15,7 @@
     /* Makes the div span the full width of the container */
     height: 90%;
     /* Makes the div span the full height of the container */
+
     color: rgb(47, 37, 27);
     /* Text color */
     display: flex;
@@ -55,7 +56,7 @@
     margin: 0% 1%;
     padding: 1% 2%;
     background-color: rgba(100, 50, 50, 0.75);
-    border: 3px solid rgba(82, 69, 55, 0.75);    
+    border: 3px solid rgba(82, 69, 55, 0.75);
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
@@ -74,7 +75,7 @@
     padding: 2% 2%;
     margin: 4% 0%;
     background-color: rgba(238, 202, 153, 0.75);
-    border: 3px solid rgba(82, 69, 55, 0.75);
+    border-color: rgba(82, 69, 55, 0.75);
     display: flex;
     flex-direction: column;
     align-items: center;

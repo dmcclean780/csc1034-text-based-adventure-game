@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../../css/default/generic.css">
     <link rel="stylesheet" href="../../../css/mobile/dungeons.css">
     <link rel="stylesheet" href="../../../css/mobile/generic.css">
-    <link rel="stylesheet" href="../../../css/forest.css">
+    <style>.main-container{background-color: rgb(86, 120, 19);}</style>
     <script src="../../../javascript/dungeons/foresaken_forest.js"></script>
 </head>
 
@@ -27,8 +27,9 @@
                     Continue?
                 </div>
                 <div class="options">
-                    <button id="option_1" onclick="window.location.href='riddle1.html';">Yes</button>
-                    <button id="option_1" onclick="window.location.href='page1.html';">No</button>
+                    <!--If riddle 1 is already completed, go to riddle 2-->
+                    <button class="button-option" id="option_1" onclick="window.location.href='riddle1.html';">Yes</button>
+                    <button class="button-option" id="option_1" onclick="window.location.href='page1.html';">No</button>
                 </div>
             </div>
         </div>

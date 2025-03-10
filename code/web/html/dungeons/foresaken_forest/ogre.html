@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../../css/default/generic.css">
     <link rel="stylesheet" href="../../../css/mobile/dungeons.css">
     <link rel="stylesheet" href="../../../css/mobile/generic.css">
-    <link rel="stylesheet" href="../../../css/forest.css">
+    <style>.main-container{background-color: rgb(86, 120, 19);}</style>
     <script src="../../../javascript/dungeons/foresaken_forest.js"></script>
     <script src="../../../javascript/components/timerBar.js"></script>
 </head>
@@ -27,9 +27,10 @@
                 </div>
                 <timer-bar id="timer-bar" duration="15"></timer-bar>
                 <div class="options">
-                    <button id="option_1" onclick="">Throw Rocks</button>
-                    <button id="option_1" onclick="">Use Ring</button>
-                    <button id="option_1" onclick="">Run Away</button>
+                    <button class="button-option" id="option_1" onclick="window.location.href='../../../html/generic/death.html';">Throw Rocks</button>
+                    <!--Success page depends on sphynx results-->
+                    <button class="button-option" id="option_1" onclick="window.location.href='success2.html';">Use Ring</button>
+                    <button class="button-option" id="option_1" onclick="window.location.href='../../../html/generic/death.html';">Run Away</button>
                 </div>
             </div>
         </div>

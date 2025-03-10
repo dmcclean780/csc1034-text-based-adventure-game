@@ -8,7 +8,7 @@ console.log(fullPath);
 console.log(actionName);
 
 document.addEventListener('DOMContentLoaded', function() {
-    const buttons = document.querySelectorAll('.button_option');
+    const buttons = document.querySelectorAll('.button-option');
 
     buttons.forEach(button => {
         button.addEventListener('click', function() 
@@ -23,6 +23,14 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 r1Decision(id);
             }
+            else if(baseName == "library_r2_")
+            {
+                r2Decision(id);
+            }
+            else if(baseName == "library_r3_")
+            {
+                r3Decision(id);
+            } 
         });
     });
 });
@@ -63,7 +71,6 @@ function r1Decision(r1Buttonid)
     {
         if(r1Buttonid == "option_1")
         {
-            console.log(1);
             window.location.href = folderPath + "library_r1_investigateBookcase.html";
         }
         else if(r1Buttonid == "option_2")
@@ -91,7 +98,7 @@ function r1Decision(r1Buttonid)
         }
         else if(r1Buttonid == "option_2")
         {
-            window.location.href = "/C:/Users/joshu/csc1034_group54/code/web/html/generic/death.html";
+            window.location.href = "../../../html/generic/death.html";
         }
     }
     else if(actionName == "investigateInkPot.html")
@@ -109,11 +116,11 @@ function r1Decision(r1Buttonid)
         }
         else if(r1Buttonid == "option_2")
         {
-            window.location.href = "/C:/Users/joshu/csc1034_group54/code/web/html/generic/death.html";
+            window.location.href = "../../../html/generic/death.html";
         }
         else if(r1Buttonid == "option_3")
         {
-            window.location.href = "/C:/Users/joshu/csc1034_group54/code/web/html/generic/death.html";
+            window.location.href = "../../../html/generic/death.html";
         }
     }
     else if(actionName == "book1Win.html")
@@ -123,7 +130,14 @@ function r1Decision(r1Buttonid)
             window.location.href = folderPath + "library_r1_nextRoom.html";
         }
     }
-    else if(actionName == "library_r1_nextRoom.html")
+    else if(actionName == "nextRoom.html")
+    {
+        if(r1Buttonid == "option_1")
+        {
+            window.location.href = folderPath + "library_r2_enter.html";
+        }
+    }
+    else if(actionName == "bookPeaceWin.html")
     {
         if(r1Buttonid == "option_1")
         {
@@ -131,3 +145,157 @@ function r1Decision(r1Buttonid)
         }
     }
 }
+
+function r2Decision(r2Buttonid)
+{
+    if(actionName == "enter.html")
+    {
+        if(r2Buttonid == "option_1")
+        {
+            window.location.href = folderPath + "library_r2_stepForwardBookcaseFall.html";
+        }
+        else if(r2Buttonid == "option_2")
+        {
+            window.location.href = folderPath + "library_r2_walkAroundBookcases.html";
+
+        }
+    }
+    else if(actionName == "stepForwardBookcaseFall.html")
+    {
+        if(r2Buttonid == "option_1")
+        {
+            window.location.href = "../../../html/generic/death.html";
+        }
+        else if(r2Buttonid == "option_2")
+        {
+            window.location.href = folderPath + "library_r2_diveBackwards.html";
+        }
+    }
+    else if(actionName == "diveBackwards.html")
+    {
+        if(r2Buttonid == "option_1")
+        {
+            window.location.href = folderPath + "library_r2_walkAroundBookcases.html";
+        }
+    }
+    else if(actionName == "walkAroundBookcases.html")
+    {
+        if(r2Buttonid == "option_1")
+        {
+            window.location.href = folderPath + "library_r2_approachBook.html";
+        }
+    }
+    else if(actionName == "approachBook.html")
+    {
+        if(r2Buttonid == "option_1")
+        {
+            window.location.href = folderPath + "library_r2_sliceStronger.html";
+        }
+        else if(r2Buttonid == "option_2")
+        {
+            window.location.href = folderPath + "library_r2_sliceWeaker.html";
+        }
+    }
+    else if(actionName == "sliceStronger.html")
+    {
+        if(r2Buttonid == "option_1")
+        {
+            window.location.href = folderPath + "library_r2_sliceWeaker.html";
+        }
+    }
+    else if(actionName == "sliceWeaker.html")
+    {
+        if(r2Buttonid == "option_1")
+        {
+            window.location.href = folderPath + "library_r2_BookReadWar.html";
+        }
+    }
+    else if(actionName == "bookWarWin.html")
+    {
+        if(r2Buttonid == "option_1")
+        {
+            window.location.href = folderPath + "library_r2_nextRoom.html";
+        }
+    }
+    else if(actionName == "nextRoom.html")
+    {
+        if(r2Buttonid == "option_1")
+        {
+            window.location.href = folderPath + "library_r3_entrance.html";
+        }
+        else if(r2Buttonid == "option_2")
+        {
+            window.location.href = folderPath + "library_r2_unlockGlassCage.html";
+        }
+    }
+    else if(actionName == "unlockGlassCage.html")
+    {
+        if(r2Buttonid == "option_1")
+        {
+            window.location.href = folderPath + "library_r3_entrance.html";
+        }
+    }
+}
+
+function r3Decision(r3Buttonid)
+{
+    if(actionName == "entrance.html")
+    {
+        if(r3Buttonid == "option_1")
+        {
+            document.getElementById("details").style.display = "none";
+            document.getElementById("input-box-container").style.display = "none";
+            document.getElementById("dialogue").style.display = "flex";
+            document.getElementById("background").style.display = "none";
+        }
+    }
+    else if(actionName == "bookDecision.html")
+    {
+        if(r3Buttonid == "option_1")
+        {
+            document.getElementById("details").style.display = "none";
+            document.getElementById("input-box-container").style.display = "none";
+            document.getElementById("dialogue").style.display = "flex";
+            document.getElementById("background").style.display = "none";
+        }
+        else if(r3Buttonid == "option_2")
+        {
+            window.location.href = folderPath + "library_r3_peaceChosen.html";
+        }
+    }
+    else if(actionName == "peaceChosen.html")
+        {
+            if(r3Buttonid == "option_1")
+            {
+                document.getElementById("details").style.display = "none";
+                document.getElementById("input-box-container").style.display = "none";
+                document.getElementById("dialogue").style.display = "flex";
+                document.getElementById("background").style.display = "none";
+            }
+        }
+    else if(actionName == "bookFinalWin.html")
+        {
+            if(r3Buttonid == "option_1")
+            {
+                document.getElementById("details").style.display = "none";
+                document.getElementById("input-box-container").style.display = "none";
+                document.getElementById("dialogue").style.display = "flex";
+                document.getElementById("background").style.display = "none";
+            }
+        }
+    else if(actionName == "calligraphousKillSpare.html")
+    {
+        if(r3Buttonid == "option_1")
+        {
+            document.getElementById("details").style.display = "none";
+            document.getElementById("input-box-container").style.display = "none";
+            document.getElementById("dialogue").style.display = "flex";
+            document.getElementById("background").style.display = "none";
+        }
+        else if(r3Buttonid == "option_2")
+        {
+            window.location.href = folderPath + "library_end_epilogue.html";
+        }
+    }
+}
+

@@ -12,33 +12,28 @@
 
 <body>
     <div class="main-container">
-        <img src="../../../images/library_dungeon/library-r1.png" alt="Library Room One Background" id="background">
+        <img src="../../../images/library_dungeon/library-outside.png" alt="Library Outside Background" id="background">
 
         <div id="input-box-container">
             <div class="details-box">
                 <div id="details">
-                    As you bring the torch to the bookcase, the books seem to move and slide away from the torch. 
-                    One of them slams at you in panic, knocking you to the ground <br> <br>
-                    You are now in a room with a bookcase that is now mostly empty. 
-                    The ink pot and quill moves on it's own, scribbling onto the pages of a book.
+                    You hold the book in your hand as it pulsates with power, Calligraphous has poured all his power into understanding this book to no avail... <br> <br>
+                    All Ill Ink has flown through this book at one point... <br> <br>
+                    If you severed the connection here, it would cause a chain reaction, curing the whole library.
                 </div>
             </div>
             <div class="input-box">
                 <div id="prompt">
-                    What do you do?
                 </div>
                 <div class="options">
-                    <!-- Takes you to library_outside_lookAround -->
-                    <button class="button-option" id="option_1" onclick="">Investigate the Ink Pot</button>
-
-                    <!-- Takes you to library_outside_lookAround -->
-                    <button class="button-option" id="option_2" onclick="">Try to torch a book</button>
+                    <button class="button-option" id="option_1" onclick="">Try to cure the Book.</button>
                 </div>
             </div>
-        </div>
+        </div>                                 
     </div>
+    
     <script src="../../../javascript/dungeons/library_dungeon/library.js"></script>
-
+    <script src="../../../javascript/components/dialogue.js"></script>
 </body>
 
 </html>

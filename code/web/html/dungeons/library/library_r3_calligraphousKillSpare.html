@@ -17,24 +17,34 @@
         <div id="input-box-container">
             <div class="details-box">
                 <div id="details">
-                    You pick the book up off the floor. <br> <br>
-                    [ 'Book of Peace' Get ] <br> <br>
-                    You feel a sense of accomplishment, and a sense of dread. <br>
-                    The room around you seems to be cleansed of the Ill Ink, and the door to the next room is now open. <br>
-                    You can feel the presence of the Ill Ink in the next room, and you know that you must be careful. <br>
+                    Calligraphous lies on the ground before you, his life at your mercy.
                 </div>
             </div>
             <div class="input-box">
                 <div id="prompt">
-                    Move to the next room?
+                    What do you do?
                 </div>
                 <div class="options">
-                    <button class="button-option" id="option_1" onclick="">Contiue</button>
+                    <button class="button-option" id="option_1" onclick="">Spare Calligraphous</button>
+                    <button class="button-option" id="option_2" onclick="">Kill Calligraphous</button>
                 </div>
             </div>
-        </div>                                              
+        </div>       
+        <dialogue-box id="dialogue" 
+            name="Calligraphous"
+            dialogue='["You fool! You thought I would help you? Ha!"]'
+            finishedSpeakingFunction="finishedSpeaking"
+            characterImage="../../../images/library_dungeon/calligraphous.png"
+        ></dialogue-box>
+        <script>
+            const finishedSpeaking = () => {
+                window.location.href = "../../../html/generic/death.html";
+            }
+        </script>                             
     </div>
+    
     <script src="../../../javascript/dungeons/library_dungeon/library.js"></script>
+    <script src="../../../javascript/components/dialogue.js"></script>
 
 </body>
 

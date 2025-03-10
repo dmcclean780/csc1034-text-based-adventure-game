@@ -17,26 +17,23 @@
         <div id="input-box-container">
             <div class="details-box">
                 <div id="details">
-                    As you bring the torch to the bookcase, the books seem to move and slide away from the torch. 
-                    One of them slams at you in panic, knocking you to the ground <br> <br>
-                    You are now in a room with a bookcase that is now mostly empty. 
-                    The ink pot and quill moves on it's own, scribbling onto the pages of a book.
+                    Slicing the smaller, weaker tendrils, they cleanly fall to the ground, as more ink threatens to take it's place <br> <br>
+                    The book is open now, you can almost read it's text... if it wasn't being overcome with ink like before...
                 </div>
             </div>
             <div class="input-box">
                 <div id="prompt">
-                    What do you do?
+                    
                 </div>
+                <timer-bar id="timer-bar" duration="10"></timer-bar>
                 <div class="options">
-                    <!-- Takes you to library_outside_lookAround -->
-                    <button class="button-option" id="option_1" onclick="">Investigate the Ink Pot</button>
-
-                    <!-- Takes you to library_outside_lookAround -->
-                    <button class="button-option" id="option_2" onclick="">Try to torch a book</button>
+                    <!-- Takes you to room1 -->
+                    <button class="button-option" id="option_1" onclick="">Bring the Quill to the Book</button>
                 </div>
             </div>
         </div>
     </div>
+    <script src="../../../javascript/components/timerBar.js"></script>
     <script src="../../../javascript/dungeons/library_dungeon/library.js"></script>
 
 </body>

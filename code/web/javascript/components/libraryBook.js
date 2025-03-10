@@ -2,7 +2,7 @@ let fullPath = window.location.pathname;
 
 class LibraryBook extends HTMLElement {
     static get observedAttributes() {
-        return ["content", "contentTitle"];
+        return ["content", "contentTitle", "nextScreen", "scoreNeeded"];
     }
 
     constructor() {
@@ -12,11 +12,14 @@ class LibraryBook extends HTMLElement {
         // Default attributes
         this.content = this.getAttribute("content") || "";
         this.contentTitle = this.getAttribute("contentTitle") || "";
+        this.nextScreen = this.getAttribute("nextScreen");
 
         // Initialize score variables
         this.scoreCurrent = 0;
-        this.scoreNeeded = 5; // Set the required score
-        this.livesRemaining = 3;  // Initial lives
+        this.scoreNeeded = this.getAttribute("scoreNeeded") || 5;
+        this.livesRemaining = 3;
+
+        this.fileRel = "../../../";
 
         this.render();
     }
@@ -246,7 +249,7 @@ class LibraryBook extends HTMLElement {
         inkImages.forEach((inkImage, index) => {
             if (inkImage) {
                 inkImage.addEventListener('click', () => {
-                    if (inkImage.style.opacity > 0) {     
+                    if (inkImage.style.opacity > 0 && inkImage.style.opacity != 1) {     
                         inkImage.style.opacity = 0;  // Immediately hide the clicked ink blot
 
                         // Clear any ongoing opacity animation
@@ -257,7 +260,7 @@ class LibraryBook extends HTMLElement {
                         this.scoreCurrent++;  // Increase the score
                         this.shadowRoot.querySelector("#score").textContent = `${this.scoreCurrent} / ${this.scoreNeeded}`;
                         if(this.scoreCurrent >= this.scoreNeeded) {
-                            window.location.href = "/C:/Users/joshu/csc1034_group54/code/web/html/dungeons/library/library_r1_book1Win.html";
+                            window.location.href = this.fileRel.concat("","html/dungeons/library/" + this.nextScreen);
                         }
 
                         // Random delay before showing a new ink blot
@@ -266,7 +269,9 @@ class LibraryBook extends HTMLElement {
                         setTimeout(() => {
                             this.spawnRandomInk();  // Show new ink after delay
                         }, delay);
-                    } else {
+                    } 
+                    else if(inkImage.style.opacity != 1) 
+                    {
                         this.updateLives(); // Update lives on wrong click
                     }
                 });
@@ -274,7 +279,7 @@ class LibraryBook extends HTMLElement {
         });
     }
 
-    spawnRandomInk() {
+    spawnRandomInk(fileRel) {
         const inkImages = [...this.shadowRoot.querySelectorAll(".ink-image")];
         const randomIndex = Math.floor(Math.random() * inkImages.length);
         const inkImage = inkImages[randomIndex];
@@ -329,14 +334,14 @@ class LibraryBook extends HTMLElement {
         if (this.livesRemaining === 0) 
         {
             setTimeout(() => {
-                this.gameOver();
+                this.gameOver(this.fileRel);
             }, 500);
         }
     }
 
-    gameOver() {
+    gameOver(fileRel) {
         console.log("Game over!");
-        window.location.href = "/C:/Users/joshu/csc1034_group54/code/web/html/generic/death.html";
+        window.location.href = fileRel.concat("","html/generic/death.html");
     }
 }
 

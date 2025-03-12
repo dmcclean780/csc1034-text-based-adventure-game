@@ -1,4 +1,9 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Jersey+10&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+
 @media (min-width: 600px) {
+
 #input-box-container {
     position: absolute;
     /* Positions the div relative to the container */
@@ -10,18 +15,21 @@
     /* Makes the div span the full width of the container */
     height: 90%;
     /* Makes the div span the full height of the container */
-    color: white;
+
+    color: rgb(47, 37, 27);
     /* Text color */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-family: 'Jersey 10', sans-serif;
     align-items: center;
 }
 
 .input-box {
     width: 66%;
-    padding: 20px 20px;
-    background-color: rgba(256, 0, 0, 0.75);
+    padding: 2% 2%;
+    background-color: rgba(238, 202, 153, 0.75);
+    border: 3px solid rgba(82, 69, 55, 0.75);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,43 +38,55 @@
 
 #prompt {
     font-size: 1.5em;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .options{
-    margin-top: 40px;
-    margin-bottom: 10px;
+    margin-top: 4%;
+    margin-bottom: 1%;
     width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    overflow-x: auto;
 }
 
-#option_1, #option_2 {
-    width: 40%;
-    padding: 10px 20px;
-    background-color: rgba(0, 0, 256, 0.75);
+.button-option {
+    flex: 1;
+    margin: 0% 1%;
+    padding: 1% 2%;
+    background-color: rgba(100, 50, 50, 0.75);
+    border: 3px solid rgba(82, 69, 55, 0.75);
+    border-radius: 10px;
     text-align: center;
     cursor: pointer;
-    font-size: 1.25em;
+    font-size: 1.5em;
     color: white;
-    font-weight: bold;
 }
+
+.button-option:hover{
+    background-color: rgba(199, 120, 54, 0.75);
+    border-color:rgba(157, 92, 22, 0.75) ;
+}
+
 
 .details-box {
     width: 66%;
-    padding: 20px 20px;
-    margin: 40px 0px;
-    background-color: rgba(256, 0, 0, 0.75);
+    padding: 2% 2%;
+    margin: 4% 0%;
+    background-color: rgba(238, 202, 153, 0.75);
+    border-color: rgba(82, 69, 55, 0.75);
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 10px;
+    max-height: 30%;
+    overflow-y: auto;
 }
 
 #details {
     font-size: 1.5em;
-    margin-bottom: 20px;
+    margin-bottom: 2%;
     text-align: center;
 }
 }

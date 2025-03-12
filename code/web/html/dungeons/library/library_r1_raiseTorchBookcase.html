@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Library's Lament</title>
+    <link rel="stylesheet" href="../../../css/default/dungeons.css">
+    <link rel="stylesheet" href="../../../css/default/generic.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet"></head>
+</head>
+
+<body>
+    <div class="main-container">
+        <img src="../../../images/library_dungeon/library-r1.png" alt="Library Room One Background" id="background">
+
+        <div id="input-box-container">
+            <div class="details-box">
+                <div id="details">
+                    As you bring the torch to the bookcase, the books seem to move and slide away from the torch. 
+                    One of them slams at you in panic, knocking you to the ground <br> <br>
+                    You are now in a room with a bookcase that is now mostly empty. 
+                    The ink pot and quill moves on it's own, scribbling onto the pages of a book.
+                </div>
+            </div>
+            <div class="input-box">
+                <div id="prompt">
+                    What do you do?
+                </div>
+                <div class="options">
+                    <!-- Takes you to library_outside_lookAround -->
+                    <button class="button-option" id="option_1" onclick="">Investigate the Ink Pot</button>
+
+                    <!-- Takes you to library_outside_lookAround -->
+                    <button class="button-option" id="option_2" onclick="">Try to torch a book</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../../javascript/dungeons/library_dungeon/library.js"></script>
+
+</body>
+
+</html>

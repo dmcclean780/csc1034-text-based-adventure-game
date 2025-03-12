@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Foresaken Forest</title>
+    <link rel="stylesheet" href="../../../css/default/dungeons.css">
+    <link rel="stylesheet" href="../../../css/default/generic.css">
+    <link rel="stylesheet" href="../../../css/mobile/dungeons.css">
+    <link rel="stylesheet" href="../../../css/mobile/generic.css">
+    <style>.main-container{background-color: rgb(86, 120, 19);}</style>
+    <script src="../../../javascript/dungeons/foresaken_forest.js"></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <div id="input-box-container">
+            <div class="details-box">
+                <div id="details">
+                    You approach the sphynx.
+                    The sphynx will ask you two riddles and you must present her with items.
+                    She will use these items to help her create a weapon for you to defeat the ogre with.
+                    But beware, if you present her with the wrong items, your weapon will be weakened.
+                </div>
+            </div>
+            <div class="input-box">
+                <div id="prompt">
+                    Continue?
+                </div>
+                <div class="options">
+                    <!--If riddle 1 is already completed, go to riddle 2-->
+                    <button class="button-option" id="option_1" onclick="window.location.href='riddle1.html';">Yes</button>
+                    <button class="button-option" id="option_1" onclick="window.location.href='page1.html';">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

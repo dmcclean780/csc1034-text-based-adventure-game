@@ -3,5 +3,5 @@ function proceed(){
 }
 
 function leave(){
-    window.location.href = "../../index.html";
+    window.location.href = "../../../index.html";
 }

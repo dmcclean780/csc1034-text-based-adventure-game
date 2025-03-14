@@ -33,6 +33,31 @@ body {
     /* Just for visualization */
 }
 
+main {
+    position: relative;
+    /* Makes the container the reference for absolute positioning */
+    display: inline-block;
+    /* Ensures the container wraps around the image */
+
+    aspect-ratio: 4 / 3;
+    /* Maintain 4:3 aspect ratio */
+    max-width: 100%;
+    /* Ensure it doesn't exceed the container's width */
+    max-height: 100%;
+    /* Ensure it doesn't exceed the container's height */
+    width: auto;
+    /* Allow width to adjust based on height */
+    height: auto;
+    /* Allow height to adjust based on width */
+    /* Additional constraints to handle height or width limits */
+    width: min(100%, calc(100vh * (4 / 3)));
+    /* Constrain width based on viewport height */
+    height: min(100%, calc(100vw * (3 / 4)));
+    /* Constrain height based on viewport width */
+
+    background-color: black;
+}
+
 .death-header {
     font-size: 10em;
     color: rgb(182, 11, 11);

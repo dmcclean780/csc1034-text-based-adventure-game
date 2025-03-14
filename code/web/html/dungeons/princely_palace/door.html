@@ -2,18 +2,20 @@
 <html>
 
 <head>
-    <title>Palace Entrance</title>
+    <title>Starter Dungeon</title>
+    <link rel="stylesheet" href="../../../css/mobile/dungeons.css">
     <link rel="stylesheet" href="../../../css/default/dungeons.css">
+    <link rel="stylesheet" href="../../../css/mobile/generic.css">
     <link rel="stylesheet" href="../../../css/default/generic.css">
-    <script src="../../../javascript/dungeons/princely_palace/door.js"></script>
     
 </head>
 
 <body>
     <div class="main-container">
+
             <img src="../../../images/princely_palace/start/golden palace background.png" alt="Dungeon Background" id="background">
 
-            <div class="input-box-container">
+            <div id="input-box-container">
                 <div class="details-box">
                     <div id="details">
                         The door is locked.
@@ -21,7 +23,7 @@
                 </div>
                 <div class="input-box">
                     <div id="prompt">
-                        WHAT WILL YOU DO?
+
                     </div>
                     <div class="options">
                         <button class="button" onclick="backward()">GO BACK</button>
@@ -29,6 +31,7 @@
                 </div>
             </div>
     </div>
+    <script src="../../../javascript/dungeons/princely_palace/door.js"></script>
 </body>
 
 </html>

@@ -67,6 +67,11 @@
     border-color:rgba(157, 92, 22, 0.75) ;
 }
 
+.button:hover{
+    background-color:rgba(199, 120, 54, 0.75);
+    border-color:rgb(157, 92, 22);
+}
+
 .details-box {
     width: 66%;
     padding: 2% 2%;

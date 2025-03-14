@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../../css/default/styling.css">
+</head>
+<body>
+    <div class="wrapper">
+        <main>
+            <div class="main-column">
+                <div id="loginContainer" class="form-container">
+                    <h1>Login</h1>
+                    <p>Enter your username and password to continue.</p>
+                    <form id="loginForm">
+                        <label>Username:
+                            <input type="text" id="username" name="username" required>
+                        </label>
+                        <label>Password:
+                            <div class="password-container">
+                                <input type="password" id="password" name="password" required>
+                                <button type="button" id="toggle-password" class="password-toggle-btn">Show</button>
+                            </div>
+                        </label>
+                        <button type="submit">Login</button>
+                    </form>
+                    <p id="loginMessage"></p>
+                    <p>Don't have an account? <br><a href="#" onclick="toggleForms()">Register here</a></p>
+                </div>
+
+                <div id="registerContainer" class="form-container hidden">
+                    <h2>Register a New Account</h2>
+                    <form id="registerForm">
+                        <label>Username:
+                            <input type="text" id="regUsername" name="regUsername" required>
+                        </label>
+                        <label>Password:
+                            <div class="password-container">
+                                <input type="password" id="regPassword" name="regPassword" required>
+                                <button type="button" id="toggle-reg-password" class="password-toggle-btn">Show</button>
+                            </div>
+                        </label>
+                        <label>Confirm Password:
+                            <div class="password-container">
+                                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                                <button type="password" id="toggle-confirm-password" class="password-toggle-btn">Show</button>
+                            </div>
+                        </label>
+                        <button type="submit">Register</button>
+                    </form>
+                    <p id="registerMessage"></p>
+                    <p>Already have an account? <br><a href="#" onclick="toggleForms()">Login here</a></p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../../javascript/login/login.js"></script> <!-- Add the new script here -->
+    <script src="../../javascript/login/utils.js"></script> <!-- Add the new script here -->
+
+</body>
+</html>

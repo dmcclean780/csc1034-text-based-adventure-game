@@ -2,7 +2,7 @@ let fullPath = window.location.pathname;
 
 class LibraryBook extends HTMLElement {
     static get observedAttributes() {
-        return ["content", "contentTitle", "nextScreen", "scoreNeeded", "fileRel", "livesRemaining"];
+        return ["content", "contentTitle", "scoreNeeded", "fileRel", "livesRemaining", "bookFunction"];
     }
 
     constructor() {
@@ -10,14 +10,15 @@ class LibraryBook extends HTMLElement {
         this.attachShadow({ mode: "open" });
 
         // Default attributes
-        this.content = this.getAttribute("content") || "";
-        this.contentTitle = this.getAttribute("contentTitle") || "";
-        this.nextScreen = this.getAttribute("nextScreen");
+        this.content = this.getAttribute("content") || "blah";
+        this.contentTitle = this.getAttribute("contentTitle");
 
         // Initialize score variables
         this.scoreCurrent = 0;
         this.scoreNeeded = this.getAttribute("scoreNeeded") || 5;
         this.livesRemaining = this.getAttribute("livesRemaining") || 3;
+
+        this.bookFunction = this.getAttribute("bookFunction") || "";
 
         this.fileRel = this.getAttribute("fileRel") || "../../../";
 
@@ -30,7 +31,28 @@ class LibraryBook extends HTMLElement {
     }
 
     render() {
-        this.content = this.content.split("|");
+        // Default attributes
+        this.content = this.getAttribute("content") || "blah";
+        this.contentTitle = this.getAttribute("contentTitle");
+
+        // Initialize score variables
+        this.scoreCurrent = 0;
+        this.scoreNeeded = this.getAttribute("scoreNeeded") || 5;
+        this.livesRemaining = this.getAttribute("livesRemaining") || 3;
+
+        this.bookFunction = this.getAttribute("bookFunction") || "";
+
+        this.fileRel = this.getAttribute("fileRel") || "../../";
+
+
+        if (Array.isArray(this.content)) {
+            console.warn("this.content is an array, joining elements into a string.");
+            this.content = this.content.join("|"); // Join the array into a single string with '|' separator
+        }
+        
+        if (typeof this.content === "string") {
+            this.content = this.content.split("|"); // Now you can safely split it into an array
+        }
 
         this.shadowRoot.innerHTML = `
             <style>
@@ -249,8 +271,12 @@ class LibraryBook extends HTMLElement {
             this.scoreCurrent++;  // Increase the score
             this.shadowRoot.querySelector("#score").textContent = `${this.scoreCurrent} / ${this.scoreNeeded}`;
             
-            if (this.scoreCurrent >= this.scoreNeeded) {
-                window.location.href = this.fileRel.concat("", "html/dungeons/library/" + this.nextScreen);
+            if (this.scoreCurrent >= this.scoreNeeded) 
+            {
+                let str = this.bookFunction;
+                console.log(str);
+                let func = eval(str);
+                func();
                 return;
             }
     

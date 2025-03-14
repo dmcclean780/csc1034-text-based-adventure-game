@@ -1,0 +1,6 @@
+CREATE TABLE users (
+    userId INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    pw VARCHAR(255) NOT NULL, -- Stored in plain text
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

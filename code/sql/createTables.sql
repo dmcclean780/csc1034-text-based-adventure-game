@@ -27,7 +27,7 @@ CREATE TABLE npcs
     FOREIGN KEY
         (npcID) REFERENCES npcs
         (id)
-);
+); 
 
         CREATE TABLE areas
         (

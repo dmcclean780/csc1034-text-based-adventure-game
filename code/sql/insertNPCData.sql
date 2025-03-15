@@ -66,7 +66,7 @@ VALUES
      '(() => { loadNextDecision(1, 3); })'),
   
   ('Calligraphous',
-    'images/library_dungeon/calligraphous.png',
+    'images/npc/calligraphous.png',
     '["WHO DISTURBS MY READINGS?", 
             "Well, well, well, who might you be?", 
             "...not much talking? Well then... I see you have brought two books here for me", 
@@ -74,22 +74,22 @@ VALUES
             '(() => { loadNextDecision(3, 23); })'),
 
   ('Calligraphous',
-      'images/library_dungeon/calligraphous.png',
+      'images/npc/calligraphous.png',
       '["So you wish to aid me then? Interesting...", "Here, give this a read, I cannot understand it"]',
               '(() => { loadNextDecision(3, 24); })'),
 
   ('Calligraphous',
-      'images/library_dungeon/calligraphous.png',
+      'images/npc/calligraphous.png',
       '["Very well then. Have it your way."]',
                 '(() => { goToDeathScreen("Calligraphous killed you"); })'),
                 
   ('Calligraphous',
-      'images/library_dungeon/calligraphous.png',
+      'images/npc/calligraphous.png',
       '["You fool! You thought I would help you? Ha!"]',
                 '(() => { goToDeathScreen("Calligraphous killed you"); })'),
                 
    ('Calligraphous',
-      'images/library_dungeon/calligraphous.png',
+      'images/npc/calligraphous.png',
       '["Please! I did not want to hurt you!", "Listen... I can teach you!", "It does not need to end like this!"]',
                 '(() => { loadNextDecision(3, 27); })');
 

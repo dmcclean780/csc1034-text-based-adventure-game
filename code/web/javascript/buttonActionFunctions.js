@@ -39,9 +39,5 @@ function disableButton(event) {
 }
 
 function goToMap() {
-<<<<<<< HEAD
-    window.location.href = "../map.html";
-=======
     window.location.href = pathToRoot +"html/map.html";
->>>>>>> main
 }

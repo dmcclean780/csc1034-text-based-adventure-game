@@ -1,34 +1,29 @@
 
 
-CREATE TABLE npcs
-(
-    id INT
-    AUTO_INCREMENT PRIMARY KEY,
-        name CHAR
-    (20) NOT NULL,
-        imageFilePath Char
-    (50) NOT NULL,
-        firstDialogue TEXT
-    (1000) NOT NULL,
-        onFirstDialogueEnd TEXT
-    (1000) NOT NULL
+    CREATE TABLE npcs
+    (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name CHAR(20) NOT NULL,
+        imageFilePath Char(50) NOT NULL,
+        firstDialogue TEXT(1000) NOT NULL,
+        onFirstDialogueEnd TEXT(1000) NOT NULL
     );
 
     CREATE TABLE map(
-            worldName CHAR(20) NOT NULL,
-            rowSize INT NOT NULL,
-            colSize INT NOT NULL,
-            PRIMARY KEY (worldName)
-        )
+        worldName CHAR(20) NOT NULL,
+        rowSize INT NOT NULL,
+        colSize INT NOT NULL,
+        PRIMARY KEY (worldName)
+    )
 
-        CREATE TABLE areas
-        (
-            id INT NOT NULL PRIMARY KEY,
-            name CHAR(20) NOT NULL,
-            rowPosition INT NOT NULL,
-            colPosition INT NOT NULL,
-            ableToVisitCondition TEXT(1000) NOT NULL
-        );
+    CREATE TABLE areas
+    (
+        id INT NOT NULL PRIMARY KEY,
+        name CHAR(20) NOT NULL,
+        rowPosition INT NOT NULL,
+        colPosition INT NOT NULL,
+        ableToVisitCondition TEXT(1000) NOT NULL
+    );
 
     CREATE TABLE decisions
     (

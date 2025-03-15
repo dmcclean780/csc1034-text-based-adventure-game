@@ -1,17 +1,17 @@
 
 
-    CREATE TABLE npcs
-    (
-        id INT
-        AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE npcs
+(
+    id INT
+    AUTO_INCREMENT PRIMARY KEY,
         name CHAR
-        (20) NOT NULL,
+    (20) NOT NULL,
         imageFilePath Char
-        (50) NOT NULL,
+    (50) NOT NULL,
         firstDialogue TEXT
-        (1000) NOT NULL,
+    (1000) NOT NULL,
         onFirstDialogueEnd TEXT
-        (1000) NOT NULL
+    (1000) NOT NULL
     );
 
     CREATE TABLE areas
@@ -120,7 +120,6 @@
         id INT NOT NULL,
         areaID INT NOT NULL,
         npcID INT NOT NULL,
-
         PRIMARY KEY (id, areaID),
         FOREIGN KEY (npcID) REFERENCES npcs(id),
         FOREIGN KEY (id) REFERENCES decisions(id)
@@ -131,4 +130,13 @@
         worldName CHAR(20) NOT NULL PRIMARY KEY,
         rowSize INT NOT NULL,
         colSize INT NOT NULL
+    );
+
+    CREATE TABLE users
+    (
+        username VARCHAR(50) UNIQUE NOT NULL,
+        pass VARCHAR(255) NOT NULL,
+        -- Stored in plain text
+
+        PRIMARY KEY (username)
     );

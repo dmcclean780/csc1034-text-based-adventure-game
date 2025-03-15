@@ -15,7 +15,7 @@ VALUES
         'As you approach the library, you see what Paige told you about, black sludge seeps out of the door. &#10;
                     The &#39;Ill Ink&#39;, she had called it. You can feel the dark energy emanating from the building.',
         'Enter the Library?',
-        'images/library_dungeon/library-outside.png',
+        'images/backgrounds/library-outside.png',
         FALSE,
         FALSE,
         FALSE,
@@ -33,7 +33,7 @@ VALUES
                     The air is thick with the smell of decay. This place meant a great deal to Paige.
                     Now, however, it is a place of darkness and despair. Covered in the &#39;Ill Ink&#39;, the library is a shadow of its former self.',
         'Enter the Library?',
-        'images/library_dungeon/library-outside.png',
+        'images/backgrounds/library-outside.png',
         FALSE,
         FALSE,
         FALSE,
@@ -53,7 +53,7 @@ VALUES
                     The door further into the library is blocked a bookcase covered in ink.
                     You see a small table with an Ink Pot on it.',
         'Enter the Library?',
-        'images/library_dungeon/library-r1.png',
+        'images/backgrounds/library-r1.png',
         FALSE,
         FALSE,
         FALSE,
@@ -70,7 +70,7 @@ VALUES
                     Each book in the bookcase seems to be be writhing with a life of its own. There seems to be no way past the bookcase as it is.&#10;&#10;
                     The ink pot on the table is glowing with a strange light.',
         'Enter the Library?',
-        'images/library_dungeon/library-r1.png',
+        'images/backgrounds/library-r1.png',
         FALSE,
         FALSE,
         FALSE,
@@ -88,7 +88,7 @@ VALUES
                     You are now in a room with a bookcase that is now mostly empty. 
                     The ink pot and quill moves on it&#39;s own, scribbling onto the pages of a book.',
         'What do you do?',
-        'images/library_dungeon/library-r1.png',
+        'images/backgrounds/library-r1.png',
         FALSE,
         FALSE,
         FALSE,
@@ -105,7 +105,7 @@ VALUES
         The information in the book seems to be changing as the Quill writes.&#10;&#10;
         It&#39;s as though the Quill is taking in the information from the book and rewriting it from memory.',
         'What do you do?',
-        'images/library_dungeon/library-r1.png',
+        'images/backgrounds/library-r1.png',
         FALSE,
         FALSE,
         FALSE,
@@ -122,7 +122,7 @@ VALUES
         The Quill, attempting to continue it&#39;s goal, moves a book into your hands, flowing ink onto the page.&#10;&#10;
         You can take matters into your own hands, and attempt to write with the Quill, or you can let it continue to write on its own.',
         'What do you do?',
-        'images/library_dungeon/library-r1.png',
+        'images/backgrounds/library-r1.png',
         FALSE,
         FALSE,
         FALSE,
@@ -137,7 +137,7 @@ VALUES
         3,
         '',
         '',
-        'images/library_dungeon/library-r1.png',
+        'images/backgrounds/library-r1.png',
         FALSE,
         FALSE,
         FALSE,
@@ -153,7 +153,7 @@ VALUES
         'Successfully removing the Ill Ink from the book, it falls to the floor in front of you.&#10;&#10;
                     It is a small green book with with the word &#39;Peace&#39; written on the cover in gold lettering.',
         'What do you do?',
-        'images/library_dungeon/library-r1.png',
+        'images/backgrounds/library-r1.png',
         FALSE,
         FALSE,
         FALSE,
@@ -172,7 +172,7 @@ VALUES
         The room around you seems to be cleansed of the Ill Ink, and the door to the next room is now open. &#10;  
         You can feel the presence of the Ill Ink in the next room, and you know that you must be careful.',
         'What do you do?',
-        'images/library_dungeon/library-r1.png',
+        'images/backgrounds/library-r1.png',
         FALSE,
         FALSE,
         FALSE,
@@ -189,7 +189,7 @@ VALUES
         You see a Book on a lectern in centre of room, all of the ink seems to be flowing in and out of this book, lighter strands of ink flow into the book &#10; &#10;  
         Two bookcases form a corridor to the middle of the room, they look unstable.',
         'What do you do?',
-        'images/library_dungeon/library-r2.png',
+        'images/backgrounds/library-r2.png',
         FALSE,
         FALSE,
         FALSE,
@@ -206,7 +206,7 @@ VALUES
         You are only a fifth of the way along these bookcases&#10;&#10;  
         They will fall on you if you don&#39;t act fast!  ',
         'What do you do?',
-        'images/library_dungeon/library-r2.png',
+        'images/backgrounds/library-r2.png',
         FALSE,
         FALSE,
         FALSE,
@@ -222,7 +222,7 @@ VALUES
         'As you dive backwards, the bookcases collapse down into the centre of the room in a heap&#10;&#10;  
         They surely would have killed you if they fell on you.',
         'What do you do?',
-        'images/library_dungeon/library-r2.png',
+        'images/backgrounds/library-r2.png',
         FALSE,
         FALSE,
         FALSE,
@@ -238,7 +238,7 @@ VALUES
         'Stepping to the side of the bookcases, they collapse down into the centre of the room in a heap&#10;&#10;  
         They surely would have killed you if they fell on you.',
         'What do you do?',
-        'images/library_dungeon/library-r2.png',
+        'images/backgrounds/library-r2.png',
         FALSE,
         FALSE,
         FALSE,
@@ -254,7 +254,7 @@ VALUES
         'Stepping to the side of the bookcases, they collapse down into the centre of the room in a heap&#10;&#10;  
         They surely would have killed you if they fell on you.',
         'What do you do?',
-        'images/library_dungeon/library-r2.png',
+        'images/backgrounds/library-r2.png',
         FALSE,
         FALSE,
         FALSE,
@@ -270,7 +270,7 @@ VALUES
         'Digging your sword into the thicker tendrils surrounding the book, more ink takes it&#39;s place&#10;&#10;  
         These appendages are too strong to be beaten like this...',
         'What do you do?',
-        'images/library_dungeon/library-r2.png',
+        'images/backgrounds/library-r2.png',
         FALSE,
         FALSE,
         FALSE,
@@ -286,7 +286,7 @@ VALUES
         'Slicing the smaller, weaker tendrils, they cleanly fall to the ground, as more ink threatens to take it&#39;s place&#10;&#10;  
         The book is open now, you can almost read it&#39;s text... if it wasn&#39;t being overcome with ink like before...',
         'What do you do?',
-        'images/library_dungeon/library-r2.png',
+        'images/backgrounds/library-r2.png',
         FALSE,
         FALSE,
         FALSE,
@@ -301,7 +301,7 @@ VALUES
         3,
         '',
         '',
-        'images/library_dungeon/library-r2.png',
+        'images/backgrounds/library-r2.png',
         FALSE,
         FALSE,
         FALSE,
@@ -317,7 +317,7 @@ VALUES
         'Successfully removing the Ill Ink from the book, it falls to the floor in front of you.&#10;&#10;  
         It is a small red book with with the word &#39;War&#39; written on the cover in gold lettering.  ',
         'What do you do?',
-        'images/library_dungeon/library-r2.png',
+        'images/backgrounds/library-r2.png',
         FALSE,
         FALSE,
         FALSE,
@@ -336,7 +336,7 @@ VALUES
         The room around you seems to be cleansed of the Ill Ink, and the door to the next room is now open.&#10;  
         A locked glass case with a book inside',
         'What do you do?',
-        'images/library_dungeon/library-r2.png',
+        'images/backgrounds/library-r2.png',
         FALSE,
         FALSE,
         FALSE,
@@ -354,7 +354,7 @@ VALUES
         You feel a sense of accomplishment, and a sense of dread. <br>
         The library is definitely safer, but not all of this power has been cleansed yet. <br>',
         'What do you do?',
-        'images/library_dungeon/library-r2.png',
+        'images/backgrounds/library-r2.png',
         FALSE,
         FALSE,
         FALSE,
@@ -370,7 +370,7 @@ VALUES
         'You stand in front of a large door into the final room of the library, the fluttering of hundreds of pages can be heard behind the door <br> <br>
         As you step forward... a floorboard creaks below you.',
         'What do you do?',
-        'images/library_dungeon/library-r3.png',
+        'images/backgrounds/library-r3.png',
         FALSE,
         FALSE,
         TRUE,
@@ -388,7 +388,7 @@ VALUES
         or War...&#10;&#10;  
         Make this decision wisely... he is a powerful sorcerer, you would likely not be able to best him in combat... not in conventional ways, anyway.',
         'What do you do?',
-        'images/library_dungeon/library-r3.png',
+        'images/backgrounds/library-r3.png',
         FALSE,
         FALSE,
         TRUE,
@@ -405,7 +405,7 @@ VALUES
         All Ill Ink has flown through this book at one point...&#10;&#10;  
         If you severed the connection here, it would cause a chain reaction, curing the whole library.  ',
         'What do you do?',
-        'images/library_dungeon/library-r3.png',
+        'images/backgrounds/library-r3.png',
         FALSE,
         FALSE,
         FALSE,
@@ -420,7 +420,7 @@ VALUES
         3,
         '',
         '',
-        'images/library_dungeon/library-r3.png',
+        'images/backgrounds/library-r3.png',
         FALSE,
         FALSE,
         FALSE,
@@ -437,7 +437,7 @@ VALUES
         Every piece of ink from the walls to the floors shudders in pain, trying to escape.&#10;  
         Calligraphous falls to the floor in a panic, his powers failing him as you draw your sword to his neck.&#10;',
         'What do you do?',
-        'images/library_dungeon/library-r3.png',
+        'images/backgrounds/library-r3.png',
         FALSE,
         FALSE,
         TRUE,
@@ -452,7 +452,7 @@ VALUES
         3,
         'Calligraphous lies on the ground before you, his life at your mercy.',
         'What do you do?',
-        'images/library_dungeon/library-r3.png',
+        'images/backgrounds/library-r3.png',
         FALSE,
         FALSE,
         TRUE,
@@ -467,7 +467,7 @@ VALUES
         3,
         'Calligraphous snatches the book as you hand it to him.',
         'What do you do?',
-        'images/library_dungeon/library-r3.png',
+        'images/backgrounds/library-r3.png',
         FALSE,
         FALSE,
         TRUE,
@@ -484,7 +484,7 @@ VALUES
         He dies instantly as blood floods onto the floor.&#10;  
         Looking around, you can see the library a bit clearer now, books are still thrown all over the floor, and bookcases are mostly empty, but the Ill Ink has been completely removed from this place.&#10;',
         'What do you do?',
-        'images/library_dungeon/library-r3.png',
+        'images/backgrounds/library-r3.png',
         FALSE,
         FALSE,
         FALSE,

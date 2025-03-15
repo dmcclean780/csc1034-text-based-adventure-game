@@ -140,3 +140,10 @@ CREATE TABLE npcs
             FOREIGN KEY (npcID) REFERENCES npcs(id),
             FOREIGN KEY (id) REFERENCES decisions(id)
         );
+
+        CREATE TABLE users (
+            username VARCHAR(50) UNIQUE NOT NULL,
+            pass VARCHAR(255) NOT NULL, -- Stored in plain text
+
+            PRIMARY KEY (username)
+        );

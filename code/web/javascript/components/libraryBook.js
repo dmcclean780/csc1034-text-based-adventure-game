@@ -1,5 +1,3 @@
-let fullPath = window.location.pathname;
-
 class LibraryBook extends HTMLElement {
     static get observedAttributes() {
         return ["content", "contentTitle", "scoreNeeded", "fileRel", "livesRemaining", "bookFunction"];

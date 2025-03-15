@@ -2,7 +2,7 @@
 //loadSettings() will be called in the settings page and set the setting obj state according to the sql
 
 let settings = {
-    doTextAnimations: false,
+    doTextAnimations: true,
     textAnimationSpeed: 30, //controlled by slider with values 20 - 70
 }
 

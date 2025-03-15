@@ -29,9 +29,6 @@ async function buildDecision(decisionData) {
     } catch (e) {
         console.log("No drag drop game to remove");
     }
-<<<<<<< HEAD
-    
-=======
     try {
         document.getElementById("library-book").remove();
     } catch (e) {
@@ -41,7 +38,6 @@ async function buildDecision(decisionData) {
 
     document.getElementById("details").style.display = "flex";
     document.getElementById("input-box-container").style.display = "flex";
->>>>>>> main
 
 
     document.getElementById("details").innerHTML = decisionData.details;
@@ -167,10 +163,7 @@ function buildLibraryBook(decisionData){
     libraryBook.setAttribute("livesRemaining", decisionData.bookTotalLives);
     libraryBook.setAttribute("bookFunction", decisionData.bookFunction);
 
-<<<<<<< HEAD
-=======
     main.appendChild(libraryBook);
     libraryBook.render();
 }
 
->>>>>>> main

@@ -148,12 +148,3 @@ function buildTextEntry(decisionData){
     textEntry.connectedCallback();
 }
 
-
-
-
-
-
-
-sessionStorage.clear();
-loadNextDecision(2, 1);
-

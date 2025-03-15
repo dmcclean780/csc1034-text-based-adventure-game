@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Life After Death</title>
+    <link rel="stylesheet" href="../../css/default/generic.css">
+    <link rel="stylesheet" href="../../css/default/dungeons.css">
+    <link rel="stylesheet" href="../../css/mobile/generic.css">
+    <link rel="stylesheet" href="../../css/mobile/dungeons.css">
+    <link rel="stylesheet" href="../../css/default/menu.css">
+  </head>
+  <body style="color:black; background-color: black;">
+    <div class="input-box" style="height: 80%;">
+      <h1 class="details-box" style="letter-spacing: 2px;">SETTINGS</h1>
+      <div class="menu">
+        <div class="column">
+          <button class="menu-button-option" id='do-text-animations' onclick="">DO TEXT ANIMATIONS: ON</button>
+          <button class="menu-button-option" onclick="" style="width: 85%; margin-top:8%; margin-bottom:8%; letter-spacing: 2px;">SETTING 2</button>
+          <button class="menu-button-option" onclick="" style="width: 85%; margin-top:8%; margin-bottom:8%; letter-spacing: 2px;">SETTING 3</button>
+        </div>
+        <div class="column">
+          <div class="slidecontainer">
+            <span>TEXT ANIMATION SPEED</span>
+            <div class="slider-wrapper">
+                <input type="range" min="20" max="70" value="60" class="slider" id="text-animation-speed">
+                <span id="slider-value" class="slider-value">50</span>
+            </div>
+        </div>
+          <button class="menu-button-option" onclick="" style="width: 85%; margin-top:8%; margin-bottom:8%; letter-spacing: 2px;">SETTING 5</button>
+          <button class="menu-button-option" onclick="" style="width: 85%; margin-top:8%; margin-bottom:8%; letter-spacing: 2px;">SETTING 6</button>
+          
+        </div>
+      </div>
+      <button class="button-option" onclick="saveAndReturn()" style="margin: 5px; letter-spacing: 2px; background-color: rgb(100, 50, 50); width: 65%;">SAVE & RETURN</button>
+    </div>
+    <script src="../../settings.js"></script>
+  </body>
+</html>

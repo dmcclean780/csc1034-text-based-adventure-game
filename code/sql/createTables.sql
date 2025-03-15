@@ -125,12 +125,6 @@ CREATE TABLE npcs
         PRIMARY KEY (id, areaID, buttonID)
     );
 
-<<<<<<< HEAD
-            FOREIGN KEY (id) REFERENCES decisions(id),
-            PRIMARY KEY (id, areaID, buttonID)
-        );
-        
-=======
     CREATE TABLE dialogues
     (
         id INT NOT NULL,
@@ -141,13 +135,6 @@ CREATE TABLE npcs
         FOREIGN KEY (id) REFERENCES decisions(id)
     );
 
-    CREATE TABLE map
-    (
-        worldName CHAR(20) NOT NULL PRIMARY KEY,
-        rowSize INT NOT NULL,
-        colSize INT NOT NULL
-    );
-
     CREATE TABLE users
     (
         username VARCHAR(50) UNIQUE NOT NULL,
@@ -156,4 +143,3 @@ CREATE TABLE npcs
 
         PRIMARY KEY (username)
     );
->>>>>>> main

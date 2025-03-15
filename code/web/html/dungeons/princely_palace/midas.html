@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Starter Dungeon</title>
+    <link rel="stylesheet" href="../../../css/mobile/dungeons.css">
+    <link rel="stylesheet" href="../../../css/default/dungeons.css">
+    <link rel="stylesheet" href="../../../css/mobile/generic.css">
+    <link rel="stylesheet" href="../../../css/default/generic.css">
+    
+</head>
+
+<body>
+    <div class="main-container">
+
+            <img src="../../../images/princely_palace/start/golden palace background.png" alt="Dungeon Background" id="background">
+
+            <div id="input-box-container">
+                <div class="details-box">
+                    <div id="details">
+                        Before you looms Midas, the mighty king who has taken over this palace and turned almost all of it to gold.
+                        His golden gauntlet, the source of his power, glints and shines in the golden light streaming through the 
+                        windows of the chamber.
+                        In a loud booming voice, he says, "What could be here for? Leave at once or I shall petrify you in gold.
+                        I was sent here to collect riches for my master and I will not disappoint. Away with you now."
+                    </div>
+                </div>
+                <div class="input-box">
+                    <div id="prompt">
+                        WHAT WILL YOU DO?
+                    </div>
+                    <div class="options">
+                        <button class="button" onclick="fight()">FIGHT</button>
+                        <script>
+                            let antiMidas = sessionStorage.getItem("antiMidas");
+                            if (antiMidas == "true"){
+                                document.write('<button class="button" onclick="armwrestle()">ARMWRESTLE</button>');
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script src="../../../javascript/dungeons/princely_palace/midas.js"></script>
+</body>
+
+</html>

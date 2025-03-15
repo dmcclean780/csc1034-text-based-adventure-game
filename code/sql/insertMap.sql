@@ -1,0 +1,1 @@
+INSERT INTO map(worldName, rowSize, colSize) VALUES ('WORLD MAP', 6, 7);

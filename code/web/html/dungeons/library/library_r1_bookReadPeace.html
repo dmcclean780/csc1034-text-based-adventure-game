@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Library's Lament</title>
+    <link rel="stylesheet" href="../../../css/default/dungeons.css">
+    <link rel="stylesheet" href="../../../css/default/generic.css">
+    <link rel="stylesheet" href="../../../css/default/library.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div id="input-box-container"></div>
+        <library-book 
+        id="library-book"
+        scoreNeeded=10
+        contentTitle="The Gift of Peace" 
+        content="Peace is quiet, soft, and bright|
+        A gentle glow in darkest night.|
+        No war, no hate, just calm and free,|
+        A world of love for you and me."
+        nextScreen="library_r1_bookPeaceWin.html"
+        fileRel = "../../../"
+        livesRemaining=3
+        contentType="book"> 
+        </library-book>
+    </div>
+    <script src="../../../javascript/components/libraryBook.js"></script>
+    <script src="../../../javascript/dungeons/library_dungeon/library.js"></script>
+</body>
+
+</html>

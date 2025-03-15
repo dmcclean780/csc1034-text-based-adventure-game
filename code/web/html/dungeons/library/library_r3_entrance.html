@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Library's Lament</title>
+    <link rel="stylesheet" href="../../../css/default/dungeons.css">
+    <link rel="stylesheet" href="../../../css/default/generic.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet"></head>
+</head>
+
+<body>
+    <div class="main-container">
+        <img src="../../../images/library_dungeon/library-outside.png" alt="Library Outside Background" id="background">
+
+        <div id="input-box-container">
+            <div class="details-box">
+                <div id="details">
+                    You stand in front of a large door into the final room of the library, the fluttering of hundreds of pages can be heard behind the door <br> <br>
+                    As you step forward... a floorboard creaks below you.
+                </div>
+            </div>
+            <div class="input-box">
+                <div id="prompt">
+                    test
+                </div>
+                <div class="options">
+                    <button class="button-option" id="option_1" onclick="">Continue</button>
+                </div>
+            </div>
+        </div>     
+        <dialogue-box id="dialogue" 
+            name="Calligraphous"
+            dialogue='["WHO DISTURBS MY READINGS?", 
+            "Well, well, well, who might you be?", 
+            "...not much talking? Well then... I see you have brought two books here for me", 
+            "I should thank you for aiding the cause, give one here... NOW."]'
+            finishedSpeakingFunction="finishedSpeaking"
+            characterImage="../../../images/library_dungeon/calligraphous.png"
+        ></dialogue-box>
+        <script>
+            const finishedSpeaking = () => {
+                window.location.href = "library_r3_bookDecision.html";
+            }
+        </script>                                  
+    </div>
+    
+    <script src="../../../javascript/dungeons/library_dungeon/library.js"></script>
+    <script src="../../../javascript/components/dialogue.js"></script>
+
+</body>
+
+</html>

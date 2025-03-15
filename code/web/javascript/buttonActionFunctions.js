@@ -11,7 +11,7 @@ function showPopupMenu(event) {
 
 function goToDeathScreen(deathMessage) {
     sessionStorage.setItem("deathMessage", deathMessage);
-    window.location.href = "../generic/death.html";
+    window.location.href = pathToRoot + "html/generic/death.html";
 }
 
 function changeDetails(newDetails) {
@@ -39,5 +39,9 @@ function disableButton(event) {
 }
 
 function goToMap() {
+<<<<<<< HEAD
     window.location.href = "../map.html";
+=======
+    window.location.href = pathToRoot +"html/map.html";
+>>>>>>> main
 }

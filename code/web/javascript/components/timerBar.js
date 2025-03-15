@@ -14,18 +14,20 @@ class TimerBar extends HTMLElement {
             <style>
                 #timer-bar{
                     width: 100%;
-                    height: 10px;
+                    height: 20px;
                     background-color: green;
                     padding: 0 0;
+                    margin: 10px 10px;
                     position: absolute;
                     border-radius: 60px / 15px;
                 }
 
                 #timer-background{
                     width: 100%;
-                    height: 10px;
+                    height: 20px;
                     background-color: black;
                     padding: 0 0;
+                    margin: 10px 10px;
                     position: absolute;
                     border-radius: 60px / 15px;
 
@@ -34,7 +36,7 @@ class TimerBar extends HTMLElement {
                 #timer-time{
                     width: 100%;
                     height: 10px;
-                    font-size: 1.5em;
+                    font-size: 1.25em;
                     margin-bottom: 20px;
                     text-align: center;
                     position: absolute;

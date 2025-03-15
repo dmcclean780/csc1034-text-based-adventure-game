@@ -29,7 +29,19 @@ async function buildDecision(decisionData) {
     } catch (e) {
         console.log("No drag drop game to remove");
     }
+<<<<<<< HEAD
     
+=======
+    try {
+        document.getElementById("library-book").remove();
+    } catch (e) {
+        console.log("No library book to remove");
+    }
+
+
+    document.getElementById("details").style.display = "flex";
+    document.getElementById("input-box-container").style.display = "flex";
+>>>>>>> main
 
 
     document.getElementById("details").innerHTML = decisionData.details;
@@ -68,8 +80,6 @@ async function buildDecision(decisionData) {
         buildLibraryBook(decisionData);
     }
 }
-
-
 
 async function buildDialogue(decisionData) {
     const main = document.getElementById("main-container");
@@ -146,4 +156,21 @@ function buildTextEntry(decisionData){
     textEntry.connectedCallback();
 }
 
+function buildLibraryBook(decisionData){
+    const main = document.getElementById("main-container");
+    const libraryBook = document.createElement("library-book");
+    libraryBook.setAttribute("id", "library-book");
+    libraryBook.setAttribute("content", decisionData.bookContent);
+    libraryBook.setAttribute("contentTitle", decisionData.bookTitle);
+    libraryBook.setAttribute("scoreNeeded", decisionData.bookScoreNeeded);
+    libraryBook.setAttribute("fileRel", "../../");
+    libraryBook.setAttribute("livesRemaining", decisionData.bookTotalLives);
+    libraryBook.setAttribute("bookFunction", decisionData.bookFunction);
 
+<<<<<<< HEAD
+=======
+    main.appendChild(libraryBook);
+    libraryBook.render();
+}
+
+>>>>>>> main

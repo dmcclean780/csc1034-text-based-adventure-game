@@ -21,4 +21,4 @@ async function loadNextDecision(areaID, decisonID) {
 
 const areaID = sessionStorage.getItem("areaID") || 1;
 sessionStorage.clear();
-loadNextDecision(2, 1); //Change this to change what decision is loaded on page load of dungeon.html
+loadNextDecision(areaID, 1); //Change this to change what decision is loaded on page load of dungeon.html

@@ -18,7 +18,6 @@ async function executeDatabaseQuery(params) {
             body: params
         }); // Waits for a response from the fetch
 
-
         let result = await response.json(); // Waits for the JSON to be parsed
 
         // If an error has been returned, e.g. incorrect SQL syntax, display the error
@@ -35,6 +34,7 @@ async function executeDatabaseQuery(params) {
            console.log("success: ", result.success)
             if (result.affected_rows !== undefined) {
                 console.log(result.affected_rows);
+                return result.affected_rows;
             }
         }
         return null;

@@ -6,4 +6,5 @@ async function loadNextDecision(areaID, decisonID) {
 
 
 sessionStorage.clear();
-loadNextDecision(2, 1); //Change this to change what decision is loaded on page load of dungeon.html
+loadNextDecision(3, 1); //Change this to change what decision is loaded on page load of dungeon.html
+// area id then decision id

@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Jersey+10&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
-=======
->>>>>>> main
 
 @media (min-width: 600px) {
 
@@ -18,16 +16,6 @@
         height: 90%;
         /* Makes the div span the full height of the container */
 
-<<<<<<< HEAD
-        color: rgb(47, 37, 27);
-        /* Text color */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        font-family: 'Jersey 10', sans-serif;
-        align-items: center;
-    }
-=======
     color: rgb(47, 37, 27);
     /* Text color */
     display: flex;
@@ -37,7 +25,6 @@
     align-items: center;
     color:rgba(47, 37, 27, 0.75);
 }
->>>>>>> main
 
     .input-box {
         width: 66%;
@@ -104,4 +91,5 @@
     border-radius: 10px;
     max-height: 30%;
     overflow-y: auto;
+}
 }

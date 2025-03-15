@@ -12,6 +12,7 @@ body {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
+    background-color: black;
 }
 
 body {
@@ -48,7 +49,7 @@ body {
 #background {
     height: 100%;
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 15;
     object-fit: contain;
 
     image-rendering: pixelated;

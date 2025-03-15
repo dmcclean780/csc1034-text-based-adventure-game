@@ -1,7 +1,7 @@
 INSERT INTO areas
-    (id, name)
+    (id, name, rowPosition, colPosition, ableToVisitCondition)
 VALUES
-    (1, 'Village');
+    (1, 'Village', 3, 2, TRUE);
 
 INSERT INTO decisions
     (id, areaID, details, prompt, backgroundFilePath, hasTimer, hasPopupMenu, hasDialogue, hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions)
@@ -164,7 +164,7 @@ VALUES
         1,
         'option_3',
         'LEAVE',
-        '(() => {console.log("LEAVE VILLAGE")})',
+        '(() => {goToMap()})',
         '(getState("TOWN_HALL_ENTERED") == "true")'
     ),
     (
@@ -268,7 +268,7 @@ VALUES
         1,
         'option_3',
         'LEAVE',
-        '(() => {console.log("LEAVE VILLAGE")})',
+        '(() => {goToMap()})',
         '(getState("TOWN_HALL_ENTERED") == "true")'
     ),
     (

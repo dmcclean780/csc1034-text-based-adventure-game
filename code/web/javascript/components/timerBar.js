@@ -43,6 +43,7 @@ class TimerBar extends HTMLElement {
 
                 #timer-box {
                     width: 100%;
+                    margin-top: 20px;
                     background-color: grey;
                     position: relative;
                     display: flex;
@@ -51,6 +52,7 @@ class TimerBar extends HTMLElement {
                 }
                 
                 :host{
+                    display: none;
                     width: 100%;
                 }
             </style>
@@ -126,6 +128,7 @@ class TimerBar extends HTMLElement {
 
     stopTimer(){
         clearInterval(this.id);
+        this.timerStarted = false;
     }
 
 

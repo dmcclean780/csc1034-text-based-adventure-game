@@ -27,12 +27,22 @@ CREATE TABLE npcs
     FOREIGN KEY
         (npcID) REFERENCES npcs
         (id)
-);
+    );
+        
+        CREATE TABLE map(
+            worldName CHAR(20) NOT NULL,
+            rowSize INT NOT NULL,
+            colSize INT NOT NULL,
+            PRIMARY KEY (worldName)
+        )
 
         CREATE TABLE areas
         (
             id INT NOT NULL PRIMARY KEY,
-            name CHAR(20) NOT NULL
+            name CHAR(20) NOT NULL,
+            rowPosition INT NOT NULL,
+            colPosition INT NOT NULL,
+            ableToVisitCondition TEXT(1000) NOT NULL
         );
 
         CREATE TABLE decisions
@@ -129,14 +139,4 @@ CREATE TABLE npcs
             FOREIGN KEY (id) REFERENCES decisions(id),
             PRIMARY KEY (id, areaID, buttonID)
         );
-
-        CREATE TABLE dialogues
-        (
-            id INT NOT NULL,
-            areaID INT NOT NULL,
-            npcID INT NOT NULL,
-
-            PRIMARY KEY (id, areaID),
-            FOREIGN KEY (npcID) REFERENCES npcs(id),
-            FOREIGN KEY (id) REFERENCES decisions(id)
-        );
+        

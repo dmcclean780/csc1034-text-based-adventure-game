@@ -32,7 +32,7 @@ async function executeDatabaseQuery(params) {
         }
         else {
             // For anything else, assume something like INSERT, DROP etc. corresponding message
-           console.log(result.success)
+           console.log("success: ", result.success)
             if (result.affected_rows !== undefined) {
                 console.log(result.affected_rows);
             }

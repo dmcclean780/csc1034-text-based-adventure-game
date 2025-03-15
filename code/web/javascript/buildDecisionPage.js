@@ -29,14 +29,12 @@ async function buildDecision(decisionData) {
     } catch (e) {
         console.log("No drag drop game to remove");
     }
-
-
-    document.getElementById("details").style.display = "flex";
-    document.getElementById("input-box-container").style.display = "flex";
+    
 
 
     document.getElementById("details").innerHTML = decisionData.details;
     document.getElementById("prompt").innerHTML = decisionData.prompt;
+    document.getElementById("background").src = "../../"+decisionData.backgroundFilePath;
 
     while (options.firstChild) {
         options.removeChild(options.firstChild);
@@ -148,12 +146,4 @@ function buildTextEntry(decisionData){
     textEntry.connectedCallback();
 }
 
-
-
-
-
-
-
-sessionStorage.clear();
-loadNextDecision(2, 1);
 

@@ -64,12 +64,5 @@ VALUES
     'images/npc/paige.png',
     '["Hello, PlayerNameHere."]',
      '(() => { loadNextDecision(1, 3); })');
-    
-        
 
-
-INSERT INTO NPCdialogue(npcID, dialogue, onDialogueEnd)
-VALUES
-	(2, '["Back are we?", "Well as you can see I still have nothing to offer you", "Safe Travels"]',  '(() => { loadNextDecision(1, 1); })');
-    
 	

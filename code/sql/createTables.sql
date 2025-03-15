@@ -92,6 +92,7 @@ CREATE TABLE npcs
         contentTitle CHAR(50) NOT NULL,
         scoreNeeded INT NOT NULL,
         totalLives INT NOT NULL,
+        bookFunction TEXT(1000) NOT NULL,
 
         PRIMARY KEY (id, areaID),
         FOREIGN KEY (id) REFERENCES decisions(id)

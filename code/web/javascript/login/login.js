@@ -1,6 +1,6 @@
 sessionStorage.clear();
 
-document.getElementById("loginForm").addEventListener("submit", async function (event) {
+document.getElementById("loginForm").addEventListener("submit", async  (event) => {
     event.preventDefault();
 
     let username = document.getElementById("username").value;
@@ -33,7 +33,7 @@ document.getElementById("loginForm").addEventListener("submit", async function (
 });
 
 
-document.getElementById("registerForm").addEventListener("submit", async function (event) {
+document.getElementById("registerForm").addEventListener("submit", async  (event) => {
     event.preventDefault();
 
     let username = document.getElementById("regUsername").value.trim();
@@ -65,6 +65,9 @@ document.getElementById("registerForm").addEventListener("submit", async functio
         if (insertResult > 0) {
             messageElement.textContent = "Registration successful!";
             document.getElementById("registerForm").reset();
+            sessionStorage.setItem("username", username);
+            sessionStorage.setItem("password", password);
+            window.location.href = "../../index.html";
         } else 
         {
             messageElement.textContent = "Error registering user.";
@@ -80,10 +83,10 @@ document.getElementById("registerForm").addEventListener("submit", async functio
 function toggleForms() {
     document.getElementById("loginContainer").classList.toggle("hidden");
     document.getElementById("registerContainer").classList.toggle("hidden");
-    }
+}
 
 // Toggle password visibility for login form
-document.getElementById('toggle-password').addEventListener('click', function () {
+document.getElementById('toggle-password').addEventListener('click',  () => {
     var passwordInput = document.getElementById('password');
     var button = document.getElementById('toggle-password');
 
@@ -97,7 +100,7 @@ document.getElementById('toggle-password').addEventListener('click', function ()
 });
 
 // Toggle password visibility for registration form
-document.getElementById('toggle-reg-password').addEventListener('click', function () {
+document.getElementById('toggle-reg-password').addEventListener('click',  () => {
     var passwordInput = document.getElementById('regPassword');
     var button = document.getElementById('toggle-reg-password');
 
@@ -111,7 +114,7 @@ document.getElementById('toggle-reg-password').addEventListener('click', functio
 });
 
 // Toggle password visibility for confirm password field
-document.getElementById('toggle-confirm-password').addEventListener('click', function () {
+document.getElementById('toggle-confirm-password').addEventListener('click',  () => {
     var confirmPasswordInput = document.getElementById('confirmPassword');
     var button = document.getElementById('toggle-confirm-password');
 

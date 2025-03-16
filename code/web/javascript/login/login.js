@@ -58,8 +58,11 @@ document.getElementById("registerForm").addEventListener("submit", async  (event
         }
 
         // Insert the new user into the database
-        let insertQuery = `INSERT INTO users (username, pass) VALUES ('${username}', '${password}')`;
-        let insertResult = await makeDatabaseQuery(insertQuery);
+        const insertQuery = `INSERT INTO users (username, pass) VALUES ('${username}', '${password}')`;
+        const insertResult = await makeDatabaseQuery(insertQuery);
+
+        const insertDefaultSettings = `INSERT INTO settings (username, doTextAnimations, textAnimationSpeed) VALUES ('${username}', TRUE, 30)`;
+        const insertSettingsResult = await makeDatabaseQuery(insertDefaultSettings);
 
 
         if (insertResult > 0) {

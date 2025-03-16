@@ -1,14 +1,23 @@
 //This obj will be fetched from sql and changed in the settings page
-//loadSettings() will be called in the settings page and set the setting obj state according to the sql
-
 let settings = {
     doTextAnimations: true,
     textAnimationSpeed: 30, //controlled by slider with values 20 - 70
 }
 
+function loadSettings(){
+    const username = sessionStorage.getItem("username");
+    const query = `SELECT * FROM settings WHERE username = '${username}'`;
+    makeDatabaseQuery(query).then((result) => {
+        if(result && result.length > 0){
+            settings = result[0];
+            applySettings();
+        }
+    });
+}
+
+
 function applySettings(){
-    console.log('Applying settings');
-    document.getElementById("do-text-animations").innerHTML = `DO TEXT ANIMATIONS: ${settings.doTextAnimations ? "ON" : "OFF"}`;
+    document.getElementById("do-text-animations").innerHTML = `DO TEXT ANIMATIONS: ${settings.doTextAnimations == 1 ? "ON" : "OFF"}`;
     document.getElementById("text-animation-speed").value = 90 - settings.textAnimationSpeed;
     document.getElementById("slider-value").innerHTML = 90 - settings.textAnimationSpeed;
 }
@@ -25,11 +34,15 @@ function changeTextAnimationSpeed(e){
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    applySettings();
+    loadSettings();
     document.getElementById("do-text-animations").addEventListener("click", changeDoTextAnimations);
     document.getElementById("text-animation-speed").addEventListener("input", changeTextAnimationSpeed);
 });
 
 function saveAndReturn(){
-    window.location.href = "../../index.html";
+    const username = sessionStorage.getItem("username");
+    const query = `UPDATE settings SET doTextAnimations = ${settings.doTextAnimations ? 1 : 0}, textAnimationSpeed = ${settings.textAnimationSpeed} WHERE username = '${username}'`;
+    makeDatabaseQuery(query).then(() => {
+        window.location.href = "../../index.html";
+    });
 }

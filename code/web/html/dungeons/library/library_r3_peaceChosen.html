@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Library's Lament</title>
+    <link rel="stylesheet" href="../../../css/default/dungeons.css">
+    <link rel="stylesheet" href="../../../css/default/generic.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet"></head>
+</head>
+
+<body>
+    <div class="main-container">
+        <img src="../../../images/library_dungeon/library-outside.png" alt="Library Outside Background" id="background">
+
+        <div id="input-box-container">
+            <div class="details-box">
+                <div id="details">
+                    Calligraphous snatches the book as you hand it to him.
+                </div>
+            </div>
+            <div class="input-box">
+                <div id="prompt">
+                </div>
+                <div class="options">
+                    <button class="button-option" id="option_1" onclick="">Continue</button>
+                </div>
+            </div>
+        </div>       
+        <dialogue-box id="dialogue" 
+            name="Calligraphous"
+            dialogue='["So you wish to aid me then? Interesting...", "Here, give this a read, I cannot understand it"]'
+            finishedSpeakingFunction="finishedSpeaking"
+            characterImage="../../../images/library_dungeon/calligraphous.png"
+        ></dialogue-box>
+        <script>
+            const finishedSpeaking = () => {
+                window.location.href = "../../../html/dungeons/library/library_r3_bookReadFinal.html";
+            }
+        </script>                             
+    </div>
+    
+    <script src="../../../javascript/dungeons/library_dungeon/library.js"></script>
+    <script src="../../../javascript/components/dialogue.js"></script>
+</body>
+
+</html>

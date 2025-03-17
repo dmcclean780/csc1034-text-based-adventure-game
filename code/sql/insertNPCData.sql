@@ -92,9 +92,4 @@ VALUES
       'images/npc/calligraphous.png',
       '["Please! I did not want to hurt you!", "Listen... I can teach you!", "It does not need to end like this!"]',
                 '(() => { loadNextDecision(3, 27); })');
-
-INSERT INTO NPCdialogue(npcID, dialogue, onDialogueEnd)
-VALUES
-	(2, '["Back are we?", "Well as you can see I still have nothing to offer you", "Safe Travels"]',  '(() => { loadNextDecision(1, 1); })');
-    
 	

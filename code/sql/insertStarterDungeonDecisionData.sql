@@ -1,7 +1,7 @@
 INSERT INTO areas
-    (id, name)
+    (id, name, rowPosition, colPosition, ableToVisitCondition)
 VALUES
-    (2, 'Catacombs');
+    (2, 'Catacombs', 2, 1, FALSE);
 
 INSERT INTO decisions
     (id, areaID, details, prompt, backgroundFilePath, hasTimer, hasPopupMenu, hasDialogue, hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions)
@@ -268,7 +268,7 @@ VALUES
     (
         18,
         2,
-        ' As you move into this chamber, the lantern illuminates the path ahead and you can see that there is
+        'As you move into this chamber, the lantern illuminates the path ahead and you can see that there is
                     a thin, wooden bridge that crosses over a chasm that leads much deeper within the catacombs, to
                     where bodies
                     of a different sort lie buried. Making use of your lantern you start traversing the bridge. As you

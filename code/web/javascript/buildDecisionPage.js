@@ -42,6 +42,7 @@ async function buildDecision(decisionData) {
 
     document.getElementById("details").innerHTML = decisionData.details;
     document.getElementById("prompt").innerHTML = decisionData.prompt;
+    document.getElementById("background").src = "../../"+decisionData.backgroundFilePath;
 
     while (options.firstChild) {
         options.removeChild(options.firstChild);
@@ -165,7 +166,4 @@ function buildLibraryBook(decisionData){
     main.appendChild(libraryBook);
     libraryBook.render();
 }
-
-sessionStorage.clear();
-//loadNextDecision(8, 3);
 

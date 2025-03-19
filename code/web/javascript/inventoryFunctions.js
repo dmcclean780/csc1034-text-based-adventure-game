@@ -17,7 +17,6 @@ function removeFromInventory(item, quantity) {
 function checkInventory(item, quantity) {
     console.log("Check if ", item, " x", quantity, " is in inventory");
     const itemQuantity = localStorage[item];
-    console.log(parseInt(itemQuantity) >= quantity);
     if (itemQuantity == null) {
         return false;
     }

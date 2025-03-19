@@ -9,7 +9,7 @@ VALUES
     ( 1,
         1,
         'Welcome to the village of Eldermere. This is a bustling villiage that sits nestled at the edge of
-        the dark forest. There is an udercurrent of tension runing through all here. You see several houses
+        the dark forest. There is an undercurrent of tension runing through all here. You see several houses
         and shops here that you should visit.',
         ' WHERE WILL YOU GO?',
         'images/backgrounds/1-1.png',
@@ -165,7 +165,7 @@ VALUES
         'option_3',
         'LEAVE',
         '(() => {goToMap()})',
-        '(getState("TOWN_HALL_ENTERED") == "true")'
+        '(getState("townHallVisited") == true)'
     ),
     (
         2,
@@ -204,7 +204,7 @@ VALUES
         1,
         'option_4',
         'THE TOWN HALL',
-        '(() => {changeState("TOWN_HALL_ENTERED", true);loadNextDecision(1,6)})',
+        '(() => {changeState("townHallVisited", 1);loadNextDecision(1,6)})',
         TRUE
     ),
     (
@@ -269,7 +269,7 @@ VALUES
         'option_3',
         'LEAVE',
         '(() => {goToMap()})',
-        '(getState("TOWN_HALL_ENTERED") == "true")'
+        '(getState("townHallVisited") == true)'
     ),
     (
         9,

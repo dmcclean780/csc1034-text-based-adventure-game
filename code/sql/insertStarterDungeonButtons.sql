@@ -29,10 +29,10 @@ VALUES
     (8, 2, 'option_2', 'FOLLOW THE WIND', '(() => {loadNextDecision(2, 18)})', TRUE),
 
     (9, 2, 'option_1', 'OPEN THE CHEST', '((event) => {showPopupMenu(event);
-                                                  addToInventory("OIL BOTTLE", 1);
-                                                  changeState("CHEST_OPENED", true);})', '(getState("CHEST_OPENED") == "false")'),
+                                                  addToInventory("OIL_BOTTLE", 1);
+                                                  changeState("CHEST_OPENED", true);})', '(getState("CHEST_OPENED") == false)'),
     (9, 2, 'option_2', 'OPEN THE SARCOPHAGUS', '(() => {loadNextDecision(2, 10);
-                                                        changeState("SARCOPHAGUS_OPENED", true);})', '(getState("SARCOPHAGUS_OPENED") == "false")'),
+                                                        changeState("SARCOPHAGUS_OPENED", true);})', '(getState("SARCOPHAGUS_OPENED") == false)'),
     (9, 2, 'option_3', 'LEAVE THIS TOMB', '(() => {loadNextDecision(2, 11)})', TRUE),
 
     (10, 2, 'option_1', 'READ THE TOME', '((event) => {showPopupMenu(event);
@@ -124,7 +124,7 @@ VALUES
 
     (31, 2, 'option_1', 'CONTINUE', '(() => {loadNextDecision(2, 32)})', TRUE),
 
-    (32, 2, 'option_1', 'GO TO THE VILLAGE', '(() => {loadNextDecision(1, 1)})', TRUE);
+    (32, 2, 'option_1', 'GO TO THE VILLAGE', '(() => {changeState("catacombsCompleted", 1); clearLocalState(); loadNextDecision(1, 1)})', TRUE);
 
 
 

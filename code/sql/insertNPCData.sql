@@ -64,6 +64,7 @@ VALUES
     'images/npc/paige.png',
     '["Hello, PlayerNameHere."]',
      '(() => { loadNextDecision(1, 3); })'),
+<<<<<<< HEAD
      
 
 
@@ -191,8 +192,40 @@ VALUES
   ;
     
         
+=======
+  
+  ('Calligraphous',
+    'images/npc/calligraphous.png',
+    '["WHO DISTURBS MY READINGS?", 
+            "Well, well, well, who might you be?", 
+            "...not much talking? Well then... I see you have brought two books here for me", 
+            "I should thank you for aiding the cause, give one here... NOW."]',
+            '(() => { loadNextDecision(3, 23); })'),
+>>>>>>> main
 
+  ('Calligraphous',
+      'images/npc/calligraphous.png',
+      '["So you wish to aid me then? Interesting...", "Here, give this a read, I cannot understand it"]',
+              '(() => { loadNextDecision(3, 24); })'),
 
+<<<<<<< HEAD
 INSERT INTO NPCdialogue(npcID, dialogue, onDialogueEnd)
 VALUES
 	(2, '["Back are we?", "Well as you can see I still have nothing to offer you", "Safe Travels"]',  '(() => { loadNextDecision(1, 1); })');
+=======
+  ('Calligraphous',
+      'images/npc/calligraphous.png',
+      '["Very well then. Have it your way."]',
+                '(() => { goToDeathScreen("Calligraphous killed you"); })'),
+                
+  ('Calligraphous',
+      'images/npc/calligraphous.png',
+      '["You fool! You thought I would help you? Ha!"]',
+                '(() => { goToDeathScreen("Calligraphous killed you"); })'),
+                
+   ('Calligraphous',
+      'images/npc/calligraphous.png',
+      '["Please! I did not want to hurt you!", "Listen... I can teach you!", "It does not need to end like this!"]',
+                '(() => { loadNextDecision(3, 27); })');
+	
+>>>>>>> main

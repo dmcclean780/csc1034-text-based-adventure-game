@@ -11,6 +11,8 @@ function showPopupMenu(event) {
 
 function goToDeathScreen(deathMessage) {
     sessionStorage.setItem("deathMessage", deathMessage);
+    changeState("alive", 0);
+    changeState("successful", 0);
     window.location.href = pathToRoot + "html/generic/death.html";
 }
 

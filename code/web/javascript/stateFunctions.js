@@ -73,7 +73,6 @@ function updateStateDatabase(gameState) {
       .join(", ")}
     ,currentAreaState = '${JSON.stringify(gameState.localState)}'
     WHERE username = '${gameState.globalState.username}' AND characterID = '${gameState.globalState.characterID}';`;
-    console.log(query);
     makeDatabaseQuery(query);
 }
 

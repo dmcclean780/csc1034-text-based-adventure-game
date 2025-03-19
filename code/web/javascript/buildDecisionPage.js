@@ -57,7 +57,7 @@ async function buildDecision(decisionData) {
     }
 
     if (decisionData.hasTimer == 1) {
-        //buildTimerBar(decisionData);
+        buildTimerBar(decisionData);
     }
 
     if (decisionData.hasTextEntry == 1) {

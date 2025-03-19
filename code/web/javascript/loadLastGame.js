@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         characterItem.innerHTML = character.characterID + ". " + character.name;
         if (character.alive == 1) {
             characterItem.addEventListener("click", () => {
-                loadGameState();
+                loadGameState(character);
                 if (character.currentArea == '0') {
                     window.location.href = "../map.html";
                     return;
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 });
 
-function loadGameState(){
+function loadGameState(character){
     const globalStateVariables = Object.getOwnPropertyNames(character);
     globalStateVariables.forEach(variable => {
         Object.defineProperty(gameState.globalState, variable, {

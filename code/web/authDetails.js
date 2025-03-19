@@ -1,7 +1,7 @@
 authDetails = {
     "webhosting_url": "",
     "hostname": "localhost",
-    "username":  "",
+    "username": "",
     "password": "",
     "database": ""
 }

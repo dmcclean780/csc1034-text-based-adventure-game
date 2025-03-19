@@ -22,3 +22,9 @@ function goToLoadGame(){
 function backFromLoadGame(){
     window.location.href = "startGame.html";
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (sessionStorage.getItem("username") === null || sessionStorage.getItem("username") === "") {
+        window.location.href = "html/menus/login.html";
+    }
+});

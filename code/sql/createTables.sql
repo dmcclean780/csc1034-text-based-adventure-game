@@ -14,7 +14,7 @@
         rowSize INT NOT NULL,
         colSize INT NOT NULL,
         PRIMARY KEY (worldName)
-    )
+    );
 
     CREATE TABLE areas
     (

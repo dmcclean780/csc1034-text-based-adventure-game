@@ -3,5 +3,5 @@ authDetails = {
     "hostname": "localhost",
     "username":  "",
     "password": "",
-    "database": ""
+    "database": "ggilpin02"
 }

@@ -1,7 +1,7 @@
 INSERT INTO 
 buttonOptions(id, areaID, buttonID, buttonText, buttonFunction, showCondition)
 VALUES
-            -- library_outside_enterQuestion --
+        -- library_outside_enterQuestion --
     (1, 3, 'option_1', 'Enter Library', '(()=> {loadNextDecision(3, 3)})', TRUE),
     (1, 3, 'option_2', 'Look Around', '(()=> {loadNextDecision(3, 2)})', TRUE),
     (1, 3, 'option_3', 'Return to Village', '(()=> {loadNextDecision(1, 1)})', TRUE),

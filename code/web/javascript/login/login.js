@@ -1,10 +1,9 @@
-sessionStorage.clear();
+let user = {
+    username: "",
+    pass: "",
+}
 
-<<<<<<< HEAD
-document.getElementById("loginForm").addEventListener("submit", async function (event) {
-=======
 document.getElementById("loginForm").addEventListener("submit", async  (event) => {
->>>>>>> main
     event.preventDefault();
 
     let username = document.getElementById("username").value;
@@ -21,10 +20,15 @@ document.getElementById("loginForm").addEventListener("submit", async  (event) =
         console.log("Full result object:", result);
 
         if (result && result.length > 0) {
-            let user = result[0];
+            user.username = result[0].username;
+            user.pass = result[0].pass;
+
             console.log(user);
+
             sessionStorage.setItem("username", user.username);
             sessionStorage.setItem("password", user.pass);
+
+
             window.location.href = "../../index.html";
         } else {
             messageElement.textContent = "Invalid username or password.";
@@ -37,11 +41,7 @@ document.getElementById("loginForm").addEventListener("submit", async  (event) =
 });
 
 
-<<<<<<< HEAD
-document.getElementById("registerForm").addEventListener("submit", async function (event) {
-=======
 document.getElementById("registerForm").addEventListener("submit", async  (event) => {
->>>>>>> main
     event.preventDefault();
 
     let username = document.getElementById("regUsername").value.trim();
@@ -66,23 +66,16 @@ document.getElementById("registerForm").addEventListener("submit", async  (event
         }
 
         // Insert the new user into the database
-<<<<<<< HEAD
-        let insertQuery = `INSERT INTO users (username, pass) VALUES ('${username}', '${password}')`;
-        let insertResult = await makeDatabaseQuery(insertQuery);
-=======
         const insertQuery = `INSERT INTO users (username, pass) VALUES ('${username}', '${password}')`;
         const insertResult = await makeDatabaseQuery(insertQuery);
 
         const insertDefaultSettings = `INSERT INTO settings (username, doTextAnimations, textAnimationSpeed) VALUES ('${username}', TRUE, 30)`;
         const insertSettingsResult = await makeDatabaseQuery(insertDefaultSettings);
->>>>>>> main
-
 
         if (insertResult > 0) {
             messageElement.textContent = "Registration successful!";
             document.getElementById("registerForm").reset();
             sessionStorage.setItem("username", username);
-            sessionStorage.setItem("password", password);
             window.location.href = "../../index.html";
         } else 
         {

@@ -2,27 +2,12 @@
 
     CREATE TABLE npcs
     (
-<<<<<<< HEAD
-        id INT
-        AUTO_INCREMENT PRIMARY KEY,
-    npcID INT NOT NULL,
-    dialogue TEXT
-        (1000) NOT NULL,
-    onDialogueEnd TEXT
-        (1000) NOT NULL,
-    
-    FOREIGN KEY
-        (npcID) REFERENCES npcs
-        (id)
-); 
-=======
         id INT AUTO_INCREMENT PRIMARY KEY,
         name CHAR(20) NOT NULL,
         imageFilePath Char(50) NOT NULL,
         firstDialogue TEXT(1000) NOT NULL,
         onFirstDialogueEnd TEXT(1000) NOT NULL
     );
->>>>>>> main
 
     CREATE TABLE map(
         worldName CHAR(20) NOT NULL,
@@ -163,3 +148,46 @@
         PRIMARY KEY (username),
         FOREIGN KEY (username) REFERENCES users(username)
     );
+
+    CREATE TABLE characters
+    (
+        characterID INT AUTO_INCREMENT,
+        username VARCHAR(50) NOT NULL,
+        name CHAR(20) NOT NULL,
+        currentDecision INT NOT NULL,
+        currentArea INT NOT NULL,
+        alive BOOLEAN NOT NULL,
+        successful BOOLEAN,
+        endingAchieved INT,
+        catacombsCompleted BOOLEAN,
+        townHallVisited BOOLEAN,
+        libraryCompleted BOOLEAN,
+        currentAreaState JSON,
+
+        PRIMARY KEY (characterID, username),
+        FOREIGN KEY (username) REFERENCES users(username),
+        FOREIGN KEY (currentDecision) REFERENCES decisions(id),
+        FOREIGN KEY (currentArea) REFERENCES areas(id)
+    );
+
+     CREATE TABLE item
+    (
+        itemID INT AUTO_INCREMENT,
+        name CHAR(20) NOT NULL,
+        quanity INT NOT NULL,
+
+        PRIMARY KEY (itemID)
+    );
+    
+    CREATE TABLE characterInventory
+    (
+        characterID INT NOT NULL,
+        itemID INT NOT NULL,
+        quantity INT NOT NULL,
+
+        PRIMARY KEY (characterID),
+        FOREIGN KEY (characterID) REFERENCES characters(characterID),
+        FOREIGN KEY (itemID) REFERENCES item(itemID)
+    );  
+
+   

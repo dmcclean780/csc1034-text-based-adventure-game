@@ -13,7 +13,9 @@ async function setUpMap(){
     }
 
     for(let i=0; i<areaData.length; i++){
-        
+        if(areaData[i].id == '0'){
+            continue;
+        }
         const area = areaData[i];
         const mapTile = document.getElementById((parseInt(area.rowPosition)-1) * (parseInt(mapData.colSize)) + parseInt(area.colPosition));
         const areaTile = document.createElement("button");

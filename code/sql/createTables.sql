@@ -137,6 +137,7 @@
         pass VARCHAR(255) NOT NULL,
         -- Stored in plain text
 
+
         PRIMARY KEY (username)
     );
 
@@ -147,4 +148,25 @@
         textAnimationSpeed INT NOT NULL,
         PRIMARY KEY (username),
         FOREIGN KEY (username) REFERENCES users(username)
+    );
+
+    CREATE TABLE characters
+    (
+        characterID INT AUTO_INCREMENT,
+        username VARCHAR(50) NOT NULL,
+        name CHAR(20) NOT NULL,
+        currentDecision INT NOT NULL,
+        currentArea INT NOT NULL,
+        alive BOOLEAN NOT NULL,
+        successful BOOLEAN,
+        endingAchieved INT,
+        catacombsCompleted BOOLEAN,
+        townHallVisited BOOLEAN,
+        libraryCompleted BOOLEAN,
+        currentAreaState JSON,
+
+        PRIMARY KEY (characterID, username),
+        FOREIGN KEY (username) REFERENCES users(username)
+        FOREIGN KEY (currentDecision) REFERENCES decisions(id)
+        FOREIGN KEY (currentArea) REFERENCES areas(id)
     );

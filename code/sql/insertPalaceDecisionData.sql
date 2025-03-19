@@ -17,7 +17,7 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        FLASE,
+        FALSE,
         FALSE,
         TRUE
     ),
@@ -32,7 +32,7 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        FLASE,
+        FALSE,
         FALSE,
         TRUE
     ),
@@ -47,7 +47,7 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        FLASE,
+        FALSE,
         FALSE,
         TRUE
     ),
@@ -61,7 +61,7 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        FLASE,
+        FALSE,
         FALSE,
         TRUE
     ),
@@ -77,7 +77,7 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        FLASE,
+        FALSE,
         FALSE,
         TRUE
     ),
@@ -94,7 +94,7 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        FLASE,
+        FALSE,
         FALSE,
         TRUE
     ),
@@ -108,7 +108,7 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        FLASE,
+        FALSE,
         FALSE,
         TRUE
     ),
@@ -122,7 +122,7 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        FLASE,
+        FALSE,
         FALSE,
         TRUE
     ),
@@ -137,7 +137,7 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        FLASE,
+        FALSE,
         FALSE,
         TRUE
     ),
@@ -151,7 +151,7 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        FLASE,
+        FALSE,
         FALSE,
         TRUE
     ),
@@ -169,7 +169,7 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        FLASE,
+        FALSE,
         FALSE,
         TRUE
     ),
@@ -180,11 +180,11 @@ VALUES
         instantly turn to gold.',
         'WHICH WAY DO YOU DODGE?',
         'images/princely_palace/start/golden palace background.png',
+        TRUE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        FLASE,
         FALSE,
         TRUE
     ),
@@ -195,11 +195,11 @@ VALUES
         golden form. He tries to catch you by going for a backhand.',
         'HOW DO YOU AVOID IT?',
         'images/princely_palace/start/golden palace background.png',
+        TRUE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        FLASE,
         FALSE,
         TRUE
     ),
@@ -210,11 +210,11 @@ VALUES
         This is your chance.',
         'STRIKE?',
         'images/princely_palace/start/golden palace background.png',
+        TRUE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        FLASE,
         FALSE,
         TRUE
     ),
@@ -230,7 +230,7 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        FLASE,
+        FALSE,
         FALSE,
         TRUE
     ),
@@ -247,7 +247,7 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        FLASE,
+        FALSE,
         FALSE,
         TRUE
     ),
@@ -262,7 +262,7 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        FLASE,
+        FALSE,
         FALSE,
         TRUE
     ),
@@ -277,7 +277,7 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        FLASE,
+        FALSE,
         FALSE,
         TRUE
     );

@@ -13,14 +13,17 @@ async function setUpMap(){
     }
 
     for(let i=0; i<areaData.length; i++){
-        
+        if(areaData[i].id == '0'){
+            continue;
+        }
         const area = areaData[i];
         const mapTile = document.getElementById((parseInt(area.rowPosition)-1) * (parseInt(mapData.colSize)) + parseInt(area.colPosition));
         const areaTile = document.createElement("button");
         areaTile.classList.add("map-button");
         if(eval(area.ableToVisitCondition) == true){
             areaTile.addEventListener("click", function(){
-                sessionStorage.setItem("areaID", area.id);
+                changeState("currentArea", area.id);
+                changeState("currentDecision", 1);
                 window.location.href = "dungeons/dungeon.html";
             });
         } else {

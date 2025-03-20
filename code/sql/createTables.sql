@@ -135,7 +135,6 @@
     (
         username VARCHAR(50) UNIQUE NOT NULL,
         pass VARCHAR(255) NOT NULL,
-        -- Stored in plain text
 
         PRIMARY KEY (username)
     );
@@ -149,7 +148,7 @@
         FOREIGN KEY (username) REFERENCES users(username)
     );
 
-    CREATE TABLE characters
+    CREATE TABLE playerCharacter
     (
         characterID INT AUTO_INCREMENT,
         username VARCHAR(50) NOT NULL,
@@ -163,6 +162,7 @@
         townHallVisited BOOLEAN,
         libraryCompleted BOOLEAN,
         currentAreaState JSON,
+        inventory JSON,
 
         PRIMARY KEY (characterID, username),
         FOREIGN KEY (username) REFERENCES users(username),
@@ -170,24 +170,6 @@
         FOREIGN KEY (currentArea) REFERENCES areas(id)
     );
 
-     CREATE TABLE item
-    (
-        itemID INT AUTO_INCREMENT,
-        name CHAR(20) NOT NULL,
-        quanity INT NOT NULL,
 
-        PRIMARY KEY (itemID)
-    );
-    
-    CREATE TABLE characterInventory
-    (
-        characterID INT NOT NULL,
-        itemID INT NOT NULL,
-        quantity INT NOT NULL,
-
-        PRIMARY KEY (characterID),
-        FOREIGN KEY (characterID) REFERENCES characters(characterID),
-        FOREIGN KEY (itemID) REFERENCES item(itemID)
-    );  
 
    

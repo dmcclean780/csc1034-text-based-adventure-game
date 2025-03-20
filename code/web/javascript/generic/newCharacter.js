@@ -14,12 +14,12 @@ document.getElementById("new-character").addEventListener("click", async  (event
 
     try {
         // Insert the new user into the database
-        const insertQuery = `INSERT INTO characters (username, name, currentDecision, currentArea, alive, successful, endingAchieved, catacombsCompleted, townHallVisited, libraryCompleted, currentAreaState) VALUES ('${user}', '${characterName}', 1, 2, 1, 0, 0, 0, 0, 0, '{}')`;
+        const insertQuery = `INSERT INTO playerCharacter (username, name, currentDecision, currentArea, alive, successful, endingAchieved, catacombsCompleted, townHallVisited, libraryCompleted, currentAreaState, inventory) VALUES ('${user}', '${characterName}', 1, 2, 1, 0, 0, 0, 0, 0, '{}', '{}')`;
         const insertResult = await makeDatabaseQuery(insertQuery);
 
         if (insertResult > 0) {
             sessionStorage.setItem("CharacterName", characterName);
-            window.location.href = "../dungeons/dungeon.html";
+            window.location.href = "loadGame.html";
         } else 
         {
             console.log("Error inserting character into database");

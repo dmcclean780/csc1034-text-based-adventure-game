@@ -72,5 +72,5 @@ VALUES
         -- library_r3_peaceChosen --
     (28, 3, 'option_1', 'Continue', '(() => {showDialogue()})', TRUE), 
         -- library_end_epilogue --
-    (29, 3, 'option_1', 'Continue', '(() => {goToMap()}', TRUE);
+    (29, 3, 'option_1', 'Continue', '(() => {changeState("libraryCompleted", 1); clearLocalState(); goToMap()}', TRUE);
 

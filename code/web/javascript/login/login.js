@@ -1,7 +1,9 @@
-let user = {
-    username: "",
-    pass: "",
-}
+document.addEventListener("DOMContentLoaded", () => {
+    console.log(sessionStorage.getItem("username"));
+    if (sessionStorage.getItem("username")) {
+        window.location.href = "../../index.html";
+    }
+});
 
 document.getElementById("loginForm").addEventListener("submit", async  (event) => {
     event.preventDefault();
@@ -20,13 +22,11 @@ document.getElementById("loginForm").addEventListener("submit", async  (event) =
         console.log("Full result object:", result);
 
         if (result && result.length > 0) {
-            user.username = result[0].username;
-            user.pass = result[0].pass;
+            username = result[0].username;
+            password = result[0].pass;
 
-            console.log(user);
-
-            sessionStorage.setItem("username", user.username);
-            sessionStorage.setItem("password", user.pass);
+            sessionStorage.setItem("username", username);
+            sessionStorage.setItem("password", password);
 
 
             window.location.href = "../../index.html";

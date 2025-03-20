@@ -9,4 +9,6 @@ VALUES
 -- Book of War --
 (4, 'Book of War', 'A book that tells the story of a great war.'),
 -- Paige's Book --
-(5, 'Paige Book', 'A book that tells the story of a great war.');
+(5, 'Paige Book', 'A book that tells the story of a great war.'),
+-- Key -- 
+(6, 'Key', 'Paige owns this key.');

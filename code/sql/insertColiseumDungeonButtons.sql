@@ -109,7 +109,7 @@ VALUES
     (41, 7, 'option_1', 'Turn the staff to gold', '(()=> {loadNextDecision(7, 17)})', TRUE),
     (41, 7, 'option_2', 'Turn Pandoro to gold', '(()=> {loadNextDecision(7, 18)})', TRUE),
 
-    (42, 7, 'option_1', '(beat ink game)', '(()=> {showDialogue()})', TRUE),
+    (42, 7, 'option_1', 'Continue', '(()=> {loadNextDecision(7, 63)})', TRUE),
     
     (43, 7, 'option_1', 'Continue', '(()=> {loadNextDecision(7, 44)})', TRUE),
     
@@ -153,7 +153,7 @@ VALUES
 
     (61, 7, 'option_1', 'Continue?', '(()=> {showDialogue()})', TRUE),
 
-    (62, 7, 'option_1', '(beat ink game)', '(()=> {showDialogue()})', TRUE)
+    (62, 7, 'option_1', '(beat ink game)', '(()=> {loadNextDecision(7, 64)})', TRUE)
     ;
 
 

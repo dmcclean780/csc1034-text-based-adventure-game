@@ -152,8 +152,7 @@ function buildTextEntry(decisionData){
     textEntry.connectedCallback();
 }
 
-<<<<<<< HEAD
-=======
+
 function buildLibraryBook(decisionData){
     const main = document.getElementById("main-container");
     const libraryBook = document.createElement("library-book");
@@ -169,4 +168,3 @@ function buildLibraryBook(decisionData){
     libraryBook.render();
 }
 
->>>>>>> main

@@ -588,7 +588,7 @@ VALUES
         'images/backgrounds/2-1.png',
         FALSE,
         FALSE,
-        TRUE,
+        FALSE,
         FALSE,
         FALSE,
         FALSE,
@@ -876,6 +876,34 @@ VALUES
         FALSE,
         FALSE,
         TRUE
+    ),
+    (
+        63,
+        7,
+        '',
+        '',
+        'images/backgrounds/2-1.png',
+        FALSE,
+        FALSE,
+        TRUE,
+        TRUE,
+        FALSE,
+        FALSE,
+        FALSE
+    ),
+    (
+        64,
+        7,
+        '',
+        '',
+        'images/backgrounds/2-1.png',
+        FALSE,
+        FALSE,
+        TRUE,
+        TRUE,
+        FALSE,
+        FALSE,
+        FALSE
     )
     
     ;

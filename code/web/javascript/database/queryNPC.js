@@ -3,7 +3,7 @@ async function makeNpcQuery(npcID) {
     npcs.name, 
     npcs.imageFilePath, 
     npcs.firstDialogue,
-    npcs.onFirstDialogueEnd, 
+    npcs.onFirstDialogueEnd 
     FROM npcs
     WHERE npcs.id = ${npcID}
     GROUP BY npcs.id, npcs.name, npcs.imageFilePath, npcs.firstDialogue;`;

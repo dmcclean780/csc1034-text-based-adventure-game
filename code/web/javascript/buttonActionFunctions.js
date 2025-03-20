@@ -38,13 +38,13 @@ function disableButton(event) {
     document.getElementById(event.target.id).style.display = "none";
 }
 
-<<<<<<< HEAD
 
 function goToEndScreen(ending) {
     sessionStorage.setItem("ending", ending);
     window.location.href = "../generic/end.html";
-=======
+}
+
 function goToMap() {
     window.location.href = pathToRoot +"html/map.html";
->>>>>>> main
+
 }

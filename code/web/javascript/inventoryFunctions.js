@@ -1,25 +1,58 @@
+let inventory;
+
+document.addEventListener("DOMContentLoaded", () => 
+    {
+        if(sessionStorage.getItem("inventory")){
+            inventory = JSON.parse(sessionStorage.getItem("inventory"));
+        }
+    }
+);
+
 function addToInventory(item, quantity) {
-    console.log("ADD ", item, " x", quantity, " to inventory");
-    localStorage[item] = quantity;
-    const itemQuantity = localStorage[item];
-    console.log("Item Quantity: ", itemQuantity); //temporay for now until we have a proper inventory system
+    if(inventory[item] == null){
+        Object.defineProperty(inventory, item, {
+            value: quantity,
+            writable: true,
+            enumerable: true
+        });
+    } else {
+        inventory[item] += quantity;
+    }
+
+    sessionStorage.setItem("inventory", JSON.stringify(inventory));
 }
 
 function removeFromInventory(item, quantity) {
-    console.log("REMOVE ", item, " x", quantity, " from inventory");
-    if(checkInventory(item, quantity)){
-        let itemQuantity = localStorage[item];
-        itemQuantity -= quantity;
-        localStorage[item] = itemQuantity;
+    if (!inventory[item]) {
+        return;
     }
+
+    if (inventory[item] <= quantity) {
+        inventory = Object.assign({}, inventory);  // Create a shallow copy of the object
+        delete inventory[item]; // Remove item from the new object
+    } else {
+        inventory[item] -= quantity;
+    }
+
+    sessionStorage.setItem("inventory", JSON.stringify(inventory));
 }
 
 function checkInventory(item, quantity) {
-    console.log("Check if ", item, " x", quantity, " is in inventory");
-    const itemQuantity = localStorage[item];
-    console.log(parseInt(itemQuantity) >= quantity);
-    if (itemQuantity == null) {
+    if(inventory[item] >= quantity)
+    {
+        return true;
+    } 
+    else 
+    {
         return false;
     }
-    return parseInt(itemQuantity) >= quantity;
 }
+
+function updateDatabaseInventory(inventory) {
+    const items = Object.getOwnPropertyNames(inventory);
+    const query = `UPDATE playerCharacter 
+    SET inventory = '${JSON.stringify(inventory)}'
+    WHERE username = '${gameState.globalState.username}' AND characterID = '${gameState.globalState.characterID}';`;
+    makeDatabaseQuery(query);
+}
+

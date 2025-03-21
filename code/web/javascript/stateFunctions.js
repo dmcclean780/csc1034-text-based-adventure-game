@@ -1,18 +1,43 @@
+let gameState;
+
+document.addEventListener("DOMContentLoaded", () => {
+    if(sessionStorage.getItem("gameState")){
+        gameState = JSON.parse(sessionStorage.getItem("gameState"));
+    }
+}
+);
+
 function changeState(property, state) {
-    console.log("Change ", property, " to ", state);
-    sessionStorage.setItem(property, state);
+    const globalStateVariables = Object.getOwnPropertyNames(gameState.globalState);
+    const localStateVariables = Object.getOwnPropertyNames(gameState.localState);
+    if(globalStateVariables.includes(property)){
+        gameState.globalState[property] = state;
+    } else if(localStateVariables.includes(property)){
+        gameState.localState[property] = state;
+    } else {
+        Object.defineProperty(gameState.localState, property, {
+            value: state,
+            writable: true,
+            enumerable: true
+        });
+    }
+    sessionStorage.setItem("gameState", JSON.stringify(gameState));
 }
 
 function getState(property) {
-    const value = sessionStorage.getItem(property);
-    if (value == null) {
-        changeState(property, false);
+    const globalStateVariables = Object.getOwnPropertyNames(gameState.globalState);
+    const localStateVariables = Object.getOwnPropertyNames(gameState.localState);
+    if(globalStateVariables.includes(property)){
+        return gameState.globalState[property]
+    } else if(localStateVariables.includes(property)){
+        return gameState.localState[property]
+    } else {
+        return false;
     }
-    return sessionStorage.getItem(property);
 }
 
 function decreaseStateVariable(property, value) {
-    let propertyValue = sessionStorage.getItem(property);
+    let propertyValue = getState(property);
     if (propertyValue == null) {
         changeState(property, 0);
     }
@@ -22,9 +47,43 @@ function decreaseStateVariable(property, value) {
 }
 
 function checkState(property, checkValue, onCheckPassed, onCheckFailed) {
-    if(parseInt(sessionStorage.getItem(property)) == checkValue){
+    const propertyValue = getState(property);
+    if(propertyValue == checkValue){
         onCheckPassed();
     } else {
         onCheckFailed();
     }
+}
+
+function updateStateDatabase(gameState) {
+    const attributeNames = Object.getOwnPropertyNames(gameState.globalState);
+    attributeNames.pop();
+    const query = `UPDATE playerCharacter 
+    SET 
+    ${attributeNames
+      .map(attribute => {
+        const value = gameState.globalState[attribute];
+        // If value is null or undefined, set it to NULL in the query
+        if (value === null || value === undefined) {
+          return `${attribute} = NULL`;
+        }
+        return `${attribute} = '${value}'`;
+      })
+      .join(", ")}
+    ,currentAreaState = '${JSON.stringify(gameState.localState)}'
+    WHERE username = '${gameState.globalState.username}' AND characterID = '${gameState.globalState.characterID}';`;
+    makeDatabaseQuery(query);
+}
+
+function clearLocalState() {
+    gameState.localState = {};
+    sessionStorage.setItem("gameState", JSON.stringify(gameState));
+}
+
+function getAllGlobalStateVariableNames() {
+    return Object.getOwnPropertyNames(gameState.globalState);
+}
+
+function printState() {
+    console.log(gameState);
 }

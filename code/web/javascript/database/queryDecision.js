@@ -68,7 +68,10 @@ async function makeDecisionQuery(decisionID, areaID) {
 `;
 
     let decisionData = await makeDatabaseQuery(query);
+    console.log(decisionID, areaID)
+    console.log(decisionData);
     decisionData = decisionData.pop();
+    console.log(decisionData);
     if(decisionData.hasButtonOptions == 1){
         decisionData.buttonIDs = JSON.parse(decisionData.buttonIDs);
         decisionData.buttonTexts = JSON.parse(decisionData.buttonTexts);

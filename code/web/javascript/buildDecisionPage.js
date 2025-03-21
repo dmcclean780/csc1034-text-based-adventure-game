@@ -89,7 +89,9 @@ async function buildDialogue(decisionData) {
 function buildButtonOptions(decisionData){
     const options = document.getElementById("options");
     for (let i = 0; i < decisionData.buttonIDs.length; i++) {
-        if(!eval(decisionData.buttonConditions[i])){
+        
+        if(!eval(decisionData.buttonConditions[i]))
+        {
             continue;
         }
         const button = document.createElement("button");
@@ -109,6 +111,7 @@ function buildTimerBar(decisionData){
     timerBar.setAttribute("id", "timer-bar");
     timerBar.duration = decisionData.timerDuration;
     timerBar.onCompleteCallback =eval(decisionData.timerOnComplete);
+    timerBar.style.display = "block";
     inputBox.insertBefore(timerBar, options);
     
 }
@@ -166,4 +169,3 @@ function buildLibraryBook(decisionData){
     main.appendChild(libraryBook);
     libraryBook.render();
 }
-

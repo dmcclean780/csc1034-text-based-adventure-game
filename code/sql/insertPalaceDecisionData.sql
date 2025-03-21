@@ -134,7 +134,7 @@ VALUES
     ),
     (
         10,
-        9,
+        6,
         'Inside the chest is a gauntlet made of a dark grey metal. You take it and add it to your inventory.',
         '',
         'images/backgrounds/palace.png',

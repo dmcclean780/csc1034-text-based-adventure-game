@@ -33,7 +33,7 @@ VALUES
 
 (10, 6, 'option_1', 'ACCEPT', '(()=> addToInventory("ANTIMIDAS", 1); {loadNextDecision(5, 6)})', TRUE),
 
-(11, 6, 'option_1', 'FIGHT', '(()=> {loadNextDecision(12, 6)})' TRUE),
+(11, 6, 'option_1', 'FIGHT', '(()=> {loadNextDecision(12, 6)})', TRUE),
 (11, 6, 'option_2', 'ARMWRESTLE', '(()=> {loadNextDecision(16, 6)})', '(checkInventory("ANTIMIDAS", 1) == true)'),
 
 (12, 6, 'option_1', 'LEFT', '(()=> {loadNextDecision(13, 6)})', TRUE),

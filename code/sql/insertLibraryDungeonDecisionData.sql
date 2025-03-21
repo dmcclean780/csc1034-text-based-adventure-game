@@ -1,7 +1,7 @@
 INSERT INTO areas
     (id, name, rowPosition, colPosition, ableToVisitCondition)
 VALUES
-    (3, 'Library', 5, 2, TRUE);
+    (3, 'Library', 5, 2, '(getState("libraryCompleted") == false)');
 
 INSERT INTO decisions
     (id, areaID, details, prompt, backgroundFilePath, 

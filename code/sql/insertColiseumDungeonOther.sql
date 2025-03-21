@@ -9,7 +9,7 @@ VALUES
     ),
     
     (
-        64,
+        61,
         7,
         9
     ),
@@ -51,7 +51,13 @@ VALUES
     ),
     
     (
-        62,
+        65,
+        7,
+        16
+    ),
+    
+    (
+        66,
         7,
         16
     ),
@@ -93,7 +99,7 @@ VALUES
     "The Gift of Peace",
     30,
     3,
-    '(()=> {showDialogue()})'
+    '(()=> {loadNextDecision(7, 65)})'
 ),
 (
     64,
@@ -105,5 +111,5 @@ VALUES
     "The Gift of Peace",
     30,
     3,
-    '(()=> {showDialogue()})'
+    '(()=> {loadNextDecision(7, 66)})'
 );

@@ -1,4 +1,9 @@
-sessionStorage.clear();
+document.addEventListener("DOMContentLoaded", () => {
+    console.log(sessionStorage.getItem("username"));
+    if (sessionStorage.getItem("username")) {
+        window.location.href = "../../index.html";
+    }
+});
 
 document.getElementById("loginForm").addEventListener("submit", async  (event) => {
     event.preventDefault();
@@ -69,7 +74,6 @@ document.getElementById("registerForm").addEventListener("submit", async  (event
             messageElement.textContent = "Registration successful!";
             document.getElementById("registerForm").reset();
             sessionStorage.setItem("username", username);
-            sessionStorage.setItem("password", password);
             window.location.href = "../../index.html";
         } else 
         {

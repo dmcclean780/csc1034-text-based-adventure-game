@@ -1,8 +1,11 @@
-if(settings.doTextAnimations){
-    document.addEventListener("DOMContentLoaded", () => {
+
+
+
+document.addEventListener("settingsLoaded", () => {
+    if (settings.doTextAnimations == '1') {
         setupObservers();
-    });
-}
+    }
+});
 
 
 let detailsChanged = false;

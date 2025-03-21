@@ -149,11 +149,15 @@ VALUES
     (59, 7, 'option_3', 'Use sword', '(()=> {loadNextDecision(7, 52)})', TRUE),
     (59, 7, 'option_4', 'Bury him in his coliseum', '(()=> {loadNextDecision(7, 54)})', TRUE),
 
-    (60, 7, 'option_1', 'Continue?', '(()=> {showDialogue()})', TRUE),
+    (60, 7, 'option_1', 'Continue', '(()=> {showDialogue()})', TRUE),
 
-    (61, 7, 'option_1', 'Continue?', '(()=> {showDialogue()})', TRUE),
+    (61, 7, 'option_1', 'Continue', '(()=> {showDialogue()})', TRUE),
 
-    (62, 7, 'option_1', '(beat ink game)', '(()=> {loadNextDecision(7, 64)})', TRUE)
+    (62, 7, 'option_1', 'Continue', '(()=> {loadNextDecision(7, 64)})', TRUE),
+
+    (65, 7, 'option_1', 'Continue', '(()=> {showDialogue()})', TRUE),
+
+    (66, 7, 'option_1', 'Continue', '(()=> {showDialogue()})', TRUE)
     ;
 
 

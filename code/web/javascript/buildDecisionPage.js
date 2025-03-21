@@ -109,6 +109,7 @@ function buildTimerBar(decisionData){
     timerBar.setAttribute("id", "timer-bar");
     timerBar.duration = decisionData.timerDuration;
     timerBar.onCompleteCallback =eval(decisionData.timerOnComplete);
+    timerBar.style.display = "block";
     inputBox.insertBefore(timerBar, options);
     
 }

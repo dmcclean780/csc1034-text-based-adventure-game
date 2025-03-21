@@ -190,7 +190,7 @@ VALUES
   '(() => { loadNextDecision(7, 48); })'),
     
 
-  
+
   ('Calligraphous',
     'images/npc/calligraphous.png',
     '["WHO DISTURBS MY READINGS?", 
@@ -199,8 +199,26 @@ VALUES
             "I should thank you for aiding the cause, give one here... NOW."]',
             '(() => { loadNextDecision(3, 23); })'),
 
+
   ('Calligraphous',
       'images/npc/calligraphous.png',
       '["So you wish to aid me then? Interesting...", "Here, give this a read, I cannot understand it"]',
-              '(() => { loadNextDecision(3, 24); })');
+              '(() => { loadNextDecision(3, 24); })'),
+
+  ('Calligraphous',
+      'images/npc/calligraphous.png',
+      '["Very well then. Have it your way."]',
+                '(() => { goToDeathScreen("Calligraphous killed you"); })'),
+
+  
+  ('Calligraphous',
+      'images/npc/calligraphous.png',
+      '["You fool! You thought I would help you? Ha!"]',
+                '(() => { goToDeathScreen("Calligraphous killed you"); })'),
+
+  
+   ('Calligraphous',
+      'images/npc/calligraphous.png',
+      '["Please! I did not want to hurt you!", "Listen... I can teach you!", "It does not need to end like this!"]',
+                '(() => { loadNextDecision(3, 27); })');
 

@@ -1,7 +1,6 @@
 INSERT INTO areas
-    (id, name)
 VALUES
-    (7, 'Coliseum');
+    (7, 'Coliseum', 2, 5, TRUE);
 
 INSERT INTO decisions
     (id, areaID, details, prompt, backgroundFilePath, hasTimer, hasPopupMenu, hasDialogue, hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions)
@@ -885,7 +884,7 @@ VALUES
         'images/backgrounds/2-1.png',
         FALSE,
         FALSE,
-        TRUE,
+        FALSE,
         TRUE,
         FALSE,
         FALSE,
@@ -899,11 +898,39 @@ VALUES
         'images/backgrounds/2-1.png',
         FALSE,
         FALSE,
-        TRUE,
+        FALSE,
         TRUE,
         FALSE,
         FALSE,
         FALSE
+    ),
+    (
+        65,
+        7,
+        'You successfully cleansed the book of its ill ink infection.',
+        'Continue?',
+        'images/backgrounds/2-1.png',
+        FALSE,
+        FALSE,
+        TRUE,
+        FALSE,
+        FALSE,
+        FALSE,
+        TRUE
+    ),
+    (
+        66,
+        7,
+        'You successfully cleansed the book of its ill ink infection.',
+        'Continue?',
+        'images/backgrounds/2-1.png',
+        FALSE,
+        FALSE,
+        TRUE,
+        FALSE,
+        FALSE,
+        FALSE,
+        TRUE
     )
     
     ;

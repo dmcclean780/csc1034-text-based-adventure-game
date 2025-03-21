@@ -4,5 +4,4 @@ authDetails = {
     "username": "jduke02",
     "password": "vnrsMq16fMSXHNB8",
     "database": "jduke02"
-
 }

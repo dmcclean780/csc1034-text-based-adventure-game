@@ -89,7 +89,9 @@ async function buildDialogue(decisionData) {
 function buildButtonOptions(decisionData){
     const options = document.getElementById("options");
     for (let i = 0; i < decisionData.buttonIDs.length; i++) {
-        if(!eval(decisionData.buttonConditions[i])){
+        
+        if(!eval(decisionData.buttonConditions[i]))
+        {
             continue;
         }
         const button = document.createElement("button");
@@ -167,4 +169,3 @@ function buildLibraryBook(decisionData){
     main.appendChild(libraryBook);
     libraryBook.render();
 }
-

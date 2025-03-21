@@ -6,15 +6,19 @@
     <link rel="stylesheet" href="../../css/default/dungeons.css">
     <link rel="stylesheet" href="../../css/mobile/generic.css">
     <link rel="stylesheet" href="../../css/mobile/dungeons.css">
+    <link rel="stylesheet" href="../../css/default/interface.css">
   </head>
   <body style="color:black; background-color: black;">
     <div class="input-box">
-      <h1 class="details-box" style="letter-spacing: 2px;">PLAY GAME</h1>
-      <button class="button-option" onclick="goToNewGame()" style="margin: 5px; letter-spacing: 2px;">NEW GAME</button>
-      <button class="button-option" onclick="goToLoadGame()" style="margin: 5px; letter-spacing: 2px;">LOAD SAVED GAME</button>
-      <button class="button-option" onclick="backFromStartGame()" style="margin: 5px; letter-spacing: 2px;">RETURN</button>
+      <h1 class="details-box" style="letter-spacing: 2px;">CREATE NEW CHARACTER</h1>
+      <label>Character Name:
+            <input type="text" id="characterName" required>
+        </label>
+        <button id="new-character">Submit</button>
     </div>
-    
+    <script src="../../authDetails.js"></script>
     <script src="../../javascript/generic/menuFunctions.js"></script>
+    <script src="../../javascript/generic/newCharacter.js"></script>
+    <script src="../../javascript/database/queryDatabase.js"></script>
   </body>
 </html>

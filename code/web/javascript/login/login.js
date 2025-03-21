@@ -22,10 +22,9 @@ document.getElementById("loginForm").addEventListener("submit", async  (event) =
         console.log("Full result object:", result);
 
         if (result && result.length > 0) {
-            let user = result[0];
-            console.log(user);
-            sessionStorage.setItem("username", user.username);
-            sessionStorage.setItem("password", user.pass);
+            username = result[0].username;
+            sessionStorage.setItem("username", username);
+
             window.location.href = "../../index.html";
         } else {
             messageElement.textContent = "Invalid username or password.";
@@ -68,7 +67,6 @@ document.getElementById("registerForm").addEventListener("submit", async  (event
 
         const insertDefaultSettings = `INSERT INTO settings (username, doTextAnimations, textAnimationSpeed) VALUES ('${username}', TRUE, 30)`;
         const insertSettingsResult = await makeDatabaseQuery(insertDefaultSettings);
-
 
         if (insertResult > 0) {
             messageElement.textContent = "Registration successful!";

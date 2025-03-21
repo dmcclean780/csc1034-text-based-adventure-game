@@ -19,10 +19,10 @@ async function loadNextDecision(areaID, decisonID) {
     changeState("currentDecision", decisonID);
     printState();
     updateStateDatabase(gameState);
+    updateDatabaseInventory(inventory);
     const decisionData = await makeDecisionQuery(decisonID, areaID);
     console.log(decisionData);
     buildDecision(decisionData);
-
 }
 
 document.addEventListener("settingsLoaded", () => {

@@ -15,6 +15,9 @@ function backFromStartGame(){
     window.location.href = "../../index.html";
 }
 
+function goToNewGame(){
+    window.location.href = "newGame.html";
+}
 function goToLoadGame(){
     window.location.href = "loadGame.html";
 }

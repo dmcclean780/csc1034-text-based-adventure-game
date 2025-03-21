@@ -331,7 +331,7 @@ class LibraryBook extends HTMLElement {
                     this.spawnRandomInk();
                 }, Math.random() * 1500 + 500);
             }
-        }, 10);
+        }, 20);
     }
 
     updateLives() {

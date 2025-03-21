@@ -7,6 +7,10 @@ let gameState = {
     }
 }
 
+let inventory = {
+
+}
+
 async function getAllCharacters() {
     console.log(sessionStorage.getItem("username"));
     const characters = await makeDatabaseQuery(`SELECT * FROM playerCharacter WHERE username = '${sessionStorage.getItem("username")}'`);
@@ -23,6 +27,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (character.alive == 1) {
             characterItem.addEventListener("click", () => {
                 loadGameState(character);
+                loadInventory(character);
                 if (character.currentArea == '0') {
                     window.location.href = "../map.html";
                     return;
@@ -60,4 +65,9 @@ function loadGameState(character){
     sessionStorage.setItem("gameState", JSON.stringify(gameState));
 }
 
+function loadInventory(character){
+    const inventory = JSON.parse(character.inventory);
+    sessionStorage.setItem("inventory", JSON.stringify(inventory));
+    console.log("Inventory Loaded:", sessionStorage.getItem("inventory"));
+}
 

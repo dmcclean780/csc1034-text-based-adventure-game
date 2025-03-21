@@ -23,11 +23,7 @@ document.getElementById("loginForm").addEventListener("submit", async  (event) =
 
         if (result && result.length > 0) {
             username = result[0].username;
-            password = result[0].pass;
-
             sessionStorage.setItem("username", username);
-            sessionStorage.setItem("password", password);
-
 
             window.location.href = "../../index.html";
         } else {

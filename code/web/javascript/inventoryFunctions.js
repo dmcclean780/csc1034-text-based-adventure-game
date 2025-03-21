@@ -49,21 +49,9 @@ function checkInventory(item, quantity) {
 }
 
 function updateDatabaseInventory(inventory) {
-    const attributeNames = Object.getOwnPropertyNames(gameState.globalState);
-    attributeNames.pop();
+    const items = Object.getOwnPropertyNames(inventory);
     const query = `UPDATE playerCharacter 
-    SET 
-    ${attributeNames
-      .map(attribute => {
-        const value = gameState.globalState[attribute];
-        // If value is null or undefined, set it to NULL in the query
-        if (value === null || value === undefined) {
-          return `${attribute} = NULL`;
-        }
-        return `${attribute} = '${value}'`;
-      })
-      .join(", ")}
-    ,inventory = '${JSON.stringify(inventory)}'
+    SET inventory = '${JSON.stringify(inventory)}'
     WHERE username = '${gameState.globalState.username}' AND characterID = '${gameState.globalState.characterID}';`;
     makeDatabaseQuery(query);
 }

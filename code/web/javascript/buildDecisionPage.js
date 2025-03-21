@@ -90,7 +90,6 @@ function buildButtonOptions(decisionData){
     const options = document.getElementById("options");
     for (let i = 0; i < decisionData.buttonIDs.length; i++) {
         
-        console.log(decisionData.buttonConditions[i]);
         if(!eval(decisionData.buttonConditions[i]))
         {
             continue;

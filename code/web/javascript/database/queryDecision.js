@@ -32,6 +32,7 @@ async function makeDecisionQuery(decisionID, areaID) {
                         CASE WHEN decisions.hasLibraryBook THEN libraryBooks.contentTitle ELSE NULL END AS bookTitle,
                         CASE WHEN decisions.hasLibraryBook THEN libraryBooks.scoreNeeded ELSE NULL END AS bookScoreNeeded,
                         CASE WHEN decisions.hasLibraryBook THEN libraryBooks.totalLives ELSE NULL END AS bookTotalLives,
+                        CASE WHEN decisions.hasLibraryBook THEN libraryBooks.bookFunction ELSE NULL END AS bookFunction,
 
                         -- Conditionally fetch Drag Drop Game Info
                         CASE WHEN decisions.hasDragDropGame THEN dragDropGames.noDragItems ELSE NULL END AS noDragItems,

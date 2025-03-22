@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Jersey+10&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+<<<<<<< HEAD
+*{
+    font-family: 'Jersey 10', sans-serif;
+}
+=======
 
 *{
     font-family: 'Jersey 10', sans-serif;
     letter-spacing: 0.04em;
 }
 
+>>>>>>> main
 html,
 body {
     margin: 0;

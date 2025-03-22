@@ -92,4 +92,22 @@
     max-height: 30%;
     overflow-y: auto;
 }
+
+#details {
+    font-size: 1.5em;
+    margin-bottom: 2%;
+    text-align: center;
+}
+
+.button-options {
+    width: 40%;
+    padding: 10px 20px;
+    background-color: rgba(30, 0, 255, 0.75);
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.25em;
+    color: white;
+    font-weight: bold;
+}
+
 }

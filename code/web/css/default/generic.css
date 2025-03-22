@@ -85,7 +85,6 @@ main {
     aspect-ratio: 16 / 15;
     object-fit: contain;
 
-    image-rendering: pixelated;
     display: block;
 }
 

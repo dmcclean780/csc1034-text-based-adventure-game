@@ -22,7 +22,6 @@ function changeState(property, state) {
         });
     }
     sessionStorage.setItem("gameState", JSON.stringify(gameState));
-   
 }
 
 function getState(property) {

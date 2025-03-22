@@ -135,8 +135,6 @@
     (
         username VARCHAR(50) UNIQUE NOT NULL,
         pass VARCHAR(255) NOT NULL,
-        -- Stored in plain text
-
 
         PRIMARY KEY (username)
     );
@@ -164,9 +162,14 @@
         townHallVisited BOOLEAN,
         libraryCompleted BOOLEAN,
         currentAreaState JSON,
+        inventory JSON,
 
         PRIMARY KEY (characterID, username),
         FOREIGN KEY (username) REFERENCES users(username),
         FOREIGN KEY (currentDecision) REFERENCES decisions(id),
         FOREIGN KEY (currentArea) REFERENCES areas(id)
     );
+
+
+
+   

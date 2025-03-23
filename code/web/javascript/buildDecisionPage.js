@@ -1,7 +1,7 @@
 function updateDialogueBox(npcData, dialogueBoxID, pathToRoot) {
     const dialogueBox = document.getElementById(dialogueBoxID);
     dialogueBox.setAttribute('name', npcData.name);
-    dialogueBox.setAttribute('dialogue', npcData.firstDialogue);
+    dialogueBox.setAttribute('dialogue', npcData.firstDialogue.replaceAll("PlayerNameHere", getState("name")));
     dialogueBox.setAttribute('finishedSpeakingFunction', npcData.onFirstDialogueEnd);
     dialogueBox.setAttribute('characterImage', pathToRoot + npcData.imageFilePath);
     dialogueBox.render();

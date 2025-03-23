@@ -17,14 +17,14 @@ async function setUpMap(){
             continue;
         }
         const area = areaData[i];
-        const mapTile = document.getElementById((parseInt(area.rowPosition)-1) * (parseInt(mapData.colSize)) + parseInt(area.colPosition));
+        const mapTile = document.getElementById((area.rowPosition-1) * (mapData.rowSize) + (area.colPosition-1)+1);
         const areaTile = document.createElement("button");
         areaTile.classList.add("map-button");
         if(eval(area.ableToVisitCondition) == true){
             areaTile.addEventListener("click", function(){
                 changeState("currentArea", area.id);
                 changeState("currentDecision", 1);
-                window.location.href = "dungeons/dungeon.html";
+                window.location.href = "../dungeons/dungeon.html";
             });
         } else {
             console.log("not able to visit", area.name);

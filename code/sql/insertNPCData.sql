@@ -31,8 +31,8 @@ VALUES
   ('Witch',
     'images/npc/witch.png',
     '["PlayerNameHere", 
-    "Total Decisions: NoFromDatabase" , 
-    "Various Other Game Stats"]',
+    "You have a long journey ahead of you" , 
+    "I would recommend visitng the library before you set out"]',
     '(() => { loadNextDecision(1, 8); })'),
 
   ('Andrew',

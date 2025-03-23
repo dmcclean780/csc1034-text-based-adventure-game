@@ -13,7 +13,7 @@ function goToDeathScreen(deathMessage) {
     sessionStorage.setItem("deathMessage", deathMessage);
     changeState("alive", 0);
     changeState("successful", 0);
-    window.location.href = pathToRoot + "html/generic/death.html";
+    window.location.href = pathToRoot + "html/other_game_pages/death.html";
 }
 
 function changeDetails(newDetails) {
@@ -43,10 +43,10 @@ function disableButton(event) {
 
 function goToEndScreen(ending) {
     sessionStorage.setItem("ending", ending);
-    window.location.href = "../generic/end.html";
+    window.location.href = pathToRoot+"html/other_game_pages/end.html";
 }
 
 function goToMap() {
-    window.location.href = pathToRoot +"html/map.html";
+    window.location.href = pathToRoot +"html/other_game_pages/map.html";
 
 }

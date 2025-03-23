@@ -30,21 +30,27 @@
 
     <script>
         pathToRoot = "../../";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            if (sessionStorage.getItem("username") === null || sessionStorage.getItem("username") === "") {
+                window.location.href = pathToRoot + "html/menus/login.html";
+            }
+        })
     </script>
 
 
-    <script src="../../settings.js"></script>
+    <script src="../../javascript/menus/settings.js"></script>
 
     <script src="../../javascript/textLoadingAnim.js"></script>
-    
+
     <script src="../../javascript/libraries/DragDropTouch.js"></script>
-    
+
     <script src="../../authDetails.js"></script>
     <script src="../../javascript/database/queryDatabase.js"></script>
     <script src="../../javascript/database/queryNPC.js"></script>
     <script src="../../javascript/database/queryDecision.js"></script>
 
-    
+
     <script src="../../javascript/components/timerBar.js"></script>
     <script src="../../javascript/components/popupMenu.js"></script>
     <script src="../../javascript/components/dragAndDropGame.js"></script>

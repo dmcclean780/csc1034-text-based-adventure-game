@@ -16,10 +16,6 @@
     <div class="menu">
       <div class="column">
         <button class="menu-button-option" id='do-text-animations' onclick="">DO TEXT ANIMATIONS: ON</button>
-        <button class="menu-button-option" onclick=""
-          style="width: 85%; margin-top:8%; margin-bottom:8%; letter-spacing: 2px;">SETTING 2</button>
-        <button class="menu-button-option" onclick=""
-          style="width: 85%; margin-top:8%; margin-bottom:8%; letter-spacing: 2px;">SETTING 3</button>
       </div>
       <div class="column">
         <div class="slidecontainer">
@@ -29,22 +25,30 @@
             <span id="slider-value" class="slider-value">50</span>
           </div>
         </div>
-        <button class="menu-button-option" onclick=""
-          style="width: 85%; margin-top:8%; margin-bottom:8%; letter-spacing: 2px;">SETTING 5</button>
-        <button class="menu-button-option" onclick=""
-          style="width: 85%; margin-top:8%; margin-bottom:8%; letter-spacing: 2px;">SETTING 6</button>
-
       </div>
     </div>
     <button class="button-option" onclick="saveAndReturn()"
       style="margin: 5px; letter-spacing: 2px; background-color: rgb(100, 50, 50); width: 65%;">SAVE & RETURN</button>
   </div>
+
+  <!--Config Files-->
+  <script src="../../authDetails.js"></script>
+
+  <!--Local Config Variables-->
   <script>
     pathToRoot = "../../";
   </script>
-  <script src="../../authDetails.js"></script>
-  <script src="../../javascript/database/queryDatabase.js"></script>
 
+  <!--Database Files-->
+  <script src="../../javascript/database/queryDatabase.js"></script>
+  <script src="../../javascript/database/querySettings.js"></script>
+  <script src="../../javascript/database/pingDatabase.js"></script>
+
+
+  <!--Ensure the server is reachable-->
+  <script src="../../javascript/checkConnection.js"></script>
+
+  <!--Functionality Files-->
   <script src="../../javascript/menus/menuFunctions.js"></script>
   <script src="../../javascript/menus/settings.js"></script>
 </body>

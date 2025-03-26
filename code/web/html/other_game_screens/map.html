@@ -14,19 +14,33 @@
 
 <body>
     <div class="main-container" id="main-container">
+        <pause-menu id="pause-menu" style="display: none;"></pause-menu>
+        <img src="../../images/icons/pause.png" alt="Pause" id="pause_button" onclick="showPauseMenu()">
         <div class="map-grid" id="map-grid">
             
         </div>
         <h1>Click on an Area to Visit It</h1>
     </div>
     
+    <!-- Config Files-->
     <script src="../../authDetails.js"></script>
+
+    <!--Database Files-->
     <script src="../../javascript/database/queryDatabase.js"></script>
     <script src="../../javascript/database/queryAreas.js"></script>
     <script src="../../javascript/database/queryMap.js"></script>
+    <script src="../../javascript/database/pingDatabase.js"></script>
 
-    <script src="../../javascript/stateFunctions.js"></script>
-    <script src="../../javascript/map.js"></script>
+
+    <!--Web Components-->
+    <script src="../../javascript/components/pauseMenu.js"></script>
+
+    <!--Ensure the server is reachable-->
+    <script src="../../javascript/checkConnection.js"></script>
+
+    <!--Functionality Files-->
+    <script src="../../javascript/gameFunctions/stateFunctions.js"></script>
+    <script src="../../javascript/menus/map.js"></script>
 
 
 

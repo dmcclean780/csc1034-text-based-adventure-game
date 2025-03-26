@@ -5,9 +5,9 @@
     background-color: lightgray;
     
     display: grid;
-    grid-template-columns: repeat(6, 1fr); 
+    
 
-    background-image: url(map.png);
+    background-image: url(../../images/map/map.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

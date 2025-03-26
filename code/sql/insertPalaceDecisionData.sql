@@ -1,7 +1,7 @@
 INSERT INTO areas
     (id, name, rowPosition, colPosition, ableToVisitCondition)
 VALUES
-    (6, "Palace", 4, 3, TRUE);
+    (6, "Palace", 4, 3, '(getState("palaceCompleted") == false)');
 
 INSERT INTO decisions
     (id, areaID, details, prompt, backgroundFilePath, hasTimer, hasPopupMenu, hasDialogue, hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions)

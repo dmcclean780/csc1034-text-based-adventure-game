@@ -6,7 +6,7 @@ async function loadSettings() {
     const query = `SELECT * FROM settings WHERE username = '${username}'`;
     const result = await makeDatabaseQuery(query);
     if (result && result.length > 0) {
-       
+
         return result[0];
     }
 }
@@ -30,21 +30,31 @@ function changeTextAnimationSpeed(e) {
 }
 
 function saveAndReturn() {
-    const username = sessionStorage.getItem("username");
-    const query = `UPDATE settings SET doTextAnimations = ${settings.doTextAnimations ? 1 : 0}, textAnimationSpeed = ${settings.textAnimationSpeed} WHERE username = '${username}'`;
-    makeDatabaseQuery(query).then(() => {
+    if (serverReachable) {
+        const username = sessionStorage.getItem("username");
+        const query = `UPDATE settings SET doTextAnimations = ${settings.doTextAnimations ? 1 : 0}, textAnimationSpeed = ${settings.textAnimationSpeed} WHERE username = '${username}'`;
+        makeDatabaseQuery(query).then(() => {
+            window.location.href = "../../index.html";
+        });
+    } else {
+        alert("Server Unreachable - Unable To Change Settings")
         window.location.href = "../../index.html";
-    });
+    }
 }
 
 
 document.addEventListener("DOMContentLoaded", async () => {
-    settings = await loadSettings();
-    document.dispatchEvent(new Event("settingsLoaded"));
-    console.log(settings);
-    if (window.location.href.includes("settings.html")) {
-        applySettings();
-        document.getElementById("do-text-animations").addEventListener("click", changeDoTextAnimations);
-        document.getElementById("text-animation-speed").addEventListener("input", changeTextAnimationSpeed);
-    }
+    setTimeout(async () => {
+        if (serverReachable) {
+            document.getElementById("do-text-animations").addEventListener("click", changeDoTextAnimations);
+            document.getElementById("text-animation-speed").addEventListener("input", changeTextAnimationSpeed);
+            if (serverReachable && settings == null) {
+                settings = await querySettings();
+                if (window.location.href.includes("settings.html")) {
+                    applySettings();
+                }
+            }
+        }
+    }, 250);
+
 });

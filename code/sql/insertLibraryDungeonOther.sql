@@ -51,27 +51,27 @@ VALUES
     (
         22,
         3,
-        8
+        20
     ),
     (
         23,
         3,
-        10
+        22
     ),
     (
         28,
         3,
-        9
+        21
     ),
     (
         27,
         3,
-        11
+        23
     ),
     (
         26,
         3,
-        12
+        24
     );
 
  INSERT INTO timerBars(id, areaID, duration, onComplete)

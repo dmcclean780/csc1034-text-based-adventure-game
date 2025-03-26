@@ -13,13 +13,18 @@
 <body>
     <div class="main-container" id="main-container">
         <img src="" alt="Dungeon Background" id="background">
+        <inventory-container id="inventory" style="display: none;"></inventory-container>
+        <pause-menu id="pause-menu" style="display: none;"></pause-menu>
 
         <div id="input-box-container">
+            <img src="../../images/icons/pause.png" alt="Pause" id="pause_button" onclick="showPauseMenu()">
+
             <div class="details-box" id="details-box" style="display: none;">
                 <div id="details" style="display: none;">
                 </div>
             </div>
             <div class="input-box" id="input-box" style="display: none;">
+                <img src="../../images/icons/inventory.png" alt="Inventory" id="inventory_button" onclick="showInventory()">
                 <div id="prompt" style="display: none;">
                 </div>
                 <div class="options" id="options" style="display: none;">
@@ -52,6 +57,8 @@
     <script src="../../javascript/components/textEntry.js"></script>
     <script src="../../javascript/components/libraryBook.js"></script>
     <script src="../../javascript/components/selectInventory.js"></script>
+    <script src="../../javascript/components/inventory.js"></script>
+    <script src="../../javascript/components/pauseMenu.js"></script>
 
     <script src="../../javascript/inventoryFunctions.js"></script>
     <script src="../../javascript/buildDecisionPage.js"></script>

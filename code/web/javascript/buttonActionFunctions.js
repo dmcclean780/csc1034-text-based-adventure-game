@@ -13,6 +13,7 @@ function goToDeathScreen(deathMessage) {
     sessionStorage.setItem("deathMessage", deathMessage);
     changeState("alive", 0);
     changeState("successful", 0);
+    updateStateDatabase(gameState);
     window.location.href = pathToRoot + "html/generic/death.html";
 }
 
@@ -38,6 +39,12 @@ function addToDetails(newDetails) {
 
 function disableButton(event) {
     document.getElementById(event.target.id).style.display = "none";
+}
+
+
+function goToEndScreen(ending) {
+    sessionStorage.setItem("ending", ending);
+    window.location.href = "../generic/end.html";
 }
 
 function goToMap() {

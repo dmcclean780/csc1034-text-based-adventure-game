@@ -20,6 +20,7 @@ function addToInventory(item, quantity) {
     }
 
     sessionStorage.setItem("inventory", JSON.stringify(inventory));
+    updateInventoryComponent();
 }
 
 function removeFromInventory(item, quantity) {
@@ -28,13 +29,14 @@ function removeFromInventory(item, quantity) {
     }
 
     if (inventory[item] <= quantity) {
-        inventory = Object.assign({}, inventory);  // Create a shallow copy of the object
-        delete inventory[item]; // Remove item from the new object
+        inventory = Object.assign({}, inventory);
+        delete inventory[item];
     } else {
         inventory[item] -= quantity;
     }
 
     sessionStorage.setItem("inventory", JSON.stringify(inventory));
+    updateInventoryComponent();
 }
 
 function checkInventory(item, quantity) {
@@ -56,7 +58,18 @@ function updateDatabaseInventory(inventory) {
     makeDatabaseQuery(query);
 }
 
+function updateInventoryComponent() {
+    const inventoryComponent = document.getElementById("inventory");
+    inventoryComponent.loadInventory();
+}
+
+function updateInventoryComponent() {
+    const inventoryComponent = document.getElementById("inventory");
+    inventoryComponent.loadInventory();
+}
+
 function getAllInventoryItems(){
     const items = Object.getOwnPropertyNames(inventory);
     return items;
 }
+

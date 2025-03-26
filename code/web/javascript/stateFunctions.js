@@ -46,6 +46,17 @@ function decreaseStateVariable(property, value) {
     changeState(property, propertyValue);
 }
 
+function increaseStateVariable(property, value) {
+    let propertyValue = sessionStorage.getItem(property);
+    if (propertyValue == null) {
+        changeState(property, 0);
+    }
+    propertyValue = parseInt(propertyValue);
+    propertyValue+=value;
+    console.log(`value of ${property} is ${propertyValue}`);
+    changeState(property, propertyValue);
+}
+
 function checkState(property, checkValue, onCheckPassed, onCheckFailed) {
     const propertyValue = getState(property);
     if(propertyValue == checkValue){

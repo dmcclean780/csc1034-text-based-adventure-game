@@ -56,3 +56,7 @@ function updateDatabaseInventory(inventory) {
     makeDatabaseQuery(query);
 }
 
+function getAllInventoryItems(){
+    const items = Object.getOwnPropertyNames(inventory);
+    return items;
+}

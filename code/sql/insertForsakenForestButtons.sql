@@ -4,21 +4,18 @@ VALUES
     (1, 5, 'option_2', 'Explore Forest', '(()=> {loadNextDecision(5, 11)})', TRUE),
     (1, 5, 'option_3', 'Leave Forest', '(()=> {goToDeathScreen("Death has come for you")})', TRUE),
 
-    (2, 5, 'option_1', 'Yes', '(()=> {checkState("RIDDLE1_COMPLETE", true, loadNextDecision(5, 4), loadNextDecision(5, 3))})', TRUE),
+    (2, 5, 'option_1', 'Yes', '(()=> {changeState("RIDDLES_CORRECT", 0); checkState("RIDDLE1_COMPLETE", true, loadNextDecision(5, 4), loadNextDecision(5, 3));})', TRUE),
     (2, 5, 'option_2', 'No', '(()=> {loadNextDecision(5, 1)})', TRUE),
 
-    --NEED TO SELECT ITEM FROM INVENTORY--
-    --THEN COMPARE ITEM--
-    --NEED TO TRACK CORRECT ANSWERS--
-    (3, 5, 'option_1', 'Select Item', '((event)=> {showPopupMenu(event);
-                                                changeState("RIDDLE1_COMPLETE", true);})', TRUE),
+    -- NEED TO SELECT ITEM FROM INVENTORY--
+    -- THEN COMPARE ITEM--
+    -- NEED TO TRACK CORRECT ANSWERS--
+    (3, 5, 'option_1', 'Select Item', '((event)=> {selectFromInventory(event)})', TRUE),
     (3, 5, 'option_2', 'Explore Forest', '(()=> {loadNextDecision(5, 11)})', TRUE),
 
-    --NEED TO TRACK CORRECT ANSWERS--
-    (4, 5, 'option_1', 'Select Item', '((event)=> {showPopupMenu(event);
-                                                checkState("RIDDLES_CORRECT", 2, loadNextDecision(5, 7), 
-                                                checkState("RIDDLES_CORRECT", 1, loadNextDecision(5, 6), loadNextDecision(5, 5)))})', TRUE),
-    (4, 5, 'option_2', 'Explore Forest', '(()=> {loadNextDecision(5, 11)})', TRUE),
+    -- NEED TO TRACK CORRECT ANSWERS--
+    (4, 5, 'option_1', 'Select Item', '((event)=> {selectFromInventory(event);})', TRUE),
+    (4, 5, 'option_2', 'Explore Forest', '(()=> {loadNextDecision(5, 11); changeState("RIDDLE1_COMPLETE", true);})', TRUE),
 
     (5, 5, 'option_1', 'Continue', '(()=> {loadNextDecision(5, 8)})', TRUE),
 
@@ -30,10 +27,9 @@ VALUES
     (8, 5, 'option_2', 'Use Ring', '(()=> {checkState("RIDDLES_CORRECT", 2, loadNextDecision(5, 10), loadNextDecision(5, 9))})', 'checkInventory("RING OF STRENGTH", 1)'),
     (8, 5, 'option_3', 'Run Away', '(()=> {goToDeathScreen("You were defeated by the ogre and Death has come for you.")})', TRUE),
 
-    --GO TO MAIN MENU--
-    (9, 5, 'option_1', 'Continue', '(()=> {removeFromInventory("RING OF STRENGTH", 1)})', TRUE),
-    --GO TO MAIN MENU--
-    (10, 5, 'option_1', 'Continue', '(()=> {})', TRUE),
+    (9, 5, 'option_1', 'Continue', '(()=> {removeFromInventory("RING OF STRENGTH", 1); goToMap();})', TRUE),
+
+    (10, 5, 'option_1', 'Continue', '(()=> {goToMap()})', TRUE),
 
     (11, 5, 'option_1', 'The Clearing', '(()=> {loadNextDecision(5, 12)})', TRUE),
     (11, 5, 'option_2', 'The Trees', '(()=> {loadNextDecision(5, 15)})', TRUE),
@@ -53,7 +49,7 @@ VALUES
     (15, 5, 'option_2', 'Search the roots', '(()=> {loadNextDecision(5, 18)})', TRUE),
     (15, 5, 'option_3', 'Explore Forest', '(()=> {loadNextDecision(5, 11)})', TRUE),
 
-    (16, 5, 'option_1', 'Give Pinecone', '(()=> {removeFromInventory("PINECONE", 1): loadNextDecision(5, 17);})', 'checkInventory("PINECONE", 1)'),
+    (16, 5, 'option_1', 'Give Pinecone', '(()=> {removeFromInventory("PINECONE", 1); loadNextDecision(5, 17);})', 'checkInventory("PINECONE", 1)'),
     (16, 5, 'option_2', 'Climb Down', '(()=> {loadNextDecision(5, 15)})', TRUE),
 
     (17, 5, 'option_1', 'Climb Down', '(()=> {addToInventory("FEATHER", 1); loadNextDecision(5, 15);})', TRUE),
@@ -68,8 +64,8 @@ VALUES
     (19, 5, 'option_3', 'Swim in the River', '(()=> {goToDeathScreen("You were attacked and eaten by crocodiles")})', TRUE),
     (19, 5, 'option_4', 'Explore Forest', '(()=> {loadNextDecision(5, 11)})', TRUE),
 
-    (20, 5, 'option_1', 'Collect Rocks', '((event)=> {disableButton(event); addToInventory("ROCKS", 1)})', TRUE),
-    (20, 5, 'option_2', 'Pick Up Litter', '(()=> {loadNextDecision(5, 21)})', TRUE),
+    (20, 5, 'option_1', 'Collect Rocks', '((event)=> {disableButton(event); addToInventory("ROCKS", 1);})', TRUE),
+    (20, 5, 'option_2', 'Pick Up Litter', '(()=> {loadNextDecision(5, 21); addToInventory("EMPTY BOTTLE", 1);})', TRUE),
     (20, 5, 'option_3', 'Explore Forest', '(()=> {loadNextDecision(5, 11)})', TRUE),
 
     (21, 5, 'option_1', 'Explore Forest', '(()=> {loadNextDecision(5, 11)})', TRUE);

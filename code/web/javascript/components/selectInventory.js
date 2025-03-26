@@ -1,12 +1,14 @@
-class selectInventory extends HTMLElement {
+class SelectInventory extends HTMLElement {
 
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
 
         // Default duration
-        this.content = setUpInventory();
-        this.contentTitle = "Inventory";
+        this.correctItem = this.getAttribute("correctItem");
+        this.correctAnswerFunction = eval(this.getAttribute("correctAnswerFunction"));
+        this.incorrectAnswerFunction = eval(this.getAttribute("incorrectAnswerFunction"));
+        //this.contentTitle = "Inventory";
 
         this.shadowRootStyles = `
             <style>
@@ -64,12 +66,20 @@ class selectInventory extends HTMLElement {
                     cursor: pointer;
                 }
 
-                #content{
-                    height: 20%;
+                #inventory-list{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 10px;
                 }
 
-                #title{
-                    height 80%;    
+                .inventory-button{
+                    padding: 10px;
+                    border-radius: 5px;
+                    background-color: rgba(100, 50, 50, 0.75);
+                    cursor: pointer;
+                    border: none;
+                    min-width: 80px;    
                 }
             </style>
             `;
@@ -80,13 +90,19 @@ class selectInventory extends HTMLElement {
             <div id="root">
                 <div id="wrapper">
                     <div id="content-box">
-                        <h1 id="title" >${this.contentTitle}</h1>
-                        <p id="content" >${this.content}</p>
+                        <h1>Inventory</h1>
+                        <div id="inventory-list"></div>
                     </div>
                     <button id="close-button" >Close</button>
                 </div>
             </div>
         `;
+
+        this.shadowRoot.querySelector("#close-button").addEventListener("click", () => {
+            this.style.display = "none";
+        });
+
+        this.render();
 
 
     }
@@ -101,7 +117,7 @@ class selectInventory extends HTMLElement {
         });
     }
 
-    render() {
+    /*render() {
         const contentTitle = "Inventory"
         let content = setUpInventory()
         this.shadowRoot.innerHTML = this.shadowRootStyles;
@@ -121,6 +137,46 @@ class selectInventory extends HTMLElement {
         this.shadowRoot.querySelector("#close-button").addEventListener("click", () => {
             this.style.display = "none";
         });
+    }*/
+
+    
+    render() {
+        const inventoryList = this.shadowRoot.querySelector("#inventory-list");
+        inventoryList.innerHTML = "";
+
+        const itemData = getAllInventoryItems();
+
+        this.correctItem = this.getAttribute("correctItem");
+        this.correctAnswerFunction = eval(this.getAttribute("correctAnswerFunction"));
+        this.incorrectAnswerFunction = eval(this.getAttribute("incorrectAnswerFunction"));
+
+        if (!itemData || itemData.length === 0) {
+            inventoryList.innerHTML = "<p>No items in inventory</p>";
+            return;
+        }
+
+        itemData.forEach(item => {
+            const itemButton = document.createElement("button");
+            itemButton.classList.add("inventory-button");
+            itemButton.innerHTML = item;
+
+            itemButton.addEventListener("click", () => {
+                const isCorrect = item === this.correctItem;
+                console.log(`Selected item: ${item}, Correct: ${isCorrect}`);
+                this.style.display = "none";
+                if (isCorrect){
+                    this.correctAnswerFunction();
+                }else{
+                    this.incorrectAnswerFunction();
+                }
+            });
+
+            inventoryList.appendChild(itemButton);
+        });
+    }
+
+    connectedCallback(){
+        this.render();
     }
 
     
@@ -128,7 +184,7 @@ class selectInventory extends HTMLElement {
 }
 
 
-async function setUpInventory() {
+/*async function setUpInventory() {
 
     const itemData = await makeItemQuery("NULL");
     const inventoryData = await makeInventoryQuery("INVENTORY");
@@ -151,7 +207,7 @@ async function setUpInventory() {
         itemTile.classList.add("inventory-button");
         inventoryTile.appendChild(itemTile);
     }
-}
+}*/
 
 
 customElements.define("select-inventory", SelectInventory);

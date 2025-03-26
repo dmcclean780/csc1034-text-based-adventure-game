@@ -34,6 +34,11 @@ async function buildDecision(decisionData) {
     } catch (e) {
         console.log("No library book to remove");
     }
+    try {
+        document.getElementById("select-inventory").remove();
+    } catch (e) {
+        console.log("No inventory to remove");
+    }
 
 
     document.getElementById("details").style.display = "flex";
@@ -74,6 +79,10 @@ async function buildDecision(decisionData) {
 
     if (decisionData.hasLibraryBook == 1) {
         buildLibraryBook(decisionData);
+    }
+
+    if (decisionData.hasSelectInventory == 1) {
+        buildSelectInventory(decisionData);
     }
 }
 
@@ -168,4 +177,16 @@ function buildLibraryBook(decisionData){
 
     main.appendChild(libraryBook);
     libraryBook.render();
+}
+
+function buildSelectInventory(decisionData){
+    const main = document.getElementById("main-container");
+    const selectInventory = document.createElement("select-inventory");
+    selectInventory.setAttribute("correctItem", decisionData.selectInventoryCorrectItem);
+    selectInventory.setAttribute("correctAnswerFunction", decisionData.selectInventoryCorrectAnswerFunction);
+    selectInventory.setAttribute("incorrectAnswerFunction", decisionData.selectInventoryIncorrectAnswerFunction);
+    selectInventory.setAttribute("id", "select-inventory");
+    
+    main.appendChild(selectInventory);
+    selectInventory.render();
 }

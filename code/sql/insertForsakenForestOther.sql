@@ -2,13 +2,9 @@ INSERT INTO timerBars(id, areaID, duration, onComplete)
 VALUES
     (8, 5, 15, '(()=> {goToDeathScreen("You were defeated by the ogre and Death has come for you.")})');
 
-INSERT INTO popupMenus(id, areaID, contentType, content, contentTitle)
+INSERT INTO selectInventory(id, areaID, correctItem, correctAnswerFunction, incorrectAnswerFunction)
 VALUES
-    --SELECT OPTION FROM INVENTORY?--
-    (3, 5, 'list', 'inventory items', 'Inventory'),
-    (4, 5, 'list', 'inventory items', 'Inventory');
-
---NEED TO FINNISH THIS--
-INSERT INTO dialogues(id, areaID, npcID)
-VALUES
-    ();
+    (3, 5, "FEATHER", '(()=> {increaseStateVariable("RIDDLES_CORRECT", 1); loadNextDecision(5, 4);})', '(()=> {loadNextDecision(5, 4)})'),
+    (4, 5, "FLOWER", '(()=> {increaseStateVariable("RIDDLES_CORRECT", 1); checkState("RIDDLES_CORRECT", 2, ()=> {loadNextDecision(5, 7)}, 
+                            ()=> {checkState("RIDDLES_CORRECT", 1, ()=> {loadNextDecision(5, 6)}, ()=> {loadNextDecision(5, 5)})});})', '(()=> {checkState("RIDDLES_CORRECT", 2, 
+                            ()=> {loadNextDecision(5, 7)}, ()=> {checkState("RIDDLES_CORRECT", 1, ()=> {loadNextDecision(5, 6)}, ()=> {loadNextDecision(5, 5)})})})');

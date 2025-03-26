@@ -43,3 +43,7 @@ function disableButton(event) {
 function goToMap() {
     window.location.href = pathToRoot +"html/map.html";
 }
+
+function selectFromInventory(event) {
+    document.getElementById("select-inventory").style.display = "block";
+}

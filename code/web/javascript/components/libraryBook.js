@@ -69,6 +69,25 @@ class LibraryBook extends HTMLElement {
                     background-color: rgba(0, 0, 0, 0.5);
                     color: black;
                 }
+
+                @media (max-width: 1250px) {
+                    .ink-image {
+                        transform: translateX(-50%) translateY(25px) !important;
+                        z-index: 2;
+                        width: 350px;
+                        height: auto;
+                    }
+
+                    #title {
+                        margin-top: 75px;
+                    }
+
+                    .text-line {
+                        font-size: 1.5rem !important;
+                        margin-bottom: 0.25rem !important;
+                    }
+                }
+
                 #content-box {
                     width: 60%;
                     height: 80%;
@@ -93,10 +112,22 @@ class LibraryBook extends HTMLElement {
                     display: flex;
                     flex-direction: column; /* Keep title and score aligned */
                     align-items: center; /* Vertical centering */
-                    width: 180px; /* Fixed width */
-                    justify-content: space-between;
+                    width: 140px; /* Fixed width */
+                    justify-content: center; /* Center the content vertically */
                     text-align: center;
                     border: 5px solid black;
+                    padding: 5px; /* Reduce padding */
+                }
+
+                #score-title, #lives-title {
+                    font-size: 2rem; /* Reduce the font size */
+                    margin: 0; /* Remove any extra margin */
+                    padding: 0; /* Remove any padding */
+                }
+
+                #score, #lives {
+                    font-size: 2rem; /* Reduce font size for consistency */
+                    margin: 0; /* Remove any extra margin */
                 }
 
                 #score-box{
@@ -105,32 +136,6 @@ class LibraryBook extends HTMLElement {
 
                 #lives-box{
                     left: 5px;
-                }
-
-                #score-title { 
-                    font-size: 2rem;
-                    color: black;
-                    font-weight: normal;
-                    white-space: nowrap; /* Prevents wrapping */
-                }
-                #score {
-                    font-size: 2rem;
-                    color: black;
-                    font-weight: normal;
-                    text-align: right;
-                    flex-grow: 1; /* Allows even spacing */
-                }
-
-                #lives-title {
-                    font-size: 2rem;
-                    color: black;
-                    font-weight: normal;
-                    white-space: nowrap;
-                }
-
-                #lives {
-                    display: flex;
-                    gap: 5px;
                 }
 
                 @keyframes loseHeart {
@@ -228,8 +233,9 @@ class LibraryBook extends HTMLElement {
                 const inkImageRect = inkImage.getBoundingClientRect();  // Get the ink image's width
                 const textLineCenterX = textLineRect.left + textLineRect.width / 2; // center of the text line
                 const inkImageCenterX = inkImageRect.width / 2; // center of the ink image
-                inkImage.style.left = `${textLineCenterX - inkImageCenterX - 40}px`; // position ink in the center
+                inkImage.style.left = "50%";
                 inkImage.style.top = `${textLineRect.top - boxRect.top - 5}px`;  // Position ink correctly
+                inkImage.style.transform = "translateX(-50%)";
 
                 inkImage.style.position = 'absolute'; // Make sure it's positioned correctly within the container
 

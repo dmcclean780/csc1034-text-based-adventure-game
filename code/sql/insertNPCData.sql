@@ -199,12 +199,12 @@ VALUES
             "I should thank you for aiding the cause, give one here... NOW."]',
             '(() => { loadNextDecision(3, 23); })'),
 
-
   ('Calligraphous',
       'images/npc/calligraphous.png',
       '["So you wish to aid me then? Interesting...", "Here, give this a read, I cannot understand it"]',
               '(() => { loadNextDecision(3, 24); })'),
 
+  -- Dialogue 10: 3-23
   ('Calligraphous',
       'images/npc/calligraphous.png',
       '["Very well then. Have it your way."]',

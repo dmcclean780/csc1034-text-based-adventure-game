@@ -39,7 +39,6 @@ async function buildDecision(decisionData) {
     document.getElementById("details").style.display = "flex";
     document.getElementById("input-box-container").style.display = "flex";
 
-
     document.getElementById("details").innerHTML = decisionData.details;
     document.getElementById("prompt").innerHTML = decisionData.prompt;
     document.getElementById("background").src = "../../"+decisionData.backgroundFilePath;
@@ -75,6 +74,8 @@ async function buildDecision(decisionData) {
     if (decisionData.hasLibraryBook == 1) {
         buildLibraryBook(decisionData);
     }
+
+    buildInventory(decisionData);
 }
 
 async function buildDialogue(decisionData) {
@@ -168,4 +169,21 @@ function buildLibraryBook(decisionData){
 
     main.appendChild(libraryBook);
     libraryBook.render();
+}
+
+function buildInventory(decisionData) {
+    const main = document.getElementById("main-container");
+
+    // Remove existing inventory if it already exists
+    const existingInventory = main.querySelector("inventory-container");
+    if (existingInventory) {
+        main.removeChild(existingInventory);
+    }
+
+    // Create and append a new inventory component
+    const inventory = document.createElement("inventory-container");
+    inventory.setAttribute("id", "inventory");
+    
+    // Append the newly created inventory
+    main.appendChild(inventory);
 }

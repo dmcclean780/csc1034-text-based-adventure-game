@@ -26,7 +26,9 @@ VALUES
         -- library_r1_bookReadPeace --
     
         -- library_r1_bookPeaceWin --
-    (9, 3, 'option_1', 'Yes', '(()=> {loadNextDecision(3, 10)})', TRUE), 
+    (9, 3, 'option_1', 'Yes', '(() => { loadNextDecision(3, 10); 
+        addToInventory("Quill", 1); 
+        addToInventory("Book of Peace", 1); })', TRUE), 
         -- library_r1_nextRoom --
     (10, 3, 'option_1', 'Continue', '(()=> {loadNextDecision(3, 11)})', TRUE), 
         -- library_r2_enter --
@@ -49,12 +51,14 @@ VALUES
         -- library_r2_bookReadWar --
 
         -- library_r2_bookWarWin --
-    (19, 3, 'option_1', 'Yes', '(()=> {loadNextDecision(3, 20)})', TRUE), 
+    (19, 3, 'option_1', 'Yes', '(() => {loadNextDecision(3, 20); 
+        addToInventory("Book of War", 1); })', TRUE),
         -- library_r2_nextRoom --
     (20, 3, 'option_1', 'Move to next Room', '(()=> {loadNextDecision(3, 22)})', TRUE), 
     (20, 3, 'option_2', 'Unlock the Glass Cage', '(()=> {loadNextDecision(3, 21)})', TRUE), 
         -- library_r2_unlockGlassCage --
-    (21, 3, 'option_1', 'Continue', '(()=> {loadNextDecision(3, 22)})', TRUE), 
+    (21, 3, 'option_1', 'Continue', '(() => {loadNextDecision(3, 22); 
+        addToInventory("Paige&#39;s Book", 1); })', TRUE),
         -- library_r3_entrance --
     (22, 3, 'option_1', 'Continue', '(() => {showDialogue()})', TRUE), 
         -- library_r3_bookDecision --

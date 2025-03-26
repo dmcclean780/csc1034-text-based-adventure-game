@@ -50,7 +50,7 @@ VALUES
                     Shelves are overturned, books are scattered across the floor. &#10; &#10;
                     It&#39;s even worse than Paige described.
                     The &#39;Ill Ink &#39; is consuming this place. &#10; &#10;
-                    The door further into the library is blocked a bookcase covered in ink.
+                    The door further into the library is blocked by a bookcase covered in ink.
                     You see a small table with an Ink Pot on it.',
         'Enter the Library?',
         'images/backgrounds/library-r1.png',
@@ -67,7 +67,7 @@ VALUES
         4,
         3,
         'Stepping inside, you see the library is in a state of disarray.
-                    Each book in the bookcase seems to be be writhing with a life of its own. There seems to be no way past the bookcase as it is.&#10;&#10;
+                    Each book in the bookcase seems to be writhing with a life of its own. There seems to be no way past the bookcase as it is.&#10;&#10;
                     The ink pot on the table is glowing with a strange light.',
         'Enter the Library?',
         'images/backgrounds/library-r1.png',
@@ -85,7 +85,7 @@ VALUES
         3,
         'As you bring the torch to the bookcase, the books seem to move and slide away from the torch. 
                     One of them slams at you in panic, knocking you to the ground &#10;&#10;
-                    You are now in a room with a bookcase that is now mostly empty. 
+                    You are now in a room with a bookcase that is mostly empty. 
                     The ink pot and quill moves on it&#39;s own, scribbling onto the pages of a book.',
         'What do you do?',
         'images/backgrounds/library-r1.png',
@@ -186,7 +186,7 @@ VALUES
         11,
         3,
         'Stepping into the next room, the door slams shut behind you as ink forces it closed. &#10; &#10;  
-        You see a Book on a lectern in centre of room, all of the ink seems to be flowing in and out of this book, lighter strands of ink flow into the book &#10; &#10;  
+        You see a Book on a lectern in the centre of the room, all of the ink seems to be flowing in and out of this book, lighter strands of ink flow into the book &#10; &#10;  
         Two bookcases form a corridor to the middle of the room, they look unstable.',
         'What do you do?',
         'images/backgrounds/library-r2.png',
@@ -207,7 +207,7 @@ VALUES
         They will fall on you if you don&#39;t act fast!  ',
         'What do you do?',
         'images/backgrounds/library-r2.png',
-        FALSE,
+        TRUE,
         FALSE,
         FALSE,
         FALSE,
@@ -251,8 +251,8 @@ VALUES
     (
         15,
         3,
-        'Stepping to the side of the bookcases, they collapse down into the centre of the room in a heap&#10;&#10;  
-        They surely would have killed you if they fell on you.',
+        'Approaching the book, you see ink tendrils flowing in and out of it. Thinner, weaker ones flow into the book, while thicker, stronger ones flow out. As though empowered by the books information&#10;&#10;
+        The book is closed, and the tendrils are preventing it from opening.&#10;&#10;',
         'What do you do?',
         'images/backgrounds/library-r2.png',
         FALSE,

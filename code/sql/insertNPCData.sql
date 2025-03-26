@@ -64,7 +64,11 @@ VALUES
     'images/npc/paige.png',
     '["Hello, PlayerNameHere."]',
      '(() => { loadNextDecision(1, 3); })');
-    
+
+
+
+
+  
         
 
 

@@ -103,7 +103,7 @@ VALUES
         ' After Andrew finishes speaking he leaves the room along with the other military officers. Bee-Yen
                     leads you over to the map...',
         '',
-        'images/backgrounds/1-7.png',
+        'images/backgrounds/1-6.png',
         FALSE,
         FALSE,
         TRUE,

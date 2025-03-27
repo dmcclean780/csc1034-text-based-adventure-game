@@ -44,7 +44,7 @@ VALUES
 
 (14, 6, 'option_1', 'YES', '(()=> {loadNextDecision(6, 15)})', TRUE),
 
-(15, 6, 'option_1', 'ACCEPT', '(()=> {addToInventory("MIDAS_HAND", 1); goToMap()})', TRUE),
+(15, 6, 'option_1', 'ACCEPT', '(()=> {addToInventory("MIDAS_HAND", 1); changeState("palaceCompleted", 1); clearLocalState(); goToMap()})', TRUE),
 
 (16, 6, 'option_1', 'BREAK HIS ARM', '(()=> {loadNextDecision(6, 15)})', TRUE),
 

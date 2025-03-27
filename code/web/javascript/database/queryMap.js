@@ -4,9 +4,10 @@ async function makeMapQuery(mapID) {
     map.colSize
     FROM map
     WHERE map.worldName = '${mapID}';`;
-
-    console.log(query);
-
-    let  mapData = await makeDatabaseQuery(query);
-    return mapData.pop();
+    try {
+        let mapData = await makeDatabaseQuery(query);
+        return mapData.pop();
+    } catch (error) {
+        throw error;
+    }
 }

@@ -161,6 +161,7 @@
         catacombsCompleted BOOLEAN,
         townHallVisited BOOLEAN,
         libraryCompleted BOOLEAN,
+        palaceCompleted BOOLEAN,
         currentAreaState JSON,
         inventory JSON,
 

@@ -24,7 +24,8 @@
                 </div>
             </div>
             <div class="input-box" id="input-box" style="display: none;">
-                <img src="../../images/icons/inventory.png" alt="Inventory" id="inventory_button" onclick="showInventory()">
+                <img src="../../images/icons/inventory.png" alt="Inventory" id="inventory_button"
+                    onclick="showInventory()">
                 <div id="prompt" style="display: none;">
                 </div>
                 <div class="options" id="options" style="display: none;">
@@ -33,38 +34,66 @@
         </div>
     </div>
 
+    <!--Library Files-->
+    <script src="../../javascript/libraries/DragDropTouch.js"></script>
+
+    <!--Config Files-->
+    <script src="../../authDetails.js"></script>
+
+    <!--Embedded JS for the Main Game Loop-->
     <script>
-        pathToRoot = "../../";
+        const pathToRoot = "../../";
+        let settings;
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            if (sessionStorage.getItem("username") === null || sessionStorage.getItem("username") === "") {
+                window.location.href = pathToRoot + "html/menus/login.html";
+            }
+            settings = await querySettings();
+            document.dispatchEvent(new Event("settingsLoaded"));
+        })
+
+        document.addEventListener("settingsLoaded", () => {
+            const areaID = getState("currentArea")
+            const decisionID = getState("currentDecision")
+            loadNextDecision(areaID, decisionID); //Change this to change what decision is loaded on page load of dungeon.html
+        });
     </script>
 
+   
 
-    <script src="../../settings.js"></script>
+    <!--Apply Settings-->
+    <script src="../../javascript/applySettings/textLoadingAnim.js"></script>
 
-    <script src="../../javascript/textLoadingAnim.js"></script>
-    
-    <script src="../../javascript/libraries/DragDropTouch.js"></script>
-    
-    <script src="../../authDetails.js"></script>
+    <!--Load Any Database Files-->
     <script src="../../javascript/database/queryDatabase.js"></script>
     <script src="../../javascript/database/queryNPC.js"></script>
     <script src="../../javascript/database/queryDecision.js"></script>
+    <script src="../../javascript/database/querySettings.js"></script>
+    <script src="../../javascript/database/pingDatabase.js"></script>
 
-    
+
+    <!--Load All Web Components-->
     <script src="../../javascript/components/timerBar.js"></script>
     <script src="../../javascript/components/popupMenu.js"></script>
     <script src="../../javascript/components/dragAndDropGame.js"></script>
     <script src="../../javascript/components/dialogue.js"></script>
     <script src="../../javascript/components/textEntry.js"></script>
     <script src="../../javascript/components/libraryBook.js"></script>
+    <script src="../../javascript/components/selectInventory.js"></script>
     <script src="../../javascript/components/inventory.js"></script>
     <script src="../../javascript/components/pauseMenu.js"></script>
 
-    <script src="../../javascript/inventoryFunctions.js"></script>
-    <script src="../../javascript/buildDecisionPage.js"></script>
-    <script src="../../javascript/buttonActionFunctions.js"></script>
-    <script src="../../javascript/stateFunctions.js"></script>
+    <!--Ensure the server is reachable-->
+    <script src="../../javascript/checkConnection.js"></script>
 
-    <script src="../../javascript/main.js"></script>
+    <!--Load main game functions-->
+    <script src="../../javascript/gameFunctions/inventoryFunctions.js"></script>
+    <script src="../../javascript/gameFunctions/buttonActionFunctions.js"></script>
+    <script src="../../javascript/gameFunctions/stateFunctions.js"></script>
+    <script src="../../javascript/gameFunctions/inventoryFunctions.js"></script>
+    <script src="../../javascript/gameFunctions/loadNextDecision.js"></script>
+    <script src="../../javascript/gameFunctions/buildDecisionPage.js"></script>
 
 </body>
 

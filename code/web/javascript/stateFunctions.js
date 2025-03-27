@@ -47,13 +47,12 @@ function decreaseStateVariable(property, value) {
 }
 
 function increaseStateVariable(property, value) {
-    let propertyValue = sessionStorage.getItem(property);
+    let propertyValue = getState(property);
     if (propertyValue == null) {
         changeState(property, 0);
     }
     propertyValue = parseInt(propertyValue);
     propertyValue+=value;
-    console.log(`value of ${property} is ${propertyValue}`);
     changeState(property, propertyValue);
 }
 

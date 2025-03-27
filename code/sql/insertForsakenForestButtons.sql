@@ -15,7 +15,7 @@ VALUES
 
     -- NEED TO TRACK CORRECT ANSWERS--
     (4, 5, 'option_1', 'Select Item', '((event)=> {selectFromInventory(event);})', TRUE),
-    (4, 5, 'option_2', 'Explore Forest', '(()=> {loadNextDecision(5, 11); changeState("RIDDLE1_COMPLETE", true);})', TRUE),
+    (4, 5, 'option_2', 'Explore Forest', '(()=> {loadNextDecision(5, 11)})', TRUE),
 
     (5, 5, 'option_1', 'Continue', '(()=> {loadNextDecision(5, 8)})', TRUE),
 

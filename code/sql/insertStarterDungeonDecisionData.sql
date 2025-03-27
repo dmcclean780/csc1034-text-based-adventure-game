@@ -569,10 +569,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE,
-        FALSE
+        TRUE
     );
-
 
 
 

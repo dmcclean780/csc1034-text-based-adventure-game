@@ -65,3 +65,13 @@ function updateInventoryComponent() {
     inventoryComponent.loadInventory();
 }
 
+function updateInventoryComponent() {
+    const inventoryComponent = document.getElementById("inventory");
+    inventoryComponent.loadInventory();
+}
+
+function getAllInventoryItems(){
+    const items = Object.getOwnPropertyNames(inventory);
+    return items;
+}
+

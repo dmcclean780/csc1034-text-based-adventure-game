@@ -4,7 +4,7 @@ VALUES
     (1, 'Village', 3, 2, TRUE);
 
 INSERT INTO decisions
-    (id, areaID, details, prompt, backgroundFilePath, hasTimer, hasPopupMenu, hasDialogue, hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions)
+    (id, areaID, details, prompt, backgroundFilePath, hasTimer, hasPopupMenu, hasDialogue, hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions, hasSelectInventory)
 VALUES
     ( 1,
         1,
@@ -19,7 +19,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
 
     ( 2,
@@ -34,7 +35,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     ( 3,
         1,
@@ -49,7 +51,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     ( 4,
         1,
@@ -64,7 +67,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     ( 5,
         1,
@@ -79,7 +83,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     ( 6,
         1,
@@ -96,7 +101,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     ( 7,
         1,
@@ -110,7 +116,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     ( 8,
         1,
@@ -124,7 +131,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     ( 9,
         1,
@@ -137,7 +145,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     );
 
 INSERT INTO buttonOptions

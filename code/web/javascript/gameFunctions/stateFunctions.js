@@ -46,6 +46,16 @@ function decreaseStateVariable(property, value) {
     changeState(property, propertyValue);
 }
 
+function increaseStateVariable(property, value) {
+    let propertyValue = getState(property);
+    if (propertyValue == null) {
+        changeState(property, 0);
+    }
+    propertyValue = parseInt(propertyValue);
+    propertyValue+=value;
+    changeState(property, propertyValue);
+}
+
 function checkState(property, checkValue, onCheckPassed, onCheckFailed) {
     const propertyValue = getState(property);
     if (propertyValue == checkValue) {

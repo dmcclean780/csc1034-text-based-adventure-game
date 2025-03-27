@@ -6,7 +6,7 @@ VALUES
 INSERT INTO decisions
     (id, areaID, details, prompt, backgroundFilePath, 
     hasTimer, hasPopupMenu, hasDialogue, 
-    hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions)
+    hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions, hasSelectInventory)
 VALUES
         -- library_outside_enterQuestion --
     (
@@ -22,7 +22,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
         -- library_outside_lookAround --
     (
@@ -40,7 +41,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
         -- library_r1_enter --
     (
@@ -60,7 +62,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
         -- library_r1_investigateBookcase --
     (
@@ -77,7 +80,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
         -- library_r1_raiseTorchBookcase --
     (
@@ -95,7 +99,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
         -- library_r1_investigateInkPot --
     (
@@ -112,7 +117,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
         -- library_r1_takeQuill --
     (
@@ -129,7 +135,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
         -- library_r1_bookReadPeace --
     (
@@ -142,6 +149,7 @@ VALUES
         FALSE,
         FALSE,
         TRUE,
+        FALSE,
         FALSE,
         FALSE,
         FALSE
@@ -160,7 +168,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
         -- library_r1_nextRoom --
     (
@@ -179,7 +188,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
         -- library_r2_enter --
     (
@@ -196,7 +206,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r2_stepForwardBookcaseFall --
     (
@@ -213,7 +224,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
      -- library_r2_diveBackwards --
     (
@@ -229,7 +241,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r2_walkAroundBookcase --
     (
@@ -245,7 +258,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r2_approachBook --
     (
@@ -261,7 +275,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r2_sliceStronger --
     (
@@ -277,7 +292,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r2_sliceWeaker --
     (
@@ -293,7 +309,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r2_bookReadWar --
     (
@@ -306,6 +323,7 @@ VALUES
         FALSE,
         FALSE,
         TRUE,
+        FALSE,
         FALSE,
         FALSE,
         FALSE
@@ -324,7 +342,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r2_nextRoom --
     (
@@ -343,7 +362,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
      -- library_r2_unlockGlassCage --
     (
@@ -361,7 +381,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r3_entrance --
     (
@@ -377,7 +398,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r3_bookDecision--
     (
@@ -395,7 +417,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r3_finalBookInHand --
     (
@@ -412,7 +435,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r3_bookReadFinal --
     (
@@ -425,6 +449,7 @@ VALUES
         FALSE,
         FALSE,
         TRUE,
+        FALSE,
         FALSE,
         FALSE,
         FALSE
@@ -444,7 +469,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r3_calligraphousKillSpare --
     (
@@ -459,7 +485,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r3_peaceChosen --
     (
@@ -474,7 +501,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_end_epilogue --
     (
@@ -491,7 +519,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     );
         
 

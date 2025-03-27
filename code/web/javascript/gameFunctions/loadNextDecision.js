@@ -42,8 +42,3 @@ async function loadNextDecision(areaID, decisonID) {
     }
 }
 
-document.addEventListener("settingsLoaded", () => {
-    const areaID = getState("currentArea")
-    const decisionID = getState("currentDecision")
-    loadNextDecision(5, 1); //Change this to change what decision is loaded on page load of dungeon.html
-});

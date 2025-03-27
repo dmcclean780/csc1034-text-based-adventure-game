@@ -3,7 +3,7 @@ VALUES
     (7, 'Coliseum', 2, 5, TRUE);
 
 INSERT INTO decisions
-    (id, areaID, details, prompt, backgroundFilePath, hasTimer, hasPopupMenu, hasDialogue, hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions)
+    (id, areaID, details, prompt, backgroundFilePath, hasTimer, hasPopupMenu, hasDialogue, hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions, hasSelectInventory)
 VALUES
     (
         1,
@@ -17,7 +17,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         2,
@@ -31,7 +32,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         3,
@@ -45,7 +47,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         4,
@@ -59,7 +62,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         5,
@@ -73,7 +77,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         6,
@@ -87,7 +92,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         7,
@@ -101,7 +107,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         8,
@@ -115,7 +122,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         9,
@@ -129,7 +137,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         10,
@@ -143,7 +152,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         11,
@@ -157,7 +167,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         12,
@@ -171,7 +182,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         13,
@@ -185,7 +197,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         14,
@@ -199,7 +212,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         15,
@@ -213,7 +227,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         16,
@@ -227,7 +242,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         17,
@@ -241,7 +257,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         18,
@@ -255,7 +272,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         19,
@@ -269,7 +287,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         20,
@@ -283,7 +302,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         21,
@@ -297,7 +317,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         22,
@@ -311,7 +332,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         23,
@@ -325,7 +347,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         24,
@@ -339,7 +362,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         25,
@@ -353,7 +377,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         26,
@@ -367,7 +392,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         27,
@@ -381,7 +407,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         28,
@@ -395,7 +422,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         29,
@@ -409,7 +437,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         30,
@@ -423,7 +452,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         31,
@@ -437,7 +467,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         32,
@@ -451,7 +482,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         33,
@@ -465,7 +497,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         34,
@@ -479,7 +512,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         35,
@@ -493,7 +527,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         36,
@@ -507,7 +542,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         37,
@@ -521,7 +557,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         38,
@@ -535,7 +572,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         39,
@@ -549,7 +587,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         40,
@@ -563,7 +602,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         41,
@@ -577,7 +617,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         42,
@@ -591,7 +632,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         43,
@@ -605,7 +647,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         44,
@@ -619,7 +662,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         45,
@@ -633,7 +677,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         46,
@@ -647,7 +692,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         47,
@@ -661,7 +707,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         48,
@@ -675,7 +722,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         49,
@@ -689,7 +737,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         50,
@@ -703,7 +752,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         51,
@@ -717,7 +767,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         52,
@@ -731,7 +782,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         53,
@@ -745,7 +797,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         54,
@@ -759,7 +812,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         55,
@@ -773,7 +827,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         56,
@@ -787,7 +842,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         57,
@@ -801,7 +857,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         58,
@@ -815,7 +872,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
 
     (
@@ -830,7 +888,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
 
     (
@@ -845,7 +904,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
 
     (
@@ -860,7 +920,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         62,
@@ -874,7 +935,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         63,
@@ -886,6 +948,7 @@ VALUES
         FALSE,
         FALSE,
         TRUE,
+        FALSE,
         FALSE,
         FALSE,
         FALSE
@@ -902,6 +965,7 @@ VALUES
         TRUE,
         FALSE,
         FALSE,
+        FALSE,
         FALSE
     ),
     (
@@ -916,7 +980,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         66,
@@ -930,7 +995,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     )
     
     ;

@@ -51,7 +51,6 @@ function goToEndScreen(ending) {
 }
 
 function goToMap() {
-    window.location.href = pathToRoot +"html/map.html";
     updateStateDatabase(gameState);
     updateDatabaseInventory(inventory);
     window.location.href = pathToRoot +"html/other_game_screens/map.html";

@@ -187,15 +187,15 @@ class LibraryBook extends HTMLElement {
                         <div id="lives-box">
                         <p id="lives-title">Lives</p>
                         <div id="lives">
-                            <img src="${this.fileRel}images/library_dungeon/library-heart.png" alt="heart" class="heart">
-                            <img src="${this.fileRel}images/library_dungeon/library-heart.png" alt="heart" class="heart">
-                            <img src="${this.fileRel}images/library_dungeon/library-heart.png" alt="heart" class="heart">
+                            <img src="${this.fileRel}images/items/library-heart.png" alt="heart" class="heart">
+                            <img src="${this.fileRel}images/items/library-heart.png" alt="heart" class="heart">
+                            <img src="${this.fileRel}images/items/library-heart.png" alt="heart" class="heart">
                         </div>
                     </div>
                     <h1 id="title">${this.contentTitle}</h1>
                     ${this.content.map((item) => `
                         <p class="text-line">${item}</p>
-                        <img src="${this.fileRel}images/library_dungeon/library-stroke-black.png" alt="ink" class="ink-image" id="ink-image-${this.content.indexOf(item) + 1}">
+                        <img src="${this.fileRel}images/items/library-stroke-black.png" alt="ink" class="ink-image" id="ink-image-${this.content.indexOf(item) + 1}">
                     `).join("")}
                     <div id="score-box">
                 <p id="score-title">Score</p>
@@ -309,7 +309,7 @@ class LibraryBook extends HTMLElement {
 
         if (!inkImage) return;
 
-        inkImage.src = this.fileRel.concat("","images/library_dungeon/library-stroke-black.png");
+        inkImage.src = this.fileRel.concat("","images/items/library-stroke-black.png");
         inkImage.style.opacity = 0;
         let opacity = 0;
         
@@ -325,14 +325,14 @@ class LibraryBook extends HTMLElement {
             inkImage.style.opacity = opacity;
 
             if (opacity >= 1) {
-                inkImage.src = this.fileRel.concat("","images/library_dungeon/library-stroke-red.png"); // Reset to black ink
+                inkImage.src = this.fileRel.concat("","images/items/library-stroke-red.png"); // Reset to black ink
                 clearInterval(inkImage.opacityInterval);
                 this.updateLives(); // Deduct a life
                 this.currentInk = null;
 
                 setTimeout(() => {
                     inkImage.style.opacity = 0;
-                    inkImage.src = this.fileRel.concat("","images/library_dungeon/library-stroke-black.png"); // Reset to black ink
+                    inkImage.src = this.fileRel.concat("","images/items/library-stroke-black.png"); // Reset to black ink
 
                     this.spawnRandomInk();
                 }, Math.random() * 1500 + 500);

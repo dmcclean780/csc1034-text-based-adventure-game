@@ -66,15 +66,17 @@ async function makeDecisionQuery(decisionID, areaID) {
 
                     GROUP BY decisions.id, areas.id;
 `;
-
-    let decisionData = await makeDatabaseQuery(query);
-    decisionData = decisionData.pop();
-    if(decisionData.hasButtonOptions == 1){
-        decisionData.buttonIDs = JSON.parse(decisionData.buttonIDs);
-        decisionData.buttonTexts = JSON.parse(decisionData.buttonTexts);
-        decisionData.buttonFunctions = JSON.parse(decisionData.buttonFunctions);
-        decisionData.buttonConditions = JSON.parse(decisionData.buttonConditions);
+    try {
+        let decisionData = await makeDatabaseQuery(query);
+        decisionData = decisionData.pop();
+        if (decisionData.hasButtonOptions == 1) {
+            decisionData.buttonIDs = JSON.parse(decisionData.buttonIDs);
+            decisionData.buttonTexts = JSON.parse(decisionData.buttonTexts);
+            decisionData.buttonFunctions = JSON.parse(decisionData.buttonFunctions);
+            decisionData.buttonConditions = JSON.parse(decisionData.buttonConditions);
+        }
+        return decisionData;
+    } catch (error) {
+        throw error;
     }
-    return decisionData;
 }
-

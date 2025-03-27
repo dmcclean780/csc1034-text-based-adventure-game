@@ -1,15 +1,14 @@
 let inventory;
 
-document.addEventListener("DOMContentLoaded", () => 
-    {
-        if(sessionStorage.getItem("inventory")){
-            inventory = JSON.parse(sessionStorage.getItem("inventory"));
-        }
+document.addEventListener("DOMContentLoaded", () => {
+    if (sessionStorage.getItem("inventory")) {
+        inventory = JSON.parse(sessionStorage.getItem("inventory"));
     }
+}
 );
 
 function addToInventory(item, quantity) {
-    if(inventory[item] == null){
+    if (inventory[item] == null) {
         Object.defineProperty(inventory, item, {
             value: quantity,
             writable: true,
@@ -40,12 +39,10 @@ function removeFromInventory(item, quantity) {
 }
 
 function checkInventory(item, quantity) {
-    if(inventory[item] >= quantity)
-    {
+    if (inventory[item] >= quantity) {
         return true;
-    } 
-    else 
-    {
+    }
+    else {
         return false;
     }
 }
@@ -55,7 +52,12 @@ function updateDatabaseInventory(inventory) {
     const query = `UPDATE playerCharacter 
     SET inventory = '${JSON.stringify(inventory)}'
     WHERE username = '${gameState.globalState.username}' AND characterID = '${gameState.globalState.characterID}';`;
-    makeDatabaseQuery(query);
+
+    try {
+        makeDatabaseQuery(query);
+    } catch (error) {
+        throw error;
+    }
 }
 
 function updateInventoryComponent() {

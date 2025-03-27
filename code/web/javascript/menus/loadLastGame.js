@@ -12,38 +12,46 @@ let inventory = {
 }
 
 async function getAllCharacters() {
-    console.log(sessionStorage.getItem("username"));
-    const characters = await makeDatabaseQuery(`SELECT * FROM playerCharacter WHERE username = '${sessionStorage.getItem("username")}'`);
-    return characters;
+    try {
+        const characters = await makeDatabaseQuery(`SELECT * FROM playerCharacter WHERE username = '${sessionStorage.getItem("username")}'`);
+        return characters;
+    } catch (error) {
+        throw error;
+    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     setTimeout(async () => {
         if (serverReachable) {
-            const characters = await getAllCharacters();
-            const characterList = document.getElementById("character-list");
-            characters.forEach(character => {
-                const characterItem = document.createElement("button");
-                characterItem.classList.add("button-option");
-                characterItem.innerHTML = character.characterID + ". " + character.name;
-                if (character.alive == 1) {
-                    characterItem.addEventListener("click", () => {
-                        loadGameState(character);
-                        loadInventory(character);
-                        if (character.currentArea == '0') {
-                            window.location.href = "../map.html";
-                            return;
-                        }
-                        window.location.href = "../dungeons/dungeon.html";
-                    });
-                } else {
-                    characterItem.addEventListener("click", () => {
-                        alert("This character is dead");
-                    });
-                    characterItem.style.backgroundColor = "red";
-                }
-                characterList.appendChild(characterItem);
-            });
+            try {
+                const characters = await getAllCharacters();
+                const characterList = document.getElementById("character-list");
+                characters.forEach(character => {
+                    const characterItem = document.createElement("button");
+                    characterItem.classList.add("button-option");
+                    characterItem.innerHTML = character.characterID + ". " + character.name;
+                    if (character.alive == 1) {
+                        characterItem.addEventListener("click", () => {
+                            loadGameState(character);
+                            loadInventory(character);
+                            if (character.currentArea == '0') {
+                                window.location.href = "../map.html";
+                                return;
+                            }
+                            window.location.href = "../dungeons/dungeon.html";
+                        });
+                    } else {
+                        characterItem.addEventListener("click", () => {
+                            alert("This character is dead");
+                        });
+                        characterItem.style.backgroundColor = "red";
+                    }
+                    characterList.appendChild(characterItem);
+                });
+            } catch (error) {
+                console.error("Error loading characters:", error);
+                alert("An error occurred. Please try again later.");
+            } ß
         } else {
             alert("Error - Server is Unreachable. Please try again later.");
         }

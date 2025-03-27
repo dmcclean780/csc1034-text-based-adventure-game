@@ -1,5 +1,3 @@
-
-
 async function loadNextDecision(areaID, decisonID) {
     if (settings.doTextAnimations == '1') {
         document.getElementById("details").style.display = "none";
@@ -18,11 +16,30 @@ async function loadNextDecision(areaID, decisonID) {
     changeState("currentArea", areaID);
     changeState("currentDecision", decisonID);
     printState();
-    updateStateDatabase(gameState);
-    updateDatabaseInventory(inventory);
-    const decisionData = await makeDecisionQuery(decisonID, areaID);
-    console.log(decisionData);
-    buildDecision(decisionData);
+
+    try {
+        updateStateDatabase(gameState);
+    } catch (e) {
+        console.log("Error updating state in database, ", e);
+        alert("Error updating state in database");
+    }
+
+    try {
+        updateDatabaseInventory(inventory);
+    } catch (e) {
+        console.log("Error updating inventory in database, ", e);
+        alert("Error updating inventory in database");
+    }
+
+
+    try {
+        const decisionData = await makeDecisionQuery(decisonID, areaID);
+        console.log(decisionData);
+        buildDecision(decisionData);
+    } catch (e) {
+        console.log("Error loading decision, ", e);
+        alert("Error loading decision");
+    }
 }
 
 

@@ -83,8 +83,13 @@ async function buildDialogue(decisionData) {
     const dialogueBox = document.createElement("dialogue-box");
     dialogueBox.id = "dialogue-box";
     main.appendChild(dialogueBox);
+    try{
     const npcData = await makeNpcQuery(decisionData.npcID);
     updateDialogueBox(npcData, "dialogue-box", "../../");
+    } catch (error) {
+        console.error("Error completing query:", error);
+        alert("An error occurred. Please try again.");
+    }
 }
 
 function buildButtonOptions(decisionData){

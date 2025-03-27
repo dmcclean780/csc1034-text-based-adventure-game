@@ -7,10 +7,13 @@ async function makeAreaQuery(areaID) {
     areas.ableToVisitCondition
     FROM areas
     WHERE areas.id = COALESCE(${areaID}, areas.id);`;
-
-    let  areaData = await makeDatabaseQuery(query);
-    if(areaID == "NULL"){
-        return areaData;
+    try {
+        let areaData = await makeDatabaseQuery(query);
+        if (areaID == "NULL") {
+            return areaData;
+        }
+        return areaData.pop();
+    } catch (error) {
+        throw error;
     }
-    return areaData.pop();
 }

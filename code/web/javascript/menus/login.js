@@ -18,8 +18,6 @@ document.getElementById("loginForm").addEventListener("submit", async (event) =>
                 let sqlQuery = `SELECT username, pass FROM users WHERE username = '${username}' AND pass = '${password}'`;
                 let result = await makeDatabaseQuery(sqlQuery);
 
-                console.log("Full result object:", result);
-
                 if (result && result.length > 0) {
                     username = result[0].username;
                     sessionStorage.setItem("username", username);

@@ -49,9 +49,14 @@ document.addEventListener("DOMContentLoaded", async () => {
             document.getElementById("do-text-animations").addEventListener("click", changeDoTextAnimations);
             document.getElementById("text-animation-speed").addEventListener("input", changeTextAnimationSpeed);
             if (serverReachable && settings == null) {
-                settings = await querySettings();
-                if (window.location.href.includes("settings.html")) {
-                    applySettings();
+                try {
+                    settings = await querySettings();
+                    if (window.location.href.includes("settings.html")) {
+                        applySettings();
+                    }
+                } catch (error) {
+                    console.error("Error loading settings:", error);
+                    alert("An error occurred. Please try again later.");
                 }
             }
         }

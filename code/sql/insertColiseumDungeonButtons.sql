@@ -33,8 +33,8 @@ VALUES
 
     (13, 7, 'option_1', 'Use Midas Glove', '(()=> {goToDeathScreen("So you tried to turn a gold rhino... to gold? You&#39;re not very bright, are you?")})', TRUE),
     (13, 7, 'option_2', 'Use Pickaxe', '(()=> {loadNextDecision(7, 15)})', TRUE),
-    (13, 7, 'option_3', 'Use Anti-Midas Glove', '(()=> {loadNextDecision(7, 14)})', TRUE),
-
+    (13, 7, 'option_3', 'Use Anti-Midas Glove', '(()=> {loadNextDecision(7, 14)})', '(checkInventory("ANTIMIDAS", 1) == TRUE)'),
+ 
     (14, 7, 'option_1', 'Continue', '(()=> {showDialogue()})', TRUE),
 
     (15, 7, 'option_1', 'Try to turn the fire to gold', '(()=> {goToDeathScreen("Did you just put your hand directly into the magic fire? Crazy person...")})', TRUE),
@@ -87,7 +87,6 @@ VALUES
 
     (33, 7, 'option_1', 'Pickaxe', '(()=> {loadNextDecision(7, 34)})', TRUE),
     (33, 7, 'option_2', 'Midas Glove', '(()=> {loadNextDecision(7, 35)})', TRUE),
-    (33, 7, 'option_3', 'Use Anti-Midas Glove', '(()=> {loadNextDecision(7, 35)})', TRUE),
 
     (34, 7, 'option_1', 'Finish this.', '(()=> {showDialogue()})', TRUE),
 

@@ -43,7 +43,9 @@ function disableButton(event) {
 
 function goToEndScreen(ending) {
     sessionStorage.setItem("ending", ending);
-    window.location.href = "../generic/end.html";
+    changeState("alive", 0);
+    changeState("successful", 0);
+    window.location.href = "../menus/end.html";
 }
 
 function goToMap() {

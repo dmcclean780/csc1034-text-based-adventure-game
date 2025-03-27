@@ -21,12 +21,14 @@
 
 .input-box {
     width: 66%;
-    padding: 20px 20px;
-    background-color: rgba(256, 0, 0, 0.75);
+    padding: 2% 2%;
+    background-color: rgba(238, 202, 153, 0.75);
+    border: 3px solid rgba(82, 69, 55, 0.75);
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 10px;
+    position: relative;
 }
 
 #prompt {
@@ -34,35 +36,57 @@
     margin-bottom: 20px;
 }
 
-.options{
-    margin-top: 40px;
-    margin-bottom: 10px;
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-.button-options {
-    width: 40%;
-    padding: 10px 20px;
-    background-color: rgba(255, 0, 255, 0.75);
+
+.options {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    width: 100%; /* Ensure the container doesn't shrink */
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* Two buttons per row */
+    gap: 10px; /* Space between buttons */
+    justify-content: center; /* Center grid items */
+}
+
+.button-option {
+    width: 90%; /* Prevents buttons from stretching */
+    padding: 10px;
+    background-color: rgba(100, 50, 50, 0.75);
+    border: 3px solid rgba(82, 69, 55, 0.75);
+    border-radius: 10px;
     text-align: center;
     cursor: pointer;
-    font-size: 1.25em;
+    font-size: 1.2em;
     color: white;
-    font-weight: bold;
+}
+
+.button-option:hover {
+    background-color: rgba(199, 120, 54, 0.75);
+    border-color: rgba(157, 92, 22, 0.75);
+}
+
+.button-option:active {
+    transform: scale(0.9);
+    transition: transform 0.05s ease-in;
+}
 }
 
 .details-box {
     width: 66%;
-    padding: 20px 20px;
-    margin: 40px 0px;
-    background-color: rgba(256, 0, 0, 0.75);
+    padding: 2% 2%;
+    margin: 4% 0%;
+    background-color: rgba(238, 202, 153, 0.75);
+    border: 3px solid rgba(82, 69, 55, 0.75);
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 10px;
+    max-height: 30%;
+    overflow-y: auto;
 }
 
 #details {

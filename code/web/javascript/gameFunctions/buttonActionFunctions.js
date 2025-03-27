@@ -54,5 +54,8 @@ function goToMap() {
     updateStateDatabase(gameState);
     updateDatabaseInventory(inventory);
     window.location.href = pathToRoot +"html/other_game_screens/map.html";
+}
 
+function selectFromInventory(event) {
+    document.getElementById("select-inventory").style.display = "block";
 }

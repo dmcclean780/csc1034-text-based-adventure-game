@@ -1,0 +1,30 @@
+.stat-box{
+    width: 80%;
+    padding: 2% 2%;
+    margin: 1% 0%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(100, 50, 50, 0.75);
+    font-size: 1.5em;
+    color: white
+}
+
+.stat-table{
+    width: 66%;
+    padding: 2% 2%;
+    margin: 4% 0%;
+    background-color: rgba(238, 202, 153, 0.75);
+    border: 3px solid rgba(82, 69, 55, 0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    height: 85%;
+    overflow-y: auto;
+}
+
+h1{
+    font-size: 3em;
+}

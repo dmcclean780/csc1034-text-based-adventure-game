@@ -27,9 +27,9 @@ VALUES
     (8, 5, 'option_2', 'Use Ring', '(()=> {checkState("RIDDLES_CORRECT", 2, loadNextDecision(5, 10), loadNextDecision(5, 9))})', 'checkInventory("RING OF STRENGTH", 1)'),
     (8, 5, 'option_3', 'Run Away', '(()=> {goToDeathScreen("You were defeated by the ogre and Death has come for you.")})', TRUE),
 
-    (9, 5, 'option_1', 'Continue', '(()=> {removeFromInventory("RING OF STRENGTH", 1); goToMap();})', TRUE),
+    (9, 5, 'option_1', 'Continue', '(()=> {changeState("forestCompleted", 1); clearLocalState(); removeFromInventory("RING OF STRENGTH", 1); goToMap();})', TRUE),
 
-    (10, 5, 'option_1', 'Continue', '(()=> {goToMap()})', TRUE),
+    (10, 5, 'option_1', 'Continue', '(()=> {changeState("forestCompleted", 1); clearLocalState(); goToMap()})', TRUE),
 
     (11, 5, 'option_1', 'The Clearing', '(()=> {loadNextDecision(5, 12)})', TRUE),
     (11, 5, 'option_2', 'The Trees', '(()=> {loadNextDecision(5, 15)})', TRUE),

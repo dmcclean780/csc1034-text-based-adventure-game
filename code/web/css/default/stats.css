@@ -1,4 +1,4 @@
-.stat-box{
+.stat-box {
     width: 80%;
     padding: 2% 2%;
     margin: 1% 0%;
@@ -11,7 +11,7 @@
     color: white
 }
 
-.stat-table{
+.stat-table {
     width: 66%;
     padding: 2% 2%;
     margin: 4% 0%;
@@ -25,6 +25,41 @@
     overflow-y: auto;
 }
 
-h1{
+h1 {
     font-size: 3em;
+}
+
+.root {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlap-box {
+    position: absolute;
+    bottom: 4%;
+    background-color: rgba(100, 50, 50, 1);
+    color: white;
+    border: none;
+    border: 3px solid rgba(82, 69, 55, 0.75);
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 50%;
+    padding: 1% 4%;
+    font-size: 1.75em;
+    cursor: pointer;
+}
+
+.overlap-box:hover {
+    background-color: rgba(199, 120, 54, 1);
+    border-color: rgba(157, 92, 22, 0.75);
+}
+
+.overlap-box:active {
+    transform: scale(0.9);
+    transition: transform 0.05s ease-in;
 }

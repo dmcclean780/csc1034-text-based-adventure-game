@@ -11,6 +11,10 @@ function goToLogin(){
     window.location.href = "html/menus/login.html";
 }
 
+function goToStatistics(){
+   window.location.href="html/menus/statistics.html";
+}
+
 function backFromStartGame(){
     window.location.href = "../../index.html";
 }

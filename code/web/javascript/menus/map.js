@@ -42,7 +42,7 @@ async function setUpMap() {
         } else {
             alert("Error - Server is Unreachable. Please try again later.");
         }
-    }, 250);
+    }, 500);
 }
 
 

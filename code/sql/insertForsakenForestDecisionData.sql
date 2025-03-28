@@ -3,7 +3,7 @@
 INSERT INTO areas
     (id, name, rowPosition, colPosition, ableToVisitCondition)
 VALUES
-    (5, 'Forsaken Forest', 2, 3, TRUE);
+    (5, 'Forsaken Forest', 2, 3, '(getState("forestCompleted") == false)');
 
 INSERT INTO decisions
     (id, areaID, details, prompt, backgroundFilePath, hasTimer, hasPopupMenu, hasDialogue, hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions, hasSelectInventory)

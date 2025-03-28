@@ -102,7 +102,7 @@ const stats = [
         }
     },
     {
-        name: "Acheived: Midas Reborn",
+        name: "Achieved: Midas Reborn",
         statFunction: async () => {
             const query = `SELECT COUNT(DISTINCT username) AS users_with_midas_reborn
                             FROM playerCharacter
@@ -113,7 +113,7 @@ const stats = [
         }
     },
     {
-        name: "Acheived: Black Hole",
+        name: "Achieved: Black Hole",
         statFunction: async () => {
             const query = `SELECT COUNT(DISTINCT username) AS users_with_black_hole
                             FROM playerCharacter
@@ -124,7 +124,7 @@ const stats = [
         }
     },
     {
-        name: "Acheived: A Hero's Death",
+        name: "Achieved: A Hero's Death",
         statFunction: async () => {
             const query = `SELECT COUNT(DISTINCT username) AS users_with_hero_death
                             FROM playerCharacter
@@ -135,7 +135,7 @@ const stats = [
         }
     },
     {
-        name: "Acheived: The True Ending",
+        name: "Achieved: The True Ending",
         statFunction: async () => {
             const query = `SELECT COUNT(DISTINCT username) AS users_with_true_ending
                             FROM playerCharacter
@@ -146,7 +146,7 @@ const stats = [
         }
     },
     {
-        name: "Acheived: Live By The Sword, Die By The Sword",
+        name: "Achieved: Live By The Sword, Die By The Sword",
         statFunction: async () => {
             const query = `SELECT COUNT(DISTINCT username) AS users_with_die_by_sword
                             FROM playerCharacter
@@ -157,7 +157,7 @@ const stats = [
         }
     },
     {
-        name: "Acheived: Buried Secrets",
+        name: "Achieved: Buried Secrets",
         statFunction: async () => {
             const query = `SELECT COUNT(DISTINCT username) AS users_with_buried_secrets
                             FROM playerCharacter
@@ -179,7 +179,7 @@ const stats = [
         }
     },
     {
-        name: "Acheived: All Endings",
+        name: "Achieved: All Endings",
         statFunction: async () => {
             const query = `SELECT COUNT(username) AS users_with_all_endings
                             FROM (
@@ -195,7 +195,7 @@ const stats = [
         }
     },
     {
-        name: "Avergae Deaths Per User",
+        name: "Average Deaths Per User",
         statFunction: async () => {
             const query = `SELECT AVG(character_count) AS avg_characters_per_user
                             FROM (

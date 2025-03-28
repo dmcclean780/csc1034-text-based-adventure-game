@@ -163,6 +163,8 @@
         townHallVisited BOOLEAN,
         libraryCompleted BOOLEAN,
         palaceCompleted BOOLEAN,
+        forestCompleted BOOLEAN,
+        wormHillCompleted BOOLEAN,
         currentAreaState JSON,
         inventory JSON,
 

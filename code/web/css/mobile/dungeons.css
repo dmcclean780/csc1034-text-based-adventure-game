@@ -1,4 +1,4 @@
-@media (max-width: 599px) {
+@media (max-width: 600px) {
 
 #input-box-container {
     position: absolute;
@@ -36,11 +36,29 @@
     margin-bottom: 20px;
 }
 
-img {
-    max-width: 100%;
+#pause-button, #inventory-button {
+    max-width: 10%;
     height: auto;
 }
 
+#inventory-button {
+    position: absolute;
+    bottom: 1%; /* Adjust to fine-tune positioning */
+    left: 1%; /* Adjust to fine-tune positioning */
+    width: 10%; /* Set desired size */
+    height: auto; /* Set desired size */
+    cursor: pointer; /* Makes it clickable */
+}
+
+#pause-button {
+    position: absolute;
+    top: 1%; /* Adjust to fine-tune positioning */
+    right: 1%; /* Adjust to fine-tune positioning */
+    width: 5%; /* Set desired size */
+    height: auto; /* Set desired size */
+    cursor: pointer; /* Makes it clickable */
+    z-index: 10; /* Ensures it stays above other elements */
+}
 
 .options {
     margin-top: 40px;
@@ -49,7 +67,10 @@ img {
     display: grid;
     grid-template-columns: repeat(2, auto); /* Two buttons per row */
     gap: 10px; /* Space between buttons */
-    justify-content: center; /* Center grid items */
+
+    flex-direction: row;
+    justify-content: space-between;
+    overflow-x: auto;
 }
 
 .button-option {
@@ -93,5 +114,4 @@ img {
     font-size: 1.5em;
     margin-bottom: 20px;
     text-align: center;
-}
 }

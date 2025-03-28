@@ -43,7 +43,7 @@
         position: relative;
     }
 
-    #inventory_button {
+    #inventory-button {
         position: absolute;
         bottom: 1%; /* Adjust to fine-tune positioning */
         left: 1%; /* Adjust to fine-tune positioning */
@@ -52,7 +52,7 @@
         cursor: pointer; /* Makes it clickable */
     }
 
-    #pause_button {
+    #pause-button {
         position: absolute;
         top: 1%; /* Adjust to fine-tune positioning */
         right: 1%; /* Adjust to fine-tune positioning */
@@ -95,7 +95,7 @@
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
-    min-width: 40%;
+    min-width: 30%;
     font-size: 1.5em;
     color: white;
 }

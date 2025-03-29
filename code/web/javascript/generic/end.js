@@ -5,7 +5,13 @@ document.getElementById("return-btn").addEventListener("click", function() {
     window.location.href = "../../html/menus/startGame.html";
 });
 
-window.onload = function () {
+document.getElementById("stats-btn").addEventListener("click", function() {
+    window.location.href = "../../html/menus/startGame.html";
+});
+
+window.onload = async function () {
+    //update database columns to show character has finished the game
+
     //set ending message based on ending achieved
     let title = "";
     let message = "";

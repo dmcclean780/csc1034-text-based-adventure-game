@@ -45,6 +45,9 @@ function goToEndScreen(ending) {
     sessionStorage.setItem("ending", ending);
     changeState("alive", 0);
     changeState("successful", 1);
+    changeState("endingAchieved", ending);
+    
+    updateStateDatabase(gameState);
     window.location.href = "../menus/end.html";
 }
 

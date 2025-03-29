@@ -44,7 +44,7 @@ function disableButton(event) {
 function goToEndScreen(ending) {
     sessionStorage.setItem("ending", ending);
     changeState("alive", 0);
-    changeState("successful", 0);
+    changeState("successful", 1);
     window.location.href = "../menus/end.html";
 }
 

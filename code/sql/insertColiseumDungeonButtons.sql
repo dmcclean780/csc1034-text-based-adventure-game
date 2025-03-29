@@ -112,29 +112,29 @@ VALUES
     
     (43, 7, 'option_1', 'Continue', '(()=> {loadNextDecision(7, 44)})', TRUE),
     
-    (44, 7, 'option_1', 'Finish', '(()=> {goToEndScreen(1)})', TRUE),
+    (44, 7, 'option_1', 'Finish', '(()=> {goToEndScreen(2)})', TRUE),
     
     (45, 7, 'option_1', 'Continue', '(()=> {loadNextDecision(7, 46)})', TRUE),
     
-    (46, 7, 'option_1', 'Finish', '(()=> {goToEndScreen(1)})', TRUE),
+    (46, 7, 'option_1', 'Finish', '(()=> {goToEndScreen(3)})', TRUE),
     
     (47, 7, 'option_1', 'Continue', '(()=> {showDialogue()})', TRUE),
     
     (48, 7, 'option_1', 'Continue', '(()=> {loadNextDecision(7, 49)})', TRUE),
     
-    (49, 7, 'option_1', 'Finish', '(()=> {goToEndScreen(1)})', TRUE),
+    (49, 7, 'option_1', 'Finish', '(()=> {goToEndScreen(4)})', TRUE),
     
     (50, 7, 'option_1', 'Continue', '(()=> {loadNextDecision(7, 51)})', TRUE),
     
-    (51, 7, 'option_1', 'Finish', '(()=> {goToEndScreen(1)})', TRUE),
+    (51, 7, 'option_1', 'Finish', '(()=> {goToEndScreen(5)})', TRUE),
     
     (52, 7, 'option_1', 'Continue', '(()=> {loadNextDecision(7, 53)})', TRUE),
     
-    (53, 7, 'option_1', 'Finish', '(()=> {goToEndScreen(1)})', TRUE),
+    (53, 7, 'option_1', 'Finish', '(()=> {goToEndScreen(6)})', TRUE),
     
     (54, 7, 'option_1', 'Continue', '(()=> {loadNextDecision(7, 55)})', TRUE),
     
-    (55, 7, 'option_1', 'Finish', '(()=> {goToEndScreen(1)})', TRUE),
+    (55, 7, 'option_1', 'Finish', '(()=> {goToEndScreen(7)})', TRUE),
     
     (56, 7, 'option_1', 'Continue', '(()=> {loadNextDecision(7, 57)})', TRUE),
     

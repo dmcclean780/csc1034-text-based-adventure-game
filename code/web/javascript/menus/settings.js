@@ -16,8 +16,8 @@ function applySettings() {
     document.getElementById("do-text-animations").innerHTML = `DO TEXT ANIMATIONS: ${settings.doTextAnimations == 1 ? "ON" : "OFF"}`;
     document.getElementById("text-animation-speed").value = 90 - settings.textAnimationSpeed;
     document.getElementById("slider-value").innerHTML = 90 - settings.textAnimationSpeed;
-}
 
+}
 
 function changeDoTextAnimations() {
     settings.doTextAnimations = !settings.doTextAnimations;
@@ -29,10 +29,15 @@ function changeTextAnimationSpeed(e) {
     document.getElementById("slider-value").innerHTML = 90 - settings.textAnimationSpeed;
 }
 
+function changeTextSize() {
+    var e = document.getElementById("text-size");
+    settings.textSize = e.value;
+}
+
 function saveAndReturn() {
     if (serverReachable) {
         const username = sessionStorage.getItem("username");
-        const query = `UPDATE settings SET doTextAnimations = ${settings.doTextAnimations ? 1 : 0}, textAnimationSpeed = ${settings.textAnimationSpeed} WHERE username = '${username}'`;
+        const query = `UPDATE settings SET doTextAnimations = ${settings.doTextAnimations ? 1 : 0}, textAnimationSpeed = ${settings.textAnimationSpeed}, textSize = '${settings.textSize}' WHERE username = '${username}'`;
         makeDatabaseQuery(query).then(() => {
             window.location.href = "../../index.html";
         });
@@ -48,6 +53,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (serverReachable) {
             document.getElementById("do-text-animations").addEventListener("click", changeDoTextAnimations);
             document.getElementById("text-animation-speed").addEventListener("input", changeTextAnimationSpeed);
+            document.getElementById("text-size").addEventListener("change", changeTextSize);
             if (serverReachable && settings == null) {
                 try {
                     settings = await querySettings();

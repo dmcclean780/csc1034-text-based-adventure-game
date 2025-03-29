@@ -10,13 +10,13 @@
     width: 100%;
     /* Makes the div span the full width of the container */
     height: 95%;
-    /* Makes the div span the full height of the container */
-    color: white;
     /* Text color */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    color: rgba(47, 37, 27, 0.75);
+
 }
 
 .input-box {
@@ -43,11 +43,16 @@
 
 #inventory-button {
     position: absolute;
-    bottom: 1%; /* Adjust to fine-tune positioning */
-    left: 1%; /* Adjust to fine-tune positioning */
-    width: 10%; /* Set desired size */
-    height: auto; /* Set desired size */
-    cursor: pointer; /* Makes it clickable */
+    top: 1%;
+    /* Adjust to fine-tune positioning */
+    left: 1%;
+    /* Adjust to fine-tune positioning */
+    width: 10%;
+    /* Set desired size */
+    height: auto;
+    /* Set desired size */
+    cursor: pointer;
+    /* Makes it clickable */
 }
 
 #pause-button {
@@ -74,7 +79,7 @@
 }
 
 .button-option {
-    width: 90%; /* Prevents buttons from stretching */
+    width: 100%; /* Prevents buttons from stretching */
     padding: 10px;
     background-color: rgba(100, 50, 50, 0.75);
     border: 3px solid rgba(82, 69, 55, 0.75);

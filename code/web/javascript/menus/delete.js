@@ -38,3 +38,17 @@ document.getElementById("deleteForm").addEventListener("submit", async (event) =
         }     
     }, 250);
 }); 
+
+// Toggle password visibility for login form
+document.getElementById('toggle-password').addEventListener('click', () => {
+    var passwordInput = document.getElementById('password');
+    var button = document.getElementById('toggle-password');
+
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        button.textContent = "Hide";
+    } else {
+        passwordInput.type = "password";
+        button.textContent = "Show";
+    }
+});

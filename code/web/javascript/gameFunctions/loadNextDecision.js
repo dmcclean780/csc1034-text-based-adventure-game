@@ -16,6 +16,7 @@ async function loadNextDecision(areaID, decisonID) {
     changeState("currentArea", areaID);
     changeState("currentDecision", decisonID);
     printState();
+    printInventory();
 
     try {
         updateStateDatabase(gameState);

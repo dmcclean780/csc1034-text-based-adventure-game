@@ -13,16 +13,27 @@
         worldName CHAR(20) NOT NULL,
         rowSize INT NOT NULL,
         colSize INT NOT NULL,
+        mapImageFilePath CHAR(50) NOT NULL,
         PRIMARY KEY (worldName)
     );
 
     CREATE TABLE areas
     (
         id INT NOT NULL PRIMARY KEY,
+        worldName CHAR(20) NOT NULL,
         name CHAR(20) NOT NULL,
         rowPosition INT NOT NULL,
         colPosition INT NOT NULL,
-        ableToVisitCondition TEXT(1000) NOT NULL
+        conditionID INT NULL,
+
+        FOREIGN KEY (conditionID) REFERENCES area_conditions(id),
+        FOREIGN KEY (worldName) REFERENCES map(worldName)
+    );
+
+    CREATE TABLE area_conditions (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        conditionName VARCHAR(50) UNIQUE NOT NULL,
+        conditionScript TEXT NOT NULL
     );
 
     CREATE TABLE decisions
@@ -132,6 +143,18 @@
         FOREIGN KEY (id) REFERENCES decisions(id)
     );
 
+    CREATE TABLE selectInventory
+    (
+        id INT NOT NULL,
+        areaID INT NOT NULL,
+        correctItem CHAR(50) NOT NULL,
+        correctAnswerFunction TEXT(1000) NOT NULL,
+        incorrectAnswerFunction TEXT(1000) NOT NULL,
+
+        PRIMARY KEY (id, areaID),
+        FOREIGN KEY (id) REFERENCES decisions(id)
+    );
+
     CREATE TABLE users
     (
         username VARCHAR(50) UNIQUE NOT NULL,
@@ -166,7 +189,7 @@
         forestCompleted BOOLEAN,
         wormHillCompleted BOOLEAN,
         currentAreaState JSON,
-        inventory JSON,
+        currentPlayTime INT NOT NULL,
 
         PRIMARY KEY (characterID, username),
         FOREIGN KEY (username) REFERENCES users(username),
@@ -174,17 +197,25 @@
         FOREIGN KEY (currentArea) REFERENCES areas(id)
     );
 
-    CREATE TABLE selectInventory
-    (
-        id INT NOT NULL,
-        areaID INT NOT NULL,
-        correctItem CHAR(50) NOT NULL,
-        correctAnswerFunction TEXT(1000) NOT NULL,
-        incorrectAnswerFunction TEXT(1000) NOT NULL,
-
-        PRIMARY KEY (id, areaID),
-        FOREIGN KEY (id) REFERENCES decisions(id)
+    CREATE TABLE playerInventory (
+        characterID INT NOT NULL,
+        itemName VARCHAR(50) NOT NULL,
+        quantity INT NOT NULL,
+        PRIMARY KEY (characterID, item_name),
+        FOREIGN KEY (characterID) REFERENCES playerCharacter(characterID)
     );
+
+    CREATE TABLE playerInventoryLog (
+        characterID INT NOT NULL,
+        timestamp TIMESTAMP NOT NULL,
+        quantity INT NOT NULL,
+        itemName VARCHAR(50) NOT NULL,
+        action VARCHAR(50) NOT NULL,
+        PRIMARY KEY (characterID, timestamp),
+        FOREIGN KEY (characterID) REFERENCES playerCharacter(characterID)
+    );
+
+    
 
 
 

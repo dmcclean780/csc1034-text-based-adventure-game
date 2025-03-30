@@ -8,7 +8,7 @@ document.getElementById("new-character").addEventListener("click", async (event)
         if (serverReachable) {
             try {
                 // Insert the new user into the database
-                const insertQuery = `INSERT INTO playerCharacter (username, name, currentDecision, currentArea, alive, successful, endingAchieved, catacombsCompleted, townHallVisited, libraryCompleted, palaceCompleted, forestCompleted, currentAreaState, inventory) VALUES ('${user}', '${characterName}', 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, '{}', '{}')`;
+                const insertQuery = `INSERT INTO playerCharacter (username, name, currentDecision, currentArea, alive, successful, endingAchieved, catacombsCompleted, townHallVisited, libraryCompleted, palaceCompleted, forestCompleted, wormHillCompleted, currentAreaState, currentPlayTime) VALUES ('${user}', '${characterName}', 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, '{}', 0)`;
                 const insertResult = await makeDatabaseQuery(insertQuery);
 
                 if (insertResult > 0) {

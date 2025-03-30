@@ -1,3 +1,5 @@
+
+
 function goToPlayGame(){
     window.location.href = "html/menus/startGame.html";
 }
@@ -22,8 +24,17 @@ function backFromStartGame(){
 function goToNewGame(){
     window.location.href = "newGame.html";
 }
+
 function goToLoadGame(){
     window.location.href = "loadGame.html";
+} 
+
+function goToEditAccount(){
+    window.location.href = "html/menus/editAccount.html";
+}
+
+function goToDeleteAccount(){
+    window.location.href = "html/menus/deleteAccount.html";
 }
 
 function backFromLoadGame(){

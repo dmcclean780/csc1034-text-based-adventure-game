@@ -168,8 +168,11 @@
         username VARCHAR(50) NOT NULL,
         doTextAnimations BOOLEAN NOT NULL,
         textAnimationSpeed INT NOT NULL,
+        textSize text(50) NOT NULL,
         PRIMARY KEY (username),
         FOREIGN KEY (username) REFERENCES users(username)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
     );
 
     CREATE TABLE playerCharacter
@@ -195,6 +198,8 @@
         FOREIGN KEY (username) REFERENCES users(username),
         FOREIGN KEY (currentDecision) REFERENCES decisions(id),
         FOREIGN KEY (currentArea) REFERENCES areas(id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
     );
 
     CREATE TABLE playerInventory (

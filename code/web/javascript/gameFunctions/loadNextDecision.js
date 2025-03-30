@@ -14,23 +14,11 @@ async function loadNextDecision(areaID, decisonID) {
     }
 
     if (settings.textSize == 'Small') {
-        document.getElementById("details").style.fontSize = "0.5em";
-        document.getElementById("details-box").style.fontSize = "0.5em";
-        document.getElementById("prompt").style.fontSize = "0.5em";
-        document.getElementById("options").style.fontSize = "0.5em";
-        document.getElementById("input-box").style.fontSize = "0.5em";
+        document.documentElement.style.fontSize = "10px";
     } else if (settings.textSize == 'Medium') {
-        document.getElementById("details").style.fontSize = "1em";
-        document.getElementById("details-box").style.fontSize = "1em";
-        document.getElementById("prompt").style.fontSize = "1em";
-        document.getElementById("options").style.fontSize = "0.75em";
-        document.getElementById("input-box").style.fontSize = "1em";
+        document.documentElement.style.fontSize = "15px";
     } else if (settings.textSize == 'Large') {
-        document.getElementById("details").style.fontSize = "1.25em";
-        document.getElementById("details-box").style.fontSize = "1.25em";
-        document.getElementById("prompt").style.fontSize = "1.25em";
-        document.getElementById("options").style.fontSize = "0.8em";
-        document.getElementById("input-box").style.fontSize = "1.25em";
+        document.documentElement.style.fontSize = "20px";
     }
 
     changeState("currentArea", areaID);

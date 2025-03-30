@@ -13,10 +13,25 @@ async function loadSettings() {
 
 
 function applySettings() {
+    var savedSize = settings.textSize;
+
     document.getElementById("do-text-animations").innerHTML = `DO TEXT ANIMATIONS: ${settings.doTextAnimations == 1 ? "ON" : "OFF"}`;
     document.getElementById("text-animation-speed").value = 90 - settings.textAnimationSpeed;
     document.getElementById("slider-value").innerHTML = 90 - settings.textAnimationSpeed;
+    document.getElementById("text-size-value").innerHTML = savedSize;
 
+    if(savedSize == "Small")
+    {
+        document.getElementById("text-size").value = 1;
+    }
+    else if(savedSize == "Medium")
+    {
+        document.getElementById("text-size").value = 2;
+    }
+    else if(savedSize == "Large")
+    {
+        document.getElementById("text-size").value = 3;
+    }
 }
 
 function changeDoTextAnimations() {
@@ -29,9 +44,25 @@ function changeTextAnimationSpeed(e) {
     document.getElementById("slider-value").innerHTML = 90 - settings.textAnimationSpeed;
 }
 
-function changeTextSize() {
-    var e = document.getElementById("text-size");
-    settings.textSize = e.value;
+function changeTextSize(e) {
+    if(e.target.value == 1)
+    {
+        console.log(1);
+        settings.textSize = "Small";
+        document.getElementById("text-size-value").innerHTML = "Small";
+    }
+    else if(e.target.value == 2)
+    {
+        console.log(2);
+        settings.textSize = "Medium";
+        document.getElementById("text-size-value").innerHTML = "Medium";
+    }
+    else if(e.target.value == 3)
+    {
+        console.log(3);
+        settings.textSize = "Large";
+        document.getElementById("text-size-value").innerHTML = "Large";
+    }
 }
 
 function saveAndReturn() {
@@ -53,7 +84,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (serverReachable) {
             document.getElementById("do-text-animations").addEventListener("click", changeDoTextAnimations);
             document.getElementById("text-animation-speed").addEventListener("input", changeTextAnimationSpeed);
-            document.getElementById("text-size").addEventListener("change", changeTextSize);
+            document.getElementById("text-size").addEventListener("input", changeTextSize);
             if (serverReachable && settings == null) {
                 try {
                     settings = await querySettings();

@@ -76,7 +76,7 @@ p {
     margin-bottom: 2%;
 }
 
-#loginMessage{
+#loginMessage, #deleteMessage{
     color: rgb(205, 21, 21);
     font-size: 1.3rem;
     margin-bottom: 2%;

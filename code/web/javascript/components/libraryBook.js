@@ -69,6 +69,25 @@ class LibraryBook extends HTMLElement {
                     background-color: rgba(0, 0, 0, 0.5);
                     color: black;
                 }
+
+                @media (max-width: 1250px) {
+                    .ink-image {
+                        transform: translateX(-50%) translateY(25px) !important;
+                        z-index: 2;
+                        width: 350px;
+                        height: auto;
+                    }
+
+                    #title {
+                        margin-top: 75px;
+                    }
+
+                    .text-line {
+                        font-size: 1.5rem !important;
+                        margin-bottom: 0.25rem !important;
+                    }
+                }
+
                 #content-box {
                     width: 60%;
                     height: 80%;
@@ -93,10 +112,22 @@ class LibraryBook extends HTMLElement {
                     display: flex;
                     flex-direction: column; /* Keep title and score aligned */
                     align-items: center; /* Vertical centering */
-                    width: 180px; /* Fixed width */
-                    justify-content: space-between;
+                    width: 140px; /* Fixed width */
+                    justify-content: center; /* Center the content vertically */
                     text-align: center;
                     border: 5px solid black;
+                    padding: 5px; /* Reduce padding */
+                }
+
+                #score-title, #lives-title {
+                    font-size: 2rem; /* Reduce the font size */
+                    margin: 0; /* Remove any extra margin */
+                    padding: 0; /* Remove any padding */
+                }
+
+                #score, #lives {
+                    font-size: 2rem; /* Reduce font size for consistency */
+                    margin: 0; /* Remove any extra margin */
                 }
 
                 #score-box{
@@ -105,32 +136,6 @@ class LibraryBook extends HTMLElement {
 
                 #lives-box{
                     left: 5px;
-                }
-
-                #score-title { 
-                    font-size: 2rem;
-                    color: black;
-                    font-weight: normal;
-                    white-space: nowrap; /* Prevents wrapping */
-                }
-                #score {
-                    font-size: 2rem;
-                    color: black;
-                    font-weight: normal;
-                    text-align: right;
-                    flex-grow: 1; /* Allows even spacing */
-                }
-
-                #lives-title {
-                    font-size: 2rem;
-                    color: black;
-                    font-weight: normal;
-                    white-space: nowrap;
-                }
-
-                #lives {
-                    display: flex;
-                    gap: 5px;
                 }
 
                 @keyframes loseHeart {
@@ -182,15 +187,15 @@ class LibraryBook extends HTMLElement {
                         <div id="lives-box">
                         <p id="lives-title">Lives</p>
                         <div id="lives">
-                            <img src="${this.fileRel}images/library_dungeon/library-heart.png" alt="heart" class="heart">
-                            <img src="${this.fileRel}images/library_dungeon/library-heart.png" alt="heart" class="heart">
-                            <img src="${this.fileRel}images/library_dungeon/library-heart.png" alt="heart" class="heart">
+                            <img src="${this.fileRel}images/items/library-heart.png" alt="heart" class="heart">
+                            <img src="${this.fileRel}images/items/library-heart.png" alt="heart" class="heart">
+                            <img src="${this.fileRel}images/items/library-heart.png" alt="heart" class="heart">
                         </div>
                     </div>
                     <h1 id="title">${this.contentTitle}</h1>
                     ${this.content.map((item) => `
                         <p class="text-line">${item}</p>
-                        <img src="${this.fileRel}images/library_dungeon/library-stroke-black.png" alt="ink" class="ink-image" id="ink-image-${this.content.indexOf(item) + 1}">
+                        <img src="${this.fileRel}images/items/library-stroke-black.png" alt="ink" class="ink-image" id="ink-image-${this.content.indexOf(item) + 1}">
                     `).join("")}
                     <div id="score-box">
                 <p id="score-title">Score</p>
@@ -228,8 +233,9 @@ class LibraryBook extends HTMLElement {
                 const inkImageRect = inkImage.getBoundingClientRect();  // Get the ink image's width
                 const textLineCenterX = textLineRect.left + textLineRect.width / 2; // center of the text line
                 const inkImageCenterX = inkImageRect.width / 2; // center of the ink image
-                inkImage.style.left = `${textLineCenterX - inkImageCenterX - 40}px`; // position ink in the center
+                inkImage.style.left = "50%";
                 inkImage.style.top = `${textLineRect.top - boxRect.top - 5}px`;  // Position ink correctly
+                inkImage.style.transform = "translateX(-50%)";
 
                 inkImage.style.position = 'absolute'; // Make sure it's positioned correctly within the container
 
@@ -303,7 +309,7 @@ class LibraryBook extends HTMLElement {
 
         if (!inkImage) return;
 
-        inkImage.src = this.fileRel.concat("","images/library_dungeon/library-stroke-black.png");
+        inkImage.src = this.fileRel.concat("","images/items/library-stroke-black.png");
         inkImage.style.opacity = 0;
         let opacity = 0;
         
@@ -319,19 +325,19 @@ class LibraryBook extends HTMLElement {
             inkImage.style.opacity = opacity;
 
             if (opacity >= 1) {
-                inkImage.src = this.fileRel.concat("","images/library_dungeon/library-stroke-red.png"); // Reset to black ink
+                inkImage.src = this.fileRel.concat("","images/items/library-stroke-red.png"); // Reset to black ink
                 clearInterval(inkImage.opacityInterval);
                 this.updateLives(); // Deduct a life
                 this.currentInk = null;
 
                 setTimeout(() => {
                     inkImage.style.opacity = 0;
-                    inkImage.src = this.fileRel.concat("","images/library_dungeon/library-stroke-black.png"); // Reset to black ink
+                    inkImage.src = this.fileRel.concat("","images/items/library-stroke-black.png"); // Reset to black ink
 
                     this.spawnRandomInk();
                 }, Math.random() * 1500 + 500);
             }
-        }, 10);
+        }, 20);
     }
 
     updateLives() {

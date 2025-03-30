@@ -31,8 +31,8 @@ VALUES
   ('Witch',
     'images/npc/witch.png',
     '["PlayerNameHere", 
-    "Total Decisions: NoFromDatabase" , 
-    "Various Other Game Stats"]',
+    "You have a long journey ahead of you" , 
+    "I would recommend visitng the library before you set out"]',
     '(() => { loadNextDecision(1, 8); })'),
 
   ('Andrew',
@@ -68,7 +68,11 @@ VALUES
 
 
   ('Pandoro', 
+<<<<<<< HEAD
     'images/npc/pandoro.png', 
+=======
+    'images/npc/ankou.png', 
+>>>>>>> main
     '[
     "I summoned them from the dead.",
     "They are mine to return there.", 
@@ -78,14 +82,22 @@ VALUES
   ,
   
   ('Pandoro', 
+<<<<<<< HEAD
     'images/npc/pandoro.png', 
+=======
+    'images/npc/ankou.png', 
+>>>>>>> main
     '["You entered the arena, and now you wish to flee?", 
 		"Fight, or your fate will be death!"]',
     '(() => {loadNextDecision(7, 8); })')
   ,
 
   ('Pandoro', 
+<<<<<<< HEAD
     'images/npc/pandoro.png', 
+=======
+    'images/npc/ankou.png', 
+>>>>>>> main
     '[
     "So, Midas is dead.",
     "It’s you who’s been wreaking havoc in my servant’s homes.", 
@@ -95,7 +107,11 @@ VALUES
   ,
 
   ('Pandoro', 
+<<<<<<< HEAD
     'images/npc/pandoro.png', 
+=======
+    'images/npc/ankou.png', 
+>>>>>>> main
     '[
     "You have a mastery over gold that even I cannot attain!",
     "How is this possible?", 
@@ -105,7 +121,11 @@ VALUES
   ,
 
   ('Pandoro', 
+<<<<<<< HEAD
     'images/npc/pandoro.png', 
+=======
+    'images/npc/ankou.png', 
+>>>>>>> main
     '[
     "WHAT HAVE YOU DONE!",
     "You fool!", 
@@ -115,7 +135,11 @@ VALUES
   ,
 
   ('Pandoro', 
+<<<<<<< HEAD
     'images/npc/pandoro.png', 
+=======
+    'images/npc/ankou.png', 
+>>>>>>> main
     '[
     "Congrats, challenger.",
     "Who are you to enter my coliseum and win out against these fine warriors?", 
@@ -125,7 +149,11 @@ VALUES
   ,
 
   ('Pandoro', 
+<<<<<<< HEAD
     'images/npc/pandoro.png', 
+=======
+    'images/npc/ankou.png', 
+>>>>>>> main
     '[
     "You entered the arena, and now you wish to flee?",
     "Fight, or your fate will be death!"
@@ -134,7 +162,11 @@ VALUES
   ,
 
   ('Pandoro', 
+<<<<<<< HEAD
     'images/npc/pandoro.png', 
+=======
+    'images/npc/ankou.png', 
+>>>>>>> main
     '[
     "I summoned them from the dead.",
     "They are mine to return there.", 
@@ -144,7 +176,11 @@ VALUES
   ,
 
   ('Pandoro', 
+<<<<<<< HEAD
     'images/npc/pandoro.png', 
+=======
+    'images/npc/ankou.png', 
+>>>>>>> main
     '[
     "So, it was you who defeated Calligraphus.",
     "I shall have justice for my servant.", 
@@ -154,7 +190,11 @@ VALUES
   ,
 
   ('Pandoro', 
+<<<<<<< HEAD
     'images/npc/pandoro.png', 
+=======
+    'images/npc/ankou.png', 
+>>>>>>> main
     '[
     "You fought well.",
     "Better than I expected.", 
@@ -167,7 +207,11 @@ VALUES
   ,
 
   ('Pandoro', 
+<<<<<<< HEAD
     'images/npc/pandoro.png', 
+=======
+    'images/npc/ankou.png', 
+>>>>>>> main
     '[
     "Do you think this is justice?",
     "Do you believe you have saved the world?",
@@ -181,7 +225,11 @@ VALUES
   ,
 
   ('Pandoro', 
+<<<<<<< HEAD
     'images/npc/pandoro.png', 
+=======
+    'images/npc/ankou.png', 
+>>>>>>> main
     '[
     "You have lost, PlayerNameHere.",
     "My power was not solely dependent on that staff, it is anchored to my very soul!", 
@@ -205,6 +253,7 @@ VALUES
       '["So you wish to aid me then? Interesting...", "Here, give this a read, I cannot understand it"]',
               '(() => { loadNextDecision(3, 24); })'),
 
+  -- Dialogue 10: 3-23
   ('Calligraphous',
       'images/npc/calligraphous.png',
       '["Very well then. Have it your way."]',

@@ -39,6 +39,7 @@
         hasDragDropGame BOOLEAN NOT NULL,
         hasTextEntry BOOLEAN NOT NULL,
         hasButtonOptions BOOLEAN NOT NULL,
+        hasSelectInventory BOOLEAN NOT NULL,
 
         FOREIGN KEY (areaID) REFERENCES areas(id),
         PRIMARY KEY (id, areaID)
@@ -135,8 +136,6 @@
     (
         username VARCHAR(50) UNIQUE NOT NULL,
         pass VARCHAR(255) NOT NULL,
-        -- Stored in plain text
-
 
         PRIMARY KEY (username)
     );
@@ -163,10 +162,30 @@
         catacombsCompleted BOOLEAN,
         townHallVisited BOOLEAN,
         libraryCompleted BOOLEAN,
+        palaceCompleted BOOLEAN,
+        forestCompleted BOOLEAN,
+        wormHillCompleted BOOLEAN,
         currentAreaState JSON,
+        inventory JSON,
 
         PRIMARY KEY (characterID, username),
         FOREIGN KEY (username) REFERENCES users(username),
         FOREIGN KEY (currentDecision) REFERENCES decisions(id),
         FOREIGN KEY (currentArea) REFERENCES areas(id)
     );
+
+    CREATE TABLE selectInventory
+    (
+        id INT NOT NULL,
+        areaID INT NOT NULL,
+        correctItem CHAR(50) NOT NULL,
+        correctAnswerFunction TEXT(1000) NOT NULL,
+        incorrectAnswerFunction TEXT(1000) NOT NULL,
+
+        PRIMARY KEY (id, areaID),
+        FOREIGN KEY (id) REFERENCES decisions(id)
+    );
+
+
+
+   

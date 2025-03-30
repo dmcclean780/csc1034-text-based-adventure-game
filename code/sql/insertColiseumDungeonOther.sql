@@ -92,6 +92,7 @@ VALUES
 (
     63,
     7,
+<<<<<<< HEAD
     "Why should frail flesh bow to decay,
 When will and wit can find a way?
 To rot is but a fool’s disease—
@@ -99,12 +100,21 @@ I cure with power, gods I appease.
 Eternal night bends to my sway.",
     "Defying the Grave",
     10,
+=======
+    "Peace is quiet, soft, and bright|
+        A gentle glow in darkest night.|
+        No war, no hate, just calm and free,|
+        A world of love for you and me.",
+    "The Gift of Peace",
+    30,
+>>>>>>> main
     3,
     '(()=> {loadNextDecision(7, 65)})'
 ),
 (
     64,
     7,
+<<<<<<< HEAD
     "Why should frail flesh bow to decay,
 When will and wit can find a way?
 To rot is but a fool’s disease—
@@ -112,6 +122,14 @@ I cure with power, gods I appease.
 Eternal night bends to my sway.",
     "Defying the Grave",
     10,
+=======
+    "Peace is quiet, soft, and bright|
+        A gentle glow in darkest night.|
+        No war, no hate, just calm and free,|
+        A world of love for you and me.",
+    "The Gift of Peace",
+    30,
+>>>>>>> main
     3,
     '(()=> {loadNextDecision(7, 66)})'
 );

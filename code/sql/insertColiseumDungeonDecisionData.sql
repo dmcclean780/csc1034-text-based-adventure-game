@@ -3,7 +3,11 @@ VALUES
     (7, 'Coliseum', 2, 5, TRUE);
 
 INSERT INTO decisions
+<<<<<<< HEAD
     (id, areaID, details, prompt, backgroundFilePath, hasTimer, hasPopupMenu, hasDialogue, hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions)
+=======
+    (id, areaID, details, prompt, backgroundFilePath, hasTimer, hasPopupMenu, hasDialogue, hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions, hasSelectInventory)
+>>>>>>> main
 VALUES
     (
         1,
@@ -17,7 +21,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         2,
@@ -31,7 +40,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         3,
@@ -45,7 +59,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         4,
@@ -59,7 +78,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         5,
@@ -73,7 +97,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         6,
@@ -87,7 +116,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         7,
@@ -101,7 +135,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         8,
@@ -115,7 +154,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         9,
@@ -129,7 +173,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         10,
@@ -143,7 +192,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         11,
@@ -157,7 +211,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         12,
@@ -171,7 +230,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         13,
@@ -185,7 +249,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         14,
@@ -199,7 +268,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         15,
@@ -213,7 +287,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         16,
@@ -227,7 +306,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         17,
@@ -241,7 +325,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         18,
@@ -255,7 +344,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         19,
@@ -269,7 +363,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         20,
@@ -283,7 +382,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         21,
@@ -297,7 +401,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         22,
@@ -311,7 +420,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         23,
@@ -325,7 +439,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         24,
@@ -339,7 +458,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         25,
@@ -353,7 +477,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         26,
@@ -367,7 +496,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         27,
@@ -381,7 +515,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         28,
@@ -395,7 +534,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         29,
@@ -409,7 +553,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         30,
@@ -423,7 +572,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         31,
@@ -437,7 +591,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         32,
@@ -451,7 +610,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         33,
@@ -465,7 +629,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         34,
@@ -479,7 +648,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         35,
@@ -493,7 +667,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         36,
@@ -507,7 +686,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         37,
@@ -521,7 +705,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         38,
@@ -535,7 +724,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         39,
@@ -549,7 +743,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         40,
@@ -563,7 +762,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         41,
@@ -577,7 +781,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         42,
@@ -591,7 +800,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         43,
@@ -605,7 +819,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         44,
@@ -619,7 +838,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         45,
@@ -633,7 +857,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         46,
@@ -647,7 +876,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         47,
@@ -661,7 +895,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         48,
@@ -675,7 +914,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         49,
@@ -689,7 +933,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         50,
@@ -703,7 +952,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         51,
@@ -717,7 +971,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         52,
@@ -731,7 +990,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         53,
@@ -745,7 +1009,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         54,
@@ -759,7 +1028,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         55,
@@ -773,7 +1047,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         56,
@@ -787,7 +1066,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         57,
@@ -801,7 +1085,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         58,
@@ -815,7 +1104,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
 
     (
@@ -830,7 +1124,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
 
     (
@@ -845,7 +1144,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
 
     (
@@ -860,7 +1164,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         62,
@@ -874,7 +1183,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         63,
@@ -888,6 +1202,10 @@ VALUES
         TRUE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
+=======
+        FALSE,
+>>>>>>> main
         FALSE
     ),
     (
@@ -902,6 +1220,10 @@ VALUES
         TRUE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
+=======
+        FALSE,
+>>>>>>> main
         FALSE
     ),
     (
@@ -916,7 +1238,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     ),
     (
         66,
@@ -930,7 +1257,12 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
+<<<<<<< HEAD
         TRUE
+=======
+        TRUE,
+        FALSE
+>>>>>>> main
     )
     
     ;

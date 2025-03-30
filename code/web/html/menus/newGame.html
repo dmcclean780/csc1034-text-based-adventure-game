@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Life After Death</title>
+  <link rel="stylesheet" href="../../css/default/generic.css">
+  <link rel="stylesheet" href="../../css/default/dungeons.css">
+  <link rel="stylesheet" href="../../css/mobile/generic.css">
+  <link rel="stylesheet" href="../../css/mobile/dungeons.css">
+  <link rel="stylesheet" href="../../css/default/interface.css">
+</head>
+
+<body style="color:black; background-color: black;">
+  <div class="input-box">
+    <h1 class="details-box" style="letter-spacing: 2px;">CREATE NEW CHARACTER</h1>
+    <label>Character Name:
+      <input type="text" id="characterName" required>
+    </label>
+    <button id="new-character">Submit</button>
+  </div>
+
+  <!--Config Files-->
+  <script src="../../authDetails.js"></script>
+
+  <!--Local Config Variables-->
+  <script>
+    pathToRoot = "../../";
+  </script>
+
+  <!--Database Files-->
+  <script src="../../javascript/database/queryDatabase.js"></script>
+  <script src="../../javascript/database/pingDatabase.js"></script>
+
+
+  <!--Ensure the server is reachable-->
+  <script src="../../javascript/checkConnection.js"></script>
+
+  <!--Functionality Files-->
+  <script src="../../javascript/menus/newCharacter.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Jersey+10&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+    font-family: 'Jersey 10', sans-serif;
+    letter-spacing: 0.04em;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+}
+
+.wrapper {
+    width: 80%;
+    max-width: 90%;
+    background: white;
+    padding: 2%;
+    border-radius: 1vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../images/login/login-background.png");  
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    margin-bottom: 2%;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container {
+    background-color: rgba(238, 202, 153, 0.75);
+    border: 0.3vw solid rgba(82, 69, 55, 0.75);
+    padding: 2%;
+    border-radius: 1vw;
+    box-shadow: 0 0.4vw 0.8vw rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 40%;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin: 5%;
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    margin-bottom: 1%;
+    font-size: 2.5rem;
+}
+
+p {
+    margin-bottom: 1%;
+    font-size: 1.3rem;
+    margin-bottom: 2%;
+}
+
+#loginMessage{
+    color: rgb(205, 21, 21);
+    font-size: 1.3rem;
+    margin-bottom: 2%;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 1%;
+    font-size: 1.25rem;
+}
+
+input {
+    width: 100%;
+    padding: 1.5%;
+    margin-top: 0.5%;
+    border: 0.1vw solid #ccc;
+    border-radius: 0.5vw;
+    font-size: 1.5rem;
+    box-sizing: border-box;
+}
+
+button {
+    flex: 1;
+    margin: 2% 0 0 0;
+    padding: 1% 2%;
+    width: 96%;
+    max-width: 40%;
+    background-color: rgba(100, 50, 50, 0.75);
+    border: 0.3vw solid rgba(82, 69, 55, 0.75);
+    border-radius: 1vw;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgba(199, 120, 54, 0.75);
+    border-color: rgba(157, 92, 22, 0.75);
+}
+
+/* Password input container */
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+/* Adjust input field width to make room for toggle button */
+input[type="password"] {
+    width: 100%;
+    padding: 1.5%;  /* Padding inside input */
+    margin-top: 0.5%;
+    border: 0.1vw solid #ccc;
+    border-radius: 0.5vw;
+    font-size: 1.5rem;
+    box-sizing: border-box;  /* Ensure padding is included in width */
+}
+
+input[type="characterName"] {
+    width: 100%;
+    padding: 1.5%;  /* Padding inside input */
+    margin-top: 0.5%;
+    margin-bottom: 4%;
+    border: 0.1vw solid #ccc;
+    border-radius: 0.5vw;
+    font-size: 1.5rem;
+    box-sizing: border-box;  /* Ensure padding is included in width */
+}
+
+/* Styling for the password visibility toggle button */
+.password-toggle-btn {
+    position: absolute;
+    right: 10px;  /* Adjusted slightly to be closer to the right edge */
+    top: 50%;  /* Center vertically */
+    transform: translateY(-80%);  /* Adjust to center the button vertically */
+    font-size: 1.5rem;  /* Set font size for the icon */
+    cursor: pointer;
+    color: rgba(100, 50, 50, 0.75);
+    background-color: transparent;
+    border: none;
+    padding: 0;  /* Remove padding to make the button only as big as the text */
+    width: auto;  /* Allow button to shrink to fit the text */
+    height: auto;  /* Allow button to shrink to fit the text */
+    outline: none;  /* Remove focus outline */
+}
+
+/* To ensure it doesn't highlight on hover or focus */
+.password-toggle-btn:hover,
+.password-toggle-btn:focus {
+    background-color: transparent;
+    color: rgba(199, 120, 54, 0.75);
+    outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+}

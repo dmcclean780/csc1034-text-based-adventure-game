@@ -1,15 +1,14 @@
-.map-grid{
-    width: 100vw;  /* Full screen width */
-    height: auto;
-    aspect-ratio: 16 / 15;  /* Ensures correct proportions */
+.map-grid {
+    width: min(100vw, 100vh * (4 / 3));  /* Adjust width if height is the limit */
+    height: min(100vh, 100vw * (3 / 4)); /* Adjust height if width is the limit */
 
-    background-color: lightgray; /* Just for visibility */
-
+    background-color: lightgray;
+    
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* Equivalent to 16.667% per column */
+    
 
-    background-image: url(../images/map/map.png);
-    background-size: contain; /* Ensures the entire image is visible */
+    background-image: url(../../images/map/map.png);
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }

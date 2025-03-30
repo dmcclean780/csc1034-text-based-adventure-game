@@ -68,7 +68,7 @@ document.getElementById("registerForm").addEventListener("submit", async (event)
                 const insertQuery = `INSERT INTO users (username, pass) VALUES ('${username}', '${password}')`;
                 const insertResult = await makeDatabaseQuery(insertQuery);
 
-                const insertDefaultSettings = `INSERT INTO settings (username, doTextAnimations, textAnimationSpeed) VALUES ('${username}', TRUE, 30)`;
+                const insertDefaultSettings = `INSERT INTO settings (username, doTextAnimations, textAnimationSpeed, textSize) VALUES ('${username}', TRUE, 30, 'Medium')`;
                 const insertSettingsResult = await makeDatabaseQuery(insertDefaultSettings);
 
                 if (insertResult > 0) {

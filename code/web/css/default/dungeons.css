@@ -145,38 +145,4 @@
         font-weight: bold;
     }
 
-<<<<<<< HEAD
-.details-box {
-    width: 66%;
-    padding: 2% 2%;
-    margin: 4% 0%;
-    background-color: rgba(238, 202, 153, 0.75);
-    border-color: rgba(82, 69, 55, 0.75);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 10px;
-    max-height: 30%;
-    overflow-y: auto;
-}
-
-#details {
-    font-size: 1.5em;
-    margin-bottom: 2%;
-    text-align: center;
-}
-
-.button-options {
-    width: 40%;
-    padding: 10px 20px;
-    background-color: rgba(30, 0, 255, 0.75);
-    text-align: center;
-    cursor: pointer;
-    font-size: 1.25em;
-    color: white;
-    font-weight: bold;
-}
-
-=======
->>>>>>> main
 }

@@ -44,23 +44,13 @@ function disableButton(event) {
 
 
 function goToEndScreen(ending) {
-<<<<<<< HEAD:code/web/javascript/buttonActionFunctions.js
     sessionStorage.setItem("ending", ending);
     changeState("alive", 0);
     changeState("successful", 1);
     changeState("endingAchieved", ending);
     
-    updateStateDatabase(gameState);
-    window.location.href = "../menus/end.html";
-}
-
-function goToMap() {
-    window.location.href = pathToRoot +"html/map.html";
-
-=======
-    updateStateDatabase(gameState);
     updateDatabaseInventory(inventory);
-    sessionStorage.setItem("ending", ending);
+    updateStateDatabase(gameState);
     window.location.href = pathToRoot+"html/other_game_screens/end.html";
 }
 
@@ -72,5 +62,4 @@ function goToMap() {
 
 function selectFromInventory(event) {
     document.getElementById("select-inventory").style.display = "block";
->>>>>>> main:code/web/javascript/gameFunctions/buttonActionFunctions.js
 }

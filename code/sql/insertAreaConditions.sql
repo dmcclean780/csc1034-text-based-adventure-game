@@ -1,4 +1,4 @@
-INSERT INTO area_conditions(conditionName, conditionScript)
+INSERT INTO areaConditions(conditionName, conditionScript)
 VALUES
     ('catacombs not complete', '(getState("catacombsCompleted") == false)'),
     ('forest not complete', '(getState("forestCompleted") == false)'),

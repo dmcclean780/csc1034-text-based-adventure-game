@@ -30,9 +30,9 @@
         FOREIGN KEY (worldName) REFERENCES map(worldName)
     );
 
-    CREATE TABLE area_conditions (
+    CREATE TABLE areaConditions (
         id INT AUTO_INCREMENT PRIMARY KEY,
-        conditionName VARCHAR(50) UNIQUE NOT NULL,
+        conditionName VARCHAR(50) NOT NULL,
         conditionScript TEXT NOT NULL
     );
 

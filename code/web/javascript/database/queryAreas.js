@@ -4,11 +4,10 @@ async function makeAreaQuery(whereConditionAttribute, value) {
                         areas.name,
                         areas.rowPosition,
                         areas.colPosition,
-                        area_conditions.conditionScript AS visitCondition
+                        areaConditions.conditionScript AS visitCondition
                     FROM areas
-                    LEFT JOIN area_conditions ON areas.conditionID = area_conditions.id
-                    WHERE areas.${whereConditionAttribute} = COALESCE('${value}', areas.id);`;
-
+                    LEFT JOIN areaConditions ON areas.conditionID = areaConditions.id
+                    WHERE areas.${whereConditionAttribute} = '${value}';`;
     try {
         let areaData = await makeDatabaseQuery(query);
         return areaData;

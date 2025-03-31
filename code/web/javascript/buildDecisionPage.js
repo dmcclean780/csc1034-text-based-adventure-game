@@ -29,6 +29,11 @@ async function buildDecision(decisionData) {
     } catch (e) {
         console.log("No drag drop game to remove");
     }
+    try {
+        document.getElementById("library-book").remove();
+    } catch (e) {
+        console.log("No library book to remove");
+    }
 
 
     document.getElementById("details").style.display = "flex";
@@ -37,6 +42,7 @@ async function buildDecision(decisionData) {
 
     document.getElementById("details").innerHTML = decisionData.details;
     document.getElementById("prompt").innerHTML = decisionData.prompt;
+    document.getElementById("background").src = "../../"+decisionData.backgroundFilePath;
 
     while (options.firstChild) {
         options.removeChild(options.firstChild);
@@ -71,8 +77,6 @@ async function buildDecision(decisionData) {
     }
 }
 
-
-
 async function buildDialogue(decisionData) {
     const main = document.getElementById("main-container");
     const dialogueBox = document.createElement("dialogue-box");
@@ -85,7 +89,9 @@ async function buildDialogue(decisionData) {
 function buildButtonOptions(decisionData){
     const options = document.getElementById("options");
     for (let i = 0; i < decisionData.buttonIDs.length; i++) {
-        if(!eval(decisionData.buttonConditions[i])){
+        
+        if(!eval(decisionData.buttonConditions[i]))
+        {
             continue;
         }
         const button = document.createElement("button");
@@ -105,6 +111,7 @@ function buildTimerBar(decisionData){
     timerBar.setAttribute("id", "timer-bar");
     timerBar.duration = decisionData.timerDuration;
     timerBar.onCompleteCallback =eval(decisionData.timerOnComplete);
+    timerBar.style.display = "block";
     inputBox.insertBefore(timerBar, options);
     
 }
@@ -149,11 +156,17 @@ function buildTextEntry(decisionData){
 }
 
 
+function buildLibraryBook(decisionData){
+    const main = document.getElementById("main-container");
+    const libraryBook = document.createElement("library-book");
+    libraryBook.setAttribute("id", "library-book");
+    libraryBook.setAttribute("content", decisionData.bookContent);
+    libraryBook.setAttribute("contentTitle", decisionData.bookTitle);
+    libraryBook.setAttribute("scoreNeeded", decisionData.bookScoreNeeded);
+    libraryBook.setAttribute("fileRel", "../../");
+    libraryBook.setAttribute("livesRemaining", decisionData.bookTotalLives);
+    libraryBook.setAttribute("bookFunction", decisionData.bookFunction);
 
-
-
-
-
-sessionStorage.clear();
-loadNextDecision(2, 1);
-
+    main.appendChild(libraryBook);
+    libraryBook.render();
+}

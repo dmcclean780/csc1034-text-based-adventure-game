@@ -174,6 +174,7 @@ class DragAndDropGame extends HTMLElement {
         }
 
         this.shadowRoot.getElementById("timer-bar").onCompleteCallback = eval(this.gameFailFunction);
+        this.shadowRoot.getElementById("timer-bar").style.display = "block";
     }
 
     dragstartHandler(ev) {
@@ -239,7 +240,7 @@ class DragAndDropGame extends HTMLElement {
                 #content-box{
                     width: 100%;
                     height: 95%;
-                    background-color: rgba(100, 50, 50, 0.75);
+                    background-color: rgba(100, 50, 50, 1);
                     border-radius: 10px;
                     padding: 10px;
                     text-align: center;
@@ -255,7 +256,7 @@ class DragAndDropGame extends HTMLElement {
 
                 #title{
                     flex: 1;
-                   
+                    margin: 0;  
                 }
 
                 #timer-bar{
@@ -343,7 +344,10 @@ class DragAndDropGame extends HTMLElement {
             <div id="root">
                 <div id="wrapper">
                     <div id="content-box">
-                        <h1 id="title" >${this.gameTitle}</h1>
+                        <div>
+                            <h1 id="title" >${this.gameTitle}</h1>
+                            <p>Drag and Drop items</p>
+                        </div>
                         <timer-bar id="timer-bar" duration="${this.gameTimeLimit}"></timer-bar>
                         <div id="game-box">
                             <div class="drag-items-container">

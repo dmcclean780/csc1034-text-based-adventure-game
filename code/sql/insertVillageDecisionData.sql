@@ -1,7 +1,7 @@
 INSERT INTO areas
-    (id, name)
+    (id, name, rowPosition, colPosition, ableToVisitCondition)
 VALUES
-    (1, 'Village');
+    (1, 'Village', 3, 2, TRUE);
 
 INSERT INTO decisions
     (id, areaID, details, prompt, backgroundFilePath, hasTimer, hasPopupMenu, hasDialogue, hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions)
@@ -9,7 +9,7 @@ VALUES
     ( 1,
         1,
         'Welcome to the village of Eldermere. This is a bustling villiage that sits nestled at the edge of
-        the dark forest. There is an udercurrent of tension runing through all here. You see several houses
+        the dark forest. There is an undercurrent of tension runing through all here. You see several houses
         and shops here that you should visit.',
         ' WHERE WILL YOU GO?',
         'images/backgrounds/1-1.png',
@@ -164,8 +164,8 @@ VALUES
         1,
         'option_3',
         'LEAVE',
-        '(() => {console.log("LEAVE VILLAGE")})',
-        '(getState("TOWN_HALL_ENTERED") == "true")'
+        '(() => {goToMap()})',
+        '(getState("townHallVisited") == true)'
     ),
     (
         2,
@@ -204,7 +204,7 @@ VALUES
         1,
         'option_4',
         'THE TOWN HALL',
-        '(() => {changeState("TOWN_HALL_ENTERED", true);loadNextDecision(1,6)})',
+        '(() => {changeState("townHallVisited", 1);loadNextDecision(1,6)})',
         TRUE
     ),
     (
@@ -268,8 +268,8 @@ VALUES
         1,
         'option_3',
         'LEAVE',
-        '(() => {console.log("LEAVE VILLAGE")})',
-        '(getState("TOWN_HALL_ENTERED") == "true")'
+        '(() => {goToMap()})',
+        '(getState("townHallVisited") == true)'
     ),
     (
         9,

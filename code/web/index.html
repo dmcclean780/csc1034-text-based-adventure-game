@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NAME OF GAME</title>
+    <title>Life After Death</title>
+    <link rel="stylesheet" href="css/default/generic.css">
+    <link rel="stylesheet" href="css/default/dungeons.css">
+    <link rel="stylesheet" href="css/mobile/generic.css">
+    <link rel="stylesheet" href="css/mobile/dungeons.css">
   </head>
-  <body>
-    <h1>THIS WILL BE THE MAIN MENU FOR ALL USERS</h1>
-    <p>THIS WILL AUTOMATICALLY REDIRECT TO THE LOGIN PAGE IF THE CLIENT IS NOT LOGGED IN</p>
-    
-    <script src="./authDetails.js"></script>
-    <script src="./javascript/database/queryDatabase.js"></script>
-    <script src="./javascript/database/queryDecision.js"></script>
+  <body style="color:black; background-color: black;">
+    <div class="input-box">
+      <h1 class="details-box" style="letter-spacing: 2px;">LIFE AFTER DEATH</h1>
+      <button class="button-option" onclick="goToPlayGame()" style="margin: 5px; letter-spacing: 2px;">PLAY GAME</button>
+      <button class="button-option" onclick="" style="margin: 5px; letter-spacing: 2px;">STATISTICS</button>
+      <button class="button-option" onclick="goToSettings()" style="margin: 5px; letter-spacing: 2px;">SETTINGS</button>
+      <button class="button-option" onclick="goToLogin()" style="margin: 5px; letter-spacing: 2px;">LOG OUT</button>
+    </div>
+    <script src="javascript/generic/menuFunctions.js"></script>
   </body>
 </html>

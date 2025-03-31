@@ -11,7 +11,9 @@ function showPopupMenu(event) {
 
 function goToDeathScreen(deathMessage) {
     sessionStorage.setItem("deathMessage", deathMessage);
-    window.location.href = "../generic/death.html";
+    changeState("alive", 0);
+    changeState("successful", 0);
+    window.location.href = pathToRoot + "html/generic/death.html";
 }
 
 function changeDetails(newDetails) {
@@ -20,8 +22,10 @@ function changeDetails(newDetails) {
 
 function changeButton(event, newText, newFunction) {
     const button = document.getElementById(event.target.id);
-    button.innerHTML = newText;
-    button.addEventListener('click', newFunction);
+    const newButton = button.cloneNode(true); // Clone the button
+    newButton.innerHTML = newText; // Set new text
+    newButton.addEventListener("click", newFunction); // Reattach event listener
+    button.replaceWith(newButton); // Replace old button with the new one
 }
 
 function changePrompt(newPrompt) {
@@ -34,4 +38,15 @@ function addToDetails(newDetails) {
 
 function disableButton(event) {
     document.getElementById(event.target.id).style.display = "none";
+}
+
+
+function goToEndScreen(ending) {
+    sessionStorage.setItem("ending", ending);
+    window.location.href = "../generic/end.html";
+}
+
+function goToMap() {
+    window.location.href = pathToRoot +"html/map.html";
+
 }

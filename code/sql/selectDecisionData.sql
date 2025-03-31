@@ -47,7 +47,7 @@
                         CASE WHEN decisions.hasButtonOptions THEN JSON_ARRAYAGG(buttonOptions.buttonID ORDER BY buttonOptions.buttonID) ELSE NULL END AS buttonIDs,
                         CASE WHEN decisions.hasButtonOptions THEN JSON_ARRAYAGG(buttonOptions.buttonText ORDER BY buttonOptions.buttonID) ELSE NULL END AS buttonTexts,
                         CASE WHEN decisions.hasButtonOptions THEN JSON_ARRAYAGG(buttonOptions.buttonFunction ORDER BY buttonOptions.buttonID) ELSE NULL END AS buttonFunctions,
-                        CASE WHEN decisions.hasButtonOptions THEN JSON_ARRAYAGG(buttonOptions.showCondition ORDER BY buttonOptions.buttonID) ELSE NULL END AS buttonConditions
+                        CASE WHEN decisions.hasButtonOptions THEN JSON_ARRAYAGG(buttonOptions.showCondition ORDER BY buttonOptions.buttonID) ELSE NULL END AS buttonConditions,
 
                     FROM decisions
                     JOIN areas ON decisions.areaID = areas.id

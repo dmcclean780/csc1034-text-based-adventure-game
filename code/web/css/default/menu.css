@@ -1,0 +1,104 @@
+.menu {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    overflow: auto;
+}
+
+.column {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.slidecontainer, .menu-button-option {
+    width: 85%;
+    margin-top: 8%;
+    margin-bottom: 8%;
+    letter-spacing: 2px;
+
+    flex: 1;  /* Makes both scale equally */
+    padding: 1% 2%;  /* Ensures consistent spacing */
+    background-color: rgba(100, 50, 50, 0.75);
+    border: 3px solid rgba(82, 69, 55, 0.75);
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;
+    /* Override default CSS styles */
+    appearance: none;
+    width: 80%;
+    /* Full-width */
+    height: 75%;
+    /* Specified height */
+    background: white;
+    /* Grey background */
+    outline: none;
+    /* Remove outline */
+    opacity: 0.7;
+    /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s;
+    /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1;
+    /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    width: 25px;
+    /* Set a specific slider handle width */
+    height: 25px;
+    /* Slider handle height */
+    background: #bbaf74;
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    /* Set a specific slider handle width */
+    height: 25px;
+    /* Slider handle height */
+    background: #bbaf74;
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
+}
+
+.slider-value{
+    color: white;
+    display: inline;
+}
+
+.slider-wrapper {
+    display: flex;
+    align-items: center; /* Align slider and value */
+    gap: 10px; /* Space between slider and value */
+    padding-bottom: 4px;
+    
+}

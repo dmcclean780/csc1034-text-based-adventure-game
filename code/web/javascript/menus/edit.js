@@ -8,7 +8,26 @@ document.getElementById("editForm").addEventListener("submit", async (event) => 
             let password = document.getElementById("password").value;             
             let messageElement = document.getElementById("editMessage");                      
 
-            try {                     
+            try {
+                
+                // Define regex patterns
+                const usernameRegex = /^[a-zA-Z0-9_]{3,20}$/;  // Allows alphanumeric and underscores, 3-20 characters
+                const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!@#$%^&*]{6,255}$/;  // At least 6 chars, one letter, one number
+
+                // Validate inputs
+                if (!usernameRegex.test(newUsername)) {
+                    messageElement.textContent = "Invalid username. Use 3-20 letters, numbers, or underscores.";
+                    return;
+                }
+
+                if (!passwordRegex.test(password)) {
+                    messageElement.textContent = "Invalid password. Must be at least 6 characters with letters and numbers.";
+                    return;
+                }
+
+                // Proceed with database queries
+                let selectQuery = `SELECT * FROM users WHERE username = '${username}'`;
+                let checkResult = await makeDatabaseQuery(selectQuery);
                 // Check if username and password match in the database                     
                 let sqlQuery = `UPDATE users SET username = '${newUsername}', pass = '${password}' WHERE username = '${oldUsername}';`;                     
                 let result = await makeDatabaseQuery(sqlQuery);                          

@@ -1,7 +1,6 @@
 INSERT INTO areas
-    (id, name, rowPosition, colPosition, ableToVisitCondition)
 VALUES
-    (1, 'Village', 3, 2, TRUE);
+    (1, 'Potentia', 'Village', 3, 2, 5);
 
 INSERT INTO decisions
     (id, areaID, details, prompt, backgroundFilePath, hasTimer, hasPopupMenu, hasDialogue, hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions, hasSelectInventory)

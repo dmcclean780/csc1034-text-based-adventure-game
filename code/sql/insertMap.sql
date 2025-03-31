@@ -1,1 +1,1 @@
-INSERT INTO map(worldName, rowSize, colSize) VALUES ('WORLD MAP', 6, 7);
+INSERT INTO map VALUES ('Potentia', 6, 7, 'images/maps/potentia.png');

@@ -1,41 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Life After Death</title>
-    <link rel="stylesheet" href="../../css/default/generic.css">
-    <link rel="stylesheet" href="../../css/default/dungeons.css">
-    <link rel="stylesheet" href="../../css/mobile/generic.css">
-    <link rel="stylesheet" href="../../css/mobile/dungeons.css">
-  </head>
-  <body style="color:black; background-color: black;">
-    <div class="input-box">
-      <h1 class="details-box" style="letter-spacing: 2px;">CHOOSE A CHARACTER TO PLAY WITH</h1>
-      <div>
-        <h2>AVAILABLE CHARACTERS</h2>
-        <div id="character-list"></div>
-      </div>
-      <button class="button-option" onclick="backFromLoadGame()" style="margin: 5px; letter-spacing: 2px;">RETURN</button>
+
+<head>
+  <title>Life After Death</title>
+  <link rel="stylesheet" href="../../css/default/generic.css">
+  <link rel="stylesheet" href="../../css/default/dungeons.css">
+  <link rel="stylesheet" href="../../css/default/loadLastGame.css">
+  <link rel="stylesheet" href="../../css/mobile/generic.css">
+  <link rel="stylesheet" href="../../css/mobile/dungeons.css">
+</head>
+
+<body style="color:black; background-color: black;">
+  <div class="character-list" id="character-list">
+    <div>
+      <h1>Choose Character To Play</h1>
     </div>
-    <script>
-        pathToRoot = "../../";
-    </script>
-    
-     <!--Config Files-->
-    <script src="../../authDetails.js"></script>
 
-    <!--Database Files-->
-    <script src="../../javascript/database/queryDatabase.js"></script>
-    <script src="../../javascript/database/pingDatabase.js"></script>
+  </div>
+  <button class="overlap-box" onclick="backFromLoadGame()" style="margin: 5px; letter-spacing: 2px;">Return</button>
 
 
-    <!--Ensure the server is reachable-->
-    <script src="../../javascript/checkConnection.js"></script>
-    
-    <!--Functionality Files-->
-    <script src="../../javascript/menus/loadLastGame.js"></script>
-    <script src="../../javascript/menus/menuFunctions.js"></script>
+  <script>
+    pathToRoot = "../../";
+  </script>
 
-    <!--Sound effects-->
-    <script src="../../javascript/sounds/sounds.js"></script>
-  </body>
+  <!--Config Files-->
+  <script src="../../authDetails.js"></script>
+
+  <!--Utils File-->
+  <script src="../../javascript/utils.js"></script>
+
+  <!--Database Files-->
+  <script src="../../javascript/database/queryDatabase.js"></script>
+  <script src="../../javascript/database/pingDatabase.js"></script>
+
+
+  <!--Ensure the server is reachable-->
+  <script src="../../javascript/checkConnection.js"></script>
+
+  <!--Functionality Files-->
+  <script src="../../javascript/menus/loadLastGame.js"></script>
+  <script src="../../javascript/menus/menuFunctions.js"></script>
+
+  <!--Sound effects-->
+  <script src="../../javascript/sounds/sounds.js"></script>
+</body>
+
 </html>

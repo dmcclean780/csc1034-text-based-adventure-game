@@ -13,9 +13,18 @@ async function loadNextDecision(areaID, decisonID) {
         document.getElementById("input-box").style.display = "flex";
     }
 
+    if (settings.textSize == 'Small') {
+        document.documentElement.style.fontSize = "10px";
+    } else if (settings.textSize == 'Medium') {
+        document.documentElement.style.fontSize = "15px";
+    } else if (settings.textSize == 'Large') {
+        document.documentElement.style.fontSize = "20px";
+    }
+
     changeState("currentArea", areaID);
     changeState("currentDecision", decisonID);
     printState();
+    printInventory();
 
     try {
         updateStateDatabase(gameState);

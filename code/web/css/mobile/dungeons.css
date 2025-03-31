@@ -1,4 +1,4 @@
-@media (max-width: 599px) {
+@media (max-width: 600px) {
 
 #input-box-container {
     position: absolute;
@@ -10,23 +10,25 @@
     width: 100%;
     /* Makes the div span the full width of the container */
     height: 95%;
-    /* Makes the div span the full height of the container */
-    color: white;
     /* Text color */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    color: rgba(47, 37, 27, 0.75);
+
 }
 
 .input-box {
     width: 66%;
-    padding: 20px 20px;
-    background-color: rgba(256, 0, 0, 0.75);
+    padding: 2% 2%;
+    background-color: rgba(238, 202, 153, 0.75);
+    border: 3px solid rgba(82, 69, 55, 0.75);
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 10px;
+    position: relative;
 }
 
 #prompt {
@@ -34,40 +36,87 @@
     margin-bottom: 20px;
 }
 
-.options{
-    margin-top: 40px;
-    margin-bottom: 10px;
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+#pause-button, #inventory-button {
+    max-width: 10%;
+    height: auto;
 }
 
-.button-options {
-    width: 40%;
-    padding: 10px 20px;
-    background-color: rgba(255, 0, 255, 0.75);
+#inventory-button {
+    position: absolute;
+    top: 1%;
+    /* Adjust to fine-tune positioning */
+    left: 1%;
+    /* Adjust to fine-tune positioning */
+    width: 10%;
+    /* Set desired size */
+    height: auto;
+    /* Set desired size */
+    cursor: pointer;
+    /* Makes it clickable */
+}
+
+#pause-button {
+    position: absolute;
+    top: 1%; /* Adjust to fine-tune positioning */
+    right: 1%; /* Adjust to fine-tune positioning */
+    width: 5%; /* Set desired size */
+    height: auto; /* Set desired size */
+    cursor: pointer; /* Makes it clickable */
+    z-index: 10; /* Ensures it stays above other elements */
+}
+
+.options {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    width: 100%; /* Ensure the container doesn't shrink */
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* Two buttons per row */
+    gap: 10px; /* Space between buttons */
+
+    flex-direction: row;
+    justify-content: space-between;
+    overflow-x: auto;
+}
+
+.button-option {
+    width: 100%; /* Prevents buttons from stretching */
+    padding: 10px;
+    background-color: rgba(100, 50, 50, 0.75);
+    border: 3px solid rgba(82, 69, 55, 0.75);
+    border-radius: 10px;
     text-align: center;
     cursor: pointer;
-    font-size: 1.25em;
+    font-size: 1.2em;
     color: white;
-    font-weight: bold;
+}
+
+.button-option:hover {
+    background-color: rgba(199, 120, 54, 0.75);
+    border-color: rgba(157, 92, 22, 0.75);
+}
+
+.button-option:active {
+    transform: scale(0.9);
+    transition: transform 0.05s ease-in;
+}
 }
 
 .details-box {
     width: 66%;
-    padding: 20px 20px;
-    margin: 40px 0px;
-    background-color: rgba(256, 0, 0, 0.75);
+    padding: 2% 2%;
+    margin: 4% 0%;
+    background-color: rgba(238, 202, 153, 0.75);
+    border: 3px solid rgba(82, 69, 55, 0.75);
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 10px;
+    max-height: 30%;
+    overflow-y: auto;
 }
 
 #details {
     font-size: 1.5em;
     margin-bottom: 20px;
     text-align: center;
-}
 }

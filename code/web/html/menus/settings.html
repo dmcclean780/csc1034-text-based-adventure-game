@@ -12,7 +12,7 @@
 
 <body style="color:black; background-color: black;">
   <div class="input-box" style="height: 80%;">
-    <h1 class="details-box" style="letter-spacing: 2px;">SETTINGS</h1>
+    <h1 class="details-box" style="letter-spacing: 2px;">[ SETTINGS ]</h1>
     <div class="menu">
       <div class="column">
         <button class="menu-button-option" id='do-text-animations' onclick="">DO TEXT ANIMATIONS: ON</button>
@@ -33,10 +33,16 @@
             <span id="music-slider-value" class="music-slider-value">50</span>
           </div>
         </div>
+        <div class="text-size-container">
+          <span>TEXT SIZE</span>
+          <div class="slider-wrapper">
+            <input type="range" min="1" max="3" value="2" class="slider" id="text-size">
+            <span id="text-size-value" class="slider-value">Medium</span>
+          </div>
+        </div>
       </div>
     </div>
-    <button class="button-option" onclick="saveAndReturn()"
-      style="margin: 5px; letter-spacing: 2px; background-color: rgb(100, 50, 50); width: 65%;">SAVE & RETURN</button>
+    <button class="menu-button-option" onclick="saveAndReturn()" style="margin: 5px; letter-spacing: 3px;  width: 65%;">- SAVE & RETURN -</button>
   </div>
 
   <!--Config Files-->

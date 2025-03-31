@@ -34,7 +34,7 @@ document.getElementById("loginForm").addEventListener("submit", async (event) =>
         } else {
             alert("Error - Server is Unreachable. Please try again later.");
         }
-    }, 250);
+    }, 500);
 });
 
 
@@ -68,7 +68,7 @@ document.getElementById("registerForm").addEventListener("submit", async (event)
                 const insertQuery = `INSERT INTO users (username, pass) VALUES ('${username}', '${password}')`;
                 const insertResult = await makeDatabaseQuery(insertQuery);
 
-                const insertDefaultSettings = `INSERT INTO settings (username, doTextAnimations, textAnimationSpeed, soundEffects, musicVolume) VALUES ('${username}', TRUE, 30, TRUE, 50)`;
+                const insertDefaultSettings = `INSERT INTO settings (username, doTextAnimations, textAnimationSpeed, soundEffects, musicVolume, textSize) VALUES ('${username}', TRUE, 30, TRUE, 50, 'Medium')`;
                 const insertSettingsResult = await makeDatabaseQuery(insertDefaultSettings);
 
                 if (insertResult > 0) {
@@ -87,7 +87,7 @@ document.getElementById("registerForm").addEventListener("submit", async (event)
         } else {
             alert("Error - Server is Unreachable. Please try again later.");
         }
-    }, 250);
+    }, 500);
 });
 
 

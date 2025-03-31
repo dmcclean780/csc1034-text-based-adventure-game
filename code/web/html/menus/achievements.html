@@ -11,13 +11,13 @@
 </head>
 
 <body style="color:black; background-color: black;" class="root">
-    <div class="input-box">
-        <h1 class="details-box" style="letter-spacing: 2px;">Statistics</h1>
-        <button class="button-option" onclick="goToGloalAnalytics()" style="margin: 5px; letter-spacing: 2px;">Global Analytics</button>
-        <button class="button-option" onclick="goToUserAnalytics()" style="margin: 5px; letter-spacing: 2px;">User Analytics</button>
-        <button class="button-option" onclick="goToAchievements()" style="margin: 5px; letter-spacing: 2px;">Achievments</button>
-        <button class="button-option" onclick="backFromStartGame()" style="margin: 5px; letter-spacing: 2px;">Return</button>
-      </div>
+    <div class="stat-table" id="stat-table">
+        <div>
+            <h1>Achievements</h1>
+        </div>
+        
+    </div>
+    <button class="overlap-box" onclick="backToStatistics()" style="margin: 5px; letter-spacing: 2px;">RETURN</button>
 
     <!--Config Files-->
     <script src="../../authDetails.js"></script>
@@ -32,9 +32,7 @@
 
     <!--Functionality Files-->
     <script src="../../javascript/menus/menuFunctions.js"></script>
-
-    <!--Sound effects-->
-    <script src="../../javascript/sounds/sounds.js"></script>
+    <script src="../../javascript/menus/achievments.js"></script>
 </body>
 
 </html>

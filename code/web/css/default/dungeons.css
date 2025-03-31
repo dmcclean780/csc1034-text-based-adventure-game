@@ -15,7 +15,6 @@
         height: 90%;
         /* Makes the div span the full height of the container */
 
-        color: rgb(47, 37, 27);
         /* Text color */
         display: flex;
         flex-direction: column;
@@ -25,6 +24,11 @@
         color: rgba(47, 37, 27, 0.75);
     }
 
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
     .input-box {
         width: 66%;
         padding: 2% 2%;
@@ -37,13 +41,13 @@
         position: relative;
     }
 
-    #inventory_button {
+    #inventory-button {
         position: absolute;
-        bottom: 1%;
+        top: 0;
         /* Adjust to fine-tune positioning */
-        left: 1%;
+        left: 0;
         /* Adjust to fine-tune positioning */
-        width: 10%;
+        width: 7.5%;
         /* Set desired size */
         height: auto;
         /* Set desired size */
@@ -51,7 +55,7 @@
         /* Makes it clickable */
     }
 
-    #pause_button {
+    #pause-button {
         position: absolute;
         top: 1%;
         /* Adjust to fine-tune positioning */
@@ -77,7 +81,7 @@
     .options {
         margin-top: 4%;
         margin-bottom: 1%;
-        width: 80%;
+        width: 90%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -133,16 +137,4 @@
         margin-bottom: 2%;
         text-align: center;
     }
-
-    .button-options {
-        width: 40%;
-        padding: 10px 20px;
-        background-color: rgba(30, 0, 255, 0.75);
-        text-align: center;
-        cursor: pointer;
-        font-size: 1.25em;
-        color: white;
-        font-weight: bold;
-    }
-
 }

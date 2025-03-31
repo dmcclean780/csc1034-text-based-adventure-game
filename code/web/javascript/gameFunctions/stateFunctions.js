@@ -67,7 +67,12 @@ function checkState(property, checkValue, onCheckPassed, onCheckFailed) {
 
 function updateStateDatabase(gameState) {
     const attributeNames = Object.getOwnPropertyNames(gameState.globalState);
-    attributeNames.pop();
+    let startTime = sessionStorage.getItem("startTimestamp");
+    let endTime = Date.now();
+    let playTime = endTime - startTime;
+    gameState.globalState.currentPlayTime = playTime;
+    const currentAreaStateindex = attributeNames.indexOf("currentAreaState");
+    attributeNames.splice(currentAreaStateindex, 1);
     const query = `UPDATE playerCharacter 
     SET 
     ${attributeNames

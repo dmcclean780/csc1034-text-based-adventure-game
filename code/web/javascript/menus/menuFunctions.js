@@ -1,3 +1,5 @@
+
+
 function goToPlayGame(){
     window.location.href = "html/menus/startGame.html";
 }
@@ -22,12 +24,47 @@ function backFromStartGame(){
 function goToNewGame(){
     window.location.href = "newGame.html";
 }
+
 function goToLoadGame(){
     window.location.href = "loadGame.html";
+} 
+
+function goToEditAccount(){
+    window.location.href = "html/menus/editAccount.html";
+}
+
+function goToDeleteAccount(){
+    window.location.href = "html/menus/deleteAccount.html";
 }
 
 function backFromLoadGame(){
     window.location.href = "startGame.html";
+}
+
+function goToGloalAnalytics(){
+    window.location.href = "globalAnalytics.html";
+}
+
+function goToUserAnalytics(){
+    window.location.href = "userAnalytics.html";
+}
+
+function goToAchievements(){
+    window.location.href = "achievements.html";
+}
+
+function backToStatistics(){
+    window.location.href = "statistics.html";
+}
+
+function goToGameSummary(characterID){
+    sessionStorage.setItem("lastPage", window.location.href);
+    sessionStorage.setItem("characterID", characterID);
+    window.location.href = pathToRoot+"html/menus/gameSummary.html";
+}
+
+function backToLastPage(){
+    window.location.href = sessionStorage.getItem("lastPage");
 }
 
 document.addEventListener("DOMContentLoaded", () => {

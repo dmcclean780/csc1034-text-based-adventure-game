@@ -34,7 +34,7 @@ document.getElementById("loginForm").addEventListener("submit", async (event) =>
         } else {
             alert("Error - Server is Unreachable. Please try again later.");
         }
-    }, 250);
+    }, 500);
 });
 
 
@@ -87,7 +87,7 @@ document.getElementById("registerForm").addEventListener("submit", async (event)
         } else {
             alert("Error - Server is Unreachable. Please try again later.");
         }
-    }, 250);
+    }, 500);
 });
 
 

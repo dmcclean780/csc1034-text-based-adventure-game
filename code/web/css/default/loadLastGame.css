@@ -1,18 +1,5 @@
-.stat-box {
+.character-list {
     width: 80%;
-    padding: 2% 2%;
-    margin: 1% 0%;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: rgba(100, 50, 50, 0.75);
-    font-size: 1.5em;
-    color: white
-}
-
-.stat-table {
-    width: 66%;
     padding: 2% 2%;
     padding-bottom: 5%;
     margin: 4% 0%;
@@ -63,4 +50,50 @@ h1 {
 .overlap-box:active {
     transform: scale(0.9);
     transition: transform 0.05s ease-in;
+}
+
+.character-option {
+    width: 90%;
+    padding: 2% 2%;
+    margin: 1% 0%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(100, 50, 50, 0.75);
+    font-size: 1.5em;
+    color: white
+}
+
+.game-summary-box{
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+
+}
+
+.character-name-box {
+    flex: 1;
+    text-align: start;
+}
+
+.percentage-box {
+    margin: 0% 2%;
+    text-align: end;
+}
+
+.summary-button {
+    background-color: rgba(238, 202, 153, 0.75);
+    border: 3px solid rgba(82, 69, 55, 0.75);
+    border-radius: 50%; /* Ensures a circular shape */
+    width: min(7vw, 7vh); /* Keeps the circle responsive */
+    height: min(7vw, 7vh); /* Ensures height matches width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    text-align: center;
 }

@@ -1,4 +1,5 @@
-let inventory;
+let inventory = {};
+let inventoryLog = [];
 
 document.addEventListener("DOMContentLoaded", () => {
     if (sessionStorage.getItem("inventory")) {
@@ -19,6 +20,8 @@ function addToInventory(item, quantity) {
     }
 
     sessionStorage.setItem("inventory", JSON.stringify(inventory));
+    inventoryLog.push({ "characterID": gameState.globalState.characterID, "timestamp": Math.floor(Date.now() / 1000), "item": item, "quantity": quantity, "action": "ADD" });
+
     updateInventoryComponent();
 }
 
@@ -35,6 +38,9 @@ function removeFromInventory(item, quantity) {
     }
 
     sessionStorage.setItem("inventory", JSON.stringify(inventory));
+    inventoryLog.push({ "characterID": gameState.globalState.characterID, "timestamp": Math.floor(Date.now() / 1000), "item": item, "quantity": quantity, "action": "REMOVE" });
+    console.log(inventoryLog);
+
     updateInventoryComponent();
 }
 
@@ -47,16 +53,35 @@ function checkInventory(item, quantity) {
     }
 }
 
-function updateDatabaseInventory(inventory) {
-    const items = Object.getOwnPropertyNames(inventory);
-    const query = `UPDATE playerCharacter 
-    SET inventory = '${JSON.stringify(inventory)}'
-    WHERE username = '${gameState.globalState.username}' AND characterID = '${gameState.globalState.characterID}';`;
+async function updateDatabaseInventory(inventory) {
+    const characterID = gameState.globalState.characterID;
 
-    try {
-        makeDatabaseQuery(query);
-    } catch (error) {
-        throw error;
+    for (const [itemName, quantity] of Object.entries(inventory)) {
+        const query = `
+            INSERT INTO playerInventory (characterID, itemName, quantity)
+            VALUES (${characterID}, '${itemName}', ${quantity})
+            ON DUPLICATE KEY UPDATE quantity = ${quantity};
+        `;
+        await makeDatabaseQuery(query);
+    }
+
+    const deleteQuery = `
+        DELETE FROM playerInventory
+        WHERE characterID = ${characterID}
+        AND itemName NOT IN (${Object.keys(inventory).map((item) => `'${item}'`).join(',')});
+    `;
+    if (Object.keys(inventory).length > 0) {
+        await makeDatabaseQuery(deleteQuery);
+    } else {
+        const clearQuery = `DELETE FROM playerInventory WHERE characterID = ${characterID};`;
+        await makeDatabaseQuery(clearQuery);
+    }
+
+    if (inventoryLog.length != 0) {
+        const updateInventoryLogQuery = `INSERT INTO playerInventoryLog (characterID, timestamp, itemName, quantity, action) 
+                                        VALUES ${inventoryLog.map((record) => { return `(${record.characterID}, FROM_UNIXTIME(${record.timestamp}), '${record.item}', ${record.quantity}, '${record.action}')` }).join(',')};`;
+        inventoryLog = [];
+        await makeDatabaseQuery(updateInventoryLogQuery);
     }
 }
 
@@ -70,8 +95,12 @@ function updateInventoryComponent() {
     inventoryComponent.loadInventory();
 }
 
-function getAllInventoryItems(){
+function getAllInventoryItems() {
     const items = Object.getOwnPropertyNames(inventory);
     return items;
+}
+
+function printInventory() {
+    console.log(inventory);
 }
 

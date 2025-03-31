@@ -97,6 +97,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                 }
             }
         }
-    }, 250);
+    }, 500);
 
 });

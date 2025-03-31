@@ -2,6 +2,7 @@
 document.getElementById("new-character").addEventListener("click", async (event) => {
     let user = sessionStorage.getItem("username");
     let characterName = document.getElementById("characterName").value;
+<<<<<<< HEAD
 
     if(characterName != "")
     {
@@ -13,6 +14,19 @@ document.getElementById("new-character").addEventListener("click", async (event)
                     const insertQuery = `INSERT INTO playerCharacter (username, name, currentDecision, currentArea, alive, successful, endingAchieved, catacombsCompleted, townHallVisited, libraryCompleted, palaceCompleted, forestCompleted, currentAreaState, inventory) VALUES ('${user}', '${characterName}', 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, '{}', '{}')`;
                     const insertResult = await makeDatabaseQuery(insertQuery);
     
+=======
+               
+    if(characterName != "")
+    {
+        event.preventDefault();
+        setTimeout(async () => {
+            if (serverReachable) {
+                try {
+                    // Insert the new user into the database
+                    const insertQuery = `INSERT INTO playerCharacter (username, name, currentDecision, currentArea, alive, successful, endingAchieved, catacombsCompleted, townHallVisited, libraryCompleted, palaceCompleted, forestCompleted, wormHillCompleted, currentAreaState, currentPlayTime) VALUES ('${user}', '${characterName}', 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, '{}', 0)`;                 
+                    const insertResult = await makeDatabaseQuery(insertQuery);
+
+>>>>>>> main
                     if (insertResult > 0) {
                         sessionStorage.setItem("CharacterName", characterName);
                         window.location.href = "loadGame.html";
@@ -27,7 +41,11 @@ document.getElementById("new-character").addEventListener("click", async (event)
             } else {
                 alert("Error - Server is Unreachable. Please try again later.");
             }
+<<<<<<< HEAD
         }, 250);
+=======
+        }, 500);
+>>>>>>> main
     }
     else{
         alert("Character name must not be blank!");

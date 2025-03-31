@@ -1,7 +1,7 @@
 authDetails = {
-    "webhosting_url": "jduke02.webhosting1.eeecs.qub.ac.uk",
+    "webhosting_url": "	dmcclean13.webhosting1.eeecs.qub.ac.uk",
     "hostname": "localhost",
-    "username": "jduke02",
-    "password": "vnrsMq16fMSXHNB8",
-    "database": "jduke02"
+    "username": "dmcclean13",
+    "password": "LzRG5klqcVRJkC17",
+    "database": "CSC1034_CW_54"
 }

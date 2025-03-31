@@ -12,6 +12,7 @@ async function makeDecisionQuery(decisionID, areaID) {
                         decisions.hasDragDropGame,
                         decisions.hasTextEntry,
                         decisions.hasButtonOptions,
+                        decisions.hasSelectInventory,
 
                         -- Conditionally fetch Timer Bar Info
                         CASE WHEN decisions.hasTimer THEN timerBars.duration ELSE NULL END AS timerDuration,
@@ -49,7 +50,12 @@ async function makeDecisionQuery(decisionID, areaID) {
                         CASE WHEN decisions.hasButtonOptions THEN JSON_ARRAYAGG(buttonOptions.buttonID ORDER BY buttonOptions.buttonID) ELSE NULL END AS buttonIDs,
                         CASE WHEN decisions.hasButtonOptions THEN JSON_ARRAYAGG(buttonOptions.buttonText ORDER BY buttonOptions.buttonID) ELSE NULL END AS buttonTexts,
                         CASE WHEN decisions.hasButtonOptions THEN JSON_ARRAYAGG(buttonOptions.buttonFunction ORDER BY buttonOptions.buttonID) ELSE NULL END AS buttonFunctions,
-                        CASE WHEN decisions.hasButtonOptions THEN JSON_ARRAYAGG(buttonOptions.showCondition ORDER BY buttonOptions.buttonID) ELSE NULL END AS buttonConditions
+                        CASE WHEN decisions.hasButtonOptions THEN JSON_ARRAYAGG(buttonOptions.showCondition ORDER BY buttonOptions.buttonID) ELSE NULL END AS buttonConditions,
+
+                        -- Conditionally fetch Select Inventory Info
+                        CASE WHEN decisions.hasSelectInventory THEN selectInventory.correctItem ELSE NULL END AS selectInventoryCorrectItem,
+                        CASE WHEN decisions.hasSelectInventory THEN selectInventory.correctAnswerFunction ELSE NULL END AS selectInventoryCorrectAnswerFunction,
+                        CASE WHEN decisions.hasSelectInventory THEN selectInventory.incorrectAnswerFunction ELSE NULL END AS selectInventoryIncorrectAnswerFunction
 
                     FROM decisions
                     JOIN areas ON decisions.areaID = areas.id
@@ -61,23 +67,23 @@ async function makeDecisionQuery(decisionID, areaID) {
                     LEFT JOIN dragDropGames ON decisions.hasDragDropGame = TRUE AND decisions.id = dragDropGames.id AND decisions.areaID = dragDropGames.areaID
                     LEFT JOIN buttonOptions ON decisions.hasButtonOptions = TRUE AND decisions.id = buttonOptions.id AND decisions.areaID = buttonOptions.areaID
                     LEFT JOIN dialogues ON decisions.hasDialogue = TRUE AND decisions.id = dialogues.id AND decisions.areaID = dialogues.areaID
+                    LEFT JOIN selectInventory ON decisions.hasSelectInventory = TRUE AND decisions.id = selectInventory.id AND decisions.areaID = selectInventory.areaID
 
                     WHERE decisions.id = ${decisionID} AND areas.id = ${areaID}
 
                     GROUP BY decisions.id, areas.id;
 `;
-
-    let decisionData = await makeDatabaseQuery(query);
-    console.log(decisionID, areaID)
-    console.log(decisionData);
-    decisionData = decisionData.pop();
-    console.log(decisionData);
-    if(decisionData.hasButtonOptions == 1){
-        decisionData.buttonIDs = JSON.parse(decisionData.buttonIDs);
-        decisionData.buttonTexts = JSON.parse(decisionData.buttonTexts);
-        decisionData.buttonFunctions = JSON.parse(decisionData.buttonFunctions);
-        decisionData.buttonConditions = JSON.parse(decisionData.buttonConditions);
+    try {
+        let decisionData = await makeDatabaseQuery(query);
+        decisionData = decisionData.pop();
+        if (decisionData.hasButtonOptions == 1) {
+            decisionData.buttonIDs = JSON.parse(decisionData.buttonIDs);
+            decisionData.buttonTexts = JSON.parse(decisionData.buttonTexts);
+            decisionData.buttonFunctions = JSON.parse(decisionData.buttonFunctions);
+            decisionData.buttonConditions = JSON.parse(decisionData.buttonConditions);
+        }
+        return decisionData;
+    } catch (error) {
+        throw error;
     }
-    return decisionData;
 }
-

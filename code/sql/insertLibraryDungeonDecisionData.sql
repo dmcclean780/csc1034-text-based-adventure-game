@@ -1,12 +1,11 @@
 INSERT INTO areas
-    (id, name, rowPosition, colPosition, ableToVisitCondition)
 VALUES
-    (3, 'Library', 5, 2, '(getState("libraryCompleted") == false)');
+    (3, 'Potentia', 'Library', 5, 2, 4);
 
 INSERT INTO decisions
     (id, areaID, details, prompt, backgroundFilePath, 
     hasTimer, hasPopupMenu, hasDialogue, 
-    hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions)
+    hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions, hasSelectInventory)
 VALUES
         -- library_outside_enterQuestion --
     (
@@ -22,7 +21,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
         -- library_outside_lookAround --
     (
@@ -40,7 +40,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
         -- library_r1_enter --
     (
@@ -50,7 +51,7 @@ VALUES
                     Shelves are overturned, books are scattered across the floor. &#10; &#10;
                     It&#39;s even worse than Paige described.
                     The &#39;Ill Ink &#39; is consuming this place. &#10; &#10;
-                    The door further into the library is blocked a bookcase covered in ink.
+                    The door further into the library is blocked by a bookcase covered in ink.
                     You see a small table with an Ink Pot on it.',
         'Enter the Library?',
         'images/backgrounds/library-r1.png',
@@ -60,14 +61,15 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
         -- library_r1_investigateBookcase --
     (
         4,
         3,
         'Stepping inside, you see the library is in a state of disarray.
-                    Each book in the bookcase seems to be be writhing with a life of its own. There seems to be no way past the bookcase as it is.&#10;&#10;
+                    Each book in the bookcase seems to be writhing with a life of its own. There seems to be no way past the bookcase as it is.&#10;&#10;
                     The ink pot on the table is glowing with a strange light.',
         'Enter the Library?',
         'images/backgrounds/library-r1.png',
@@ -77,7 +79,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
         -- library_r1_raiseTorchBookcase --
     (
@@ -85,7 +88,7 @@ VALUES
         3,
         'As you bring the torch to the bookcase, the books seem to move and slide away from the torch. 
                     One of them slams at you in panic, knocking you to the ground &#10;&#10;
-                    You are now in a room with a bookcase that is now mostly empty. 
+                    You are now in a room with a bookcase that is mostly empty. 
                     The ink pot and quill moves on it&#39;s own, scribbling onto the pages of a book.',
         'What do you do?',
         'images/backgrounds/library-r1.png',
@@ -95,7 +98,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
         -- library_r1_investigateInkPot --
     (
@@ -112,7 +116,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
         -- library_r1_takeQuill --
     (
@@ -129,7 +134,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
         -- library_r1_bookReadPeace --
     (
@@ -142,6 +148,7 @@ VALUES
         FALSE,
         FALSE,
         TRUE,
+        FALSE,
         FALSE,
         FALSE,
         FALSE
@@ -160,7 +167,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
         -- library_r1_nextRoom --
     (
@@ -179,14 +187,15 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
         -- library_r2_enter --
     (
         11,
         3,
         'Stepping into the next room, the door slams shut behind you as ink forces it closed. &#10; &#10;  
-        You see a Book on a lectern in centre of room, all of the ink seems to be flowing in and out of this book, lighter strands of ink flow into the book &#10; &#10;  
+        You see a Book on a lectern in the centre of the room, all of the ink seems to be flowing in and out of this book, lighter strands of ink flow into the book &#10; &#10;  
         Two bookcases form a corridor to the middle of the room, they look unstable.',
         'What do you do?',
         'images/backgrounds/library-r2.png',
@@ -196,7 +205,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r2_stepForwardBookcaseFall --
     (
@@ -207,13 +217,14 @@ VALUES
         They will fall on you if you don&#39;t act fast!  ',
         'What do you do?',
         'images/backgrounds/library-r2.png',
+        TRUE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
      -- library_r2_diveBackwards --
     (
@@ -229,7 +240,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r2_walkAroundBookcase --
     (
@@ -245,14 +257,15 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r2_approachBook --
     (
         15,
         3,
-        'Stepping to the side of the bookcases, they collapse down into the centre of the room in a heap&#10;&#10;  
-        They surely would have killed you if they fell on you.',
+        'Approaching the book, you see ink tendrils flowing in and out of it. Thinner, weaker ones flow into the book, while thicker, stronger ones flow out. As though empowered by the books information&#10;&#10;
+        The book is closed, and the tendrils are preventing it from opening.&#10;&#10;',
         'What do you do?',
         'images/backgrounds/library-r2.png',
         FALSE,
@@ -261,7 +274,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r2_sliceStronger --
     (
@@ -277,7 +291,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r2_sliceWeaker --
     (
@@ -293,7 +308,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r2_bookReadWar --
     (
@@ -306,6 +322,7 @@ VALUES
         FALSE,
         FALSE,
         TRUE,
+        FALSE,
         FALSE,
         FALSE,
         FALSE
@@ -324,7 +341,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r2_nextRoom --
     (
@@ -343,7 +361,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
      -- library_r2_unlockGlassCage --
     (
@@ -361,7 +380,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r3_entrance --
     (
@@ -377,7 +397,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r3_bookDecision--
     (
@@ -395,7 +416,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r3_finalBookInHand --
     (
@@ -412,7 +434,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r3_bookReadFinal --
     (
@@ -425,6 +448,7 @@ VALUES
         FALSE,
         FALSE,
         TRUE,
+        FALSE,
         FALSE,
         FALSE,
         FALSE
@@ -444,7 +468,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r3_calligraphousKillSpare --
     (
@@ -459,7 +484,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_r3_peaceChosen --
     (
@@ -474,7 +500,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     -- library_end_epilogue --
     (
@@ -491,7 +518,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     );
         
 

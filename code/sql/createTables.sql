@@ -4,7 +4,7 @@
     (
         id INT AUTO_INCREMENT PRIMARY KEY,
         name CHAR(20) NOT NULL,
-        imageFilePath Char(50) NOT NULL,
+        imageFilePath CHAR(50) NOT NULL,
         firstDialogue TEXT(1000) NOT NULL,
         onFirstDialogueEnd TEXT(1000) NOT NULL
     );
@@ -85,7 +85,7 @@
         areaID INT NOT NULL,
         correctAnswer CHAR(50) NOT NULL,
         onCorrect TEXT(1000) NOT NULL,
-        onIncorrect TEXT(100) NOT NULL,
+        onIncorrect TEXT(1000) NOT NULL,
 
         PRIMARY KEY (id, areaID),
         FOREIGN KEY (id) REFERENCES decisions(id)
@@ -168,7 +168,7 @@
         username VARCHAR(50) NOT NULL,
         doTextAnimations BOOLEAN NOT NULL,
         textAnimationSpeed INT NOT NULL,
-        textSize text(50) NOT NULL,
+        textSize TEXT(50) NOT NULL,
         PRIMARY KEY (username),
         FOREIGN KEY (username) REFERENCES users(username)
         ON DELETE CASCADE

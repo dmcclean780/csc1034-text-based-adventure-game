@@ -71,7 +71,7 @@ const stats = [
         }
     },
     {
-        name: "Average Play Time For Successful Characaters",
+        name: "Average Play Time For Successful Characters",
         statFunction: async () => {
             const query = `SELECT AVG(COALESCE(success_total_playtime, 0)) AS avg_playtime_per_success
                             FROM (

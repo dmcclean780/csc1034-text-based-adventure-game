@@ -28,5 +28,5 @@ async function loadNextDecision(areaID, decisonID) {
 document.addEventListener("settingsLoaded", () => {
     const areaID = getState("currentArea")
     const decisionID = getState("currentDecision")
-    loadNextDecision(areaID, decisionID); //Change this to change what decision is loaded on page load of dungeon.html
+    loadNextDecision(6, 1); //Change this to change what decision is loaded on page load of dungeon.html
 });

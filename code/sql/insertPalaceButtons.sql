@@ -40,7 +40,7 @@ VALUES
 (12, 6, 'option_2', 'RIGHT', '(()=> {loadNextDecision(6, 14)})', TRUE),
 
 (13, 6, 'option_1', 'JUMP OVER', '(()=> {loadNextDecision(6, 14)})', TRUE),
-(13, 6, 'option_2', 'DUCK UNDER', '(()=> {loadNextDecision(6, 18)})', TRUE),
+(13, 6, 'option_2', 'DUCK UNDER', '(()=> {loadNextDecision(6, 14)})', TRUE),
 
 (14, 6, 'option_1', 'YES', '(()=> {loadNextDecision(6, 15)})', TRUE),
 

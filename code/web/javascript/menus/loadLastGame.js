@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             alert("Error - Server is Unreachable. Please try again later.");
         }
-    }, 250);
+    }, 500);
 });
 
 function createCharacterSelector(character, i) {
@@ -73,7 +73,8 @@ function addGameSummaryButton(character) {
     const characterGameSummary = document.createElement("button");
     characterGameSummary.classList.add("summary-button");
     characterGameSummary.innerHTML = "...";
-    characterGameSummary.addEventListener("click", () => {
+    characterGameSummary.addEventListener("click", (event) => {
+        event.stopPropagation();
         goToGameSummary(character.characterID);
     });
     return characterGameSummary;

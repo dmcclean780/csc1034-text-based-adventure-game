@@ -60,7 +60,7 @@ function backToStatistics(){
 function goToGameSummary(characterID){
     sessionStorage.setItem("lastPage", window.location.href);
     sessionStorage.setItem("characterID", characterID);
-    window.location.href = "gameSummary.html";
+    window.location.href = pathToRoot+"html/menus/gameSummary.html";
 }
 
 function backToLastPage(){

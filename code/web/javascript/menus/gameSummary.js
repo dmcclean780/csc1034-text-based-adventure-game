@@ -69,6 +69,35 @@ const stats = [
         }
     },
     {
+        name: "Ending Achieved",
+        statFunction: async () => {
+            const query = `SELECT endingAchieved, successful, alive
+                            FROM playerCharacter 
+                            WHERE playerCharacter.characterID = '${sessionStorage.getItem('characterID')}';`;
+            const result = await makeDatabaseQuery(query);
+            if(result[0]['alive'] == '1'){
+                return "---";
+            } else if(result[0]['successful'] == '0'){
+                return "Death & Defeat";
+            } else if(result[0]['endingAchieved'] == '1'){
+                return "Midas Reborn";
+            } else if(result[0]['endingAchieved'] == '2'){
+                return "A Hero's Death";
+            } else if(result[0]['endingAchieved'] == '3'){
+                return "Black Hole";
+            } else if(result[0]['endingAchieved'] == '4'){
+                return "True Ending";
+            } else if(result[0]['endingAchieved'] == '5'){
+                return "Should've Died A Hero";
+            } else if(result[0]['endingAchieved'] == '6'){
+                return "Live By The Sword, Die By The Sword";
+            } else if(result[0]['endingAchieved'] == '7'){
+                return "Buried Secrets";
+            }
+
+        }
+    },
+    {
         name: "Total Play Time",
         statFunction: async () => {
             const query = `SELECT SUM(currentPlayTime) AS total_playtime

@@ -27,7 +27,7 @@ document.getElementById("new-character").addEventListener("click", async (event)
             } else {
                 alert("Error - Server is Unreachable. Please try again later.");
             }
-        }, 250);
+        }, 500);
     }
     else{
         alert("Character name must not be blank!");

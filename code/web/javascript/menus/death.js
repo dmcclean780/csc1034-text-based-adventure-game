@@ -3,6 +3,8 @@ console.log(deathMessage);
 
 window.onload = function () {
     document.getElementById("death-message").innerHTML = deathMessage;
+
+    sessionStorage.clear();
 }
 
 function restart() {

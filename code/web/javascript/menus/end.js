@@ -9,8 +9,9 @@ document.getElementById("stats-btn").addEventListener("click", function() {
     window.location.href = "../../html/menus/startGame.html";
 });
 
-window.onload = async function () {
-    //update database columns to show character has finished the game
+window.onload = function () {
+    //update header to show player name
+    document.getElementById("playerNameHere").innerHTML = `Congratulations, ${getState("name")}`;
 
     //set ending message based on ending achieved
     let title = "";

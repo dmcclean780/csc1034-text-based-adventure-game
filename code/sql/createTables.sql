@@ -145,6 +145,8 @@
         username VARCHAR(50) NOT NULL,
         doTextAnimations BOOLEAN NOT NULL,
         textAnimationSpeed INT NOT NULL,
+        soundEffects BOOLEAN NOT NULL,
+        musicVolume INT NOT NULL,
         PRIMARY KEY (username),
         FOREIGN KEY (username) REFERENCES users(username)
     );

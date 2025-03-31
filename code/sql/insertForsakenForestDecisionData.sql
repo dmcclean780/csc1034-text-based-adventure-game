@@ -1,4 +1,3 @@
---NEED TO INSERT BACKGROUND IMAGES--
 
 INSERT INTO areas
     (id, name, rowPosition, colPosition, ableToVisitCondition)
@@ -15,7 +14,7 @@ VALUES
         You must banish the ogre from the forest and restore peace.
         There is a powerful sphynx in the forest who will help you on your quest.',
         '',
-        '',
+        'images/backgrounds/forest.png',
         FALSE,
         FALSE,
         FALSE,
@@ -33,7 +32,7 @@ VALUES
         She will use these items to help her create a weapon for you to defeat the ogre with.
         But beware, if you present her with the wrong items, your weapon will be weakened.',
         'Continue?',
-        '',
+        'images/backgrounds/forest.png',
         FALSE,
         FALSE,
         FALSE,
@@ -52,7 +51,7 @@ VALUES
         Light as air, yet I can fall,
         What am I, can you recall?&quot;',
         '',
-        '',
+        'images/backgrounds/forest.png',
         FALSE,
         FALSE,
         FALSE,
@@ -72,7 +71,7 @@ VALUES
         A gift of love, a healing touch.
         What am I?&quot;',
         '',
-        '',
+        'images/backgrounds/forest.png',
         FALSE,
         FALSE,
         FALSE,
@@ -88,7 +87,7 @@ VALUES
         'The sphynx has nothing to offer you.
         Good luck facing the ogre.',
         '',
-        '',
+        'images/backgrounds/forest.png',
         FALSE,
         FALSE,
         FALSE,
@@ -105,7 +104,7 @@ VALUES
         But beware, you can only use it once.
         Good luck facing the ogre.',
         '',
-        '',
+        'images/backgrounds/forest.png',
         FALSE,
         FALSE,
         FALSE,
@@ -121,7 +120,7 @@ VALUES
         'The sphynx presents you with a ring that will grant you incredible strength and power.
         Good luck facing the ogre.',
         '',
-        '',
+        'images/backgrounds/forest.png',
         FALSE,
         FALSE,
         FALSE,
@@ -137,7 +136,7 @@ VALUES
         'You approach the ogre, ready to fight.
         He spots you and charges towars you.',
         'What do you do?',
-        '',
+        'images/backgrounds/forest.png',
         TRUE,
         FALSE,
         FALSE,
@@ -155,7 +154,7 @@ VALUES
         Unfortunately your ring of strength broke in your battle with the ogre.
         Good luck continuing your quest.',
         '',
-        '',
+        'images/backgrounds/forest.png',
         FALSE,
         FALSE,
         FALSE,
@@ -173,7 +172,7 @@ VALUES
         Fortunately you still have your ring of strength. Use it wisely, it will serve you well in your future battles.
         Good luck continuing your quest.',
         '',
-        '',
+        'images/backgrounds/forest.png',
         FALSE,
         FALSE,
         FALSE,
@@ -189,7 +188,7 @@ VALUES
         'You decide to explore the forest.
         Where would you like to search?',
         '',
-        '',
+        'images/backgrounds/forest.png',
         FALSE,
         FALSE,
         FALSE,
@@ -208,7 +207,7 @@ VALUES
         You must be the hero here to save us from that evil ogre.
         Can you help us?&quot;',
         '',
-        '',
+        'images/backgrounds/forest.png',
         FALSE,
         FALSE,
         TRUE,
@@ -224,7 +223,7 @@ VALUES
         '&quot;Thank you!
         These will go great with dinner!&quot;',
         '',
-        '',
+        'images/backgrounds/forest.png',
         FALSE,
         FALSE,
         TRUE,
@@ -244,7 +243,7 @@ VALUES
         Take this with you, it may come in useful.&quot;
         The gnome presents you with a flower. You take it with you.',
         '',
-        '',
+        'images/backgrounds/forest.png',
         FALSE,
         FALSE,
         TRUE,
@@ -261,7 +260,7 @@ VALUES
         It looks taller and older than all the rest.
         You decide to investigate the tree further.',
         'What would you like to do?',
-        '',
+        'images/backgrounds/forest.png',
         FALSE,
         FALSE,
         FALSE,
@@ -278,7 +277,7 @@ VALUES
         Perched on the top branch is a great brown owl.
         However, everytime you get close to him, he snaps his beak at you.',
         'What would you like to do?',
-        '',
+        'images/backgrounds/forest.png',
         FALSE,
         FALSE,
         FALSE,
@@ -296,7 +295,7 @@ VALUES
         To thank you, he gives you one of his finest feathers.
         You take it with you. It could be useful later.',
         '',
-        '',
+        'images/backgrounds/forest.png',
         FALSE,
         FALSE,
         FALSE,
@@ -313,7 +312,7 @@ VALUES
         There is a small cluster of mushrooms growing at the base of the tree.
         There is also a pinecone lying near the roots.',
         'What would you like to do?',
-        '',
+        'images/backgrounds/forest.png',
         FALSE,
         FALSE,
         FALSE,
@@ -329,7 +328,7 @@ VALUES
         'There is a twisting river that runs through the forest.
         You decide to walk down to its banks to get a closer look.',
         '',
-        '',
+        'images/backgrounds/forest.png',
         FALSE,
         FALSE,
         FALSE,
@@ -346,7 +345,7 @@ VALUES
         There are rocks of all shapes and sizes scattered on the ground of the cave.
         There is also a lot of litter on the ground that the locals must have left here.',
         '',
-        '',
+        'images/backgrounds/forest.png',
         FALSE,
         FALSE,
         FALSE,
@@ -364,7 +363,7 @@ VALUES
         Among the litter you find an empty water bottle.
         You take it with you, it could come in useful later.',
         '',
-        '',
+        'images/backgrounds/forest.png',
         FALSE,
         FALSE,
         FALSE,

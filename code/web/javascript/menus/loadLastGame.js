@@ -7,10 +7,6 @@ let gameState = {
     }
 }
 
-let inventory = {
-
-}
-
 async function getAllCharacters() {
     try {
         const characters = await makeDatabaseQuery(`SELECT * FROM playerCharacter WHERE username = '${sessionStorage.getItem("username")}'`);
@@ -26,37 +22,75 @@ document.addEventListener("DOMContentLoaded", () => {
             try {
                 const characters = await getAllCharacters();
                 const characterList = document.getElementById("character-list");
-                characters.forEach(character => {
-                    const characterItem = document.createElement("button");
-                    characterItem.classList.add("button-option");
-                    characterItem.innerHTML = character.characterID + ". " + character.name;
-                    if (character.alive == 1) {
-                        characterItem.addEventListener("click", () => {
-                            loadGameState(character);
-                            loadInventory(character);
-                            if (character.currentArea == '0') {
-                                window.location.href = "../map.html";
-                                return;
-                            }
-                            window.location.href = "../dungeons/dungeon.html";
-                        });
-                    } else {
-                        characterItem.addEventListener("click", () => {
-                            alert("This character is dead");
-                        });
-                        characterItem.style.backgroundColor = "red";
-                    }
+                for(let i=0; i<characters.length; i++) {
+                    const character = characters[i];
+                    const characterItem = createCharacterSelector(character, i);
                     characterList.appendChild(characterItem);
-                });
+                }
             } catch (error) {
                 console.error("Error loading characters:", error);
                 alert("An error occurred. Please try again later.");
-            } ß
+            }
         } else {
             alert("Error - Server is Unreachable. Please try again later.");
         }
-    }, 250);
+    }, 500);
 });
+
+function createCharacterSelector(character, i) {
+    const characterItem = document.createElement("button");
+    characterItem.classList.add("character-option");
+
+    const characterName = document.createElement("p");
+    characterName.innerHTML = (i+1)+"."+character.name;
+    characterName.classList.add("character-name-box");
+    characterItem.appendChild(characterName);
+
+    const otherInfo = document.createElement("span");
+    otherInfo.classList.add("game-summary-box");
+    const completionPercentage = document.createElement("p");
+    completionPercentage.innerHTML = calculateGamePercentage(character);
+    completionPercentage.classList.add("percentage-box");
+    otherInfo.appendChild(completionPercentage);
+    const characterGameSummary = addGameSummaryButton(character);
+    otherInfo.appendChild(characterGameSummary);
+    characterItem.appendChild(otherInfo);
+
+    if (character.alive == 1) {
+        characterItem.addEventListener("click", () => {
+            characterOnClickFunction(character);
+        });
+    } else {
+        characterItem.addEventListener("click", () => {
+            alert("This character is dead");
+        });
+        characterItem.style.backgroundColor = "red";
+    }
+    return characterItem;
+}
+
+function addGameSummaryButton(character) {
+    const characterGameSummary = document.createElement("button");
+    characterGameSummary.classList.add("summary-button");
+    characterGameSummary.innerHTML = "...";
+    characterGameSummary.addEventListener("click", (event) => {
+        event.stopPropagation();
+        goToGameSummary(character.characterID);
+    });
+    return characterGameSummary;
+}
+
+async function characterOnClickFunction(character) {
+    loadGameState(character);
+    await loadInventory(character);
+    sessionStorage.setItem("startTimestamp", Date.now());
+    if (character.currentArea == '0') {
+        window.location.href = "../map.html";
+        return;
+    }
+    window.location.href = "../dungeons/dungeon.html";
+}
+
 
 function loadGameState(character) {
     const globalStateVariables = Object.getOwnPropertyNames(character);
@@ -79,9 +113,14 @@ function loadGameState(character) {
     sessionStorage.setItem("gameState", JSON.stringify(gameState));
 }
 
-function loadInventory(character) {
-    const inventory = JSON.parse(character.inventory);
+async function loadInventory(character) {
+    const query = `SELECT * FROM playerInventory WHERE characterID = '${character.characterID}'`;
+    const inventoryItems = await makeDatabaseQuery(query);
+    let inventory = {};
+    inventoryItems.forEach(item => {
+        inventory[item.itemName] = item.quantity;
+    });
     sessionStorage.setItem("inventory", JSON.stringify(inventory));
-    console.log("Inventory Loaded:", sessionStorage.getItem("inventory"));
+
 }
 

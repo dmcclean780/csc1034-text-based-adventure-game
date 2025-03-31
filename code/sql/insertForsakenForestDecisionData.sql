@@ -1,9 +1,7 @@
---NEED TO INSERT BACKGROUND IMAGES--
+-- NEED TO INSERT BACKGROUND IMAGES--
 
-INSERT INTO areas
-    (id, name, rowPosition, colPosition, ableToVisitCondition)
-VALUES
-    (5, 'Forsaken Forest', 2, 3, '(getState("forestCompleted") == false)');
+INSERT INTO areas VALUES
+    (5, 'Potentia', 'Forsaken Forest', 2, 3, 2);
 
 INSERT INTO decisions
     (id, areaID, details, prompt, backgroundFilePath, hasTimer, hasPopupMenu, hasDialogue, hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions, hasSelectInventory)
@@ -211,7 +209,7 @@ VALUES
         '',
         FALSE,
         FALSE,
-        TRUE,
+        FALSE,
         FALSE,
         FALSE,
         FALSE,

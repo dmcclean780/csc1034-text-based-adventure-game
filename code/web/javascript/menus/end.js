@@ -2,11 +2,14 @@ const ending = sessionStorage.getItem("ending");
 console.log(ending);
 
 document.getElementById("return-btn").addEventListener("click", function() {
+    let username = sessionStorage.getItem("username");
+    sessionStorage.clear();
+    sessionStorage.setItem("username", username);
     window.location.href = "../../html/menus/startGame.html";
 });
 
 document.getElementById("stats-btn").addEventListener("click", function() {
-    window.location.href = "../../html/menus/startGame.html";
+    goToGameSummary(gameState.globalState.characterID);
 });
 
 window.onload = function () {
@@ -92,9 +95,4 @@ window.onload = function () {
 
     document.getElementById("end-title").innerHTML = title;
     document.getElementById("end-message").innerHTML = message;
-
-
-    let username = sessionStorage.getItem("username");
-    sessionStorage.clear();
-    sessionStorage.setItem("username", username);
 }

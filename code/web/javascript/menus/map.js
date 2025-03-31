@@ -2,10 +2,11 @@ async function setUpMap() {
     setTimeout(async () => {
         if (serverReachable) {
             try {
-                const areaData = await makeAreaQuery("NULL");
-                const mapData = await makeMapQuery("WORLD MAP");
+                
+                const mapData = await makeMapQuery("Potentia");
 
                 const mapBox = document.getElementById("map-grid");
+                mapBox.style.backgroundImage = `url(${pathToRoot}${mapData.mapImageFilePath})`;
                 mapBox.style.gridTemplateColumns = "repeat(" + mapData.rowSize + ", 1fr)";
                 mapBox.replaceChildren();
                 for (let i = 0; i < parseInt(mapData.rowSize) * parseInt(mapData.colSize); i++) {
@@ -16,6 +17,8 @@ async function setUpMap() {
                     mapBox.appendChild(mapTile);
                 }
 
+
+                const areaData = await makeAreaQuery("worldName", mapData.worldName);
                 for (let i = 0; i < areaData.length; i++) {
                     if (areaData[i].id == '0') {
                         continue;
@@ -24,7 +27,7 @@ async function setUpMap() {
                     const mapTile = document.getElementById((area.rowPosition - 1) * (mapData.rowSize) + (area.colPosition - 1) + 1);
                     const areaTile = document.createElement("button");
                     areaTile.classList.add("map-button");
-                    if (eval(area.ableToVisitCondition) == true) {
+                    if (eval(area.visitCondition) == true) {
                         areaTile.addEventListener("click", function () {
                             changeState("currentArea", area.id);
                             changeState("currentDecision", 1);

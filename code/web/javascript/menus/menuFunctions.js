@@ -41,6 +41,32 @@ function backFromLoadGame(){
     window.location.href = "startGame.html";
 }
 
+function goToGloalAnalytics(){
+    window.location.href = "globalAnalytics.html";
+}
+
+function goToUserAnalytics(){
+    window.location.href = "userAnalytics.html";
+}
+
+function goToAchievements(){
+    window.location.href = "achievements.html";
+}
+
+function backToStatistics(){
+    window.location.href = "statistics.html";
+}
+
+function goToGameSummary(characterID){
+    sessionStorage.setItem("lastPage", window.location.href);
+    sessionStorage.setItem("characterID", characterID);
+    window.location.href = pathToRoot+"html/menus/gameSummary.html";
+}
+
+function backToLastPage(){
+    window.location.href = sessionStorage.getItem("lastPage");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     if (sessionStorage.getItem("username") === null || sessionStorage.getItem("username") === "") {
         window.location.href = pathToRoot+"html/menus/login.html";

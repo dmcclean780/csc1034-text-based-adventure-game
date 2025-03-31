@@ -92,4 +92,9 @@ window.onload = function () {
 
     document.getElementById("end-title").innerHTML = title;
     document.getElementById("end-message").innerHTML = message;
+
+
+    let username = sessionStorage.getItem("username");
+    sessionStorage.clear();
+    sessionStorage.setItem("username", username);
 }

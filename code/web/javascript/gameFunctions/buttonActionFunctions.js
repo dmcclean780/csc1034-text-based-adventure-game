@@ -44,9 +44,13 @@ function disableButton(event) {
 
 
 function goToEndScreen(ending) {
-    updateStateDatabase(gameState);
-    updateDatabaseInventory(inventory);
     sessionStorage.setItem("ending", ending);
+    changeState("alive", 0);
+    changeState("successful", 1);
+    changeState("endingAchieved", ending);
+    
+    updateDatabaseInventory(inventory);
+    updateStateDatabase(gameState);
     window.location.href = pathToRoot+"html/other_game_screens/end.html";
 }
 

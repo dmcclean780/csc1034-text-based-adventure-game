@@ -22,7 +22,7 @@ function applySettings() {
     document.getElementById("music-volume").value = settings.musicVolume;
     document.getElementById("music-slider-value").value = settings.musicVolume;
     document.getElementById("text-size-value").innerHTML = savedSize;
-}
+
 
     if(savedSize == "Small")
     {
@@ -53,11 +53,11 @@ function changeTextAnimationSpeed(e) {
     document.getElementById("slider-value").innerHTML = 90 - settings.textAnimationSpeed;
 }
 
-<<<<<<< HEAD
 function changeMusicVolume(e) {
     settings.musicVolume = e.target.value;
     document.getElementById("music-slider-value").innerHTML = settings.musicVolume;
-=======
+}
+
 function changeTextSize(e) {
     if(e.target.value == 1)
     {
@@ -77,17 +77,13 @@ function changeTextSize(e) {
         settings.textSize = "Large";
         document.getElementById("text-size-value").innerHTML = "Large";
     }
->>>>>>> main
 }
 
 function saveAndReturn() {
     if (serverReachable) {
         const username = sessionStorage.getItem("username");
-<<<<<<< HEAD
-        const query = `UPDATE settings SET doTextAnimations = ${settings.doTextAnimations ? 1 : 0}, textAnimationSpeed = ${settings.textAnimationSpeed}, soundEffects = ${settings.soundEffects}, musicVolume = ${settings.musicVolume} WHERE username = '${username}'`;
-=======
-        const query = `UPDATE settings SET doTextAnimations = ${settings.doTextAnimations ? 1 : 0}, textAnimationSpeed = ${settings.textAnimationSpeed}, textSize = '${settings.textSize}' WHERE username = '${username}'`;
->>>>>>> main
+        const query = `UPDATE settings SET doTextAnimations = ${settings.doTextAnimations ? 1 : 0}, textAnimationSpeed = ${settings.textAnimationSpeed}, soundEffects = ${settings.soundEffects}, musicVolume = ${settings.musicVolume}, textSize = '${settings.textSize}' WHERE username = '${username}'`;
+
         makeDatabaseQuery(query).then(() => {
             window.location.href = "../../index.html";
         });
@@ -103,12 +99,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (serverReachable) {
             document.getElementById("do-text-animations").addEventListener("click", changeDoTextAnimations);
             document.getElementById("text-animation-speed").addEventListener("input", changeTextAnimationSpeed);
-<<<<<<< HEAD
             document.getElementById("sound-effects").addEventListener("click", changeSoundEffects);
             document.getElementById("music-volume").addEventListener("input", changeMusicVolume);
-=======
             document.getElementById("text-size").addEventListener("input", changeTextSize);
->>>>>>> main
             if (serverReachable && settings == null) {
                 try {
                     settings = await querySettings();

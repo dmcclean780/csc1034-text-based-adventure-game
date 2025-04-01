@@ -17,7 +17,7 @@
         </div>
 
     </div>
-    <button class="overlap-box" onclick="backToStatistics()" style="margin: 5px; letter-spacing: 2px;">RETURN</button>
+    <button id="return-button" class="overlap-box" style="margin: 5px; letter-spacing: 2px;">RETURN</button>
 
     <!--Config Files-->
     <script src="../../authDetails.js"></script>
@@ -26,12 +26,24 @@
     <script>
         pathToRoot = "../../";
     </script>
+    <script>
+        let settings;
+        document.addEventListener("DOMContentLoaded", async () => {
+          settings = await querySettings();
+          document.dispatchEvent(new Event("settingsLoaded"));
+        });
+    </script>
 
     <!--Load utils File-->
     <script src="../../javascript/utils.js"></script>
 
     <!--Load Any Database Files-->
     <script src="../../javascript/database/queryDatabase.js"></script>
+    <script src="../../javascript/database/querySettings.js"></script>
+
+    <!--Sound effects-->
+    <script src="../../javascript/sounds/sounds.js"></script>
+    <script src="../../javascript/menuButtons/globalAnalyticsButtons.js"></script>
 
     <!--Functionality Files-->
     <script src="../../javascript/menus/menuFunctions.js"></script>

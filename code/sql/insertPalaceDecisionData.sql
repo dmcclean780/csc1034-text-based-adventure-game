@@ -158,7 +158,7 @@ VALUES
     (
         11,
         6,
-        'Before you looms Midas, the mighty king who has taken over this palace and turned almost all of it to gold. His golden gauntlet, the source of his power, glints and shines in the golden light streaming through the windows of the chamber. In a loud booming voice, he says, "What could be here for? Leave at once or I shall petrify you in gold. I was sent here to collect riches for my master and I will not disappoint. Away with you now."',
+        'Before you looms Midas, the mighty king who has taken over this palace and turned almost all of it to gold. His golden gauntlet, the source of his power, glints and shines in the golden light streaming through the windows of the chamber. In a loud booming voice, he says, "What could you be here for? Leave at once or I shall petrify you in gold. I was sent here to collect riches for my master and I will not disappoint. Away with you now."',
         'WHAT WILL YOU DO?',
         'images/backgrounds/palace.png',
         FALSE,

@@ -21,8 +21,15 @@
 
 
   <script>
-    pathToRoot = "../../";
-  </script>
+    const pathToRoot = "../../";
+    let settings;
+
+    document.addEventListener("DOMContentLoaded", async () => {
+        settings = await querySettings();
+        document.dispatchEvent(new Event("settingsLoaded"));
+    })
+</script>
+
 
   <!--Config Files-->
   <script src="../../authDetails.js"></script>
@@ -32,6 +39,7 @@
 
   <!--Database Files-->
   <script src="../../javascript/database/queryDatabase.js"></script>
+  <script src="../../javascript/database/querySettings.js"></script>
   <script src="../../javascript/database/pingDatabase.js"></script>
 
 
@@ -41,6 +49,9 @@
   <!--Functionality Files-->
   <script src="../../javascript/menus/loadLastGame.js"></script>
   <script src="../../javascript/menus/menuFunctions.js"></script>
+
+   <!--Apply Settings-->
+   <script src="../../javascript/applySettings/textSize.js"></script>
 </body>
 
 </html>

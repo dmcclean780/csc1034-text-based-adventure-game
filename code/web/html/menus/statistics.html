@@ -24,14 +24,27 @@
 
     <!--Local Config Variables-->
     <script>
-        pathToRoot = "../../";
+        const pathToRoot = "../../";
+        let settings;
+    
+        document.addEventListener("DOMContentLoaded", async () => {
+            settings = await querySettings();
+            document.dispatchEvent(new Event("settingsLoaded"));
+        })
     </script>
+    <!--Functionality Files-->
+    <script src="../../javascript/menus/menuFunctions.js"></script>
+
+    <!--Apply Settings-->
+    <script src="../../javascript/applySettings/textSize.js"></script>
 
     <!--Load Any Database Files-->
     <script src="../../javascript/database/queryDatabase.js"></script>
+    <script src="../../javascript/database/querySettings.js"></script>
+    <script src="../../javascript/database/pingDatabase.js"></script>
 
-    <!--Functionality Files-->
-    <script src="../../javascript/menus/menuFunctions.js"></script>
+    <!--Ensure the server is reachable-->
+    <script src="../../javascript/checkConnection.js"></script>
 </body>
 
 </html>

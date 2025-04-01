@@ -3,8 +3,8 @@ console.log(deathMessage);
 
 document.getElementById("return-btn").addEventListener("click", function() {
     let username = sessionStorage.getItem("username");
-    sessionStorage.setItem("username", username);
     sessionStorage.clear();
+    sessionStorage.setItem("username", username);
     window.location.href = "../../html/menus/startGame.html";
 });
 

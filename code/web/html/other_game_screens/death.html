@@ -4,7 +4,6 @@
 <head>
     <title>Death</title>
     <link rel="stylesheet" href="../../css/default/generic.css">
-    <script src="../../javascript/menus/death.js"></script>
 </head>
 
 <body>
@@ -16,8 +15,29 @@
             <p id="death-message">
 
             </p>
-            <button id="restart-button" onclick="restart()">Restart</button>
+            <div class="death-container">
+                <button class="death-button" id="stats-btn">See Character Stats</button>
+                <button class="death-button" id="return-btn">Return To Menu</button>
+            </div>
+            
         </main>
     </div>
+
+    <script>
+        const pathToRoot = "../../";
+    </script>
+
+        <!--Config Files-->
+        <script src="../../authDetails.js"></script>
+
+    <!--Apply Settings-->
+    <script src="../../javascript/applySettings/textLoadingAnim.js"></script>
+    <script src="../../javascript/menus/menuFunctions.js"></script>
+    <script src="../../authDetails.js"></script>
+    <script src="../../javascript/database/queryDatabase.js"></script>
+    <script src="../../javascript/gameFunctions/stateFunctions.js"></script>
+    <script src="../../javascript/menus/menuFunctions.js"></script>
+
+    <script src="../../javascript/menus/death.js"></script>
 </body>
 </html>

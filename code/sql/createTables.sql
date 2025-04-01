@@ -1,5 +1,3 @@
-
-
     CREATE TABLE npcs
     (
         id INT AUTO_INCREMENT PRIMARY KEY,

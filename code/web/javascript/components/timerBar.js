@@ -101,12 +101,21 @@ class TimerBar extends HTMLElement {
             let timerTime = this.shadowRoot.getElementById("timer-time");
             timerTime.innerHTML = timerRemaining;
             let width = 100;
+
+            this.dispatchEvent(new CustomEvent("timer-start", {
+                detail: {duration: this.duration},
+                bubbles: true,
+            }));
+
             this.id = setInterval(() => {
                 if (width <= widthStep || timerRemaining <= 1) {
                     clearInterval(this.id);
                     i = 0;
                     timerBar.style.width = 0 + "%";
                     timerTime.innerHTML = 0;
+
+                    this.dispatchEvent(new CustomEvent("timer-end", {bubbles: true}));
+
                     if (this.onComplete) {
                      this.onComplete();
                     }
@@ -131,6 +140,8 @@ class TimerBar extends HTMLElement {
     stopTimer(){
         clearInterval(this.id);
         this.timerStarted = false;
+
+        this.dispatchEvent(new CustomEvent("timer-end", {bubbles: true}));
     }
 
 

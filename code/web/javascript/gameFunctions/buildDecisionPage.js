@@ -85,6 +85,7 @@ async function buildDecision(decisionData) {
     }
 
     buildInventory(decisionData);
+    document.dispatchEvent(new Event("decisionLoaded"));
 }
 
 async function buildDialogue(decisionData) {

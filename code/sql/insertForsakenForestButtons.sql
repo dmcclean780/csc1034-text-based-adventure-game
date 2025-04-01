@@ -4,7 +4,7 @@ VALUES
     (1, 5, 'option_2', 'Explore Forest', '(()=> {loadNextDecision(5, 11)})', TRUE),
     (1, 5, 'option_3', 'Leave Forest', '(()=> {goToDeathScreen("Death has come for you")})', TRUE),
 
-    (2, 5, 'option_1', 'Yes', '(()=> {changeState("RIDDLES_CORRECT", 0); checkState("RIDDLE1_COMPLETE", true, loadNextDecision(5, 4), loadNextDecision(5, 3));})', TRUE),
+    (2, 5, 'option_1', 'Yes', '(()=> {changeState("RIDDLES_CORRECT", 0); checkState("RIDDLE1_COMPLETE", true, ()=> {loadNextDecision(5, 4)}, ()=> {loadNextDecision(5, 3)});})', TRUE),
     (2, 5, 'option_2', 'No', '(()=> {loadNextDecision(5, 1)})', TRUE),
 
     -- NEED TO SELECT ITEM FROM INVENTORY--

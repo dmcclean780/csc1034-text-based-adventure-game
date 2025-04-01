@@ -30,12 +30,20 @@
     <script>
         pathToRoot = "../../";
     </script>
+    <script>
+        let settings;
+        document.addEventListener("DOMContentLoaded", async () => {
+          settings = await querySettings();
+          document.dispatchEvent(new Event("settingsLoaded"));
+        });
+    </script>
 
     <!--Database Files-->
     <script src="../../javascript/database/queryDatabase.js"></script>
     <script src="../../javascript/database/queryAreas.js"></script>
     <script src="../../javascript/database/queryMap.js"></script>
     <script src="../../javascript/database/pingDatabase.js"></script>
+    <script src="../../javascript/database/querySettings.js"></script>
 
 
     <!--Web Components-->
@@ -44,11 +52,12 @@
     <!--Ensure the server is reachable-->
     <script src="../../javascript/checkConnection.js"></script>
 
+    <!--Sound effects-->
+    <script src="../../javascript/applySettings/sounds.js"></script>
+
     <!--Functionality Files-->
     <script src="../../javascript/gameFunctions/stateFunctions.js"></script>
     <script src="../../javascript/menus/map.js"></script>
-
-
 
 </body>
 

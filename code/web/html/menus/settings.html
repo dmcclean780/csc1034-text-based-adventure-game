@@ -16,6 +16,7 @@
     <div class="menu">
       <div class="column">
         <button class="menu-button-option" id='do-text-animations' onclick="">DO TEXT ANIMATIONS: ON</button>
+        <button class="menu-button-option" id="sound-effects" onclick="">Sound Effects: ON</button>
       </div>
       <div class="column">
         <div class="slidecontainer">
@@ -23,6 +24,13 @@
           <div class="slider-wrapper">
             <input type="range" min="20" max="70" value="60" class="slider" id="text-animation-speed">
             <span id="slider-value" class="slider-value">50</span>
+          </div>
+        </div>
+        <div class="slidecontainer">
+          <span>MUSIC VOLUME</span>
+          <div class="slider-wrapper">
+            <input type="range" min="0" max="100" value="50" class="slider" id="music-volume">
+            <span id="music-slider-value" class="music-slider-value">50</span>
           </div>
         </div>
         <div class="text-size-container">
@@ -34,7 +42,7 @@
         </div>
       </div>
     </div>
-    <button class="menu-button-option" onclick="saveAndReturn()" style="margin: 5px; letter-spacing: 3px;  width: 65%;">- SAVE & RETURN -</button>
+    <button id="save-return-button" class="menu-button-option" style="margin: 5px; letter-spacing: 3px;  width: 65%;">- SAVE & RETURN -</button>
   </div>
 
   <!--Config Files-->
@@ -62,9 +70,13 @@
   <!--Ensure the server is reachable-->
   <script src="../../javascript/checkConnection.js"></script>
 
+  <!--Sound effects-->
+  <script src="../../javascript/applySettings/sounds.js"></script>
+
   <!--Functionality Files-->
   <script src="../../javascript/menus/menuFunctions.js"></script>
   <script src="../../javascript/menus/settings.js"></script>
+  <script src="../../javascript/menuButtons/settingsButtons.js"></script>
 </body>
 
 </html>

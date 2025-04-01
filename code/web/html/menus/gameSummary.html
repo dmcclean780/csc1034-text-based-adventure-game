@@ -17,21 +17,18 @@
         </div>
 
     </div>
-    <button class="overlap-box" onclick="backToLastPage()" style="margin: 5px; letter-spacing: 2px;">RETURN</button>
+    <button id = "return-button" class="overlap-box" style="margin: 5px; letter-spacing: 2px;">RETURN</button>
 
     <!--Config Files-->
     <script src="../../authDetails.js"></script>
 
     <!--Local Config Variables-->
-    <!--Local Config Variables-->
     <script>
-        const pathToRoot = "../../";
         let settings;
-    
         document.addEventListener("DOMContentLoaded", async () => {
-            settings = await querySettings();
-            document.dispatchEvent(new Event("settingsLoaded"));
-        })
+          settings = await querySettings();
+          document.dispatchEvent(new Event("settingsLoaded"));
+        });
     </script>
 
     <!--Load utils File-->

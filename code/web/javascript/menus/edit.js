@@ -52,7 +52,7 @@ document.getElementById("editForm").addEventListener("submit", async (event) => 
         } else {             
             alert("Error - Server is Unreachable. Please try again later.");         
         }     
-    }, 250);
+    }, 500);
 }); 
 
 // Toggle password visibility for login form

@@ -13,10 +13,10 @@
 <body style="color:black; background-color: black;" class="root">
     <div class="input-box">
         <h1 class="details-box" style="letter-spacing: 2px;">Statistics</h1>
-        <button class="button-option" onclick="goToGloalAnalytics()" style="margin: 5px; letter-spacing: 2px;">Global Analytics</button>
-        <button class="button-option" onclick="goToUserAnalytics()" style="margin: 5px; letter-spacing: 2px;">User Analytics</button>
-        <button class="button-option" onclick="goToAchievements()" style="margin: 5px; letter-spacing: 2px;">Achievments</button>
-        <button class="button-option" onclick="backFromStartGame()" style="margin: 5px; letter-spacing: 2px;">Return</button>
+        <button id="global-analytics-button" class="button-option" style="margin: 5px; letter-spacing: 2px;">Global Analytics</button>
+        <button id="user-analytics-button" class="button-option" style="margin: 5px; letter-spacing: 2px;">User Analytics</button>
+        <button id="achievments-button" class="button-option" style="margin: 5px; letter-spacing: 2px;">Achievments</button>
+        <button id="return-button" class="button-option" style="margin: 5px; letter-spacing: 2px;">Return</button>
       </div>
 
     <!--Config Files-->
@@ -42,6 +42,10 @@
     <script src="../../javascript/database/queryDatabase.js"></script>
     <script src="../../javascript/database/querySettings.js"></script>
     <script src="../../javascript/database/pingDatabase.js"></script>
+
+    <!--Sound effects-->
+    <script src="../../javascript/applySettings/sounds.js"></script>
+    <script src="../../javascript/menuButtons/statisticsButtons.js"></script>
 
     <!--Ensure the server is reachable-->
     <script src="../../javascript/checkConnection.js"></script>

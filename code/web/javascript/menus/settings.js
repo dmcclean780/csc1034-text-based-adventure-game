@@ -1,5 +1,4 @@
 //This obj will be fetched from sql and changed in the settings page
-let settings;
 
 async function loadSettings() {
     const username = sessionStorage.getItem("username");

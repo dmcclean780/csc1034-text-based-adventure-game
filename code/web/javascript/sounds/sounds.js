@@ -25,21 +25,36 @@ document.addEventListener("settingsLoaded", () => {
 });
 
 const timerCountdownSound = new Audio(pathToRoot+"sounds/timercountdown.mp3");
+timerCountdownSound.loop = true;
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("timer-start", (event) => {
+        console.log("Timer started, playing sound");
+        timerCountdownSound.play().catch(error => console.log("Autoplay Blocked:", error));
+    });
+
+    document.addEventListener("timer-end", () => {
+        console.log("Timer ended, stopping sound");
+        timerCountdownSound.pause();
+        timerCountdownSound.currentTime = 0;
+    })
+})
 
 const backgroundmusic = new Audio(pathToRoot+"sounds/backgroundmusic.mp3");
 backgroundmusic.loop = true;
-backgroundmusic.volume = settings.musicVolume;
-
-document.addEventListener("DOMContentLoaded", () => {
-    if(sessionStorage.getItem("musicPlaying") === "true"){
-        backgroundmusic.play().catch(error => console.log("Autoplay Blocked:", error));
-    }
-
-    document.addEventListener("click", () => {
-        if(backgroundmusic.paused){
-            backgroundmusic.play().then(() => {
-                sessionStorage.setItem("musicPlaying", "true")
-            }).catch(error => console.log("Autoplay Blocked:", error));
+//backgroundmusic.volume = settings.musicVolume;
+if(window.location.href.includes("dungeons")){
+    document.addEventListener("DOMContentLoaded", () => {
+        if(sessionStorage.getItem("musicPlaying") === "true"){
+            backgroundmusic.play().catch(error => console.log("Autoplay Blocked:", error));
         }
-    }), {once: true};
-});
+
+        document.addEventListener("click", () => {
+            if(backgroundmusic.paused){
+                backgroundmusic.play().then(() => {
+                    sessionStorage.setItem("musicPlaying", "true")
+                }).catch(error => console.log("Autoplay Blocked:", error));
+            }
+        }), {once: true};
+    });
+}

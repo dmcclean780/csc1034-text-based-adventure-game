@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-    <button class="menu-button-option" onclick="saveAndReturn()" style="margin: 5px; letter-spacing: 3px;  width: 65%;">- SAVE & RETURN -</button>
+    <button id="save-return-button" class="menu-button-option" style="margin: 5px; letter-spacing: 3px;  width: 65%;">- SAVE & RETURN -</button>
   </div>
 
   <!--Config Files-->
@@ -51,6 +51,13 @@
   <!--Local Config Variables-->
   <script>
     pathToRoot = "../../";
+  </script>
+  <script>
+    let settings;
+    document.addEventListener("DOMContentLoaded", async () => {
+      settings = await querySettings();
+      document.dispatchEvent(new Event("settingsLoaded"));
+    });
   </script>
 
   <!--Database Files-->
@@ -68,6 +75,7 @@
 
   <!--Sound effects-->
   <script src="../../javascript/sounds/sounds.js"></script>
+  <script src="../../javascript/menuButtons/settingsButtons.js"></script>
 </body>
 
 </html>

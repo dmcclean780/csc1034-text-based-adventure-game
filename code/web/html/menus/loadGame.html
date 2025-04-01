@@ -17,11 +17,18 @@
     </div>
 
   </div>
-  <button class="overlap-box" onclick="backFromLoadGame()" style="margin: 5px; letter-spacing: 2px;">Return</button>
+  <button id="return-button" class="overlap-box" style="margin: 5px; letter-spacing: 2px;">Return</button>
 
 
   <script>
     pathToRoot = "../../";
+  </script>
+  <script>
+    let settings;
+    document.addEventListener("DOMContentLoaded", async () => {
+      settings = await querySettings();
+      document.dispatchEvent(new Event("settingsLoaded"));
+    });
   </script>
 
   <!--Config Files-->
@@ -44,6 +51,7 @@
 
   <!--Sound effects-->
   <script src="../../javascript/sounds/sounds.js"></script>
+  <script src="../../javascript/menuButtons/loadGameButtons.js"></script>
 </body>
 
 </html>

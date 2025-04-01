@@ -26,6 +26,13 @@
   <script>
     pathToRoot = "../../";
   </script>
+  <script>
+    let settings;
+    document.addEventListener("DOMContentLoaded", async () => {
+      settings = await querySettings();
+      document.dispatchEvent(new Event("settingsLoaded"));
+    });
+  </script>
 
   <!--Database Files-->
   <script src="../../javascript/database/queryDatabase.js"></script>
@@ -40,6 +47,7 @@
 
   <!--Sound effects-->
   <script src="../../javascript/sounds/sounds.js"></script>
+  <script src="../../javascript/menuButtons/newGameButtons.js"></script>
 
 </body>
 

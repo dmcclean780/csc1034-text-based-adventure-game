@@ -25,7 +25,7 @@
                                 <button type="button" id="toggle-password" class="password-toggle-btn">Show</button>
                             </div>
                         </label>
-                        <button type="submit">Login</button>
+                        <button id="login-button" type="submit">Login</button>
                     </form>
                     <p id="loginMessage"></p>
                     <p>Don't have an account? <br><a href="#" onclick="toggleForms()">Register here</a></p>
@@ -50,7 +50,7 @@
                                     class="password-toggle-btn">Show</button>
                             </div>
                         </label>
-                        <button type="submit">Register</button>
+                        <button id="register-button" type="submit">Register</button>
                     </form>
                     <p id="registerMessage"></p>
                     <p>Already have an account? <br><a href="#" onclick="toggleForms()">Login here</a></p>
@@ -65,6 +65,13 @@
     <!--Local Config Variables-->
     <script>
         pathToRoot = "../../";
+    </script>
+    <script>
+        let settings;
+        document.addEventListener("DOMContentLoaded", async () => {
+          settings = await querySettings();
+          document.dispatchEvent(new Event("settingsLoaded"));
+        });
     </script>
 
     <!--Database Files-->
@@ -81,6 +88,7 @@
    
     <!--Sound effects-->
     <script src="../../javascript/sounds/sounds.js"></script>
+    <script src="../../javascript/menuButtons/loginButtons.js"></script>
 
 
 </body>

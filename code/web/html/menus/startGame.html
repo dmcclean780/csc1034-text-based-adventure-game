@@ -12,14 +12,21 @@
 <body style="color:black; background-color: black;">
   <div class="input-box">
     <h1 class="details-box" style="letter-spacing: 2px;">PLAY GAME</h1>
-    <button class="button-option" onclick="goToNewGame()" style="margin: 5px; letter-spacing: 2px;">NEW GAME</button>
-    <button class="button-option" onclick="goToLoadGame()" style="margin: 5px; letter-spacing: 2px;">LOAD SAVED GAME</button>
-    <button class="button-option" onclick="backFromStartGame()" style="margin: 5px; letter-spacing: 2px;">RETURN</button>
+    <button id="new-game-button" class="button-option" onclick="goToNewGame()" style="margin: 5px; letter-spacing: 2px;">NEW GAME</button>
+    <button id="load-game-button" class="button-option" onclick="goToLoadGame()" style="margin: 5px; letter-spacing: 2px;">LOAD SAVED GAME</button>
+    <button id="return-button" class="button-option" onclick="backFromStartGame()" style="margin: 5px; letter-spacing: 2px;">RETURN</button>
   </div>
 
   <!--Local Config Variables-->
   <script>
     pathToRoot = "../../";
+  </script>
+  <script>
+    let settings;
+    document.addEventListener("DOMContentLoaded", async () => {
+      settings = await querySettings();
+      document.dispatchEvent(new Event("settingsLoaded"));
+    });
   </script>
 
   <!--Functionality Files-->
@@ -27,6 +34,7 @@
 
   <!--Sound effects-->
   <script src="../../javascript/sounds/sounds.js"></script>
+  <script src="../../javascript/menuButtons/startGameButtons.js"></script>
 </body>
 
 </html>

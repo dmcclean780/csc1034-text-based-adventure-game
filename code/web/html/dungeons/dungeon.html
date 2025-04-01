@@ -51,7 +51,7 @@
             }
             settings = await querySettings();
             document.dispatchEvent(new Event("settingsLoaded"));
-        })
+        });
 
         document.addEventListener("settingsLoaded", () => {
             const areaID = getState("currentArea")
@@ -94,6 +94,9 @@
     <script src="../../javascript/gameFunctions/inventoryFunctions.js"></script>
     <script src="../../javascript/gameFunctions/loadNextDecision.js"></script>
     <script src="../../javascript/gameFunctions/buildDecisionPage.js"></script>
+
+    <!--Sound effects-->
+    <script src="../../javascript/sounds/sounds.js"></script>
 
 </body>
 

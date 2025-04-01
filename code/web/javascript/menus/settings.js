@@ -82,7 +82,7 @@ function changeTextSize(e) {
 function saveAndReturn() {
     if (serverReachable) {
         const username = sessionStorage.getItem("username");
-        const query = `UPDATE settings SET doTextAnimations = ${settings.doTextAnimations ? 1 : 0}, textAnimationSpeed = ${settings.textAnimationSpeed}, soundEffects = ${settings.soundEffects}, musicVolume = ${settings.musicVolume}, textSize = '${settings.textSize}' WHERE username = '${username}'`;
+        const query = `UPDATE settings SET doTextAnimations = ${settings.doTextAnimations ? 1 : 0}, textAnimationSpeed = ${settings.textAnimationSpeed}, soundEffects = ${settings.soundEffects ? 1 : 0}, musicVolume = ${settings.musicVolume}, textSize = '${settings.textSize}' WHERE username = '${username}'`;
 
         makeDatabaseQuery(query).then(() => {
             window.location.href = "../../index.html";

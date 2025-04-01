@@ -20,6 +20,13 @@
     <script>
       pathToRoot = "";
   </script>
+  <script>
+    let settings;
+    document.addEventListener("DOMContentLoaded", async () => {
+      settings = await querySettings();
+      document.dispatchEvent(new Event("settingsLoaded"));
+    });
+  </script>
     <script src="javascript/menus/menuFunctions.js"></script>
     <script src="javascript/sounds/sounds.js"></script>
   </body>

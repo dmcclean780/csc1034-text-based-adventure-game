@@ -17,7 +17,7 @@
         </div>
 
     </div>
-    <button class="overlap-box" onclick="backToLastPage()" style="margin: 5px; letter-spacing: 2px;">RETURN</button>
+    <button id = "return-button" class="overlap-box" style="margin: 5px; letter-spacing: 2px;">RETURN</button>
 
     <!--Config Files-->
     <script src="../../authDetails.js"></script>
@@ -25,6 +25,13 @@
     <!--Local Config Variables-->
     <script>
         pathToRoot = "../../";
+    </script>
+    <script>
+        let settings;
+        document.addEventListener("DOMContentLoaded", async () => {
+          settings = await querySettings();
+          document.dispatchEvent(new Event("settingsLoaded"));
+        });
     </script>
 
     <!--Load utils File-->
@@ -36,6 +43,10 @@
     <!--Functionality Files-->
     <script src="../../javascript/menus/menuFunctions.js"></script>
     <script src="../../javascript/menus/gameSummary.js"></script>
+
+    <!--Sound effects-->
+    <script src="../../javascript/sounds/sounds.js"></script>
+    <script src="../../javascript/menuButtons/gameSummaryButtons.js"></script>
 </body>
 
 </html>

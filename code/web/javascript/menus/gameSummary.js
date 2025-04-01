@@ -98,17 +98,6 @@ const stats = [
         }
     },
     {
-        name: "Total Play Time",
-        statFunction: async () => {
-            const query = `SELECT SUM(currentPlayTime) AS total_playtime
-                            FROM playerCharacter
-                            WHERE username = '${sessionStorage.getItem("username")}';`;
-            const result = await makeDatabaseQuery(query);
-            const rawTime = Math.floor(parseFloat(result.pop()['total_playtime']));
-            return convertTimeToHumanReadable(rawTime);
-        }
-    },
-    {
         name: "Currently Held Items",
         statFunction: async () => {
             const query = `SELECT DISTINCT itemName

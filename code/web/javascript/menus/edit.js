@@ -12,7 +12,7 @@ document.getElementById("editForm").addEventListener("submit", async (event) => 
                 
                 // Define regex patterns
                 const usernameRegex = /^[a-zA-Z0-9_]{3,20}$/;  // Allows alphanumeric and underscores, 3-20 characters
-                const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!@#$%^&*]{6,255}$/;  // At least 6 chars, one letter, one number
+                const passwordRegex = /^[A-Za-z\d!@#$%^&*]{6,}$/;  // At least 6 characters, allows letters, numbers, and special characters
 
                 // Validate inputs
                 if (!usernameRegex.test(newUsername)) {
@@ -21,7 +21,7 @@ document.getElementById("editForm").addEventListener("submit", async (event) => 
                 }
 
                 if (!passwordRegex.test(password)) {
-                    messageElement.textContent = "Invalid password. Must be at least 6 characters with letters and numbers.";
+                    messageElement.textContent = "Invalid password. Must be at least 6 characters with letters or numbers.";
                     return;
                 }
 

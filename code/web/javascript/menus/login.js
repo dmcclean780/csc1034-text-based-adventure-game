@@ -55,7 +55,22 @@ document.getElementById("registerForm").addEventListener("submit", async (event)
             }
 
             try {
-                // Check if the username already exists in the database
+                // Define regex patterns
+                const usernameRegex = /^[a-zA-Z0-9_]{3,20}$/;  // Allows alphanumeric and underscores, 3-20 characters
+                const passwordRegex = /^[A-Za-z\d!@#$%^&*]{6,}$/;  // At least 6 characters, allows letters, numbers, and special characters
+
+                // Validate inputs
+                if (!usernameRegex.test(username)) {
+                    messageElement.textContent = "Invalid username. Use 3-20 letters, numbers, or underscores.";
+                    return;
+                }
+
+                if (!passwordRegex.test(password)) {
+                    messageElement.textContent = "Invalid password. Must be at least 6 characters with letters or numbers.";
+                    return;
+                }
+
+                // Proceed with database queries
                 let selectQuery = `SELECT * FROM users WHERE username = '${username}'`;
                 let checkResult = await makeDatabaseQuery(selectQuery);
 
@@ -64,11 +79,10 @@ document.getElementById("registerForm").addEventListener("submit", async (event)
                     return;
                 }
 
-                // Insert the new user into the database
                 const insertQuery = `INSERT INTO users (username, pass) VALUES ('${username}', '${password}')`;
                 const insertResult = await makeDatabaseQuery(insertQuery);
 
-                const insertDefaultSettings = `INSERT INTO settings (username, doTextAnimations, textAnimationSpeed, soundEffects, musicVolume, textSize) VALUES ('${username}', TRUE, 30, TRUE, 50, 'Medium')`;
+                const insertDefaultSettings = `INSERT INTO settings (username, doTextAnimations, textAnimationSpeed, soundEffects, musicVolume, textSize) VALUES ('${username}', TRUE, 30, TRUE, 30, 'Medium')`;
                 const insertSettingsResult = await makeDatabaseQuery(insertDefaultSettings);
 
                 if (insertResult > 0) {

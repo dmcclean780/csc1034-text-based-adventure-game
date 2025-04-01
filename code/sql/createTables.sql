@@ -1,5 +1,3 @@
-
-
     CREATE TABLE npcs
     (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -26,7 +24,7 @@
         colPosition INT NOT NULL,
         conditionID INT NULL,
 
-        FOREIGN KEY (conditionID) REFERENCES area_conditions(id),
+        FOREIGN KEY (conditionID) REFERENCES areaConditions(id),
         FOREIGN KEY (worldName) REFERENCES map(worldName)
     );
 

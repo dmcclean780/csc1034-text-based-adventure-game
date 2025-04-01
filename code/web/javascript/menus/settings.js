@@ -1,15 +1,5 @@
 //This obj will be fetched from sql and changed in the settings page
 
-async function loadSettings() {
-    const username = sessionStorage.getItem("username");
-    const query = `SELECT * FROM settings WHERE username = '${username}'`;
-    const result = await makeDatabaseQuery(query);
-    if (result && result.length > 0) {
-
-        return result[0];
-    }
-}
-
 
 function applySettings() {
     var savedSize = settings.textSize;

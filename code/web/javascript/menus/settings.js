@@ -1,14 +1,18 @@
 //This obj will be fetched from sql and changed in the settings page
-let settings;
 
 
 function applySettings() {
     var savedSize = settings.textSize;
-
+    console.log(settings.soundEffects);
+    console.log(settings.soundEffects == 1);
     document.getElementById("do-text-animations").innerHTML = `DO TEXT ANIMATIONS: ${settings.doTextAnimations == 1 ? "ON" : "OFF"}`;
+    document.getElementById("sound-effects").innerHTML = `SOUND EFFECTS: ${settings.soundEffects == 1 ? "ON" : "OFF"}`;
     document.getElementById("text-animation-speed").value = 90 - settings.textAnimationSpeed;
     document.getElementById("slider-value").innerHTML = 90 - settings.textAnimationSpeed;
+    document.getElementById("music-volume").value = settings.musicVolume;
+    document.getElementById("music-slider-value").innerHTML = settings.musicVolume;
     document.getElementById("text-size-value").innerHTML = savedSize;
+
 
     if(savedSize == "Small")
     {
@@ -29,27 +33,34 @@ function changeDoTextAnimations() {
     document.getElementById("do-text-animations").innerHTML = `DO TEXT ANIMATIONS: ${settings.doTextAnimations ? "ON" : "OFF"}`;
 }
 
+function changeSoundEffects() {
+    settings.soundEffects = !settings.soundEffects;
+    document.getElementById("sound-effects").innerHTML = `SOUND EFFECTS: ${settings.soundEffects ? "ON" : "OFF"}`;
+}
+
 function changeTextAnimationSpeed(e) {
     settings.textAnimationSpeed = 90 - e.target.value;
     document.getElementById("slider-value").innerHTML = 90 - settings.textAnimationSpeed;
 }
 
+function changeMusicVolume(e) {
+    settings.musicVolume = e.target.value;
+    document.getElementById("music-slider-value").innerHTML = settings.musicVolume;
+}
+
 function changeTextSize(e) {
     if(e.target.value == 1)
     {
-        console.log(1);
         settings.textSize = "Small";
         document.getElementById("text-size-value").innerHTML = "Small";
     }
     else if(e.target.value == 2)
     {
-        console.log(2);
         settings.textSize = "Medium";
         document.getElementById("text-size-value").innerHTML = "Medium";
     }
     else if(e.target.value == 3)
     {
-        console.log(3);
         settings.textSize = "Large";
         document.getElementById("text-size-value").innerHTML = "Large";
     }
@@ -58,7 +69,8 @@ function changeTextSize(e) {
 function saveAndReturn() {
     if (serverReachable) {
         const username = sessionStorage.getItem("username");
-        const query = `UPDATE settings SET doTextAnimations = ${settings.doTextAnimations ? 1 : 0}, textAnimationSpeed = ${settings.textAnimationSpeed}, textSize = '${settings.textSize}' WHERE username = '${username}'`;
+        const query = `UPDATE settings SET doTextAnimations = ${settings.doTextAnimations ? 1 : 0}, textAnimationSpeed = ${settings.textAnimationSpeed}, soundEffects = ${settings.soundEffects ? 1 : 0}, musicVolume = ${settings.musicVolume}, textSize = '${settings.textSize}' WHERE username = '${username}'`;
+
         makeDatabaseQuery(query).then(() => {
             window.location.href = "../../index.html";
         });
@@ -74,8 +86,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (serverReachable) {
             document.getElementById("do-text-animations").addEventListener("click", changeDoTextAnimations);
             document.getElementById("text-animation-speed").addEventListener("input", changeTextAnimationSpeed);
+            document.getElementById("sound-effects").addEventListener("click", changeSoundEffects);
+            document.getElementById("music-volume").addEventListener("input", changeMusicVolume);
             document.getElementById("text-size").addEventListener("input", changeTextSize);
-            if (serverReachable && settings == null) {
+            if (serverReachable) {
                 try {
                     settings = await querySettings();
                     if (window.location.href.includes("settings.html")) {

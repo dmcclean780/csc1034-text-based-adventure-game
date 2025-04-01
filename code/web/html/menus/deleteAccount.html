@@ -25,7 +25,7 @@
                                 <button type="button" id="toggle-password" class="password-toggle-btn">Show</button>
                             </div>
                         </label>
-                        <button type="submit">Delete Account</button>
+                        <button id = "delete-account-button" type="submit">Delete Account</button>
                     </form>
                     <p id="deleteMessage"></p>
                 </div>
@@ -39,13 +39,24 @@
     <script>
         pathToRoot = "../../";
     </script>
+    <script>
+        let settings;
+        document.addEventListener("DOMContentLoaded", async () => {
+          settings = await querySettings();
+          document.dispatchEvent(new Event("settingsLoaded"));
+        });
+    </script>
 
     <!--Database Files-->
     <script src="../../javascript/database/queryDatabase.js"></script>
     <script src="../../javascript/database/pingDatabase.js"></script>
+    <script src="../../javascript/database/querySettings.js"></script>
 
     <!--Ensure the server is reachable-->
     <script src="../../javascript/checkConnection.js"></script>
+
+    <!--Sound effects-->
+    <script src="../../javascript/sounds/sounds.js"></script>
 
     <!--Functionality Files-->
     <script src="../../javascript/menus/delete.js"></script>

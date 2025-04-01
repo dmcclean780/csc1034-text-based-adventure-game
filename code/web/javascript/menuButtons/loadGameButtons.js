@@ -1,3 +1,5 @@
 document.getElementById("return-button").addEventListener("click", () => {
-    backFromLoadGame();
+    setTimeout(() => {
+        backFromLoadGame();
+    }, 250);
 });

@@ -13,13 +13,14 @@ async function loadSettings() {
 
 function applySettings() {
     var savedSize = settings.textSize;
-
+    console.log(settings.soundEffects);
+    console.log(settings.soundEffects == 1);
     document.getElementById("do-text-animations").innerHTML = `DO TEXT ANIMATIONS: ${settings.doTextAnimations == 1 ? "ON" : "OFF"}`;
     document.getElementById("sound-effects").innerHTML = `SOUND EFFECTS: ${settings.soundEffects == 1 ? "ON" : "OFF"}`;
     document.getElementById("text-animation-speed").value = 90 - settings.textAnimationSpeed;
     document.getElementById("slider-value").innerHTML = 90 - settings.textAnimationSpeed;
     document.getElementById("music-volume").value = settings.musicVolume;
-    document.getElementById("music-slider-value").value = settings.musicVolume;
+    document.getElementById("music-slider-value").innerHTML = settings.musicVolume;
     document.getElementById("text-size-value").innerHTML = savedSize;
 
 
@@ -60,19 +61,16 @@ function changeMusicVolume(e) {
 function changeTextSize(e) {
     if(e.target.value == 1)
     {
-        console.log(1);
         settings.textSize = "Small";
         document.getElementById("text-size-value").innerHTML = "Small";
     }
     else if(e.target.value == 2)
     {
-        console.log(2);
         settings.textSize = "Medium";
         document.getElementById("text-size-value").innerHTML = "Medium";
     }
     else if(e.target.value == 3)
     {
-        console.log(3);
         settings.textSize = "Large";
         document.getElementById("text-size-value").innerHTML = "Large";
     }
@@ -101,7 +99,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             document.getElementById("sound-effects").addEventListener("click", changeSoundEffects);
             document.getElementById("music-volume").addEventListener("input", changeMusicVolume);
             document.getElementById("text-size").addEventListener("input", changeTextSize);
-            if (serverReachable && settings == null) {
+            if (serverReachable) {
                 try {
                     settings = await querySettings();
                     if (window.location.href.includes("settings.html")) {

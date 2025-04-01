@@ -1,3 +1,5 @@
 document.getElementById("save-return-button").addEventListener("click", () => {
-    saveAndReturn();
+    setTimeout(() => {
+        saveAndReturn();
+    }, 250);
 });

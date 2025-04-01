@@ -1,3 +1,5 @@
 document.getElementById("return-button").addEventListener("click", () => {
-    backToStatistics();
+    setTimeout(() => {
+        backToStatistics();
+    }, 250);
 });

@@ -1,23 +1,36 @@
 document.getElementById("play-game-button").addEventListener("click", () => {
-    goToPlayGame();
+    setTimeout(() => {
+        goToPlayGame();
+    }, 250);
+
 });
 
 document.getElementById("statistics-button").addEventListener("click", () => {
-    goToStatistics();
+    setTimeout(() => {
+        goToStatistics();
+    }, 250);
 });
 
 document.getElementById("settings-button").addEventListener("click", () => {
-    goToSettings();
+    setTimeout(() => {
+        goToSettings();
+    }, 250);
 });
 
 document.getElementById("log-out-button").addEventListener("click", () => {
-    goToLogin();
+    setTimeout(() => {
+        goToLogin();
+    }, 250);
 });
 
 document.getElementById("edit-account-button").addEventListener("click", () => {
-    goToEditAccount();
+    setTimeout(() => {
+        goToEditAccount();
+    }, 250);
 });
 
 document.getElementById("delete-account-button").addEventListener("click", () => {
-    goToDeleteAccount();
+    setTimeout(() => {
+        goToDeleteAccount();
+    }, 250);
 });

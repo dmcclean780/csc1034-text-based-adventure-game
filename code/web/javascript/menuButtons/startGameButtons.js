@@ -1,11 +1,17 @@
 document.getElementById("new-game-button").addEventListener("click", () => {
-    goToNewGame();
+    setTimeout(() => {
+        goToNewGame();
+    }, 250);
 });
 
 document.getElementById("load-game-button").addEventListener("click", () => {
-    goToLoadGame();
+    setTimeout(() => {
+        goToLoadGame();
+    }, 250);
 });
 
 document.getElementById("return-button").addEventListener("click", () => {
-    backFromStartGame();
+    setTimeout(() => {
+        backFromStartGame();
+    }, 250);
 });

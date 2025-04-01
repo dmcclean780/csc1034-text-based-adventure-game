@@ -1,15 +1,23 @@
 document.getElementById("global-analytics-button").addEventListener("click", () => {
-    goToGloalAnalytics();
+    setTimeout(() => {
+        goToGloalAnalytics();
+    }, 250);
 });
 
 document.getElementById("user-analytics-button").addEventListener("click", () => {
-    goToUserAnalytics();
+    setTimeout(() => {
+        goToUserAnalytics();
+    }, 250);
 });
 
 document.getElementById("achievments-button").addEventListener("click", () => {
-    goToAchievements();
+    setTimeout(() => {
+        goToAchievements();
+    }, 250);
 });
 
 document.getElementById("return-button").addEventListener("click", () => {
-    backFromStartGame();
+    setTimeout(() => {
+        backFromStartGame();
+    }, 250);
 });

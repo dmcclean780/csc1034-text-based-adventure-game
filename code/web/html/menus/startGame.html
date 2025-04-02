@@ -1,20 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Life After Death</title>
-    <link rel="stylesheet" href="../../css/default/generic.css">
-    <link rel="stylesheet" href="../../css/default/dungeons.css">
-    <link rel="stylesheet" href="../../css/mobile/generic.css">
-    <link rel="stylesheet" href="../../css/mobile/dungeons.css">
-  </head>
-  <body style="color:black; background-color: black;">
-    <div class="input-box">
-      <h1 class="details-box" style="letter-spacing: 2px;">PLAY GAME</h1>
-      <button class="button-option" onclick="goToNewGame()" style="margin: 5px; letter-spacing: 2px;">NEW GAME</button>
-      <button class="button-option" onclick="goToLoadGame()" style="margin: 5px; letter-spacing: 2px;">LOAD SAVED GAME</button>
-      <button class="button-option" onclick="backFromStartGame()" style="margin: 5px; letter-spacing: 2px;">RETURN</button>
-    </div>
-    
-    <script src="../../javascript/generic/menuFunctions.js"></script>
-  </body>
+
+<head>
+  <title>Life After Death</title>
+  <link rel="stylesheet" href="../../css/default/generic.css">
+  <link rel="stylesheet" href="../../css/default/dungeons.css">
+  <link rel="stylesheet" href="../../css/mobile/generic.css">
+  <link rel="stylesheet" href="../../css/mobile/dungeons.css">
+</head>
+
+<body style="color:black; background-color: black;">
+  <div class="input-box">
+    <h1 class="details-box" style="letter-spacing: 2px;">PLAY GAME</h1>
+    <button id="new-game-button" class="button-option" style="margin: 5px; letter-spacing: 2px;">NEW GAME</button>
+    <button id="load-game-button" class="button-option" style="margin: 5px; letter-spacing: 2px;">LOAD SAVED GAME</button>
+    <button id="return-button" class="button-option" style="margin: 5px; letter-spacing: 2px;">RETURN</button>
+  </div>
+
+  <script src="../../authDetails.js"></script>
+  <!--Local Config Variables-->
+  <script>
+    pathToRoot = "../../";
+  </script>
+  <script>
+    let settings;
+    document.addEventListener("DOMContentLoaded", async () => {
+      settings = await querySettings();
+      document.dispatchEvent(new Event("settingsLoaded"));
+    });
+  </script>
+
+  <!--Database Files-->
+  <script src="../../javascript/database/queryDatabase.js"></script>
+  <script src="../../javascript/database/querySettings.js"></script>
+
+  <!--Sound effects-->
+  <script src="../../javascript/applySettings/sounds.js"></script>
+  <script src="../../javascript/menuButtons/startGameButtons.js"></script>
+
+  <!--Functionality Files-->
+  <script src="../../javascript/menus/menuFunctions.js"></script>
+
+  <!--Apply Settings-->
+  <script src="../../javascript/applySettings/textSize.js"></script>
+
+  <!--Load Any Database Files-->
+  <script src="../../javascript/database/queryDatabase.js"></script>
+  <script src="../../javascript/database/querySettings.js"></script>
+  <script src="../../javascript/database/pingDatabase.js"></script>
+
+  <!--Ensure the server is reachable-->
+  <script src="../../javascript/checkConnection.js"></script>
+</body>
+
 </html>

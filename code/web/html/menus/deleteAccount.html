@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account</title>
+    <link rel="stylesheet" href="../../css/default/interface.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <main>
+            <div class="main-column">
+                <div id="deleteContainer" class="form-container">
+                    <h1>Delete Account</h1>
+                    <p>Enter your username and password to delete your account.</p>
+                    <form id="deleteForm">
+                        <label>Username:
+                            <input type="text" id="username" name="username" required>
+                        </label>
+                        <label>Password:
+                            <div class="password-container">
+                                <input type="password" id="password" name="password" required>
+                                <button type="button" id="toggle-password" class="password-toggle-btn">Show</button>
+                            </div>
+                        </label>
+                        <button id = "delete-account-button" type="submit">Delete Account</button>
+                    </form>
+                    <p id="deleteMessage"></p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!--Config Files-->
+    <script src="../../authDetails.js"></script>
+    
+    <!--Local Config Variables-->
+    <script>
+        pathToRoot = "../../";
+    </script>
+    <script>
+        let settings;
+        document.addEventListener("DOMContentLoaded", async () => {
+          settings = await querySettings();
+          document.dispatchEvent(new Event("settingsLoaded"));
+        });
+    </script>
+
+    <!--Database Files-->
+    <script src="../../javascript/database/queryDatabase.js"></script>
+    <script src="../../javascript/database/pingDatabase.js"></script>
+    <script src="../../javascript/database/querySettings.js"></script>
+
+    <!--Ensure the server is reachable-->
+    <script src="../../javascript/checkConnection.js"></script>
+
+    <!--Sound effects-->
+    <script src="../../javascript/applySettings/sounds.js"></script>
+
+    <!--Functionality Files-->
+    <script src="../../javascript/menus/delete.js"></script>
+   
+</body>
+
+</html>

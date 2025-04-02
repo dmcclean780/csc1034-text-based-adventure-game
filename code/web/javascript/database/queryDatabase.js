@@ -26,14 +26,13 @@ async function executeDatabaseQuery(params) {
         }
         // If a dataset has been returned, e.g. from a SELECT statement, do something.
         else if (result.data) {
-            console.log(result.data);
             return result.data;
         }
         else {
             // For anything else, assume something like INSERT, DROP etc. corresponding message
            console.log("success: ", result.success)
             if (result.affected_rows !== undefined) {
-                console.log(result.affected_rows);
+                console.log("affected rows: ", result.affected_rows);
                 return result.affected_rows;
             }
         }

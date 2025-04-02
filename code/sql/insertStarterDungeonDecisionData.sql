@@ -1,10 +1,9 @@
 INSERT INTO areas
-    (id, name, rowPosition, colPosition, ableToVisitCondition)
 VALUES
-    (2, 'Catacombs', 2, 1, FALSE);
+    (2, 'Potentia', 'Catacombs', 2, 1, 1);
 
 INSERT INTO decisions
-    (id, areaID, details, prompt, backgroundFilePath, hasTimer, hasPopupMenu, hasDialogue, hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions)
+    (id, areaID, details, prompt, backgroundFilePath, hasTimer, hasPopupMenu, hasDialogue, hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions, hasSelectInventory)
 VALUES
     (
         1,
@@ -19,7 +18,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         2,
@@ -34,7 +34,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         3,
@@ -42,28 +43,30 @@ VALUES
         'This chamber is even darker than the last, somehow. As you try to make your way through the darkness,
         you stumble and nearly fall. This chamber contains only a single narrow path over a bottomless chasm.',
         'DO YOU WANT TO TRY AND NAVIGATE THE PATH IN THE DARK?',
-        'images/backgrounds/2-3.png',
+        'images/backgrounds/2-2.png',
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         4,
         2,
         'You are back in the first chamber.',
         'TRY FOLLOWING THE WALL FOR ANOTHER CHAMBER',
-        'images/backgrounds/2-4.png',
+        'images/backgrounds/2-2.png',
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         5,
@@ -78,36 +81,39 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         6,
         2,
         ' There must be something of use in this room if you could only find it.',
         'WHAT DO YOU LOOK AT FIRST?',
-        'images/backgrounds/2-6.png',
+        'images/backgrounds/2-5.png',
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         7,
         2,
-        'You go back into the first chamber. WWith your lantern lit, you can see an old brazier. You could
+        'You go back into the first chamber. With your lantern lit, you can see an old brazier. You could
                     light it with your lantern.',
         'LIGHT THE BRAZIER?',
-        'images/backgrounds/2-7.png',
+        'images/backgrounds/2-2.png',
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         8,
@@ -123,7 +129,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         9,
@@ -140,21 +147,23 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         10,
         2,
         ' You pry the lid of the sarcophagus, an empty burial save for an old tome. You decide to take the tome.',
         'WHAT WILL YOU DO?',
-        'images/backgrounds/2-10.png',
+        'images/backgrounds/2-9.png',
         FALSE,
         TRUE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         11,
@@ -169,7 +178,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         12,
@@ -178,14 +188,15 @@ VALUES
         continue forward. When you are half way accross the corridorr all of the sarcophogi 
         open and skeletons rise from them. You must fight your way through to the other side',
         'YOU ARE SURROUNDED BY SKELETON WARRIORS.',
-        'images/backgrounds/2-12.png',
+        'images/backgrounds/2-11.png',
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         13,
@@ -194,14 +205,15 @@ VALUES
         As you leave the sarcophagus all the other sarcophogi open and skeletons rise from them. 
         You must fight your way through to the other side',
         'YOU ARE SURROUNDED BY SKELETON WARRIORS.',
-        'images/backgrounds/2-13.png',
+        'images/backgrounds/2-11.png',
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         14,
@@ -210,14 +222,15 @@ VALUES
                     defeat the entire force. However, your sword is nearing its limit, and the weapons of your enemies are
                     not any better. You can now make your way to the end of this corridor and see what lies beyond.',
         '',
-        'images/backgrounds/2-14.png',
+        'images/backgrounds/2-11.png',
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         15,
@@ -226,14 +239,15 @@ VALUES
                     coated in a thin layer of lubricating oil. You may be able to get it set alight using your lantern
                     although you will have to work quickly before the horde organises.',
         '',
-        'images/backgrounds/2-15.png',
+        'images/backgrounds/2-11.png',
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         16,
@@ -241,14 +255,15 @@ VALUES
         ' You successfully set the rope on fire. The skeletons are crushed under the weight of the chandelier
                     and you are able to pass through the door.',
         '',
-        'images/backgrounds/2-16.png',
+        'images/backgrounds/2-11.png',
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         TRUE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         17,
@@ -256,14 +271,15 @@ VALUES
         'Still in darkness; you make use of the lantern light to find the exit 
         from this chamber in which the wind is coming from. ',
         'DO YOU ENTER?',
-        'images/backgrounds/2-17.png',
+        'images/backgrounds/2-2.png',
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         18,
@@ -283,7 +299,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         19,
@@ -292,14 +309,15 @@ VALUES
                     edge of the ground and can climb up now. The skeletons have not noticed you yet and you can ignore
                     them and continue into the catacombs.',
         '',
-        'images/backgrounds/2-19.png',
+        'images/backgrounds/2-18.png',
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         20,
@@ -307,14 +325,15 @@ VALUES
         ' You crouch down and start to move slowly across the bridge. When you are nearly there the skeletons
                     see you and charge on to the bridge towards you.',
         'WHAT DO YOU DO?',
-        'images/backgrounds/2-20.png',
+        'images/backgrounds/2-18.png',
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         21,
@@ -322,14 +341,15 @@ VALUES
         ' You are now on the other side of the bridge and the skeletons are still on the bridge. You can cut or burn
                     the bridge to drop them into the chasm',
         'WHAT DO YOU DO?',
-        'images/backgrounds/2-21.png',
+        'images/backgrounds/2-18.png',
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         22,
@@ -337,14 +357,15 @@ VALUES
         ' You cut the bridge with your sword and it collapses into the chasm, 
         taking the skeletons with it. You are now free to continue on your way.',
         '',
-        'images/backgrounds/2-22.png',
+        'images/backgrounds/2-18.png',
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         23,
@@ -352,14 +373,15 @@ VALUES
         ' You burn the bridge with your lantern and it collapses into the chasm, taking the skeletons with it.
                     You are now free to continue on your way.',
         '',
-        'images/backgrounds/2-23.png',
+        'images/backgrounds/2-18.png',
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         24,
@@ -375,7 +397,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         25,
@@ -392,13 +415,14 @@ VALUES
                     <br>
                     What am I?',
         '',
-        'images/backgrounds/2-25.png',
+        'images/backgrounds/2-24.png',
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         TRUE,
+        FALSE,
         FALSE
     ),
     (
@@ -415,7 +439,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         27,
@@ -433,49 +458,53 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         28,
         2,
         '  Ankou charges at you with his scythe raised high. ',
         'REACT QUICKLY!',
-        'images/backgrounds/2-28.png',
+        'images/backgrounds/2-27.png',
         TRUE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         29,
         2,
         '   You dodge Ankou&#39;s swing and have an opening to strike.. ',
         'WHAT WILL YOU DO?',
-        'images/backgrounds/2-29.png',
+        'images/backgrounds/2-27.png',
         TRUE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         30,
         2,
         'You parry Ankou&#39;s scythe and he stumbles back. You have a moment to catch your breath before he attacks again.',
         'WHAT WILL YOU DO?',
-        'images/backgrounds/2-30.png',
+        'images/backgrounds/2-27.png',
         TRUE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         31,
@@ -483,14 +512,15 @@ VALUES
         'You have defeated Ankou and the Carved Stone Door opens. You can now escape the catacombs. You take
         the blade of Ankou&#39;s scythe to function as a cutlass to replace your broken sword. The presence of Death leaves the area.',
         '',
-        'images/backgrounds/2-31.png',
+        'images/backgrounds/2-27.png',
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         32,
@@ -504,21 +534,23 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         33,
         2,
         'It is still too dark for you to navigate well in the rest of the cave. You should try to find a way to create a light source.',
         'DO YOU WANT TO LEAVE ANYWAY?',
-        'images/backgrounds/2-33.png',
+        'images/backgrounds/2-5.png',
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         34,
@@ -529,12 +561,22 @@ VALUES
                     your sword. There is also a large chandeler mounted to the ceiling using a rope. It is too thick to cut
                     but perhaps you could destroy it using another method?',
         'WHAT WILL YOU DO?',
-        'images/backgrounds/2-34.png',
+        'images/backgrounds/2-11.png',
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     );
+
+
+
+
+
+
+
+
+

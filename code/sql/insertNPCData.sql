@@ -31,8 +31,8 @@ VALUES
   ('Witch',
     'images/npc/witch.png',
     '["PlayerNameHere", 
-    "Total Decisions: NoFromDatabase" , 
-    "Various Other Game Stats"]',
+    "You have a long journey ahead of you" , 
+    "I would recommend visitng the library before you set out"]',
     '(() => { loadNextDecision(1, 8); })'),
 
   ('Andrew',
@@ -68,7 +68,7 @@ VALUES
 
 
   ('Pandoro', 
-    'images/npc/ankou.png', 
+    'images/npc/pandoro.png', 
     '[
     "I summoned them from the dead.",
     "They are mine to return there.", 
@@ -78,14 +78,14 @@ VALUES
   ,
   
   ('Pandoro', 
-    'images/npc/ankou.png', 
+    'images/npc/pandoro.png', 
     '["You entered the arena, and now you wish to flee?", 
 		"Fight, or your fate will be death!"]',
     '(() => {loadNextDecision(7, 8); })')
   ,
 
   ('Pandoro', 
-    'images/npc/ankou.png', 
+    'images/npc/pandoro.png', 
     '[
     "So, Midas is dead.",
     "It’s you who’s been wreaking havoc in my servant’s homes.", 
@@ -95,7 +95,7 @@ VALUES
   ,
 
   ('Pandoro', 
-    'images/npc/ankou.png', 
+    'images/npc/pandoro.png', 
     '[
     "You have a mastery over gold that even I cannot attain!",
     "How is this possible?", 
@@ -105,7 +105,7 @@ VALUES
   ,
 
   ('Pandoro', 
-    'images/npc/ankou.png', 
+    'images/npc/pandoro.png', 
     '[
     "WHAT HAVE YOU DONE!",
     "You fool!", 
@@ -115,7 +115,7 @@ VALUES
   ,
 
   ('Pandoro', 
-    'images/npc/ankou.png', 
+    'images/npc/pandoro.png', 
     '[
     "Congrats, challenger.",
     "Who are you to enter my coliseum and win out against these fine warriors?", 
@@ -125,7 +125,7 @@ VALUES
   ,
 
   ('Pandoro', 
-    'images/npc/ankou.png', 
+    'images/npc/pandoro.png', 
     '[
     "You entered the arena, and now you wish to flee?",
     "Fight, or your fate will be death!"
@@ -134,7 +134,7 @@ VALUES
   ,
 
   ('Pandoro', 
-    'images/npc/ankou.png', 
+    'images/npc/pandoro.png', 
     '[
     "I summoned them from the dead.",
     "They are mine to return there.", 
@@ -144,7 +144,7 @@ VALUES
   ,
 
   ('Pandoro', 
-    'images/npc/ankou.png', 
+    'images/npc/pandoro.png', 
     '[
     "So, it was you who defeated Calligraphus.",
     "I shall have justice for my servant.", 
@@ -154,7 +154,7 @@ VALUES
   ,
 
   ('Pandoro', 
-    'images/npc/ankou.png', 
+    'images/npc/pandoro.png', 
     '[
     "You fought well.",
     "Better than I expected.", 
@@ -167,7 +167,7 @@ VALUES
   ,
 
   ('Pandoro', 
-    'images/npc/ankou.png', 
+    'images/npc/pandoro.png', 
     '[
     "Do you think this is justice?",
     "Do you believe you have saved the world?",
@@ -181,7 +181,7 @@ VALUES
   ,
 
   ('Pandoro', 
-    'images/npc/ankou.png', 
+    'images/npc/pandoro.png', 
     '[
     "You have lost, PlayerNameHere.",
     "My power was not solely dependent on that staff, it is anchored to my very soul!", 
@@ -198,6 +198,7 @@ VALUES
             "...not much talking? Well then... I see you have brought two books here for me", 
             "I should thank you for aiding the cause, give one here... NOW."]',
             '(() => { loadNextDecision(3, 23); })'),
+
 
   ('Calligraphous',
       'images/npc/calligraphous.png',
@@ -222,3 +223,26 @@ VALUES
       '["Please! I did not want to hurt you!", "Listen... I can teach you!", "It does not need to end like this!"]',
                 '(() => { loadNextDecision(3, 27); })');
 
+
+ ('ShadowWorm',
+    'images/npc/wormshadowdirtmound.png',
+    '["...Is ...someone... THERE?"]',
+              '(() => { loadNextDecision(4, 20); })');
+
+ ('ShadowWorm',
+ 'images/npc/wormshadowdirtmound.png',
+ '["...Who goes there? Who dares to enter this domain? Turn back now before my patience is tested!"]',
+           '(() => { loadNextDecision(4, 21); })');
+
+
+ ('ShadowWorm',
+ 'images/npc/wormshadowdirtmound.png',
+ '["...This insolence will not go unpunished! You have lost your chance to run, now you must face me!"] ',
+           '(() => { loadNextDecision(4, 32); })');
+
+ ('Worm',
+ 'images/npc/wormdirtmound.png',
+ '["...Pick up the cards, and prove that you are worthy to face me! Win and I might let you go, lose and you will feed the worms!" ]',
+           '(() => { loadNextDecision(4, 34); })');
+ 
+ 

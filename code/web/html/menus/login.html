@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="../../css/default/interface.css">
 </head>
+
 <body>
     <div class="wrapper">
         <main>
@@ -23,7 +25,7 @@
                                 <button type="button" id="toggle-password" class="password-toggle-btn">Show</button>
                             </div>
                         </label>
-                        <button type="submit">Login</button>
+                        <button id="login-button" type="submit">Login</button>
                     </form>
                     <p id="loginMessage"></p>
                     <p>Don't have an account? <br><a href="#" onclick="toggleForms()">Register here</a></p>
@@ -44,10 +46,11 @@
                         <label>Confirm Password:
                             <div class="password-container">
                                 <input type="password" id="confirmPassword" name="confirmPassword" required>
-                                <button type="button" id="toggle-confirm-password" class="password-toggle-btn">Show</button>
+                                <button type="button" id="toggle-confirm-password"
+                                    class="password-toggle-btn">Show</button>
                             </div>
                         </label>
-                        <button type="submit">Register</button>
+                        <button id="register-button" type="submit">Register</button>
                     </form>
                     <p id="registerMessage"></p>
                     <p>Already have an account? <br><a href="#" onclick="toggleForms()">Login here</a></p>
@@ -55,10 +58,36 @@
             </div>
         </main>
     </div>
-    <script src="../../javascript/login/login.js"></script> <!-- Add the new script here -->
-    <script src="../../authDetails.js"></script> <!-- Add the new script here -->
-    <script src="../../javascript/database/queryDatabase.js"></script> <!-- Add the new script here -->
+    <!--Config Files-->
+    <script src="../../authDetails.js"></script>
 
+    
+    <!--Local Config Variables-->
+    <script>
+        pathToRoot = "../../";
+    </script>
+    <script>
+        let settings;
+        document.addEventListener("DOMContentLoaded", async () => {
+          settings = await querySettings();
+          document.dispatchEvent(new Event("settingsLoaded"));
+        });
+    </script>
+
+    <!--Database Files-->
+    <script src="../../javascript/database/queryDatabase.js"></script>
+    <script src="../../javascript/database/pingDatabase.js"></script>
+    <script src="../../javascript/database/querySettings.js"></script>
+
+    <!--Ensure the server is reachable-->
+    <script src="../../javascript/checkConnection.js"></script>
+
+    <!--Sound effects-->
+    <script src="../../javascript/applySettings/sounds.js"></script>
+
+    <!--Functionality Files-->
+    <script src="../../javascript/menus/login.js"></script>
 
 </body>
+
 </html>

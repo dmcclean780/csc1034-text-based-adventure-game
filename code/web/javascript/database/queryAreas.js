@@ -1,16 +1,17 @@
-async function makeAreaQuery(areaID) {
+async function makeAreaQuery(whereConditionAttribute, value) {
     const query = `SELECT
-    areas.id,
-    areas.name,
-    areas.rowPosition,
-    areas.colPosition,
-    areas.ableToVisitCondition
-    FROM areas
-    WHERE areas.id = COALESCE(${areaID}, areas.id);`;
-
-    let  areaData = await makeDatabaseQuery(query);
-    if(areaID == "NULL"){
+                        areas.id,
+                        areas.name,
+                        areas.rowPosition,
+                        areas.colPosition,
+                        areaConditions.conditionScript AS visitCondition
+                    FROM areas
+                    LEFT JOIN areaConditions ON areas.conditionID = areaConditions.id
+                    WHERE areas.${whereConditionAttribute} = '${value}';`;
+    try {
+        let areaData = await makeDatabaseQuery(query);
         return areaData;
+    } catch (error) {
+        throw error;
     }
-    return areaData.pop();
 }

@@ -1,10 +1,9 @@
 INSERT INTO areas
-    (id, name, rowPosition, colPosition, ableToVisitCondition)
 VALUES
-    (6, "Palace", 4, 3, TRUE);
+    (6, 'Potentia', "Palace", 4, 3, 3);
 
 INSERT INTO decisions
-    (id, areaID, details, prompt, backgroundFilePath, hasTimer, hasPopupMenu, hasDialogue, hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions)
+    (id, areaID, details, prompt, backgroundFilePath, hasTimer, hasPopupMenu, hasDialogue, hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions, hasSelectInventory)
 VALUES
     (
         1,
@@ -18,7 +17,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         2,
@@ -32,7 +32,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         3,
@@ -46,7 +47,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         4,
@@ -60,7 +62,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         5,
@@ -74,7 +77,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         6,
@@ -88,7 +92,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         7,
@@ -102,7 +107,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         8,
@@ -116,7 +122,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         9,
@@ -130,7 +137,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         10,
@@ -144,7 +152,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         11,
@@ -158,7 +167,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         12,
@@ -172,7 +182,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         13,
@@ -186,7 +197,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         14,
@@ -200,7 +212,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         15,
@@ -214,7 +227,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         16,
@@ -228,7 +242,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         17,
@@ -243,7 +258,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         18,
@@ -257,5 +273,6 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     );

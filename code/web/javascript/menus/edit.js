@@ -26,7 +26,7 @@ document.getElementById("editForm").addEventListener("submit", async (event) => 
                 }
 
                 // Proceed with database queries
-                let selectQuery = `SELECT * FROM users WHERE username = '${username}'`;
+                let selectQuery = `SELECT * FROM users WHERE username = '${oldUsername}'`;
                 let checkResult = await makeDatabaseQuery(selectQuery);
                 // Check if username and password match in the database                     
                 let sqlQuery = `UPDATE users SET username = '${newUsername}', pass = '${password}' WHERE username = '${oldUsername}';`;                     

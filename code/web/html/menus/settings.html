@@ -50,15 +50,16 @@
 
   <!--Local Config Variables-->
   <script>
-    pathToRoot = "../../";
-  </script>
-  <script>
-    let settings;
+    const pathToRoot = "../../";
+
     document.addEventListener("DOMContentLoaded", async () => {
-      settings = await querySettings();
-      document.dispatchEvent(new Event("settingsLoaded"));
-    });
-  </script>
+        settings = await querySettings();
+        document.dispatchEvent(new Event("settingsLoaded"));
+    })
+</script>
+
+  <!--Apply Settings-->
+  <script src="../../javascript/applySettings/textSize.js"></script>  
 
   <!--Database Files-->
   <script src="../../javascript/database/queryDatabase.js"></script>

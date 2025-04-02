@@ -124,4 +124,4 @@ VALUES
     (42, 4, 'option_2', 'Turn back and study the floor.', '(() => {loadNextDecision(4, 6)})', TRUE),
 
     
-    (43, 4, 'option_1', 'Turn back and inspect the boulder.', '(() => {loadNextDecision(4, 12)})', TRUE),
+    (43, 4, 'option_1', 'Turn back and inspect the boulder.', '(() => {loadNextDecision(4, 12)})', TRUE);

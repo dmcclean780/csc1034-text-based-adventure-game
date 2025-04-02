@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Life After Death</title>
+    <link rel="stylesheet" href="../../css/mobile/dungeons.css">
+    <link rel="stylesheet" href="../../css/default/dungeons.css">
+    <link rel="stylesheet" href="../../css/mobile/generic.css">
+    <link rel="stylesheet" href="../../css/default/generic.css">
+
+</head>
+
+<body>
+    <div class="main-container" id="main-container">
+        <img src="" alt="Dungeon Background" id="background">
+        <inventory-container id="inventory" style="display: none;"></inventory-container>
+        <pause-menu id="pause-menu" style="display: none;"></pause-menu>
+
+        <div id="input-box-container">
+            <img src="../../images/icons/pause.png" alt="Pause" id="pause-button" onclick="showPauseMenu()">
+
+            <div class="details-box" id="details-box" style="display: none;">
+                <div id="details" style="display: none;">
+                </div>
+            </div>
+            <div class="input-box" id="input-box" style="display: none;">
+                <img src="../../images/icons/inventory.png" alt="Inventory" id="inventory-button"
+                    onclick="showInventory()">
+                <div id="prompt" style="display: none;">
+                </div>
+                <div class="options" id="options" style="display: none;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Library Files-->
+    <script src="../../javascript/libraries/DragDropTouch.js"></script>
+
+    <!--Config Files-->
+    <script src="../../authDetails.js"></script>
+
+    <!--Embedded JS for the Main Game Loop-->
+    <script>
+        const pathToRoot = "../../";
+        let settings;
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            if (sessionStorage.getItem("username") === null || sessionStorage.getItem("username") === "") {
+                window.location.href = pathToRoot + "html/menus/login.html";
+            }
+            settings = await querySettings();
+            document.dispatchEvent(new Event("settingsLoaded"));
+        });
+
+        document.addEventListener("settingsLoaded", () => {
+            const areaID = getState("currentArea")
+            const decisionID = getState("currentDecision")
+            loadNextDecision(areaID, decisionID); //Change this to change what decision is loaded on page load of dungeon.html
+        });
+    </script>
+
+   
+
+    <!--Apply Settings-->
+    <script src="../../javascript/applySettings/textLoadingAnim.js"></script>
+
+    <!--Load Any Database Files-->
+    <script src="../../javascript/database/queryDatabase.js"></script>
+    <script src="../../javascript/database/queryNPC.js"></script>
+    <script src="../../javascript/database/queryDecision.js"></script>
+    <script src="../../javascript/database/querySettings.js"></script>
+    <script src="../../javascript/database/pingDatabase.js"></script>
+
+
+    <!--Load All Web Components-->
+    <script src="../../javascript/components/timerBar.js"></script>
+    <script src="../../javascript/components/popupMenu.js"></script>
+    <script src="../../javascript/components/dragAndDropGame.js"></script>
+    <script src="../../javascript/components/dialogue.js"></script>
+    <script src="../../javascript/components/textEntry.js"></script>
+    <script src="../../javascript/components/libraryBook.js"></script>
+    <script src="../../javascript/components/selectInventory.js"></script>
+    <script src="../../javascript/components/inventory.js"></script>
+    <script src="../../javascript/components/pauseMenu.js"></script>
+
+    <!--Ensure the server is reachable-->
+    <script src="../../javascript/checkConnection.js"></script>
+
+    <!--Load main game functions-->
+    <script src="../../javascript/gameFunctions/inventoryFunctions.js"></script>
+    <script src="../../javascript/gameFunctions/buttonActionFunctions.js"></script>
+    <script src="../../javascript/gameFunctions/stateFunctions.js"></script>
+    <script src="../../javascript/gameFunctions/loadNextDecision.js"></script>
+    <script src="../../javascript/gameFunctions/buildDecisionPage.js"></script>
+
+    <!--Sound effects-->
+    <script src="../../javascript/applySettings/sounds.js"></script>
+
+</body>
+
+</html>

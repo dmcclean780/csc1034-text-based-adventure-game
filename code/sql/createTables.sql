@@ -212,7 +212,7 @@
         itemName VARCHAR(50) NOT NULL,
         quantity INT NOT NULL,
         PRIMARY KEY (characterID, item_name),
-        FOREIGN KEY (characterID) REFERENCES playerCharacter(characterID)
+        FOREIGN KEY (characterID) REFERENCES playerCharacter(characterID) ON DELETE CASCADE ON UPDATE CASCADE
     );
 
     CREATE TABLE playerInventoryLog (
@@ -222,7 +222,7 @@
         itemName VARCHAR(50) NOT NULL,
         action VARCHAR(50) NOT NULL,
         PRIMARY KEY (characterID, timestamp),
-        FOREIGN KEY (characterID) REFERENCES playerCharacter(characterID)
+        FOREIGN KEY (characterID) REFERENCES playerCharacter(characterID) ON DELETE CASCADE ON UPDATE CASCADE
     );
 
     

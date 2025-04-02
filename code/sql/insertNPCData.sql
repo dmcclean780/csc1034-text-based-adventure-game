@@ -223,3 +223,26 @@ VALUES
       '["Please! I did not want to hurt you!", "Listen... I can teach you!", "It does not need to end like this!"]',
                 '(() => { loadNextDecision(3, 27); })');
 
+
+ ('ShadowWorm',
+    'images/npc/wormshadowdirtmound.png',
+    '["...Is ...someone... THERE?"]',
+              '(() => { loadNextDecision(4, 20); })');
+
+ ('ShadowWorm',
+ 'images/npc/wormshadowdirtmound.png',
+ '["...Who goes there? Who dares to enter this domain? Turn back now before my patience is tested!"]',
+           '(() => { loadNextDecision(4, 21); })');
+
+
+ ('ShadowWorm',
+ 'images/npc/wormshadowdirtmound.png',
+ '["...This insolence will not go unpunished! You have lost your chance to run, now you must face me!"] ',
+           '(() => { loadNextDecision(4, 32); })');
+
+ ('Worm',
+ 'images/npc/wormdirtmound.png',
+ '["...Pick up the cards, and prove that you are worthy to face me! Win and I might let you go, lose and you will feed the worms!" ]',
+           '(() => { loadNextDecision(4, 34); })');
+ 
+ 

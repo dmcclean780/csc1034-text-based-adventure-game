@@ -164,4 +164,3 @@ class PopupMenu extends HTMLElement {
 }
 
 customElements.define("popup-menu", PopupMenu);
-

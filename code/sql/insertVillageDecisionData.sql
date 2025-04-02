@@ -1,6 +1,6 @@
 INSERT INTO areas
 VALUES
-    (1, 'Potentia', 'Village', 3, 2, 5);
+    (1, 'Potentia', 'Village', 3, 2, 6);
 
 INSERT INTO decisions
     (id, areaID, details, prompt, backgroundFilePath, hasTimer, hasPopupMenu, hasDialogue, hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions, hasSelectInventory)

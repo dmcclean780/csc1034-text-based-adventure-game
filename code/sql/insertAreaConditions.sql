@@ -4,4 +4,5 @@ VALUES
     ('forest not complete', '(getState("forestCompleted") == false)'),
     ('palace not complete', '(getState("palaceCompleted") == false)'),
     ('library not complete', '(getState("libraryCompleted") == false)'),
+    ('worm hill not complete', '(getState("wormHillCompleted") == false)'),
     ('always', 'true');

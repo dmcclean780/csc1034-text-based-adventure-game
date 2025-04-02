@@ -1,7 +1,6 @@
 INSERT INTO areas
-    (id, name)
 VALUES
-    (4, 'DirtMound');
+    (4, 'Potentia', 'DirtMound', 6, 5, 5);
 
 INSERT INTO decisions
     (id, areaID, details, prompt, backgroundFilePath, hasTimer, hasPopupMenu, hasDialogue, hasLibraryBook, hasDragDropGame, hasTextEntry, hasButtonOptions)
@@ -19,13 +18,14 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         2,
         4,
         '  You squeeze through the crevice and stand up. You appear to be in a tunnel. The tunnel is lit only by the sunlight which pushes through holes in the exterior. ',
-        ' Will you go further into the mound or study the floor more closely?' 
+        ' Will you go further into the mound or study the floor more closely?',
          'images/backgrounds/dirtmound2.png',
         FALSE,
         FALSE,
@@ -33,7 +33,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         3,
@@ -47,7 +48,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         4,
@@ -61,7 +63,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         5,
@@ -76,7 +79,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         6,
@@ -90,7 +94,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         7,
@@ -104,7 +109,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         8,
@@ -118,7 +124,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         9,
@@ -132,7 +139,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         10,
@@ -146,7 +154,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         11,
@@ -161,13 +170,14 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         12,
         4,
         'The boulder wont budge without a tool.',
-        'What do you do?'
+        'What do you do?',
           'images/backgrounds/dirtmound2.png',
         FALSE,
         FALSE,
@@ -175,7 +185,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         13,
@@ -189,7 +200,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         14,
@@ -203,7 +215,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         15,
@@ -217,7 +230,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         16,
@@ -231,7 +245,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         17,
@@ -245,7 +260,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         18,
@@ -260,7 +276,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         19,
@@ -275,7 +292,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         20,
@@ -290,7 +308,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         21,
@@ -321,7 +340,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         23,
@@ -335,7 +355,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         24,
@@ -349,7 +370,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         25,
@@ -365,7 +387,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         26,
@@ -381,7 +404,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         27,
@@ -395,7 +419,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         28,
@@ -409,7 +434,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         29,
@@ -423,7 +449,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         30,
@@ -437,7 +464,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         31,
@@ -451,7 +479,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         32,
@@ -466,7 +495,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         33,
@@ -480,7 +510,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
     ),
     (
         34,
@@ -495,8 +526,9 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
-    );
+        TRUE,
+        FALSE
+    ),
   (
         35,
         4,
@@ -510,8 +542,9 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
-    );
+        TRUE,
+        FALSE
+    ),
   (
         36,
         4,
@@ -525,8 +558,9 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
-    );
+        TRUE,
+        FALSE
+    ),
   (
         37,
         4,
@@ -539,8 +573,9 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
-    );
+        TRUE,
+        FALSE
+    ),
   (
         38,
         4,
@@ -553,8 +588,9 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
-    );
+        TRUE,
+        FALSE
+    ),
   (
         39,
         4,
@@ -567,8 +603,9 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
-    );
+        TRUE,
+        FALSE
+    ),
 
 
   (
@@ -583,8 +620,9 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
-    );
+        TRUE,
+        FALSE
+    ),
 
 
   (
@@ -599,8 +637,9 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
-    );
+        TRUE,
+        FALSE
+    ),
   (
         42, 
         4, 
@@ -613,9 +652,10 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
 
-    );
+    ),
   (
         43, 
         4, 
@@ -628,7 +668,8 @@ VALUES
         FALSE,
         FALSE,
         FALSE,
-        TRUE
+        TRUE,
+        FALSE
 
     );
 

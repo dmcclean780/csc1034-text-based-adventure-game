@@ -41,8 +41,8 @@ VALUES
     (13, 4, 'option_2', 'Headbutt the boulder.','(()=> {goToDeathScreen("Death has claimed you for it&#39;s own")})', TRUE),
 
     (14, 4, 'option_1', 'Inspect the piece of metal.', '((event) => {showPopupMenu(event);
-                                                  addToInventory("Pickaxe of Courage", 1);})',
-     '(() => {loadNextDecision(4, 15);})', TRUE),
+                                                  addToInventory("Pickaxe of Courage", 1);
+                                                  loadNextDecision(4, 15);})', TRUE),
     (14, 4, 'option_2', 'Go further into the tunnel.', '(() => {loadNextDecision(4, 2)})', TRUE),
 
     (15, 4, 'option_1', 'Turn back.', '(() => {loadNextDecision(4, 8)})', TRUE),
@@ -94,21 +94,21 @@ VALUES
 
     (31, 4, 'option_1', 'Go further into the passage.', '(() => {showDialogue()})', TRUE), 
 
-    (32, 4,  '(checkInventory("Mysterious Earpiece", 1) == true)', 'option_1', 'Listen to the gurgling.', '(() => {loadNextDecision(4, 33)})', TRUE);
+    (32, 4,  '(checkInventory("Mysterious Earpiece", 1) == true)', 'option_1', 'Listen to the gurgling.', '(() => {loadNextDecision(4, 33)})', TRUE),
     (32, 4, 'option_2', 'Walk to the table.', '(() => {loadNextDecision(4, 38)})', TRUE),
 
     (33, 4, 'option_1', 'Pick up the slabs.', '(() => {showDialogue()})', TRUE), 
 
-    (34, 4, 'option_1', 'Play the game.', '(() => {window.location.href = "code/web/html/dungeon\DirtMound/dung_M_Pt2CardsGame.html"})', TRUE);
+    (34, 4, 'option_1', 'Play the game.', '(() => {window.location.href = "DirtMound/dung_M_Pt2CardsGame.html"})', TRUE),
 
     (35, 4, 'option_1', 'Win game.', '(() => {loadNextDecision(4, 36)})', TRUE),
     (35, 4, 'option_2', 'Lose game.', '(() => {loadNextDecision(4, 37)})', TRUE),
 
-    (36, 4, 'option_1', 'Use your pickaxe to open the hole wider and escape through it.', '(() => {loadNextDecision(4, 1)})', TRUE);
+    (36, 4, 'option_1', 'Use your pickaxe to open the hole wider and escape through it.', '(() => {loadNextDecision(4, 1)})', TRUE),
 
     (37, 4, 'option_1', 'Die.', '(()=> {goToDeathScreen("Death has claimed you for it&#39;s own")})', TRUE),
 
-    (38, 4, 'option_1', 'Pick up the slabs.', '(() => {loadNextDecision(4, 34)})', TRUE);
+    (38, 4, 'option_1', 'Pick up the slabs.', '(() => {loadNextDecision(4, 34)})', TRUE),
     (38, 4, 'option_2', 'Refuse to play.', '(() => {loadNextDecision(4, 41)})', TRUE),
 
     (39, 4, 'option_1', 'Try to get up.', '(()=> {goToDeathScreen("Death has claimed you for it&#39;s own")})', TRUE),

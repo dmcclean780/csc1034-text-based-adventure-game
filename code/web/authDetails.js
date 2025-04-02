@@ -6,5 +6,4 @@ authDetails = {
     "username": "dmcclean13",
     "password": "LzRG5klqcVRJkC17",
     "database": "CSC1034_CW_54",
- main
 }

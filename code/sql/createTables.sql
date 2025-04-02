@@ -62,7 +62,8 @@
         onComplete TEXT(1000) NOT NULL,
 
         PRIMARY KEY (id, areaID),
-        FOREIGN KEY (id) REFERENCES decisions(id)
+        FOREIGN KEY (id) REFERENCES decisions(id),
+        FOREIGN KEY (areaID) REFERENCES areas(id)
     );
 
     CREATE TABLE popupMenus
@@ -74,7 +75,8 @@
         contentTitle CHAR(50) NOT NULL,
 
         PRIMARY KEY (id, areaID),
-        FOREIGN KEY (id) REFERENCES decisions(id)
+      FOREIGN KEY (id) REFERENCES decisions(id),
+        FOREIGN KEY (areaID) REFERENCES areas(id)
     );
 
     CREATE TABLE textEntries
@@ -86,7 +88,8 @@
         onIncorrect TEXT(1000) NOT NULL,
 
         PRIMARY KEY (id, areaID),
-        FOREIGN KEY (id) REFERENCES decisions(id)
+      FOREIGN KEY (id) REFERENCES decisions(id),
+        FOREIGN KEY (areaID) REFERENCES areas(id)
     );
 
     CREATE TABLE libraryBooks
@@ -100,7 +103,8 @@
         bookFunction TEXT(1000) NOT NULL,
 
         PRIMARY KEY (id, areaID),
-        FOREIGN KEY (id) REFERENCES decisions(id)
+       FOREIGN KEY (id) REFERENCES decisions(id),
+        FOREIGN KEY (areaID) REFERENCES areas(id)
     );
 
     CREATE TABLE dragDropGames
@@ -115,7 +119,8 @@
         backgroundStyle TEXT(1000) NOT NULL,
 
         PRIMARY KEY (id, areaID),
-        FOREIGN KEY (id) REFERENCES decisions(id)
+        FOREIGN KEY (id) REFERENCES decisions(id),
+        FOREIGN KEY (areaID) REFERENCES areas(id)
     );
 
     CREATE TABLE buttonOptions
@@ -127,7 +132,8 @@
         buttonFunction TEXT(1000) NOT NULL,
         showCondition TEXT(1000) NOT NULL,
 
-        FOREIGN KEY (id) REFERENCES decisions(id),
+      FOREIGN KEY (id) REFERENCES decisions(id),
+        FOREIGN KEY (areaID) REFERENCES areas(id),
         PRIMARY KEY (id, areaID, buttonID)
     );
 
@@ -138,7 +144,8 @@
         npcID INT NOT NULL,
         PRIMARY KEY (id, areaID),
         FOREIGN KEY (npcID) REFERENCES npcs(id),
-        FOREIGN KEY (id) REFERENCES decisions(id)
+     FOREIGN KEY (id) REFERENCES decisions(id),
+        FOREIGN KEY (areaID) REFERENCES areas(id)
     );
 
     CREATE TABLE selectInventory
@@ -150,7 +157,8 @@
         incorrectAnswerFunction TEXT(1000) NOT NULL,
 
         PRIMARY KEY (id, areaID),
-        FOREIGN KEY (id) REFERENCES decisions(id)
+   FOREIGN KEY (id) REFERENCES decisions(id),
+        FOREIGN KEY (areaID) REFERENCES areas(id)
     );
 
     CREATE TABLE users

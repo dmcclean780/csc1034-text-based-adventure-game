@@ -1,53 +1,5 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
-  <head>
-    <title>Life After Death</title>
-    <link rel="stylesheet" href="css/default/generic.css">
-    <link rel="stylesheet" href="css/default/dungeons.css">
-    <link rel="stylesheet" href="css/mobile/generic.css">
-    <link rel="stylesheet" href="css/mobile/dungeons.css">
-  </head>
-  <body style="color:black; background-color: black;">
-    <div class="input-box">
-      <h1 class="details-box" style="letter-spacing: 2px;">LIFE AFTER DEATH</h1>
-      <button class="button-option" onclick="goToPlayGame()" style="margin: 5px; letter-spacing: 2px;">PLAY GAME</button>
-      <button class="button-option" onclick="goToStatistics()" style="margin: 5px; letter-spacing: 2px;">STATISTICS</button>
-      <button class="button-option" onclick="goToSettings()" style="margin: 5px; letter-spacing: 2px;">SETTINGS</button>
-      <button class="button-option" onclick="goToLogin()" style="margin: 5px; letter-spacing: 2px;">LOG OUT</button>
-      <button class="button-option" onclick="goToEditAccount()" style="margin: 5px; letter-spacing: 2px;">EDIT ACCOUNT</button>
-      <button class="button-option" onclick="goToDeleteAccount()" style="margin: 5px; letter-spacing: 2px;">DELETE ACCOUNT</button>
-    </div>
-
-    <!--Config Files-->
-    <script src="authDetails.js"></script>
-
-    <!--Embedded JS for the Main Game Loop-->
-    <script>
-      const pathToRoot = "";
-      let settings;
-
-      document.addEventListener("DOMContentLoaded", async () => {
-          settings = await querySettings();
-          document.dispatchEvent(new Event("settingsLoaded"));
-      })
-  </script>
-    <script src="javascript/menus/menuFunctions.js"></script>
-
-    <!--Apply Settings-->
-    <script src="javascript/applySettings/textSize.js"></script>
-
-    <!--Load Any Database Files-->
-    <script src="javascript/database/queryDatabase.js"></script>
-    <script src="javascript/database/querySettings.js"></script>
-    <script src="javascript/database/pingDatabase.js"></script>
-
-    <!--Ensure the server is reachable-->
-    <script src="javascript/checkConnection.js"></script>
-
-
-  </body>
-=======
 
 <head>
   <title>Life After Death</title>
@@ -79,6 +31,9 @@
       document.dispatchEvent(new Event("settingsLoaded"));
     });
   </script>
+
+  <script src="javascript/applySettings/textSize.js"></script>
+
   <!--Load Any Database Files-->
   <script src="authDetails.js"></script>
   <script src="javascript/database/queryDatabase.js"></script>
@@ -87,7 +42,7 @@
   <script src="javascript/applySettings/sounds.js"></script>
   <script src="javascript/menuButtons/indexButtons.js"></script>
   <script src="javascript/menus/menuFunctions.js"></script>
+  
 </body>
 
->>>>>>> main
 </html>

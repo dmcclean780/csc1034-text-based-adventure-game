@@ -177,10 +177,9 @@
         soundEffects BOOLEAN NOT NULL,
         musicVolume INT NOT NULL,
         textSize TEXT(50) NOT NULL,
+
         PRIMARY KEY (username),
-        FOREIGN KEY (username) REFERENCES users(username)
-        ON DELETE CASCADE
-        ON UPDATE CASCADE
+        FOREIGN KEY (username) REFERENCES users(username) ON DELETE CASCADE ON UPDATE CASCADE
     );
 
     CREATE TABLE playerCharacter
@@ -202,12 +201,10 @@
         currentAreaState JSON,
         currentPlayTime INT NOT NULL,
 
-        PRIMARY KEY (characterID, username),
-        FOREIGN KEY (username) REFERENCES users(username),
+        FOREIGN KEY (username) REFERENCES users(username) ON DELETE CASCADE ON UPDATE CASCADE,
         FOREIGN KEY (currentDecision) REFERENCES decisions(id),
         FOREIGN KEY (currentArea) REFERENCES areas(id)
-        ON DELETE CASCADE
-        ON UPDATE CASCADE
+        
     );
 
     CREATE TABLE playerInventory (

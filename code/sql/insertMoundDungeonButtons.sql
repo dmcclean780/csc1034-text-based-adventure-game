@@ -12,13 +12,13 @@ VALUES
     (4, 4, 'option_1', 'Go down the steps.', '(() => {loadNextDecision(4, 5)})', TRUE),
     (4, 4, 'option_2', 'Go back and study the floor.', '(() => {loadNextDecision(4, 6)})', TRUE),
 
-    (5, 4, 'option_1', 'Read the diary.', '(() => {loadNextDecision(4, 42)})', TRUE)
-    (5, 4, 'option_2', 'Turn back and inspect the boulder.', '(() => {loadNextDecision(4, 4)})', TRUE)
+    (5, 4, 'option_1', 'Read the diary.', '(() => {loadNextDecision(4, 42)})', TRUE),
+    (5, 4, 'option_2', 'Turn back and inspect the boulder.', '(() => {loadNextDecision(4, 4)})', TRUE),
     (5, 4, 'option_3', 'Turn back and study the floor.', '(() => {loadNextDecision(4, 6)})', TRUE),
 
     (6, 4, 'option_1', 'Inspect the piece of metal.', '((event) => {showPopupMenu(event);
                                                   addToInventory("Pickaxe of Courage", 1);})',
-    '(() => {loadNextDecision(4, 7)})', TRUE),
+                                                 '(() => {loadNextDecision(4, 7)})', TRUE),
 
     (7, 4, 'option_1', 'Exit the mound.', '(() =>{loadNextDecision(4, 8)})', TRUE),
     (7, 4, 'option_2', 'Return deeper into the mound.', '(() =>{loadNextDecision(4, 16)})', TRUE),
@@ -32,7 +32,7 @@ VALUES
     (10, 4, 'option_1', 'Inspect the boulder.','(() => {loadNextDecision(4, 12)})', TRUE),
     (10, 4, 'option_2', 'Go down the steps.','(() => {loadNextDecision(4, 11)})', TRUE),
 
-    (11, 4, 'option_1', 'Read the diary.', '(() => {loadNextDecision(4, 43)})', TRUE)
+    (11, 4, 'option_1', 'Read the diary.', '(() => {loadNextDecision(4, 43)})', TRUE),
     (11, 4, 'option_2', 'Turn back and inspect the boulder.', '(() => {loadNextDecision(4, 12)})', TRUE),
 
     (12, 4, 'option_1', 'Use the pickaxe.', '(() => {loadNextDecision(4, 18)})', TRUE),
@@ -53,9 +53,9 @@ VALUES
 
     (17, 4, 'option_1', 'Put the accessory on your ear and return to the mound, farther this time.', '((event) => {showPopupMenu(event);
                                                   addToInventory("Mysterious Earpiece", 1);})', 
-    '(() => {loadNextDecision(4, 10)})', TRUE),
+     '(() => {loadNextDecision(4, 10)})', TRUE),
 
-    (18, 4,  '(checkInventory("Mysterious Earpiece", 1) == true)',
+    (18, 4,  'checkInventory("Mysterious Earpiece", 1), == true',
      '((event) => {addToDetails("<br>The device in your ear had whirred into life when the gurgling began")})','option_1', 'Bang your pickaxe against the remants of the boulder.','(() => {loadNextDecision(4, 19)})', TRUE),
     (18, 4, 'option_2', 'Walk further into the room.', '(() => {loadNextDecision(4, 21)})', TRUE),
 
@@ -99,9 +99,9 @@ VALUES
 
     (33, 4, 'option_1', 'Pick up the slabs.', '(() => {showDialogue()})', TRUE), 
 
-    (34, 4, 'option_1', 'Play the game.', '(() => {window.location.href = "code/web/html/dungeons/DirtMound/dung_M_Pt2CardsGame.html"})', TRUE);
+    (34, 4, 'option_1', 'Play the game.', '(() => {window.location.href = "code/web/html/dungeon\DirtMound/dung_M_Pt2CardsGame.html"})', TRUE);
 
-    (35, 4, 'option_1', 'Win game.', '(() => {loadNextDecision(4, 36)})', TRUE);
+    (35, 4, 'option_1', 'Win game.', '(() => {loadNextDecision(4, 36)})', TRUE),
     (35, 4, 'option_2', 'Lose game.', '(() => {loadNextDecision(4, 37)})', TRUE),
 
     (36, 4, 'option_1', 'Use your pickaxe to open the hole wider and escape through it.', '(() => {loadNextDecision(4, 1)})', TRUE);
@@ -120,7 +120,7 @@ VALUES
     
     (41, 4, 'option_1', 'Shake your fist at the worm.', '(()=> {goToDeathScreen("Death has claimed you for it&#39;s own")})', TRUE),
 
-    (42, 4, 'option_1', 'Turn back and inspect the boulder.', '(() => {loadNextDecision(4, 4)})', TRUE)
+    (42, 4, 'option_1', 'Turn back and inspect the boulder.', '(() => {loadNextDecision(4, 4)})', TRUE),
     (42, 4, 'option_2', 'Turn back and study the floor.', '(() => {loadNextDecision(4, 6)})', TRUE),
 
     

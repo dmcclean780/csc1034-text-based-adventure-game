@@ -366,7 +366,7 @@ class LibraryBook extends HTMLElement {
 
     gameOver() {
         console.log("Game over!");
-        window.location.href = this.fileRel.concat("","html/generic/death.html");
+        goToDeathScreen("The Ill-Ink consumed you.");
     }
 }
 

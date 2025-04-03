@@ -33,7 +33,7 @@ VALUES
 
     (13, 7, 'option_1', 'Use Midas Glove', '(()=> {goToDeathScreen("So you tried to turn a gold rhino... to gold? You&#39;re not very bright, are you?")})', TRUE),
     (13, 7, 'option_2', 'Use Pickaxe', '(()=> {loadNextDecision(7, 15)})', TRUE),
-    (13, 7, 'option_3', 'Use Anti-Midas Glove', '(()=> {loadNextDecision(7, 14)})', '(checkInventory("ANTIMIDAS", 1) == TRUE)'),
+    (13, 7, 'option_3', 'Use Anti-Midas Glove', '(()=> {loadNextDecision(7, 14)})', '(checkInventory("ANTIMIDAS", 1) == true)'),
  
     (14, 7, 'option_1', 'Continue', '(()=> {showDialogue()})', TRUE),
 

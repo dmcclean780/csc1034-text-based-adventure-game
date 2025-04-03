@@ -333,7 +333,7 @@ VALUES
                        You try to pick a bejewelled nicklace from the clutter, but before you can touch it, several worms swarm the necklace and lie menacingly atop in. 
                        Something appears strange about these worms. ',
         'What do you do?',
-         'images/backgrounds/dirtmound3.png',,
+         'images/backgrounds/dirtmound3.png',
         FALSE,
         FALSE,
         FALSE,

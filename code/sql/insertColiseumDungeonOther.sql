@@ -115,3 +115,8 @@ Eternal night bends to my sway.",
     3,
     '(()=> {loadNextDecision(7, 66)})'
 );
+
+INSERT INTO timerBars(id, areaID, duration, onComplete)
+VALUES
+    (8, 7, 10, '(()=>{goToDeathScreen("Literally anything would’ve been a more effective defense than that.")})'),
+    (29, 7, 10, '(()=>{goToDeathScreen("Literally anything would’ve been a more effective defense than that.")})');
